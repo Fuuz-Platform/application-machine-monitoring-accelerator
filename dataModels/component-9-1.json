@@ -1,0 +1,320 @@
+{
+  "header": {
+    "id": "facility",
+    "name": "Facility",
+    "description": "This is a list of facilities\nLinks out to location",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "cloobg77u0002013c6akma7bu",
+    "number": "29",
+    "dataModelId": "facility",
+    "modelDefinition": {
+      "name": "Facility",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "labelField": "code",
+          "indices": [
+            {
+              "name": "Name",
+              "unique": false,
+              "fields": [
+                "name"
+              ]
+            }
+          ],
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "facility"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "code",
+          "type": "String!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "active",
+          "type": "Boolean",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "externalId",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "This is the name of the facility - Label field",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "description": "the facility type (Production , Distribution , Subcontract)",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "address",
+          "type": "Address",
+          "description": "Facility address",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenters",
+          "description": "",
+          "type": "[Workcenter!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "facilityId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This is a list of facilities\nLinks out to location"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "cloobg77u0002013c6akma7bu",
+      "dataModelVersion": {
+        "number": "29"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clok2wfih000f019s7tp9aeeb",
+      "dataModelVersion": {
+        "number": "28"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnnovn70017019l5xim57pz",
+      "dataModelVersion": {
+        "number": "27"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj7nxpq002701a54cbb20g6",
+      "dataModelVersion": {
+        "number": "26"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clgf8n5uk0003015e6sqo6se6",
+      "dataModelVersion": {
+        "number": "25"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

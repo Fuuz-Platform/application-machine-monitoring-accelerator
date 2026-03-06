@@ -1,0 +1,459 @@
+{
+  "header": {
+    "id": "createHistoricalIotTagValues",
+    "name": "Create Historical IOT Tag Values",
+    "description": "",
+    "active": true,
+    "dataFlowTypeId": "System",
+    "moduleId": "internetOfThings"
+  },
+  "version": {
+    "id": "clot17h2hhic701b84e68gjzf",
+    "number": "0.0.1",
+    "description": "",
+    "dataFlowId": "createHistoricalIotTagValues",
+    "flow": {
+      "id": "clot17h2hhic701b84e68gjzf",
+      "name": "Create Historical IOT Tag Values",
+      "type": "System",
+      "nodes": [
+        {
+          "id": "e17df105-3cbf-4aed-8970-a0759840aefc",
+          "name": "Data Changes",
+          "type": "dataChanges",
+          "data": {
+            "api": "Application",
+            "type": "IotTag",
+            "operations": [
+              "Update"
+            ],
+            "nextNodes": [
+              "2c3d12b1-88ff-4217-891e-d77567f33b73"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+          "name": "If Else",
+          "type": "ifElse",
+          "data": {
+            "transform": "$not(\n  $string(value.before.currentValue.value) = $string(value.after.currentValue.value)\n)",
+            "onTrueNextNodes": [
+              "6a9d8487-9248-415e-a553-01a50a484c61"
+            ],
+            "onFalseNextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6a9d8487-9248-415e-a553-01a50a484c61",
+          "name": "Prepare",
+          "type": "transform",
+          "data": {
+            "transform": "{\n  \"payload\":{\n    \"create\":{\n      \"value\": value.before.currentValue,\n      \"recordedAt\": value.before.currentValueRecordedAt,\n      \"iotTagId\": value.before.id\n    }\n  }\n}",
+            "nextNodes": [
+              "40144085-6f21-44b3-a3b5-31ed5243d17e"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "40144085-6f21-44b3-a3b5-31ed5243d17e",
+          "name": "Create IOT Historical Tag",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "$",
+            "mutation": "mutation ($payload: [IotTagHistoricalValueCreatePayloadInput!]!){\n  createIotTagHistoricalValue(payload: $payload){ id }\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.1"
+    },
+    "diagram": {
+      "id": "clot17h2hhic701b84e68gjzf",
+      "offsetX": 42.04,
+      "offsetY": 173.2,
+      "zoom": 88.89,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "9d495b5e-5a13-4064-9464-a595c979eb9a",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "52397989-2301-40c7-8f04-23c6bf5f5cc3": {
+              "points": [
+                {
+                  "id": "a5b51708-9180-4812-9cce-66b5d817f3da",
+                  "type": "point",
+                  "x": 248.99,
+                  "y": 153.82
+                },
+                {
+                  "id": "c4ab865d-1109-4176-a8eb-bd1b3b404f7c",
+                  "type": "point",
+                  "x": 273.21,
+                  "y": 153.82
+                }
+              ],
+              "id": "52397989-2301-40c7-8f04-23c6bf5f5cc3",
+              "type": "default",
+              "selected": false,
+              "source": "e17df105-3cbf-4aed-8970-a0759840aefc",
+              "sourcePort": "clot0p0gw07z4356ebx87u4ok",
+              "target": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+              "targetPort": "clot0pr3e07za356ec36br0m7",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "4a237e8e-d033-49e9-95e5-2ffcad9a428b": {
+              "points": [
+                {
+                  "id": "4e9b3dc5-cec2-42ab-8d38-bfa0987402f3",
+                  "type": "point",
+                  "x": 428.97,
+                  "y": 153.82
+                },
+                {
+                  "id": "82684c43-dd48-4357-a647-4732dc586ce5",
+                  "type": "point",
+                  "x": 453.22,
+                  "y": 153.82
+                }
+              ],
+              "id": "4a237e8e-d033-49e9-95e5-2ffcad9a428b",
+              "type": "default",
+              "selected": false,
+              "source": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+              "sourcePort": "clot0pr3e07zc356e0optiwke",
+              "target": "6a9d8487-9248-415e-a553-01a50a484c61",
+              "targetPort": "clot0zpjf084n356ei3gr05w4",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "b9be5856-330a-437b-9f70-0ab63ddd0581": {
+              "points": [
+                {
+                  "id": "c3fd3549-e8f3-48f1-ae5e-2bbbff0de6c9",
+                  "type": "point",
+                  "x": 609,
+                  "y": 153.82
+                },
+                {
+                  "id": "a9037d04-10f8-402a-9314-c1e26b30e324",
+                  "type": "point",
+                  "x": 638.22,
+                  "y": 153.83
+                }
+              ],
+              "id": "b9be5856-330a-437b-9f70-0ab63ddd0581",
+              "type": "default",
+              "selected": false,
+              "source": "6a9d8487-9248-415e-a553-01a50a484c61",
+              "sourcePort": "clot0zpjf084p356eyn92qht8",
+              "target": "40144085-6f21-44b3-a3b5-31ed5243d17e",
+              "targetPort": "clot15jf50896356evcr4px47",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "21399c5c-8d9e-4232-b905-b70731f89d62",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "e17df105-3cbf-4aed-8970-a0759840aefc": {
+              "id": "e17df105-3cbf-4aed-8970-a0759840aefc",
+              "type": "dataChanges",
+              "selected": true,
+              "x": 95,
+              "y": 115,
+              "ports": [
+                {
+                  "id": "clot0p0gw07z4356ebx87u4ok",
+                  "type": "default",
+                  "x": 241.88,
+                  "y": 146.71,
+                  "name": "clot0p0gw07z5356ebv3aqujz",
+                  "parentNode": "e17df105-3cbf-4aed-8970-a0759840aefc",
+                  "links": [
+                    "52397989-2301-40c7-8f04-23c6bf5f5cc3"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Message",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "type": "IotTag",
+                "operations": [
+                  "Update"
+                ],
+                "nextNodes": [
+                  "2c3d12b1-88ff-4217-891e-d77567f33b73"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Data Changes"
+            },
+            "2c3d12b1-88ff-4217-891e-d77567f33b73": {
+              "id": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+              "type": "ifElse",
+              "selected": false,
+              "x": 275,
+              "y": 115,
+              "ports": [
+                {
+                  "id": "clot0pr3e07za356ec36br0m7",
+                  "type": "default",
+                  "x": 266.1,
+                  "y": 146.72,
+                  "name": "clot0pr3e07zb356e09n8ciuz",
+                  "parentNode": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+                  "links": [
+                    "52397989-2301-40c7-8f04-23c6bf5f5cc3"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clot0pr3e07zc356e0optiwke",
+                  "type": "default",
+                  "x": 421.86,
+                  "y": 146.72,
+                  "name": "clot0pr3e07zd356eqtfiij6d",
+                  "parentNode": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+                  "links": [
+                    "4a237e8e-d033-49e9-95e5-2ffcad9a428b"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "True",
+                  "fieldPath": "data.onTrueNextNodes"
+                },
+                {
+                  "id": "clot0pr3e07ze356eqiry0oqq",
+                  "type": "default",
+                  "x": 421.86,
+                  "y": 171.85,
+                  "name": "clot0pr3e07zf356exluc9kuz",
+                  "parentNode": "2c3d12b1-88ff-4217-891e-d77567f33b73",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "False",
+                  "fieldPath": "data.onFalseNextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$not(\n  $string(value.before.currentValue.value) = $string(value.after.currentValue.value)\n)",
+                "onTrueNextNodes": [
+                  "6a9d8487-9248-415e-a553-01a50a484c61"
+                ],
+                "onFalseNextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "If Else"
+            },
+            "6a9d8487-9248-415e-a553-01a50a484c61": {
+              "id": "6a9d8487-9248-415e-a553-01a50a484c61",
+              "type": "transform",
+              "selected": false,
+              "x": 455,
+              "y": 115,
+              "ports": [
+                {
+                  "id": "clot0zpjf084n356ei3gr05w4",
+                  "type": "default",
+                  "x": 446.11,
+                  "y": 146.71,
+                  "name": "clot0zpjf084o356eaiahjaeh",
+                  "parentNode": "6a9d8487-9248-415e-a553-01a50a484c61",
+                  "links": [
+                    "4a237e8e-d033-49e9-95e5-2ffcad9a428b"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clot0zpjf084p356eyn92qht8",
+                  "type": "default",
+                  "x": 601.89,
+                  "y": 146.71,
+                  "name": "clot0zpjf084q356eenr2rwke",
+                  "parentNode": "6a9d8487-9248-415e-a553-01a50a484c61",
+                  "links": [
+                    "b9be5856-330a-437b-9f70-0ab63ddd0581"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "{\n  \"payload\":{\n    \"create\":{\n      \"value\": value.before.currentValue,\n      \"recordedAt\": value.before.currentValueRecordedAt,\n      \"iotTagId\": value.before.id\n    }\n  }\n}",
+                "nextNodes": [
+                  "40144085-6f21-44b3-a3b5-31ed5243d17e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Prepare"
+            },
+            "40144085-6f21-44b3-a3b5-31ed5243d17e": {
+              "id": "40144085-6f21-44b3-a3b5-31ed5243d17e",
+              "type": "mutate",
+              "selected": false,
+              "x": 640,
+              "y": 115,
+              "ports": [
+                {
+                  "id": "clot15jf50896356evcr4px47",
+                  "type": "default",
+                  "x": 631.11,
+                  "y": 146.72,
+                  "name": "clot15jf50897356eipniq9op",
+                  "parentNode": "40144085-6f21-44b3-a3b5-31ed5243d17e",
+                  "links": [
+                    "b9be5856-330a-437b-9f70-0ab63ddd0581"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clot15jf50898356e28fxftbk",
+                  "type": "default",
+                  "x": 812.55,
+                  "y": 146.72,
+                  "name": "clot15jf50899356en0zpnizd",
+                  "parentNode": "40144085-6f21-44b3-a3b5-31ed5243d17e",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "$",
+                "mutation": "mutation ($payload: [IotTagHistoricalValueCreatePayloadInput!]!){\n  createIotTagHistoricalValue(payload: $payload){ id }\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Create IOT Historical Tag"
+            }
+          }
+        }
+      ],
+      "name": "Create Historical IOT Tag Values",
+      "type": "System",
+      "version": "0.0.1",
+      "walkthrough": {
+        "steps": []
+      }
+    }
+  }
+}

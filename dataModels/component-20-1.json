@@ -1,0 +1,227 @@
+{
+  "header": {
+    "id": "oeeConfiguration",
+    "name": "OeeConfiguration",
+    "description": "Configuration for how oee should be aggergated",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clnvzi8e2000l016s1a7ocg46",
+    "number": "13",
+    "dataModelId": "oeeConfiguration",
+    "modelDefinition": {
+      "name": "OeeConfiguration",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "labelField": "name",
+          "triggers": {
+            "create": "(\n  $doc := doc? doc : $;\n  $doc~>| $ | { \"lastRanAt\": ( $moment().tz(\"America/Detroit\").startOf($doc.oeeTimeFrameId).format() ) } |;\n)"
+          },
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "oeeConfiguration"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "lastRanAt",
+          "type": "DateTime",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeTimeFrameId",
+          "type": "ID!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeTimeFrame",
+          "description": "",
+          "type": "OeeTimeFrame",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "oeeTimeFrameId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeDimensions",
+          "description": "",
+          "type": "[OeeDimensionOeeConfiguration!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "oeeConfigurationId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "Configuration for how oee should be aggergated"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clnvzi8e2000l016s1a7ocg46",
+      "dataModelVersion": {
+        "number": "13"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clklima1b001d01a94x261z63",
+      "dataModelVersion": {
+        "number": "12"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "visualizationDatasourceWorkcenterUtilizationByDay",
+    "name": "Visualization Datasource: Workcenter Utilization by Day",
+    "description": "",
+    "active": true
+  },
+  "version": {
+    "id": "clpkso8ju00ah01swcynz04ee",
+    "number": "1.0.0",
+    "description": "",
+    "savedTransformId": "visualizationDatasourceWorkcenterUtilizationByDay",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n  $data := $ \n    ~> | $ | {\n      \"category\": $moment(creditedAt).format(\"MM/DD/YYYY\")\n    } |;\n    \n  $groupedData := ($data{\n    category: {\n      \"category\": $first(category),\n      \"utilization\": $sum(utilizationTime[$not($isNil($))]) / 3600,\n      \"uptime\": $sum(productionTime[$not($isNil($))]) / 3600\n    }\n  } ~> $values)^(category);\n\n  $avg := $round($average($groupedData.($coalesce([utilization, uptime]))), 1);\n\n  $utilizationCount := $count($groupedData[$not($isNil(utilization))]);\n\n  {\n    \"chart\": {\n      \"subcaption\": $utilizationCount = 0\n          ? 'Based on Workcenter Status'\n        : $utilizationCount = $count($groupedData)\n          ? 'Based on Extruder Pressure'\n        : 'Based on Workcenter Status & Extruder Pressure',\n      \"numberSuffix\": \"h\"\n    },\n    \"categories\": [\n        {\n            \"category\": [$groupedData.{\n              \"label\": category,\n              \"toolText\": category & \"; \" & (\n                $isNil(utilization)\n                  ? 'Based on Workcenter Status'\n                  : 'Based on Extruder Pressure'\n              )\n            }]\n        }\n    ],\n    \"dataSet\": [\n        {\n            \"data\": [$groupedData.{\n              \"value\": $coalesce([utilization, uptime])\n            }]\n        }\n    ],\n    \"trendlines\": [\n      {\n        \"line\": [\n          {\n            \"startvalue\": 20.4,\n            \"color\": \"#43a047\",\n            \"displayvalue\": \"85%\",\n            \"valueOnRight\": true\n          },\n          {\n            \"startvalue\": 21.6,\n            \"color\": \"#ffa000\",\n            \"displayvalue\": \"90%\",\n            \"valueOnRight\": true\n          },\n          {\n            \"startvalue\": 24,\n            \"color\": \"#f44336\",\n            \"displayvalue\": \"100%\",\n            \"valueOnRight\": true\n          },\n          {\n            \"startvalue\": $avg,\n            \"color\": \"#006fba\",\n            \"displayvalue\": \"Avg: \" & $string($avg),\n            \"valueOnRight\": true\n          }\n        ]\n      }\n    ]\n  }\n)",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

@@ -1,0 +1,983 @@
+{
+  "header": {
+    "id": "buildings",
+    "name": "Buildings",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clrku6osl0009018yhgavajfb",
+    "number": "0.0.7",
+    "description": "",
+    "screenId": "buildings",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "FacilityTable",
+          "tabTitle": "Facility Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 2,
+                    "Text": 4,
+                    "Address": 1,
+                    "Table Column": 13,
+                    "Switch": 1
+                  },
+                  "module": {
+                    "id": "inventory",
+                    "group": {
+                      "id": "materialsManagement"
+                    }
+                  },
+                  "dataModel": "Facility",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "9uQ8u5c6_q",
+                  "AVn4ws27wc",
+                  "EIOu4hkAGb"
+                ],
+                "linkedNodes": {}
+              },
+              "9uQ8u5c6_q": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "tQjnqOUaAY"
+                ],
+                "linkedNodes": {}
+              },
+              "tQjnqOUaAY": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "Facility",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "9uQ8u5c6_q",
+                "hidden": false,
+                "nodes": [
+                  "P4RunSdhCJ"
+                ],
+                "linkedNodes": {}
+              },
+              "P4RunSdhCJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "tQjnqOUaAY",
+                "hidden": false,
+                "nodes": [
+                  "_s4fyBpS9G",
+                  "Su98LwejMO",
+                  "OlmbJS_rj-",
+                  "TZYQ7tbjP"
+                ],
+                "linkedNodes": {}
+              },
+              "_s4fyBpS9G": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Code",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "code",
+                  "field": "code",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "code._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "P4RunSdhCJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Su98LwejMO": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "This is the name of the facility - Label field",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "P4RunSdhCJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OlmbJS_rj-": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Type",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "type",
+                  "field": "type",
+                  "description": "the facility type (Production , Distribution , Subcontract)",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "type._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "P4RunSdhCJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AVn4ws27wc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "h_01IYqvit",
+                  "9drg3xymzr",
+                  "wlIcaG_6Hz",
+                  "0Zc51iEGJe"
+                ],
+                "linkedNodes": {}
+              },
+              "h_01IYqvit": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "AVn4ws27wc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9drg3xymzr": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Facility",
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "code",
+                          "field": "code",
+                          "description": "Short code used to identify this building or facility",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "This is the name of the facility - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "This facility is active and can be selected in the application",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "type",
+                          "field": "type",
+                          "description": "the facility type (Production , Distribution , Subcontract)",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Address",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "address",
+                          "field": "address",
+                          "description": "Facility address",
+                          "element": "AddressInput",
+                          "type": "address",
+                          "query": {
+                            "fields": [
+                              "address.lines",
+                              "address.city",
+                              "address.state",
+                              "address.country",
+                              "address.postalCode"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateFacility($payload: [FacilityCreatePayloadInput!]!) {\n  mutation: createFacility(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Facility \" & data.mutation[0].code & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "AVn4ws27wc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wlIcaG_6Hz": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Facility \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "code",
+                          "field": "code",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "This is the name of the facility - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "This facility is active and can be selected in the application",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "type",
+                          "field": "type",
+                          "description": "the facility type (Production , Distribution , Subcontract)",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Address",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "address",
+                          "field": "address",
+                          "description": "Facility address",
+                          "element": "AddressInput",
+                          "type": "address",
+                          "query": {
+                            "fields": [
+                              "address.lines",
+                              "address.city",
+                              "address.state",
+                              "address.country",
+                              "address.postalCode"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateFacility($payload: [FacilityUpdatePayloadInput!]!) {\n  mutation: updateFacility(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Facility \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "AVn4ws27wc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0Zc51iEGJe": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": true,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Facility \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteFacility($payload: [FacilityDeletePayloadInput!]!) {\n  mutation: deleteFacility(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Facility \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "AVn4ws27wc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EIOu4hkAGb": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "Facility",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "This is a list of facilities\nLinks out to location",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "wI4fm8ChsQ",
+                  "ovVdRHbpC8",
+                  "9xB4IcZ2l",
+                  "OHD90-aKW_",
+                  "6mU_KY0RS",
+                  "xoqz6_x7V_",
+                  "5riP6fYc-r"
+                ],
+                "linkedNodes": {}
+              },
+              "wI4fm8ChsQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Code",
+                  "format": "text",
+                  "field": "code",
+                  "dataPath": "code",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ovVdRHbpC8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "This is the name of the facility - Label field"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OHD90-aKW_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Type",
+                  "format": "text",
+                  "field": "type",
+                  "dataPath": "type",
+                  "description": "the facility type (Production , Distribution , Subcontract)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xoqz6_x7V_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "5riP6fYc-r": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6mU_KY0RS": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Address",
+                  "format": "address",
+                  "dataPath": "address",
+                  "description": "Facility address",
+                  "field": "address",
+                  "query": {
+                    "fields": [
+                      "address.lines",
+                      "address.city",
+                      "address.state",
+                      "address.country",
+                      "address.postalCode"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9xB4IcZ2l": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "dataPath": "active",
+                  "description": "",
+                  "field": "active",
+                  "query": {},
+                  "showColumnSuppressMenu": false,
+                  "editable": false
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "EIOu4hkAGb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TZYQ7tbjP": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "target": {
+                    "dataPath": "active._eq"
+                  },
+                  "description": "",
+                  "field": "active",
+                  "defaultValue": true,
+                  "predicate": "_eq"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "P4RunSdhCJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnne0ibo000k01c0bme7aql0",
+      "title": "Buildings",
+      "path": "/materialsManagement/inventory/facilities",
+      "moduleId": "manufacturing",
+      "screenId": "buildings",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

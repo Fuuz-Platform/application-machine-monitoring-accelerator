@@ -1,0 +1,2069 @@
+{
+  "header": {
+    "id": "workcenterDashboard",
+    "name": "Workcenter Dashboard",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clwqv2n8717oz0181fskkenjv",
+    "number": "0.0.55",
+    "description": "",
+    "screenId": "workcenterDashboard",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "Line Homepage Dashboard",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "intervals": [
+                    {
+                      "action": "$not($components.HeaderForm.formState.dirty) ? (\n  $components.HeaderForm.fn.setValue(\"fromStartedAt\", $moment().startOf('day').subtract(7, \"day\"));\n  $components.HeaderForm.fn.setValue(\"toStartedAt\", $moment().endOf('day'));\n\n  $components.SearchButton.fn.execute();\n)",
+                      "interval": 180
+                    }
+                  ],
+                  "pageLoadAction": "$isNilOrEmpty($metadata.urlParameters.id)\n  ? $addNotificationMessage(\"Error loading dashboard\", {\n      \"message\": \"No workcenter parameter was provided in the URL.\",\n      \"severity\": \"error\"\n    }) \n  : (\n  $wait(500);\n  $components.SearchButton.fn.execute();\n)"
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 38,
+                    "Form": 5,
+                    "Paper": 10,
+                    "Visualization": 17,
+                    "Table": 2,
+                    "Display": 27,
+                    "Date Time": 5,
+                    "Text": 4,
+                    "Action Button": 3,
+                    "Table Column": 29,
+                    "Icon": 1,
+                    "Date": 1,
+                    "Options": 1,
+                    "Select": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "G49QRnOne"
+                ],
+                "linkedNodes": {}
+              },
+              "UQUZGwwL2": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "remote": false,
+                      "transform": "(\n  $oee := $executeFlow(\n    \"getOeEsForShift\", \n    { \n      \"workcenterId\": $metadata.urlParameters.id ,\n      \"shift\": $components.FilterForm.data.shift,\n      \"creditAt\": $components.FilterForm.data.creditAt,\n      \"timezone\": $metadata.settings.TimeZone\n    }\n  ) ;\n  \n \n  \n\n)"
+                    },
+                    "dataSubscription": {
+                      "enabled": true,
+                      "topics": [
+                        {
+                          "topic": "oee.createUpdate"
+                        }
+                      ],
+                      "valueTransform": "$executeFlow(\n    \"getOeEsForShift\", \n    { \"workcenterId\": $metadata.urlParameters.id }\n  ) "
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": $coalesce([\n        id,\n        \"_\"\n      ])\n    },\n    \"startAt\": {\n      \"_gt\": $moment().subtract(1,'days').tz('America/Detroit'),\n      \"_lt\": $moment()\n    }\n  },\n  \"orderBy\": {\n    \"field\": \"startAt\",\n    \"direction\": \"desc\"\n  }\n}",
+                    "fields": [
+                      "id",
+                      "productionTime",
+                      "plannedDowntime",
+                      "unplannedDowntime",
+                      "totalTime",
+                      "other",
+                      "shift.id",
+                      "shift.name",
+                      "creditedAt",
+                      "oee",
+                      "quality",
+                      "qualityWeight",
+                      "availability",
+                      "availabilityWeight",
+                      "performance",
+                      "performanceWeight"
+                    ],
+                    "model": null
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "OeeForm"
+                },
+                "parent": "yaCn8BP2A",
+                "hidden": false,
+                "nodes": [
+                  "2CdlY3yH-"
+                ],
+                "linkedNodes": {}
+              },
+              "4-rdROgj9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container7"
+                },
+                "parent": "2CdlY3yH-",
+                "hidden": false,
+                "nodes": [
+                  "19GxRHuo_"
+                ],
+                "linkedNodes": {}
+              },
+              "19GxRHuo_": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "700",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Charts"
+                },
+                "parent": "4-rdROgj9",
+                "hidden": false,
+                "nodes": [
+                  "4x5j6tSkF",
+                  "d9uICe8rc"
+                ],
+                "linkedNodes": {}
+              },
+              "4x5j6tSkF": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "LeftHalf"
+                },
+                "parent": "19GxRHuo_",
+                "hidden": false,
+                "nodes": [
+                  "7hT0shlDg",
+                  "NlXDefxEx"
+                ],
+                "linkedNodes": {}
+              },
+              "d9uICe8rc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "RightHalf"
+                },
+                "parent": "19GxRHuo_",
+                "hidden": false,
+                "nodes": [
+                  "1TLfOZkKp",
+                  "AlF6widQ_"
+                ],
+                "linkedNodes": {}
+              },
+              "7hT0shlDg": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container12"
+                },
+                "parent": "4x5j6tSkF",
+                "hidden": false,
+                "nodes": [
+                  "gAh9pFaPE"
+                ],
+                "linkedNodes": {}
+              },
+              "1TLfOZkKp": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container14"
+                },
+                "parent": "d9uICe8rc",
+                "hidden": false,
+                "nodes": [
+                  "8qY1Yg7GP"
+                ],
+                "linkedNodes": {}
+              },
+              "gAh9pFaPE": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container16"
+                },
+                "parent": "7hT0shlDg",
+                "hidden": false,
+                "nodes": [
+                  "PdMnpdsqI",
+                  "ruWq3o_KF",
+                  "cl3508zff03sp3969wcjylvhu",
+                  "cl3508zq303su3969an0adrl8"
+                ],
+                "linkedNodes": {}
+              },
+              "PdMnpdsqI": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "25%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container18"
+                },
+                "parent": "gAh9pFaPE",
+                "hidden": false,
+                "nodes": [
+                  "ZH26zYW20"
+                ],
+                "linkedNodes": {}
+              },
+              "ruWq3o_KF": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container19"
+                },
+                "parent": "gAh9pFaPE",
+                "hidden": false,
+                "nodes": [
+                  "cl9ye2q13009l356eu2n6mc89"
+                ],
+                "linkedNodes": {}
+              },
+              "cl3508zff03sp3969wcjylvhu": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container20"
+                },
+                "parent": "gAh9pFaPE",
+                "hidden": false,
+                "nodes": [
+                  "cl9ye34u2009x356e4h4spnkh"
+                ],
+                "linkedNodes": {}
+              },
+              "AlF6widQ_": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container15"
+                },
+                "parent": "d9uICe8rc",
+                "hidden": false,
+                "nodes": [
+                  "cl9ye3bh800ac356eb0oy9u9y"
+                ],
+                "linkedNodes": {}
+              },
+              "cl3508zq303su3969an0adrl8": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container21"
+                },
+                "parent": "gAh9pFaPE",
+                "hidden": false,
+                "nodes": [
+                  "cl9ye35e9009z356edmfkk4gq",
+                  "SsoSoaYpo"
+                ],
+                "linkedNodes": {}
+              },
+              "NlXDefxEx": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container23"
+                },
+                "parent": "4x5j6tSkF",
+                "hidden": false,
+                "nodes": [
+                  "k-b3ZlmmN"
+                ],
+                "linkedNodes": {}
+              },
+              "k-b3ZlmmN": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "remote": false
+                    },
+                    "dataSubscription": {
+                      "enabled": true,
+                      "topics": []
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id"
+                    ],
+                    "model": "Oee",
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": data.oee.edges[0].node.startAt? \"-1\" : $coalesce([ id,\"-1\"])\n    },\n    \"startAt\": {\n      \"_gt\": data.oee.edges[0].node.startAt,\n      \"_lt\": data.oee.edges[-1].node.endAt\n    },\n    \"shiftId\":{\n      \"_eq\": data.oee.edges[0].node.shift.id\n    }\n  },\n  \n  \"orderBy\": {\n    \"field\": \"shiftHour\",\n    \"direction\": \"asc\"\n  }\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "description": "Measurement of OEE for a given workcenter.",
+                  "rowMultiSelectWithClick": false,
+                  "tableName": "HOUR BY HOUR (CURRENT SHIFT)",
+                  "fontSize": "16",
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "OeeTable"
+                },
+                "parent": "NlXDefxEx",
+                "hidden": false,
+                "nodes": [
+                  "p5elGpizj",
+                  "wJibuwm0H",
+                  "jDZ28V9y4",
+                  "XRydFodyr",
+                  "apBwpvgyv",
+                  "Mmcis5kwu",
+                  "eaKc5kOIY",
+                  "iQjzk5QuS",
+                  "Aby1w7VHG",
+                  "AhAo-FJiA",
+                  "Q8LwRkhTF"
+                ],
+                "linkedNodes": {}
+              },
+              "Mmcis5kwu": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Prod",
+                  "format": "integer",
+                  "dataPath": "totalProductionQuantity",
+                  "field": "totalProductionQuantity",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "eaKc5kOIY": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap",
+                  "format": "integer",
+                  "dataPath": "totalScrapQuantity",
+                  "field": "totalScrapQuantity",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Aby1w7VHG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Prod Time",
+                  "format": "float",
+                  "dataPath": "productionTime",
+                  "field": "productionTime",
+                  "formatString": "00:00:00",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AhAo-FJiA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Planned Downtime",
+                  "format": "float",
+                  "dataPath": "plannedDowntime",
+                  "field": "plannedDowntime",
+                  "query": {},
+                  "formatString": "00:00:00"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Q8LwRkhTF": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Unplanned Downtime",
+                  "format": "float",
+                  "dataPath": "unplannedDowntime",
+                  "field": "unplannedDowntime",
+                  "query": {},
+                  "formatString": "00:00:00",
+                  "columnProperties": {
+                    "wrapHeaderText": true,
+                    "autoHeaderHeight": true
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jDZ28V9y4": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Availability",
+                  "format": "float",
+                  "dataPath": "availability",
+                  "field": "availability",
+                  "query": {},
+                  "formatString": "0.00%",
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.availability) ? {} : {\n  \"background\": data.availability < 0.85 ? \"#f44336\" \n    : data.availability < 0.9 ? \"#ffa000\" \n    : \"#43a047\"\n}"
+                  },
+                  "width": "90"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "apBwpvgyv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quality",
+                  "format": "float",
+                  "dataPath": "quality",
+                  "field": "quality",
+                  "formatString": "0.00%",
+                  "query": {},
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.quality) ? {} : {\n  \"background\": data.quality < 0.85 ? \"#f44336\" \n    : data.quality < 0.9 ? \"#ffa000\" \n    : \"#43a047\"\n}"
+                  },
+                  "width": "90"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XRydFodyr": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Performance",
+                  "format": "float",
+                  "dataPath": "performance",
+                  "field": "performance",
+                  "formatString": "0.00%",
+                  "query": {},
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.performance) ? {} : {\n  \"background\": data.performance < 0.85 ? \"#f44336\" \n    : data.performance < 0.9 ? \"#ffa000\" \n    : \"#43a047\"\n}"
+                  },
+                  "width": "90"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "iQjzk5QuS": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ideal Rate",
+                  "format": "integer",
+                  "dataPath": "idealRate",
+                  "field": "idealRate",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZH26zYW20": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "oee",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"OEE\",\n  \"value\": $average([$components.OeeForm.data.oee.edges.node.oee]) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "oeeRing",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "OEE"
+                    }
+                  },
+                  "visualizationImageUrl": "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization9",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "PdMnpdsqI",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cl9ye2q13009l356eu2n6mc89": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Availability\",\n  \"value\": $average([$components.OeeForm.data.oee.edges.node.availability]) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "AvailabilityRing",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Availability"
+                    }
+                  }
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization10",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "ruWq3o_KF",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cl9ye34u2009x356e4h4spnkh": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "performance",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Performance\",\n  \"value\": $average([$components.OeeForm.data.oee.edges.node.performance])  * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "PerformanceRing",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Performance"
+                    }
+                  }
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization11",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "cl3508zff03sp3969wcjylvhu",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cl9ye35e9009z356edmfkk4gq": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "quality",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Quality\",\n  \"value\": $average([$components.OeeForm.data.oee.edges.node.quality]) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "QualityRing",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Quality"
+                    }
+                  }
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization12",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "cl3508zq303su3969an0adrl8",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cl9ye3bh800ac356eb0oy9u9y": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": true,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "Workcenter Status By Shift bar",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "productionTime",
+                  "visualizationParameters": {
+                    "__transform": "/*SHIFT STATUS*/\n{\n  \"history\": data.workcenterHistory.edges.node,\n  \"modeTypes\": data.modeType.edges.node,\n  \"startAt\": data.oee.edges[0].node.startAt,\n  \"shiftName\": data.oee.edges[0].node.shift.name\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "shiftStatusVis",
+                    "__remote": false
+                  },
+                  "query": {
+                    "fields": [
+                      "creditedAt",
+                      "productionTime"
+                    ]
+                  },
+                  "visualizationImageUrl": "https://www.fusioncharts.com/dev/images/chart-anatomy/bar-chart-anatomy.png"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization13",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "AlF6widQ_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3jSzEDgEv": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "175",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container31"
+                },
+                "parent": "2CdlY3yH-",
+                "hidden": false,
+                "nodes": [
+                  "IH0w8EgGs"
+                ],
+                "linkedNodes": {}
+              },
+              "IH0w8EgGs": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": true,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationImageUrl": [
+                    "https://images.ctfassets.net/fevtq3bap7tj/atL50pXAAwesMckkCA6Yi/748787b738617a33d89f26885b5e29fb/Rating_Meter.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5BeoBaWkE0yqCEcO6ckom/dd66dcf186420687e0c11402569d91d2/simple-area.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/bar-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3XymguLfmoo6iAUWuOgyAI/5a7632661728ad253dc4b5cff10cbdbd/bar-in-3d.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/63ytWFgB9uu84OK0seYoeQ/dec00146cdf4a78f53967a5ddf6b998c/Simple_box_and_whisker.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6AF2Km8NsQ2e0CuqUyqcac/fced3f580dce1fb8c1b3e0aeba5dd19d/Simple_bubble.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1ZqTjpXY8owssIK4Se4O2a/41884a1528328664e44e2f6932c26bc0/Screenshot.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5AOGTRtyy4IMKOSeac00eW/f3ab4e399b5be5af295cc29268b954e3/Simple_candlestick.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1lWc4ltToQNGYOLv8SYtFf/9812820723fa831e85d7ce200955c8b8/simple-chord-diagram.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/chart-with-single-series-img.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/b4DxvbEfpCs8iAi0GswuM/8c80ae8397f11caa48a9ec81ed03f716/column-in-3d.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/30bdZqCOGco2SSkukgUUaE/3032f548c306c896bbe602deb94b190d/Cylinder_fill.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2BPoeN83zyOqo4Y8MecWai/a75bd8bebec45113806f14797840ac63/Donut_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5tvzWIBN7O4EwiYygQae2u/fa1749be008cff74cb9d43864fdc92d9/Editable_area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/18ASDpYriyOwco62Uowe8a/9c80ff3c6cafa15c5b42954ba8cec6c6/Editable_column_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1gtHnCZqQCWUmgA8SGuIMw/a328c4799d61ba7f6afcd8cb02ec00b1/Editable_linear_scale.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/21esx1NHdSue0E6QycUYiS/b332baf63f73f1c36c3a0a5e0db1c850/Simple_graph_layout.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/XA9N24fdOCkcEyUQ4sOK6/5dcdc16a5a6874f26e68f0ece6338115/Column_with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6rNRghpTG0gSkSqKO0iI8A/3d488bae68af156e5be6efd02c9ea951/Line_with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/62tWmFPOPSEEqYY2CIw0Ic/f34b6523e03d424667dcd1c407ca9ca5/Scatter__XY__with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1cAy6CyQC0EIqWKQ8MwK8a/e4b7a8d4195efd2e86fb7f7d9da9a034/Simple_funnel.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/APzpIrrQT6yCOkGesioEs/0c6aeacfc8c0fb2a89900a4248213d4a/Simple_gantt.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4VXMzIVye4gcS66KYW42cA/3bc1e6eadfeb0220d735bcae134672f7/Horizontal_Bullet_Graph.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5lgDbFWv6wiOwEuUiseAYA/a684654d8562c27e235cd0d362f188f8/Heat_map_with_numeric_values.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5dzCRIC9mw88eWugqs84sg/fc8cf5bca6ff105c4d3e4df7ab5b5d45/Horizontal_LEDs.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7FbWYLJILCOqCsOYeSUyKQ/7313b575d8b0e80064749189fed232da/Area_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/311IqDrlB6icMS06oi6AKK/d77bd3223490a8286ac1b7af5716136a/Column_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/LtcnYs58qYGKUsQ0YEkYc/2339ea19202befbf51eb586fa073e8aa/Line_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5CbaNxkc7K6EuWIIm6K6Ii/f130ac40f4c636f6ca54cf811949bdd5/Kagi_Chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5bRn9nbUZiusAOGYGmIK0e/f255722ee8ca3350e0c4a0809d32ae27/simple-line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2yzR4c4qQw0CI6yCueQ6a8/482dbd0c23a2018b91cc0099c92eb98d/Column_with_log_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6jNqgJDXgWQ0yaqEk4uY6E/d54c38d72c37bec5864006c75c62c1c5/Line_with_log_axis.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/marimekko-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/TCbn4yo4eG8aOGymKI488/05cb3d1e6c111431961b5b304ca2e560/area-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/20wRJJp7Cc8MsUcwMS28uw/570877937c48b2c8445648ad849a0190/grouped-bar-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/hHmGHafqp2cKMEUmGYOEe/add6debac7c148069c11400b9f85d215/grouped-bar-in-3d-with-multiple-series.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/ms-column-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6dn18wRX8swm6m8cYyAQGU/2640deede78d3df7d6e4656c03b90c7c/grouped-column-in-3d-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6BRsee13vU2gUIsi0Ku0o0/db668365994eb2b0da78186479948f82/Dual_axis_-_Column__line___area__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1btmWBtwgW4iU2yIMIWgMO/4502f92ab851b5ae605bd7600d8826c7/Same_axis_-_Column___line__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6Crrw0dvXiq0AGwY0IuQg8/b228a22d8aa813a55632fefa984d62e7/Same_axis_-_Column__line___area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4eCoS4CGqAmkQywMwaw42q/b8bed64c2cdf23b36ffa59da1b88427c/Same_axis_-_Column__line___area__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6WOifYN7vUmy2w0MWAo46c/20c6a54cca14f6816e7eb5671fd966fb/Dual_axis_-_Column__line___area__2_.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4eCoS4CGqAmkQywMwaw42q/b8bed64c2cdf23b36ffa59da1b88427c/Same_axis_-_Column__line___area__in_3D.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/multi-series-spline-chart.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/multi-series-spline-area-2d-chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1nkvQIeq92i4WKEaWO48yg/72472210ffc7affd6e8f13e4cfec0e45/Grouped_stacked_columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1ANMQMdrruqwWEym2qOIGQ/900cb46c82474a79bc86f96f88a8e3aa/Dual_axis_-_Grouped_stacked_columns___line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4R3EDhTPRmq2uSScMYAKSy/c2589379f4d6a4b676e48595a8515385/step-line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2kQHOW3tmcQOQui8w80cMW/cdc26bf9b481e1e9c2454096770661af/line-with-multiple-axes-_-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/413DFM29LOcIsac82m6Ae6/9dd4e0ca079831c14b1de204d8797903/Nested_pie_in_2D.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/overlapped-bar-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/40LXTGRRN6wQoKswqW6WqQ/84f5806478e34ceb7edbad86a3b665ae/overlapping-columns.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/pareto-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6qngkH8ibKoUWmo20oogy6/e9424d20bd5a38e11a15f14db5232fee/Pareto_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2SPe1Ddq1GGuAIQqiWUagS/6627787545f65bb9dcdffc5ff235147f/Pie_in_2D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/68o78rXmGQAWmEGQmikIea/48548c810c0c826fbab6494fc92a01c9/Pie_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/79LiLu3yMwiwiaY2Wq4Yio/ee21f697986819026b4b5ace0eaed31e/Simple_pyramid.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/68o2GhyaooksuA224I6OcQ/4c4b439ba2d0022efa1fdca11798c9e8/Simple_radar.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4kqCFCz6M06kaSSSy0coIe/50b77f5490054746deb156aadc66dd5e/Real-time_Area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6w88LM7yikeEgIiMMwGssW/9b8149f799ac5fe78aa94e0678bfa37b/Real-time_Column_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4C49JpXu24AMeEk2m8YW0W/619fd84c0dba936793bdbdfb65f55adf/Real-time_Line_chart__1_.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5ownkyHK7uEGg0KMo6weGS/8078c734e85276e71b01de69d6b37fce/Real_Time_Dual_Axis_-_Line_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4lElf386MU4awYIQC2Y0Oq/679718554ca7ccf35f3e5c4139961c2a/Real-time_Stacked_Area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4I4ngh5Zksoq24oMaSUO6C/df7333b46cd05e7fb9343e88fbe3c933/Real-Time_Stacked_Column.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/sankey-diagram-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2OZLpnnAKcEwuS8aG42e2s/60b12c97cb447044ef5a239c7d101656/Simple_Scatter.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3cRwNiOxeE0Q64WYs02sCC/769dde95037e529f42422c9eabac9697/area-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1lFgdebLs9pawfV9414TCd/234b094b496aaa0e639840a04a4fc992/Screenshot_2019-09-25_at_4.54.25_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2rsFtnJ0Yk4Ca4OMCa8wMG/0386d92513c19ac4770f153c3e06f379/grouped-column-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/72wXzRpr3O4iOScaMQogw/74ceb6a316dcb0f057f62bafd0914d13/Same_axis_-_Column___line-area__with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2Dr5UusBiwsAueeW4O4A6o/c27f8da78699afd21204ead9f4999e56/Dual_axis_-_Column___line-area__with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3cRwNiOxeE0Q64WYs02sCC/769dde95037e529f42422c9eabac9697/area-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1m28LodEs8AKZDsd4ox8tg/a7ffc070500c586a807f4e8951408433/Screenshot_2019-09-25_at_5.51.21_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1m28LodEs8AKZDsd4ox8tg/a7ffc070500c586a807f4e8951408433/Screenshot_2019-09-25_at_5.51.21_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2O07HTCzNYMWE54RYZbE7m/354bea8aab5b80d73f12f979441cc5b9/Screenshot_2019-09-25_at_5.15.25_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4mF9OfdDOwYo8ka6qY4mWS/95b3f12f0f48a9e5678ec9b9ca08b064/Stacked_columns_with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/40RGmjcDLO4oKYEO0eWIww/e557fbc452c2c57a08a0b71b0e33664c/Scatter_with_selection_of_points_on_canvas.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5dPn8TDtOEyoqmAOWIC8EQ/ba6dc3a4c833985542a7ea5dca902663/Simple_spark-columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/NBlXMOAxoGaywqICywmwc/ef73cdca8d487577c3d12becb9240dbf/Simple_sparkline.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2KvLDmuK9GYKeQggACCa0m/2b0f82ee180237117cc03c80dc163a7e/Win-loss_micro_charts.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/xrk4YlkUxMuwSou2KG0gm/fad9d59b059729ef2ba09a71d6903890/simple-spline.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2Q0kyxATUQAAyqCEqC2O6w/7c9d507902b30b98a0c3bb413cb4d943/simple-spline-area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7aYOsveFoc0CSek0sI0MMc/1804b84dac14bc70a2de096d9c91b582/Stacked_area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5Q9iNw3BmX6EBpRDwuffpS/781ce9dcd25923b1366ace6ff4f41b3f/Screenshot_2019-09-25_at_6.02.41_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4PzDnrRrqUQWSY2ucwmWqY/ee776c389fa512162e81d5784202ff40/Stacked_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6tzNXjYjRK0UMiauUGAmkU/4f47d2ec00820d26019318f3553b9a43/Stacked_bars_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4LoETLAAwEmEiA0I48imc/2fb7cb4cfc02c34779d176383c9878cd/Stacked_columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6c83DPjruo4OKswqy0qCsC/6444a1596f4c10bd4f7ec2273ef3e28c/Same_axis_-_Stacked_columns___line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7kHLpGcghcwpGoOd5fYpe5/98dd4f90b56dcd22b3163320cdbad557/Screenshot_2019-09-25_at_6.00.23_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7l0T7C76BqycMuIoy0ogIg/b99e8d602b10536018b8739beb4b1111/Stacked_columns_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2DGH0e28LuyyOQMiGuEaMs/408e9171ba67e65d53e008caee6203fb/Same_axis_-_Stacked_columns___line__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/39wmvCcKx2QU40Y4mu88Yw/4edec0989a6439d36e205cf72ea12f93/Dual_axis_-_Stacked_columns___line.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/sunburst-diagram-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1o2CbvmJRq8G0AKMICMe2g/7e40b910cb0d8033332b819a2042f230/Thermometer_display.png",
+                    null,
+                    "https://images.ctfassets.net/fevtq3bap7tj/55gZIMJkGkew4C2csGMwUe/3b5f70e8031b0b2953cc1e813115b155/Simple_tree_map.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3lrbeVgqjKWCYeIQ2OKM8s/e7db0c3d60686ed7e7c06b08733a633b/Vertical_Bullet_Graph.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6NC4QyatDaOuOM8IEkSSEg/f423b2db3b6d8381d28338f8c2f67940/Vertical_LEDs.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3nsVT7yAcoAmw8YOceqG8w/99dd98c91fceba8f89b06722139b785d/Simple_waterfall.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/24S0tB897W0KMKYi2qw6GO/c5f49e0260e8d397539f210570b3fc36/line-with-zooming-_-panning.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/wyrCjKauiWKwSqkeEeWOg/63659838b31dce318261e4ee1440e50d/Dual_axis_-_Line_with_zooming___panning.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2xzUMNhazaGCSSSQ8UUE26/3a22ddabec589c228a3ac70bb6f3754c/Scatter_with_zooming_support.png"
+                  ],
+                  "visualizationName": "Mode and Events Single Workcenter Gantt",
+                  "formElement": "OeeForm",
+                  "visualizationParameters": {
+                    "__transform": "/*GANNT*/\n{\n\"REQUEST\":\n {\n  \"workcenterId\": $metadata.urlParameters.id,\n  /* \"start\": \"2023-11-05T00:00:00.001Z\", */\n  \"start\": $components.OeeForm.data.oee.edges[0].node.startAt,\n  \"end\": $components.OeeForm.data.oee.edges[-1].node.endAt\n  \n  /* $moment() */\n}\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "modeChange",
+                    "__remote": false
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "id"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization15",
+                  "editor": {
+                    "category": "Display",
+                    "description": "Visualization type input.",
+                    "color": "#917644",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "3jSzEDgEv",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "G49QRnOne": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container33"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "hD1BtRSMH",
+                  "XpXQByyUl",
+                  "yaCn8BP2A"
+                ],
+                "linkedNodes": {}
+              },
+              "8qY1Yg7GP": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": true,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationImageUrl": [
+                    "https://images.ctfassets.net/fevtq3bap7tj/atL50pXAAwesMckkCA6Yi/748787b738617a33d89f26885b5e29fb/Rating_Meter.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5BeoBaWkE0yqCEcO6ckom/dd66dcf186420687e0c11402569d91d2/simple-area.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/bar-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3XymguLfmoo6iAUWuOgyAI/5a7632661728ad253dc4b5cff10cbdbd/bar-in-3d.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/63ytWFgB9uu84OK0seYoeQ/dec00146cdf4a78f53967a5ddf6b998c/Simple_box_and_whisker.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6AF2Km8NsQ2e0CuqUyqcac/fced3f580dce1fb8c1b3e0aeba5dd19d/Simple_bubble.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1ZqTjpXY8owssIK4Se4O2a/41884a1528328664e44e2f6932c26bc0/Screenshot.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5AOGTRtyy4IMKOSeac00eW/f3ab4e399b5be5af295cc29268b954e3/Simple_candlestick.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1lWc4ltToQNGYOLv8SYtFf/9812820723fa831e85d7ce200955c8b8/simple-chord-diagram.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/chart-with-single-series-img.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/b4DxvbEfpCs8iAi0GswuM/8c80ae8397f11caa48a9ec81ed03f716/column-in-3d.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/30bdZqCOGco2SSkukgUUaE/3032f548c306c896bbe602deb94b190d/Cylinder_fill.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2BPoeN83zyOqo4Y8MecWai/a75bd8bebec45113806f14797840ac63/Donut_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5tvzWIBN7O4EwiYygQae2u/fa1749be008cff74cb9d43864fdc92d9/Editable_area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/18ASDpYriyOwco62Uowe8a/9c80ff3c6cafa15c5b42954ba8cec6c6/Editable_column_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1gtHnCZqQCWUmgA8SGuIMw/a328c4799d61ba7f6afcd8cb02ec00b1/Editable_linear_scale.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/21esx1NHdSue0E6QycUYiS/b332baf63f73f1c36c3a0a5e0db1c850/Simple_graph_layout.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/XA9N24fdOCkcEyUQ4sOK6/5dcdc16a5a6874f26e68f0ece6338115/Column_with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6rNRghpTG0gSkSqKO0iI8A/3d488bae68af156e5be6efd02c9ea951/Line_with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/62tWmFPOPSEEqYY2CIw0Ic/f34b6523e03d424667dcd1c407ca9ca5/Scatter__XY__with_error_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1cAy6CyQC0EIqWKQ8MwK8a/e4b7a8d4195efd2e86fb7f7d9da9a034/Simple_funnel.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/APzpIrrQT6yCOkGesioEs/0c6aeacfc8c0fb2a89900a4248213d4a/Simple_gantt.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4VXMzIVye4gcS66KYW42cA/3bc1e6eadfeb0220d735bcae134672f7/Horizontal_Bullet_Graph.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5lgDbFWv6wiOwEuUiseAYA/a684654d8562c27e235cd0d362f188f8/Heat_map_with_numeric_values.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5dzCRIC9mw88eWugqs84sg/fc8cf5bca6ff105c4d3e4df7ab5b5d45/Horizontal_LEDs.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7FbWYLJILCOqCsOYeSUyKQ/7313b575d8b0e80064749189fed232da/Area_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/311IqDrlB6icMS06oi6AKK/d77bd3223490a8286ac1b7af5716136a/Column_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/LtcnYs58qYGKUsQ0YEkYc/2339ea19202befbf51eb586fa073e8aa/Line_with_inverted_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5CbaNxkc7K6EuWIIm6K6Ii/f130ac40f4c636f6ca54cf811949bdd5/Kagi_Chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5bRn9nbUZiusAOGYGmIK0e/f255722ee8ca3350e0c4a0809d32ae27/simple-line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2yzR4c4qQw0CI6yCueQ6a8/482dbd0c23a2018b91cc0099c92eb98d/Column_with_log_axis.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6jNqgJDXgWQ0yaqEk4uY6E/d54c38d72c37bec5864006c75c62c1c5/Line_with_log_axis.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/marimekko-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/TCbn4yo4eG8aOGymKI488/05cb3d1e6c111431961b5b304ca2e560/area-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/20wRJJp7Cc8MsUcwMS28uw/570877937c48b2c8445648ad849a0190/grouped-bar-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/hHmGHafqp2cKMEUmGYOEe/add6debac7c148069c11400b9f85d215/grouped-bar-in-3d-with-multiple-series.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/ms-column-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6dn18wRX8swm6m8cYyAQGU/2640deede78d3df7d6e4656c03b90c7c/grouped-column-in-3d-with-multiple-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6BRsee13vU2gUIsi0Ku0o0/db668365994eb2b0da78186479948f82/Dual_axis_-_Column__line___area__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1btmWBtwgW4iU2yIMIWgMO/4502f92ab851b5ae605bd7600d8826c7/Same_axis_-_Column___line__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6Crrw0dvXiq0AGwY0IuQg8/b228a22d8aa813a55632fefa984d62e7/Same_axis_-_Column__line___area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4eCoS4CGqAmkQywMwaw42q/b8bed64c2cdf23b36ffa59da1b88427c/Same_axis_-_Column__line___area__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6WOifYN7vUmy2w0MWAo46c/20c6a54cca14f6816e7eb5671fd966fb/Dual_axis_-_Column__line___area__2_.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4eCoS4CGqAmkQywMwaw42q/b8bed64c2cdf23b36ffa59da1b88427c/Same_axis_-_Column__line___area__in_3D.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/multi-series-spline-chart.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/multi-series-spline-area-2d-chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1nkvQIeq92i4WKEaWO48yg/72472210ffc7affd6e8f13e4cfec0e45/Grouped_stacked_columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1ANMQMdrruqwWEym2qOIGQ/900cb46c82474a79bc86f96f88a8e3aa/Dual_axis_-_Grouped_stacked_columns___line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4R3EDhTPRmq2uSScMYAKSy/c2589379f4d6a4b676e48595a8515385/step-line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2kQHOW3tmcQOQui8w80cMW/cdc26bf9b481e1e9c2454096770661af/line-with-multiple-axes-_-series.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/413DFM29LOcIsac82m6Ae6/9dd4e0ca079831c14b1de204d8797903/Nested_pie_in_2D.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/overlapped-bar-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/40LXTGRRN6wQoKswqW6WqQ/84f5806478e34ceb7edbad86a3b665ae/overlapping-columns.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/pareto-chart-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6qngkH8ibKoUWmo20oogy6/e9424d20bd5a38e11a15f14db5232fee/Pareto_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2SPe1Ddq1GGuAIQqiWUagS/6627787545f65bb9dcdffc5ff235147f/Pie_in_2D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/68o78rXmGQAWmEGQmikIea/48548c810c0c826fbab6494fc92a01c9/Pie_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/79LiLu3yMwiwiaY2Wq4Yio/ee21f697986819026b4b5ace0eaed31e/Simple_pyramid.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/68o2GhyaooksuA224I6OcQ/4c4b439ba2d0022efa1fdca11798c9e8/Simple_radar.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4kqCFCz6M06kaSSSy0coIe/50b77f5490054746deb156aadc66dd5e/Real-time_Area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6w88LM7yikeEgIiMMwGssW/9b8149f799ac5fe78aa94e0678bfa37b/Real-time_Column_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4C49JpXu24AMeEk2m8YW0W/619fd84c0dba936793bdbdfb65f55adf/Real-time_Line_chart__1_.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5ownkyHK7uEGg0KMo6weGS/8078c734e85276e71b01de69d6b37fce/Real_Time_Dual_Axis_-_Line_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4lElf386MU4awYIQC2Y0Oq/679718554ca7ccf35f3e5c4139961c2a/Real-time_Stacked_Area_chart.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4I4ngh5Zksoq24oMaSUO6C/df7333b46cd05e7fb9343e88fbe3c933/Real-Time_Stacked_Column.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/sankey-diagram-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2OZLpnnAKcEwuS8aG42e2s/60b12c97cb447044ef5a239c7d101656/Simple_Scatter.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3cRwNiOxeE0Q64WYs02sCC/769dde95037e529f42422c9eabac9697/area-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1lFgdebLs9pawfV9414TCd/234b094b496aaa0e639840a04a4fc992/Screenshot_2019-09-25_at_4.54.25_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2rsFtnJ0Yk4Ca4OMCa8wMG/0386d92513c19ac4770f153c3e06f379/grouped-column-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/72wXzRpr3O4iOScaMQogw/74ceb6a316dcb0f057f62bafd0914d13/Same_axis_-_Column___line-area__with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2Dr5UusBiwsAueeW4O4A6o/c27f8da78699afd21204ead9f4999e56/Dual_axis_-_Column___line-area__with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3cRwNiOxeE0Q64WYs02sCC/769dde95037e529f42422c9eabac9697/area-with-scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1m28LodEs8AKZDsd4ox8tg/a7ffc070500c586a807f4e8951408433/Screenshot_2019-09-25_at_5.51.21_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1m28LodEs8AKZDsd4ox8tg/a7ffc070500c586a807f4e8951408433/Screenshot_2019-09-25_at_5.51.21_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2O07HTCzNYMWE54RYZbE7m/354bea8aab5b80d73f12f979441cc5b9/Screenshot_2019-09-25_at_5.15.25_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4mF9OfdDOwYo8ka6qY4mWS/95b3f12f0f48a9e5678ec9b9ca08b064/Stacked_columns_with_scrolling.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/40RGmjcDLO4oKYEO0eWIww/e557fbc452c2c57a08a0b71b0e33664c/Scatter_with_selection_of_points_on_canvas.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5dPn8TDtOEyoqmAOWIC8EQ/ba6dc3a4c833985542a7ea5dca902663/Simple_spark-columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/NBlXMOAxoGaywqICywmwc/ef73cdca8d487577c3d12becb9240dbf/Simple_sparkline.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2KvLDmuK9GYKeQggACCa0m/2b0f82ee180237117cc03c80dc163a7e/Win-loss_micro_charts.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/xrk4YlkUxMuwSou2KG0gm/fad9d59b059729ef2ba09a71d6903890/simple-spline.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2Q0kyxATUQAAyqCEqC2O6w/7c9d507902b30b98a0c3bb413cb4d943/simple-spline-area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7aYOsveFoc0CSek0sI0MMc/1804b84dac14bc70a2de096d9c91b582/Stacked_area.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/5Q9iNw3BmX6EBpRDwuffpS/781ce9dcd25923b1366ace6ff4f41b3f/Screenshot_2019-09-25_at_6.02.41_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4PzDnrRrqUQWSY2ucwmWqY/ee776c389fa512162e81d5784202ff40/Stacked_bars.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6tzNXjYjRK0UMiauUGAmkU/4f47d2ec00820d26019318f3553b9a43/Stacked_bars_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/4LoETLAAwEmEiA0I48imc/2fb7cb4cfc02c34779d176383c9878cd/Stacked_columns.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6c83DPjruo4OKswqy0qCsC/6444a1596f4c10bd4f7ec2273ef3e28c/Same_axis_-_Stacked_columns___line.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7kHLpGcghcwpGoOd5fYpe5/98dd4f90b56dcd22b3163320cdbad557/Screenshot_2019-09-25_at_6.00.23_PM.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/7l0T7C76BqycMuIoy0ogIg/b99e8d602b10536018b8739beb4b1111/Stacked_columns_in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2DGH0e28LuyyOQMiGuEaMs/408e9171ba67e65d53e008caee6203fb/Same_axis_-_Stacked_columns___line__in_3D.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/39wmvCcKx2QU40Y4mu88Yw/4edec0989a6439d36e205cf72ea12f93/Dual_axis_-_Stacked_columns___line.png",
+                    "https://www.fusioncharts.com/dev/images/chart-anatomy/sunburst-diagram-anatomy.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/1o2CbvmJRq8G0AKMICMe2g/7e40b910cb0d8033332b819a2042f230/Thermometer_display.png",
+                    null,
+                    "https://images.ctfassets.net/fevtq3bap7tj/55gZIMJkGkew4C2csGMwUe/3b5f70e8031b0b2953cc1e813115b155/Simple_tree_map.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3lrbeVgqjKWCYeIQ2OKM8s/e7db0c3d60686ed7e7c06b08733a633b/Vertical_Bullet_Graph.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/6NC4QyatDaOuOM8IEkSSEg/f423b2db3b6d8381d28338f8c2f67940/Vertical_LEDs.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/3nsVT7yAcoAmw8YOceqG8w/99dd98c91fceba8f89b06722139b785d/Simple_waterfall.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/24S0tB897W0KMKYi2qw6GO/c5f49e0260e8d397539f210570b3fc36/line-with-zooming-_-panning.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/wyrCjKauiWKwSqkeEeWOg/63659838b31dce318261e4ee1440e50d/Dual_axis_-_Line_with_zooming___panning.png",
+                    "https://images.ctfassets.net/fevtq3bap7tj/2xzUMNhazaGCSSSQ8UUE26/3a22ddabec589c228a3ac70bb6f3754c/Scatter_with_zooming_support.png"
+                  ],
+                  "visualizationName": "Hourly Production",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "id",
+                  "visualizationParameters": {
+                    "__transform": "$components.OeeForm.data.oee.edges.node",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "partCountVis",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization17",
+                  "editor": {
+                    "category": "Display",
+                    "description": "Visualization type input.",
+                    "color": "#917644",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "1TLfOZkKp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2CdlY3yH-": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container34"
+                },
+                "parent": "UQUZGwwL2",
+                "hidden": false,
+                "nodes": [
+                  "4-rdROgj9",
+                  "3jSzEDgEv"
+                ],
+                "linkedNodes": {}
+              },
+              "SsoSoaYpo": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Text",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": false,
+                  "formElement": "OeeForm",
+                  "data": {
+                    "__transform": " $components.OeeTable.fn.loadData({  \n    \"filter\": {\n      \"workcenterId\": {\n        \"_eq\": $components.OeeForm.data.oee.edges[0].node.startAt?  $coalesce([ $metadata.urlParameters.id,\"-1\"]) : \"-1\"\n      },\n      \"startAt\": {\n        \"_gte\": $components.OeeForm.data.oee.edges[0].node.startAt,\n        \"_lt\": $components.OeeForm.data.oee.edges[-1].node.endAt\n      },\n      \"shiftId\":{\n        \"_eq\": $components.OeeForm.data.oee.edges[0].node.shift.id\n      }\n    },\n  \n    \"orderBy\": {\n      \"field\": \"startAt\",\n      \"direction\": \"desc\"\n    }\n  })",
+                    "__cacheKey": "TextFromData",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "id"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "cl3508zq303su3969an0adrl8",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "p5elGpizj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Hour",
+                  "format": "text",
+                  "dataPath": "shiftHour",
+                  "description": "This indicates the hour as it relates to the shift. An 8 hour shift for example will have Hours 1 through 8. ",
+                  "field": "shiftHour"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wJibuwm0H": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Oee",
+                  "format": "float",
+                  "dataPath": "oee",
+                  "description": "OEE = Availability × Performance × Quality",
+                  "field": "oee",
+                  "query": {},
+                  "formatString": "0.00%",
+                  "width": "90",
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.quality) ? {} : {\n  \"background\": data.quality < 0.85 ? \"#f44336\" \n    : data.quality < 0.9 ? \"#ffa000\" \n    : \"#43a047\"\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "k-b3ZlmmN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bfZ9vzmLF": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "shiftGroupId"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": null
+                  },
+                  "blockNavigationWhenDirty": true
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "FilterForm"
+                },
+                "parent": "hD1BtRSMH",
+                "hidden": false,
+                "nodes": [
+                  "McCJ1vpSqm"
+                ],
+                "linkedNodes": {}
+              },
+              "McCJ1vpSqm": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container35"
+                },
+                "parent": "bfZ9vzmLF",
+                "hidden": false,
+                "nodes": [
+                  "2ahLpFbFU",
+                  "jp-kasJOu"
+                ],
+                "linkedNodes": {}
+              },
+              "jp-kasJOu": {
+                "type": {
+                  "resolvedName": "DateInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "date",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Date",
+                  "timeOfDay": "now",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "creditAt",
+                  "formElement": "FilterForm"
+                },
+                "displayName": "Date",
+                "custom": {
+                  "elementName": "Date1"
+                },
+                "parent": "McCJ1vpSqm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2ahLpFbFU": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Shift",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "FilterForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "shift",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "shift.id",
+                      "shift.name"
+                    ]
+                  },
+                  "dataModel": "Shift",
+                  "selectFields": [
+                    "name"
+                  ],
+                  "additionalFields": [
+                    "endHour",
+                    "endMinute",
+                    "startHour",
+                    "startMinute"
+                  ],
+                  "additionalFilter": {
+                    "__transform": "{ \"shiftGroupId\": { \"_eq\": $components.OeeForm.data.workcenter.edges.node.shiftGroupId } }",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.workcenter"
+                      ]
+                    },
+                    "__cacheKey": "shiftGroupSelect"
+                  },
+                  "description": "",
+                  "field": "shiftGroup",
+                  "data": {
+                    "__transform": "\n''",
+                    "__cacheKey": "",
+                    "__dynamicFields": null
+                  }
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "McCJ1vpSqm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hD1BtRSMH": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container36"
+                },
+                "parent": "G49QRnOne",
+                "hidden": false,
+                "nodes": [
+                  "bfZ9vzmLF"
+                ],
+                "linkedNodes": {}
+              },
+              "yaCn8BP2A": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container37"
+                },
+                "parent": "G49QRnOne",
+                "hidden": false,
+                "nodes": [
+                  "UQUZGwwL2"
+                ],
+                "linkedNodes": {}
+              },
+              "dU6mRwnQ6": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "rotate",
+                    "color": "inherit",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.OeeForm.fn.loadData()"
+                    }
+                  ]
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "XpXQByyUl",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XpXQByyUl": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "marginTop": "4px",
+                  "marginBottom": "4px"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container38"
+                },
+                "parent": "G49QRnOne",
+                "hidden": false,
+                "nodes": [
+                  "dU6mRwnQ6"
+                ],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnokk0tr000i015t9rnjhhsy",
+      "title": "Workcenter Dashboard",
+      "path": "/productionManagement/manufacturing/workcenterDashboard/:id",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterDashboard",
+      "isMenuAccessible": false,
+      "submenu": "Reports"
+    }
+  ]
+}

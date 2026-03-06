@@ -1,0 +1,656 @@
+{
+  "header": {
+    "id": "shift",
+    "name": "Shift",
+    "description": "This table is a list of all shifts and it's attributes",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clp461eq8000b014x07vx1sw0",
+    "number": "27",
+    "dataModelId": "shift",
+    "modelDefinition": {
+      "name": "Shift",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": true,
+            "retentionDays": 120
+          },
+          "labelField": "name",
+          "triggers": {},
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "shift"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "Shift name - Label field",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "endHour",
+          "type": "Int",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "endMinute",
+          "type": "Int",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "startHour",
+          "type": "Int",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "startMinute",
+          "type": "Int",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "active",
+          "type": "Boolean",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "creditAtStart",
+          "type": "Boolean!",
+          "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "friday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Fridays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "monday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Mondays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "saturday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Saturdays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "sunday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Sundays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "thursday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Thursdays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "tuesday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Tuesdays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "wednesday",
+          "type": "Boolean!",
+          "description": "Does this shift apply to Wednesdays?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "timeZone",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "endAt",
+          "type": "Time",
+          "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "startAt",
+          "type": "Time",
+          "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shiftGroupId",
+          "type": "ID!",
+          "description": "Identifies the shift group",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shiftGroup",
+          "description": "Shift group object",
+          "type": "ShiftGroup!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "shiftGroupId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oees",
+          "description": "",
+          "type": "[Oee!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "shiftId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table is a list of all shifts and it's attributes"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clp461eq8000b014x07vx1sw0",
+      "dataModelVersion": {
+        "number": "27"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp1fzdzg000s0191aa3dav25",
+      "dataModelVersion": {
+        "number": "26"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clossxzy0k9w701b87pz9crha",
+      "dataModelVersion": {
+        "number": "25"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnvtamyb0002017n2x76h6pq",
+      "dataModelVersion": {
+        "number": "24"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnorx6mv000s015v8ldp3dqe",
+      "dataModelVersion": {
+        "number": "23"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnopha430015015temb95fk8",
+      "dataModelVersion": {
+        "number": "22"
+      },
+      "mappingExpression": "{ \n  /* - To rename a field: */\n  \"newName\": oldName,\n  /* - To populate a default value into a newly required field: */\n  \"field\": $coalesce([field, \"Default Value\"])\n}"
+    },
+    {
+      "dataModelVersionId": "clnnd7heh000k01a35mfxh0sz",
+      "dataModelVersion": {
+        "number": "21"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnc22u5000601c01b7a1y6p",
+      "dataModelVersion": {
+        "number": "20"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnn92s00000601a335iz6hr5",
+      "dataModelVersion": {
+        "number": "19"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj6fl200016017terh24pt5",
+      "dataModelVersion": {
+        "number": "18"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl84n1wd7000n011o9egp2xka",
+      "dataModelVersion": {
+        "number": "17"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

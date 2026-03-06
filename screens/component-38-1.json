@@ -1,0 +1,2331 @@
+{
+  "header": {
+    "id": "workcenterHistory",
+    "name": "Workcenter History",
+    "description": "Workcenter History Table",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clwqp5ib10myg0181f3xx3q8i",
+    "number": "0.0.53",
+    "description": "",
+    "screenId": "workcenterHistory",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "WorkcenterHistoryTable",
+          "tabTitle": "Workcenter History Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 4,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 5,
+                    "Text": 9,
+                    "Float": 2,
+                    "Combobox": 12,
+                    "Table Column": 32,
+                    "Options": 4,
+                    "Checkbox": 2,
+                    "Switch": 1
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "WorkcenterHistory",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "j0B5OtmqRo",
+                  "wbPOHhsLrP",
+                  "Uz7T2p-bh"
+                ],
+                "linkedNodes": {}
+              },
+              "j0B5OtmqRo": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "A8uiB7-duM"
+                ],
+                "linkedNodes": {}
+              },
+              "A8uiB7-duM": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterHistory",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "j0B5OtmqRo",
+                "hidden": false,
+                "nodes": [
+                  "FdKJKw4lbJ"
+                ],
+                "linkedNodes": {}
+              },
+              "wbPOHhsLrP": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "tVM-t9AdKG",
+                  "Eqz6EMhl9W",
+                  "CdKVN73Lao",
+                  "V8WT0Cenmm"
+                ],
+                "linkedNodes": {}
+              },
+              "tVM-t9AdKG": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "wbPOHhsLrP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Eqz6EMhl9W": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": true,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Workcenter History",
+                      "fields": [
+                        {
+                          "label": "Number",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "number",
+                          "field": "number",
+                          "description": "An auto-number that is created for the end-user experience.  This field is also used as the table's label.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Duration",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "duration",
+                          "field": "duration",
+                          "description": "Duration (difference between occurAt and endAt)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Message",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "message",
+                          "field": "message",
+                          "description": "A message related to the history record.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Operation Code",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "operationCode",
+                          "field": "operationCode",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Operation Number",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "operationNumber",
+                          "field": "operationNumber",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Number",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNumber",
+                          "field": "productNumber",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Number Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNumberRevision",
+                          "field": "productNumberRevision",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productRevision",
+                          "field": "productRevision",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Number",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderNumber",
+                          "field": "workOrderNumber",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Credited At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "creditedAt",
+                          "field": "creditedAt",
+                          "description": "Report Date -",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "Time in which it ends or has been resolved.",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Occur At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "occurAt",
+                          "field": "occurAt",
+                          "description": "Time in which it occurs - logDate",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Transaction Type",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transactionType",
+                          "field": "transactionType",
+                          "description": "Transaction type object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "TransactionType",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "transactionTypeId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/transactionTypes/\" & data.transactionType.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "transactionType.id",
+                              "transactionType.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Workcenter",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workcenter",
+                          "field": "workcenter",
+                          "description": "Workcenter object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Workcenter",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "workcenterId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenter.id",
+                              "workcenter.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Shift",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shift",
+                          "field": "shift",
+                          "description": "The shift object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Shift",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "shiftId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/shifts/\" & data.shift.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "shift.id",
+                              "shift.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Workcenter Mode",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workcenterMode",
+                          "field": "workcenterMode",
+                          "description": "Workcenter mode object - look up mode by statusName _eq",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "WorkcenterMode",
+                          "labelField": "number",
+                          "labelPath": "number",
+                          "additionalFields": "number",
+                          "target": {
+                            "dataPath": "workcenterModeId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/workcenterModes/\" & data.workcenterMode.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenterMode.id",
+                              "workcenterMode.number"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkcenterHistory($payload: [WorkcenterHistoryCreatePayloadInput!]!) {\n  mutation: createWorkcenterHistory(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Workcenter History \" & data.mutation[0].number & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "wbPOHhsLrP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CdKVN73Lao": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Workcenter History \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Duration",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "duration",
+                          "field": "duration",
+                          "description": "Duration (difference between occurAt and endAt)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Message",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "message",
+                          "field": "message",
+                          "description": "A message related to the history record.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Credited At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "creditedAt",
+                          "field": "creditedAt",
+                          "description": "Report Date -",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "Time in which it ends or has been resolved.",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Occur At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "occurAt",
+                          "field": "occurAt",
+                          "description": "Time in which it occurs - logDate",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Transaction Type",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transactionType",
+                          "field": "transactionType",
+                          "description": "Transaction type object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "TransactionType",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "transactionTypeId"
+                          },
+                          "query": {
+                            "fields": [
+                              "transactionType.id",
+                              "transactionType.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Workcenter",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workcenter",
+                          "field": "workcenter",
+                          "description": "Workcenter object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Workcenter",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "workcenterId"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenter.id",
+                              "workcenter.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Shift",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shift",
+                          "field": "shift",
+                          "description": "The shift object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Shift",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "shiftId"
+                          },
+                          "query": {
+                            "fields": [
+                              "shift.id",
+                              "shift.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Mode",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "mode",
+                          "field": "mode",
+                          "description": "Workcenter mode object - look up mode by statusName _eq",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Mode",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "ModeId"
+                          },
+                          "query": {
+                            "fields": [
+                              "id",
+                              "name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Event",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "event",
+                          "field": "event",
+                          "description": "Event",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Event",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "eventId"
+                          },
+                          "query": {
+                            "fields": [
+                              "id",
+                              "name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Require Note",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "requireNote",
+                          "field": "requireNotet",
+                          "description": "requireNote",
+                          "type": "switch",
+                          "target": {
+                            "dataPath": "requireNote"
+                          }
+                        },
+                        {
+                          "label": "Production Run",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionRun",
+                          "field": "productionRun",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ProductionRun",
+                          "labelField": "number",
+                          "labelPath": "number",
+                          "additionalFields": "number",
+                          "target": {
+                            "dataPath": "productionRunId"
+                          },
+                          "query": {
+                            "fields": [
+                              "productionRun.id",
+                              "productionRun.number"
+                            ]
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateWorkcenterHistory($payload: [WorkcenterHistoryUpdatePayloadInput!]!) {\n  mutation: updateWorkcenterHistory(payload: $payload) { \n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter History \" & $components.Table1.selectedRows.id) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "wbPOHhsLrP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "V8WT0Cenmm": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Workcenter History \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteWorkcenterHistory($payload: [WorkcenterHistoryDeletePayloadInput!]!) {\n  mutation: deleteWorkcenterHistory(payload: $payload) { \n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter History \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "wbPOHhsLrP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GPsN0NH1rT": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "100%",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterHistory",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": "[edges.node~>|$|(\n\n\n$d := occurAt;\n$c := createdAt;\n{\n\"duration\": $not($isNilOrEmpty(duration)) ? duration \n: $isNilOrEmpty(duration) and $not($isNilOrEmpty(occurAt)) \n? $moment().diff($moment($d),'seconds') \n: $isNilOrEmpty(duration) and $isNilOrEmpty(occurAt)\n? $moment().diff($moment($c),'seconds')\n: 0,\n\n\"running\": $isNilOrEmpty(endAt) ? \"CURRENT\"\n: null,\n\n\"eventCategory\": $isNilOrEmpty(event.eventCategory.id) ? \"Undefined\"\n: event.eventCategory.name\n}\n\n\n\n)|]",
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id",
+                      "occurAt",
+                      "duration",
+                      "createdAt",
+                      "endAt",
+                      "workcenter.code",
+                      "event.eventCategory.id",
+                      "event.eventCategory.name"
+                    ],
+                    "parameters": "{\n\n \"orderBy\": {\n   \"field\":\"createdAt\",\n   \"direction\":\"desc\"\n }\n}"
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "filterFormName": "Form1",
+                  "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)",
+                  "rowMultiSelectWithClick": true,
+                  "views": [
+                    {
+                      "unique": false,
+                      "fields": [],
+                      "name": "Default",
+                      "rowLimit": 50,
+                      "isDefault": true,
+                      "columns": [
+                        {
+                          "id": "TableColumn15",
+                          "label": "Workcenter Code"
+                        },
+                        {
+                          "id": "TableColumn16",
+                          "label": "Shift"
+                        },
+                        {
+                          "id": "TableColumn10",
+                          "label": "Work Order"
+                        },
+                        {
+                          "id": "TableColumn22",
+                          "label": "Mode Type"
+                        },
+                        {
+                          "id": "TableColumn17",
+                          "label": "Mode"
+                        },
+                        {
+                          "id": "TableColumn20",
+                          "label": "Event"
+                        },
+                        {
+                          "id": "TableColumn23",
+                          "label": "Event Type"
+                        },
+                        {
+                          "id": "TableColumn3",
+                          "label": "Duration (s)"
+                        },
+                        {
+                          "id": "TableColumn6",
+                          "label": "Operation Number"
+                        },
+                        {
+                          "id": "TableColumn4",
+                          "label": "Message"
+                        },
+                        {
+                          "id": "TableColumn5",
+                          "label": "Operation Code"
+                        },
+                        {
+                          "id": "TableColumn8",
+                          "label": "Product Number Revision"
+                        },
+                        {
+                          "id": "TableColumn14",
+                          "label": "Transaction Type"
+                        },
+                        {
+                          "id": "TableColumn11",
+                          "label": "Credited At"
+                        },
+                        {
+                          "id": "TableColumn12",
+                          "label": "End At"
+                        },
+                        {
+                          "id": "TableColumn13",
+                          "label": "Occur At"
+                        },
+                        {
+                          "id": "TableColumn18",
+                          "label": "Created At"
+                        },
+                        {
+                          "id": "TableColumn19",
+                          "label": "Updated At"
+                        },
+                        {
+                          "id": "TableColumn25",
+                          "label": "Event Note"
+                        },
+                        {
+                          "id": "TableColumn26",
+                          "label": "Group"
+                        },
+                        {
+                          "id": "TableColumn27",
+                          "label": "Building"
+                        },
+                        {
+                          "id": "TableColumn28",
+                          "label": "Production Run"
+                        },
+                        {
+                          "id": "TableColumn29",
+                          "label": "Event Category"
+                        },
+                        {
+                          "id": "TableColumn30",
+                          "label": "Status"
+                        },
+                        {
+                          "id": "TableColumn31",
+                          "label": "Products"
+                        },
+                        {
+                          "id": "TableColumn32",
+                          "label": "Workorders"
+                        }
+                      ]
+                    }
+                  ],
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "Uz7T2p-bh",
+                "hidden": false,
+                "nodes": [
+                  "6we9Uf5Ek",
+                  "hvLxGHAnT",
+                  "hRKobkQVOy",
+                  "_VznLlhr-",
+                  "I4WhhbVwL-",
+                  "BUj_-6Tm4w",
+                  "RfLJjO6F6",
+                  "LG8toXkPa",
+                  "oi2H6aHDY",
+                  "lyd_OBK2Vn",
+                  "Bw4j1TVCf",
+                  "QUH8EYN1nT",
+                  "uPKiDvbR6n",
+                  "BebxuDsn5_",
+                  "MoUx38RKKF",
+                  "uH1zOmqIdx",
+                  "R1FrFN6DtB",
+                  "SaQSrqm7gb",
+                  "WTuGs6lz7",
+                  "oV8CJTouj",
+                  "xML5AkbPA"
+                ],
+                "linkedNodes": {}
+              },
+              "lyd_OBK2Vn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Duration",
+                  "format": "integer",
+                  "dataPath": "duration",
+                  "query": {},
+                  "style": {
+                    "justifyContent": "flex-end",
+                    "alignItems": "center"
+                  },
+                  "formatString": "00:00:00",
+                  "data": {
+                    "__transform": "data.duration",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QUH8EYN1nT": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Alarm Message",
+                  "format": "text",
+                  "field": "message",
+                  "dataPath": "message",
+                  "description": "A message related to the history record.",
+                  "width": "200",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BebxuDsn5_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credited At",
+                  "format": "date",
+                  "field": "creditedAt",
+                  "dataPath": "creditedAt",
+                  "description": "Report Date - This is based on the Shift configuration",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "MoUx38RKKF": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "format": "datetime",
+                  "field": "endAt",
+                  "dataPath": "endAt",
+                  "description": "Time in which it ends or has been resolved.",
+                  "formatString": "M/D/YYYY h:mm:ss A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uH1zOmqIdx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Occur At",
+                  "format": "datetime",
+                  "field": "occurAt",
+                  "dataPath": "occurAt",
+                  "description": "Time in which it occurs - logDate",
+                  "formatString": "M/D/YYYY h:mm:ss A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uPKiDvbR6n": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transaction",
+                  "format": "text",
+                  "field": "transactionType.name",
+                  "dataPath": "transactionType.name",
+                  "description": "Transaction Type",
+                  "query": {
+                    "fields": [
+                      "transactionType.id",
+                      "transactionType.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hRKobkQVOy": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter",
+                  "format": "text",
+                  "field": "workcenter.code",
+                  "dataPath": "workcenter.code",
+                  "query": {
+                    "fields": []
+                  },
+                  "width": "120",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "I4WhhbVwL-": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift",
+                  "format": "text",
+                  "field": "shift.name",
+                  "dataPath": "shift.name",
+                  "description": "Shift name - Label field",
+                  "query": {
+                    "fields": [
+                      "shift.id",
+                      "shift.name"
+                    ]
+                  },
+                  "width": "100"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BUj_-6Tm4w": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Mode",
+                  "format": "text",
+                  "field": "workcenterMode.mode.name",
+                  "dataPath": "mode.name",
+                  "query": {
+                    "fields": [
+                      "mode.name",
+                      "mode.modeType.color"
+                    ]
+                  },
+                  "style": {
+                    "__transform": "{\"background\": data.mode.modeType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "R1FrFN6DtB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "formatString": "M/D/YYYY h:mm:ss A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "SaQSrqm7gb": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "formatString": "M/D/YYYY h:mm:ss A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "LG8toXkPa": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event",
+                  "format": "text",
+                  "dataPath": "event.name",
+                  "field": "modeEvent.event.name",
+                  "query": {
+                    "fields": [
+                      "event.name",
+                      "event.eventType.color"
+                    ]
+                  },
+                  "style": {
+                    "__transform": "{\"background\": data.event.eventType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "150",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UEmxUKV-qd": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Credited At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "creditedAt",
+                  "field": "creditedAt",
+                  "description": "Report Date -",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange3"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3lQhDpVlXR": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "End At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "endAt",
+                  "field": "endAt",
+                  "description": "Time in which it ends or has been resolved.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange4"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "RpB72eSJuq": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Occur At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "occurAt",
+                  "field": "occurAt",
+                  "description": "Time in which it occurs - logDate",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange5"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "I5R9QorlOs": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Transaction Type",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "transactionType",
+                  "field": "transactionType",
+                  "description": "Transaction type object",
+                  "element": "Combobox",
+                  "queryType": "TransactionType",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "transactionType.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "transactionType.id",
+                      "transactionType.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ODHPIJOfTk": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter",
+                  "field": "workcenter",
+                  "description": "Workcenter object",
+                  "element": "Combobox",
+                  "queryType": "Workcenter",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "workcenter.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  },
+                  "orderByField": "code",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox2"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DdxkF4tbiq": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Shift",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "shift",
+                  "field": "shift",
+                  "description": "The shift object",
+                  "element": "Combobox",
+                  "queryType": "Shift",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "shift.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "shift.id",
+                      "shift.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox3"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FdKJKw4lbJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": true,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "A8uiB7-duM",
+                "hidden": false,
+                "nodes": [
+                  "XeBi_gI7h",
+                  "s_1Y3NGt2",
+                  "ODHPIJOfTk",
+                  "clqmi5nte000u356evkl2lepm",
+                  "kSvB7S_ER",
+                  "clqmi6dlt0018356e5hrjuvf2",
+                  "uIOG2VPUT",
+                  "CxHZ3odb-",
+                  "IbjVjthp9",
+                  "DdxkF4tbiq",
+                  "I5R9QorlOs",
+                  "UEmxUKV-qd",
+                  "3lQhDpVlXR",
+                  "RpB72eSJuq"
+                ],
+                "linkedNodes": {}
+              },
+              "uIOG2VPUT": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Event",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "event",
+                  "target": {
+                    "dataPath": "event.id._eq"
+                  },
+                  "description": "",
+                  "field": "event",
+                  "predicate": "_eq",
+                  "queryType": "Event",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "event.id",
+                      "event.name"
+                    ]
+                  },
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox5"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kSvB7S_ER": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Mode",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "mode.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "dataPath": "mode",
+                  "description": "",
+                  "field": "mode",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "mode.id",
+                      "mode.name"
+                    ]
+                  },
+                  "queryType": "Mode",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox6"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "RfLJjO6F6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Type",
+                  "format": "text",
+                  "dataPath": "event.eventType.name",
+                  "field": "event.eventType.name",
+                  "width": "100"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Bw4j1TVCf": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Message",
+                  "format": "text",
+                  "dataPath": "message",
+                  "description": "A message related to the history record",
+                  "field": "message",
+                  "width": "200",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "s_1Y3NGt2": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "orderByField": "name",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  },
+                  "queryType": "WorkcenterGroup",
+                  "dataPath": "workcenter.workcenterGroup",
+                  "target": {
+                    "dataPath": "workcenter.workcenterGroup.id._eq"
+                  },
+                  "field": "workcenter.workcenterGroup",
+                  "predicate": "_eq",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox7"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hvLxGHAnT": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Group",
+                  "format": "text",
+                  "dataPath": "workcenter.workcenterGroup.name",
+                  "field": "workcenter.workcenterGroup.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6we9Uf5Ek": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Building",
+                  "format": "text",
+                  "dataPath": "workcenter.facility.code",
+                  "field": "workcenter.facility.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XeBi_gI7h": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Building",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code"
+                    ]
+                  },
+                  "queryType": "Facility",
+                  "orderByDirection": "asc",
+                  "dataPath": "workcenter.facility",
+                  "target": {
+                    "dataPath": "workcenter.facility.id._eq"
+                  },
+                  "field": "workcenter.facility",
+                  "predicate": "_eq"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox8"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WTuGs6lz7": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Run",
+                  "format": "text",
+                  "dataPath": "productionRun.number",
+                  "field": "productionRun.number"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IbjVjthp9": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Production Run",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productionRun",
+                  "target": {
+                    "dataPath": "productionRun.id._eq"
+                  },
+                  "description": "",
+                  "field": "productionRun",
+                  "predicate": "_eq",
+                  "labelField": "number",
+                  "labelPath": "number",
+                  "orderByField": "number",
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.number"
+                    ]
+                  },
+                  "queryType": "ProductionRun"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox9"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oi2H6aHDY": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Category",
+                  "format": "text",
+                  "dataPath": "eventCategory",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "data.eventCategory",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CxHZ3odb-": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Event Category",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "event.eventCategory",
+                  "target": {
+                    "dataPath": "event.eventCategory.id._eq"
+                  },
+                  "field": "event.eventCategory",
+                  "predicate": "_eq",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "event.eventCategory.id",
+                      "event.eventCategory.name"
+                    ]
+                  },
+                  "queryType": "EventCategory",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox10"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqmi5nte000u356evkl2lepm": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Mode Type",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "mode.modeType.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "dataPath": "mode.modeType",
+                  "field": "mode.modeType",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "mode.modeType.id",
+                      "mode.modeType.name"
+                    ]
+                  },
+                  "queryType": "ModeType",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox11"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqmi6dlt0018356e5hrjuvf2": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Event Type",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "event.eventType",
+                  "target": {
+                    "dataPath": "event.eventType.id._eq"
+                  },
+                  "field": "event.eventType",
+                  "predicate": "_eq",
+                  "queryType": "EventType",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "event.eventType.id",
+                      "event.eventType.name"
+                    ]
+                  },
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox12"
+                },
+                "parent": "FdKJKw4lbJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_VznLlhr-": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Status",
+                  "format": "text",
+                  "width": "90",
+                  "dataPath": " ",
+                  "query": {
+                    "fields": []
+                  },
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.endAt) ? {\"background\": \"#2E29A6\", \"color\": \"#ffffff\"} : null",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "data": {
+                    "__transform": "data.running",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Uz7T2p-bh": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "GPsN0NH1rT"
+                ],
+                "linkedNodes": {}
+              },
+              "oV8CJTouj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Products",
+                  "format": "text",
+                  "dataPath": "productionRun.workOrderProcessDistributions.edges.node.productNumberRevision",
+                  "data": {
+                    "__transform": "/* PARTS */\n$join([data.productionRun.workOrderProcessDistributions.edges.node.productNumberRevision], \" / \")",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "field": "productionRun.workOrderProcessDistributions.edges.node.productNumber"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn31"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xML5AkbPA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workorders",
+                  "format": "text",
+                  "dataPath": "productionRun.workOrderProcessDistributions.edges.node.workOrderNumber",
+                  "field": "productionRun.workOrderProcessDistributions.edges.node.workOrderNumber",
+                  "data": {
+                    "__transform": "$join(\n  [data.productionRun.workOrderProcessDistributions.edges.node.workOrderNumber[$isString($)]],\n  \" / \"\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn32"
+                },
+                "parent": "GPsN0NH1rT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnnob67d001i01cgedbwe8vj",
+      "title": "Workcenter History",
+      "path": "/productionManagement/manufacturing/workcenterHistories",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterHistory",
+      "isMenuAccessible": true,
+      "submenu": "Reports"
+    }
+  ]
+}

@@ -1,0 +1,1512 @@
+{
+  "header": {
+    "id": "workcenterModeChange",
+    "name": "Workcenter Mode Change",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clv3yp7ua0urk019he8lv7l3e",
+    "number": "0.0.28.80",
+    "description": "",
+    "screenId": "workcenterModeChange",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "background": "paper",
+                  "intervals": [
+                    {
+                      "interval": 120,
+                      "action": "$navigateReload()\n"
+                    }
+                  ],
+                  "screenDataFlowIds": []
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 17,
+                    "Form": 1,
+                    "Options": 1,
+                    "Select": 3,
+                    "Cards": 2,
+                    "Text": 13,
+                    "Action Button": 5,
+                    "Combobox": 1,
+                    "Table": 1,
+                    "Table Column": 3
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "IglWstrd4",
+                  "ia3zl1flJ"
+                ],
+                "linkedNodes": {}
+              },
+              "IglWstrd4": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "13%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": {
+                    "__transform": "$components.WorkcenterForm.data.productionSetup.mode.modeType.color\n",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.WorkcenterForm.data.productionSetups.mode.modeType.color"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "VAP5lTgdk"
+                ],
+                "linkedNodes": {}
+              },
+              "GUHsICbEy": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "70%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "ia3zl1flJ",
+                "hidden": false,
+                "nodes": [
+                  "clp70gf1k001r356epfr4zd9f",
+                  "KnLrPZ6dK"
+                ],
+                "linkedNodes": {}
+              },
+              "VAP5lTgdk": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": "edges.node~>|$|{\n\n\"headerText\":(\n$d :=  $components.WorkcenterForm.data;\n$ps := $d.productionSetup;\n$event := $isNilOrEmpty($ps.event.name) ? \" \" : \" : \" & $ps.event.name;\n$title := $d.code & \" : \" & $ps.mode.name & $event;\n\n$r := $parseInt($substring($ps.mode.modeType.color,1,2),16);\n$g := $parseInt($substring($ps.mode.modeType.color,3,4),16);\n$b := $parseInt($substring($ps.mode.modeType.color,5,6),16);\n\n$color := (($r * 0.299) + ($g * 0.587) + ($b * 0.114)) > 186 ? \"#000000\" : \"#ffffff\";\n\n\"<span style=\\\" color:\" & $color & \"; font-size: 50px;font-weight: bold;\\\">\" & $title & \"</span>\" \n\n)\n\n}|",
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": true,
+                      "topics": [
+                        {
+                          "topic": "productionSetup.modeChange"
+                        }
+                      ],
+                      "filterTransform": "(\n/* event.body.value_1 */\n\n  $components.WorkcenterForm.fn.loadData();\n  $components.EventCards.fn.loadData();\n  $components.ModeHistoryCards.fn.loadData();\n)\n\n"
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": $metadata.urlParameters.id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "productionSetup.updatedAt",
+                      "productionSetup.mode.name",
+                      "productionSetup.mode.id",
+                      "productionSetup.mode.modeType.production",
+                      "productionSetup.event.name",
+                      "productionSetup.event.id",
+                      "productionSetup.mode.modeType.color",
+                      "id",
+                      "name",
+                      "code"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "Workcenter"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "This table lists workcenters and it's attributes\nLinks out to workcenter source location, work order process distribution and, product setup material"
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "WorkcenterForm"
+                },
+                "parent": "IglWstrd4",
+                "hidden": false,
+                "nodes": [
+                  "nPM8CkXHYZ"
+                ],
+                "linkedNodes": {}
+              },
+              "nPM8CkXHYZ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "80",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": {
+                    "__transform": "$components.WorkcenterForm.data.productionSetup.mode.modeType.color\n",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.WorkcenterForm.data.productionSetups.mode.modeType.color"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "VAP5lTgdk",
+                "hidden": false,
+                "nodes": [
+                  "yQR6ANQEo",
+                  "2B1B4FPNh"
+                ],
+                "linkedNodes": {}
+              },
+              "52RYtduxS": {
+                "type": {
+                  "resolvedName": "Cards"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": true,
+                      "topics": [
+                        {
+                          "topic": "productionSetup.modeChange"
+                        }
+                      ],
+                      "filterTransform": "$components.EventCards.fn.loadData()"
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"filter\": {\n     \"eventGroup\":{\n        \"modeList\":{\n          \"_some\":{\n            \"modeGroup\":{\n              \"workcenters\":{\n                \"_some\":{\n                  \"id\":{\"_eq\": $metadata.urlParameters.id}\n                }\n              }\n            },\n            \"modeId\":{\"_eq\": $components.WorkcenterForm.data.productionSetup.mode.id}\n            }\n          }\n        } \n  },\n  \"orderBy\": {\n    \"field\": \"order\",\n    \"direction\": \"asc\"\n  }\n}",
+                    "fields": [
+                      "event.eventType.color",
+                      "event.eventType.name",
+                      "event.name",
+                      "event.id",
+                      "requireNote"
+                    ],
+                    "model": "EventList",
+                    "readPreference": "primaryPreferred"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "padding": 8,
+                  "margin": 0,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                  "width": "250px",
+                  "height": "100px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Cards",
+                "custom": {
+                  "elementName": "EventCards"
+                },
+                "parent": "KnLrPZ6dK",
+                "hidden": false,
+                "nodes": [
+                  "L3EHDSAbPd"
+                ],
+                "linkedNodes": {}
+              },
+              "L3EHDSAbPd": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "220",
+                  "height": "100",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "52RYtduxS",
+                "hidden": false,
+                "nodes": [
+                  "NUOee4XzK"
+                ],
+                "linkedNodes": {}
+              },
+              "2B1B4FPNh": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "refresh",
+                    "variant": "light",
+                    "size": "large"
+                  },
+                  "width": "50",
+                  "height": "50",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $navigateReload();\n  $wait(500);\n  $components.WorkcenterForm.fn.loadData();\n  $components.EventCards.fn.loadData();\n  $components.WorkcenterForm.fn.setValue(\"r\",$random());\n  $components.ModeHistoryCards.fn.loadData()\n)"
+                    }
+                  ],
+                  "title": "Search",
+                  "customButtonColor": "#333333"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "nPM8CkXHYZ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NUOee4XzK": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "100%",
+                  "height": "100%",
+                  "disabled": {
+                    "__transform": "$data.card.event.id = $components.WorkcenterForm.data.productionSetup.event.id",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n\n  $result := $data.card.requireNote? $showFormDialog(\n    {\n      'title': 'Note',\n      'formInputs': [{\n          'name': 'note',\n          'description': 'The Note',\n          'type': 'markdown',\n          'dataPath': 'note',\n          'validation': { 'required': true} \n      }], \n      'submitIcon': 'plus'\n    }\n  ): true;\n  \n  $isNilOrEmpty($result)~>$not ? (\n    \n    $executeFlow(\n      \"changeWorkcenterMode\",\n      {\n        \"workcenterId\":$metadata.urlParameters.id,\n        \"eventId\": $data.card.event.id,\n        \"note\": $result.note\n      }\n    );\n    \n    $addNotificationMessage(\"Updated Mode.\", {\n      \"severity\": \"success\"\n    }) \n  )\n     \n)",
+                      "message": {
+                        "__transform": "\"\""
+                      },
+                      "transforms": {
+                        "post": "(\n  $wait(1000);\n  $components.WorkcenterForm.fn.loadData();\n  $components.EventCards.fn.loadData();\n  $components.WorkcenterForm.fn.setValue(\"r\",$random());\n  $components.ModeHistoryCards.fn.loadData()\n) "
+                      }
+                    }
+                  ],
+                  "text": {
+                    "__transform": "$data.card.event.name",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "customButtonColor": {
+                    "__transform": "$data.card.event.eventType.color",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "customTextSize": 20
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "L3EHDSAbPd",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yQR6ANQEo": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "80%",
+                  "height": "40px",
+                  "label": "Code",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "WorkcenterForm",
+                  "dataPath": "headerText",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workcenter.code",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "(\n$d :=  $components.WorkcenterForm.data;\n$ps := $d.productionSetup;\n$event := $isNilOrEmpty($ps.event.name) ? \" \" : \" : \" & $ps.event.name;\n$title := $d.code & \" : \" & $ps.mode.name & $event;\n\n$r := $parseInt($substring($ps.mode.modeType.color,1,2),16);\n$g := $parseInt($substring($ps.mode.modeType.color,3,4),16);\n$b := $parseInt($substring($ps.mode.modeType.color,5,6),16);\n\n$color := (($r * 0.299) + ($g * 0.587) + ($b * 0.114)) > 186 ? \"#000000\" : \"#ffffff\";\n\n\"<span style=\\\" color:\" & $color & \"; font-size: 50px;font-weight: bold;\\\">\" & $title & \"</span>\" \n\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.WorkcenterForm.data.productionSetup.mode.name",
+                        "components.WorkcenterForm.data.code",
+                        "components.WorkcenterForm.data.r"
+                      ]
+                    },
+                    "__cacheKey": ""
+                  },
+                  "format": "markdown",
+                  "onChange": "$components.EventCards.fn.loadData()"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "nPM8CkXHYZ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ia3zl1flJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "GUHsICbEy",
+                  "4-YBizPFK"
+                ],
+                "linkedNodes": {}
+              },
+              "4-YBizPFK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "30%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container6"
+                },
+                "parent": "ia3zl1flJ",
+                "hidden": false,
+                "nodes": [
+                  "jaR7lxnGt",
+                  "NadcF8ZB9"
+                ],
+                "linkedNodes": {}
+              },
+              "i4B2EfQZ0": {
+                "type": {
+                  "resolvedName": "Cards"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"_or\":[\n      {\n        \"workcenterId\": { \"_eq\": $metadata.urlParameters.id },\n        \"eventId\":{ \"_isNull\": true }    \n      },\n      {\n        \"workcenterId\": { \"_eq\":$metadata.urlParameters.id },\n        \"requireNote\": { \"_eq\": true },\n        \"message\":{ \"_isNull\": true }\n      }\n    ]\n    \n  },\n  \"orderBy\":{ \"field\": \"occurAt\", \"direction\": \"desc\"},\n  \"first\": 7\n}",
+                    "fields": [
+                      "id",
+                      "mode.modeType.color",
+                      "mode.name",
+                      "mode.id",
+                      "occurAt",
+                      "duration",
+                      "event.id",
+                      "event.name"
+                    ],
+                    "model": "WorkcenterHistory"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "padding": 8,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "430px",
+                  "height": "150px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Cards",
+                "custom": {
+                  "elementName": "ModeHistoryCards"
+                },
+                "parent": "NadcF8ZB9",
+                "hidden": false,
+                "nodes": [
+                  "RJw-J163b7"
+                ],
+                "linkedNodes": {}
+              },
+              "RJw-J163b7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "120",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": true,
+                  "borderRadius": 3,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": {
+                    "__transform": "$data.card.mode.modeType.color",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "data.card.mode.modeType.color"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container7"
+                },
+                "parent": "i4B2EfQZ0",
+                "hidden": false,
+                "nodes": [
+                  "NjYLXgnW0",
+                  "5mCDEnaeU"
+                ],
+                "linkedNodes": {}
+              },
+              "0sD2V0Y_B": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Mode",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "ModeHistoryCards",
+                  "dataPath": "mode.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "mode.name",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "query": {
+                    "fields": [
+                      "mode.name"
+                    ]
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "NjYLXgnW0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AGtzIbuoj": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "35%",
+                  "height": "auto",
+                  "label": "Occur At",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "ModeHistoryCards",
+                  "dataPath": "occurAt",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Time in which it occurs - logDate",
+                  "field": "occurAt",
+                  "query": {
+                    "fields": []
+                  },
+                  "format": "datetime",
+                  "formatString": "hh:mm A M/D/yyyy",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "5mCDEnaeU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uEiOK9Qo_": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "variant": "light",
+                    "size": "icon",
+                    "icon": "pen"
+                  },
+                  "width": "60px",
+                  "height": "60px",
+                  "disabled": false,
+                  "hidden": {
+                    "__transform": "$isNilOrEmpty($data.card.event)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "name": "message",
+                          "description": "Note",
+                          "label": "Note",
+                          "labelField": "message",
+                          "labelPath": "message",
+                          "type": "markdown",
+                          "dataPath": "message",
+                          "queryType": "WorkcenterHistory",
+                          "target": {
+                            "dataPath": "message"
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Add Note\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation updateWorkcenterHistory($payload: [WorkcenterHistoryUpdatePayloadInput!]!) {\n  mutation: updateWorkcenterHistory(payload: $payload){\n  id\n}\n  \n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\": $data.card.id\n    },\n      \"update\": $$.data\n  }\n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $wait(1000);\n  $components.WorkcenterForm.fn.loadData();\n  $components.EventCards.fn.loadData();\n  $components.WorkcenterForm.fn.setValue(\"r\",$random());\n  $components.ModeHistoryCards.fn.loadData()\n)"
+                    }
+                  ],
+                  "title": "Update",
+                  "text": "Note"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "5mCDEnaeU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jaR7lxnGt": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "50",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container8"
+                },
+                "parent": "4-YBizPFK",
+                "hidden": false,
+                "nodes": [
+                  "zm-52CEIC"
+                ],
+                "linkedNodes": {}
+              },
+              "zm-52CEIC": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "HISTORIC MODES MISSING EVENTS",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 29,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 29,
+                            "style": "fontsize-16"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "jaR7lxnGt",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clp70gf1k001r356epfr4zd9f": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "50",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": "#228be7"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container9"
+                },
+                "parent": "GUHsICbEy",
+                "hidden": false,
+                "nodes": [
+                  "clp70gf1k001s356eibyswo74"
+                ],
+                "linkedNodes": {}
+              },
+              "clp70gf1k001s356eibyswo74": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "SELECT AN EVENT FOR THE CURRENT MODE",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 36,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 36,
+                            "style": "fontsize-16"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text7"
+                },
+                "parent": "clp70gf1k001r356epfr4zd9f",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KnLrPZ6dK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container10"
+                },
+                "parent": "GUHsICbEy",
+                "hidden": false,
+                "nodes": [
+                  "52RYtduxS"
+                ],
+                "linkedNodes": {}
+              },
+              "NadcF8ZB9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container11"
+                },
+                "parent": "4-YBizPFK",
+                "hidden": false,
+                "nodes": [
+                  "clp8goati004d356ei0scfhxb",
+                  "i4B2EfQZ0"
+                ],
+                "linkedNodes": {}
+              },
+              "clp8goati004d356ei0scfhxb": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "50",
+                  "hidden": true,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container15"
+                },
+                "parent": "NadcF8ZB9",
+                "hidden": false,
+                "nodes": [
+                  "clp8goati004e356ef9aixqca"
+                ],
+                "linkedNodes": {}
+              },
+              "clp8goati004e356ef9aixqca": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "NO MODE CHANGES REQUIRING AN EVENT",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 34,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 34,
+                            "style": "fontsize-16"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 34,
+                            "style": "color-rgb(226,80,65)"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text11"
+                },
+                "parent": "clp8goati004d356ei0scfhxb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq5efozg009z356eb9bqivut": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "20%",
+                  "height": "auto",
+                  "label": "Duration",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "ModeHistoryCards",
+                  "dataPath": "duration",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "query": {
+                    "fields": [
+                      "duration"
+                    ]
+                  },
+                  "formatString": "hh:mm:ss",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "description": "Duration (difference between occurAt and endAt)",
+                  "field": "duration",
+                  "format": "integer"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text12"
+                },
+                "parent": "5mCDEnaeU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NjYLXgnW0": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container16"
+                },
+                "parent": "RJw-J163b7",
+                "hidden": false,
+                "nodes": [
+                  "0sD2V0Y_B",
+                  "clu79w3wj002s356ewjbo5ngi"
+                ],
+                "linkedNodes": {}
+              },
+              "5mCDEnaeU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container17"
+                },
+                "parent": "RJw-J163b7",
+                "hidden": false,
+                "nodes": [
+                  "AGtzIbuoj",
+                  "clq5efozg009z356eb9bqivut",
+                  "uEiOK9Qo_",
+                  "clulg3w3o003s356fa2fwfgh2"
+                ],
+                "linkedNodes": {}
+              },
+              "clu79w3wj002s356ewjbo5ngi": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Event",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "ModeHistoryCards",
+                  "dataPath": "event.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "event.name",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "query": {
+                    "fields": [
+                      "mode.name"
+                    ]
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text13"
+                },
+                "parent": "NjYLXgnW0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clulg3w3o003s356fa2fwfgh2": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "variant": "light",
+                    "size": "icon",
+                    "icon": "pen"
+                  },
+                  "width": "60px",
+                  "height": "60px",
+                  "disabled": false,
+                  "hidden": {
+                    "__transform": "$isNotNilOrEmpty($data.card.event)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "name": "event",
+                          "description": "Event",
+                          "label": "Event",
+                          "labelField": "event",
+                          "labelPath": "event.name",
+                          "additionalFields": [
+                            "event.name",
+                            "requireNote",
+                            "eventId"
+                          ],
+                          "stateTracking": "full",
+                          "type": "select",
+                          "dataPath": "event",
+                          "dataModel": "EventList",
+                          "selectFields": [
+                            "event.name"
+                          ],
+                          "additionalFilter": {
+                            "__transform": "{ 'eventGroup':{\n        'modeList':{\n          '_some':{\n            'modeId':{'_eq':  $data.card.mode.id  },\n            'modeGroup':{\n              'workcenters':{\n                '_some':{\n                  'id':{'_eq': $metadata.urlParameters.id  }\n                }\n              }\n            }\n            }\n          }\n        }\n      }"
+                          },
+                          "autoClear": true,
+                          "api": "Application"
+                        },
+                        {
+                          "name": "message",
+                          "description": "Note",
+                          "label": "Note",
+                          "labelField": "message",
+                          "labelPath": "message",
+                          "type": "markdown",
+                          "dataPath": "message",
+                          "queryType": "WorkcenterHistory",
+                          "target": {
+                            "dataPath": "message"
+                          },
+                          "required": {
+                            "__transform": "data.event.requireNote"
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Backfill Event\""
+                      },
+                      "transforms": {
+                        "post": "(\n  $q := \"query Query($where: EventListWhereInput) {\\n  eventList(where: $where){\\n    edges{\\n      node{  requireNote eventId }\\n    }\\n  }\\n}\\n\";\n  $eventList := $query({\n    \"statement\": $q,\n    \"variables\":{\n      \"where\": {\n        \"id\": {\"_eq\": result.event }\n      }\n    }\n  }).eventList.edges.node;\n  \n  $output:= {\n    \"eventId\": $eventList.eventId,\n    \"message\": result.message\n  };\n  $requireNote = true and $isNilOrEmpty(result.message)? $throw(\"This event requires a note.\"): $output\n)"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation updateWorkcenterHistory($payload: [WorkcenterHistoryUpdatePayloadInput!]!) {\n  mutation: updateWorkcenterHistory(payload: $payload){\n  id\n}\n  \n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\": $data.card.id\n    },\n      \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Workcenter History Updated!\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $wait(1000);\n  $components.WorkcenterForm.fn.loadData();\n  $components.EventCards.fn.loadData();\n  $components.WorkcenterForm.fn.setValue(\"r\",$random());\n  $components.ModeHistoryCards.fn.loadData()\n)",
+                      "transforms": {}
+                    }
+                  ],
+                  "title": "Update",
+                  "text": "Event"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton5"
+                },
+                "parent": "5mCDEnaeU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cloizp81y000r015u9ocq40b1",
+      "title": "Workcenter Mode Change",
+      "path": "/productionManagement/manufacturing/workcenterModeChange/:id",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterModeChange",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

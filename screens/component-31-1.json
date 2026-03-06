@@ -1,0 +1,4253 @@
+{
+  "header": {
+    "id": "workcenterControlPanel",
+    "name": "Workcenter Control Panel",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "cls3po96y004e011s5gaf7tik",
+    "number": "0.0.42",
+    "description": "",
+    "screenId": "workcenterControlPanel",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "intervals": [
+                    {
+                      "interval": 5000,
+                      "action": "(\n$components.ModeForm.fn.loadData();\n$components.OeeForm.fn.loadData();\n$components.GoalForm.fn.loadData()\n)"
+                    }
+                  ]
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementCounts": {
+                    "Container": 118,
+                    "Cards": 1,
+                    "Text": 76,
+                    "Action Button": 40,
+                    "Form": 16,
+                    "Float": 2,
+                    "Table": 12,
+                    "Scan": 1,
+                    "Table Column": 75,
+                    "Visualization": 4,
+                    "Tab Bar": 1,
+                    "Switch": 1,
+                    "Flow Button": 1,
+                    "Number": 1
+                  },
+                  "elementName": "Screen"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "E9Fwejss8"
+                ],
+                "linkedNodes": {}
+              },
+              "E9Fwejss8": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "8M02NmoHg",
+                  "w-QxuwVrk",
+                  "uJGs7DP-N"
+                ],
+                "linkedNodes": {}
+              },
+              "8M02NmoHg": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "E9Fwejss8",
+                "hidden": false,
+                "nodes": [
+                  "s6dnQhgxk"
+                ],
+                "linkedNodes": {}
+              },
+              "w-QxuwVrk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": "#ececec"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "E9Fwejss8",
+                "hidden": false,
+                "nodes": [
+                  "14cWDFlt9"
+                ],
+                "linkedNodes": {}
+              },
+              "uJGs7DP-N": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "360px",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "BottomContainer"
+                },
+                "parent": "E9Fwejss8",
+                "hidden": false,
+                "nodes": [
+                  "eENqzKRHt",
+                  "7Pqalq181"
+                ],
+                "linkedNodes": {}
+              },
+              "s6dnQhgxk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100px",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container20"
+                },
+                "parent": "8M02NmoHg",
+                "hidden": false,
+                "nodes": [
+                  "mJRFgBup9"
+                ],
+                "linkedNodes": {}
+              },
+              "mJRFgBup9": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": $metadata.urlParameters.id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "updatedAt",
+                      "mode.name",
+                      "mode.id",
+                      "mode.modeType.production",
+                      "event.name",
+                      "mode.modeType.color",
+                      "workcenter.id",
+                      "workcenter.name",
+                      "workcenter.code",
+                      "workcenter.modeGroupId",
+                      "productionRun.id",
+                      "productionRun.number"
+                    ],
+                    "model": "ProductionSetup",
+                    "disableDataChangeIndicator": true
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "This table is a list of production setup and it's atributes\nLinks out to: production setup operator, production history, production setup material, and production setup BOM"
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "ModeForm"
+                },
+                "parent": "s6dnQhgxk",
+                "hidden": false,
+                "nodes": [
+                  "jyZeRfapD-"
+                ],
+                "linkedNodes": {}
+              },
+              "jyZeRfapD-": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": {
+                    "__transform": "$components.ModeForm.data.mode.modeType.color",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.ModeForm.data.mode",
+                        "components.ModeForm.data.mode.modeType.name"
+                      ]
+                    },
+                    "__cacheKey": "mode",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container21"
+                },
+                "parent": "mJRFgBup9",
+                "hidden": false,
+                "nodes": [
+                  "J85spkQxi",
+                  "hFI2GmxLF",
+                  "VGz4CzeM9"
+                ],
+                "linkedNodes": {}
+              },
+              "cld4owxna04ea356dv1fjrlh3": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "duration"
+                    ],
+                    "model": "WorkcenterHistory",
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n    \"_eq\": $metadata.urlParameters.id \n    }\n  }\n}"
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "This table contains the workcenter history.\n\nLinks out to position sub-event.",
+                  "defaultSort": [
+                    {
+                      "field": "TableColumn25",
+                      "direction": "desc"
+                    }
+                  ],
+                  "views": [
+                    {
+                      "unique": false,
+                      "fields": [],
+                      "name": "Default",
+                      "isDefault": true,
+                      "rowLimit": 500,
+                      "columns": [
+                        {
+                          "id": "TableColumn26",
+                          "label": "Transaction"
+                        },
+                        {
+                          "id": "TableColumn25",
+                          "label": "Occur At"
+                        },
+                        {
+                          "id": "TableColumn63",
+                          "label": "Duration"
+                        },
+                        {
+                          "id": "TableColumn27",
+                          "label": "Message"
+                        }
+                      ]
+                    }
+                  ],
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "HistoryTable"
+                },
+                "parent": "XBR2Dj_wc",
+                "hidden": false,
+                "nodes": [
+                  "2cf0tvghm",
+                  "x98v7CyrA",
+                  "MMP2lagLc",
+                  "ND-QXwJm5"
+                ],
+                "linkedNodes": {}
+              },
+              "x98v7CyrA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Occur At",
+                  "format": "datetime",
+                  "dataPath": "occurAt",
+                  "description": "Time in which it occurs",
+                  "field": "occurAt",
+                  "query": {},
+                  "width": "180px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "cld4owxna04ea356dv1fjrlh3",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2cf0tvghm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transaction",
+                  "format": "text",
+                  "dataPath": "transactionType.name",
+                  "field": "transactionType.name",
+                  "width": "140px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "cld4owxna04ea356dv1fjrlh3",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ND-QXwJm5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Message",
+                  "format": "text",
+                  "dataPath": "message",
+                  "description": "A message related to the history record.",
+                  "field": "message",
+                  "width": "300px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "cld4owxna04ea356dv1fjrlh3",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cld4fmvgm000l356d3xw8sls1": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 2,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "60px",
+                  "height": "60px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "title": {
+                        "__transform": "\"Change Workcenter Status\""
+                      },
+                      "fields": [
+                        {
+                          "name": "mode",
+                          "description": "The mode object.",
+                          "label": "Mode",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "type": "combobox",
+                          "dataPath": "mode",
+                          "queryType": "Mode",
+                          "target": {
+                            "dataPath": "modeId"
+                          },
+                          "additionalFilter": {
+                            "__transform": "{\n    \"modeList\": {\n      \"_some\": {\n        \"modeGroupId\": {\"_eq\":  $components.ModeForm.data.workcenter.modeGroupId  }\n      }\n    }\n  }"
+                          },
+                          "query": {
+                            "fields": [
+                              "mode.id",
+                              "mode.name"
+                            ]
+                          },
+                          "validation": {
+                            "required": false
+                          }
+                        },
+                        {
+                          "name": "event",
+                          "description": "Event object",
+                          "label": "Event",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "type": "combobox",
+                          "dataPath": "event",
+                          "queryType": "Event",
+                          "target": {
+                            "dataPath": "eventId"
+                          },
+                          "additionalFilter": {
+                            "__transform": "{\n  \"eventLists\": {\n    \"_some\": {\n   \"eventGroup\": {\n   \"modeList\": {\n   \"_some\": {\n   \"modeGroupId\": {\n    \"_eq\":  $components.ModeForm.data.workcenter.modeGroupId  \n  },\n  \"modeId\": { \"_eq\":  $coalesce([data.mode.id, $components.ModeForm.data.workcenter.mode.id ])  }\n   }\n  }\n  }\n  }\n  }\n}",
+                            "__dynamicFields": {
+                              "payload": [
+                                "data.mode"
+                              ],
+                              "context": []
+                            },
+                            "context": 33,
+                            "__cacheKey": "EventFiterKey"
+                          },
+                          "autoClear": true,
+                          "api": "Application",
+                          "query": {
+                            "fields": [
+                              "id",
+                              "name"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "flow",
+                      "transforms": {
+                        "post": "{\n  \"result\": $.result\n}",
+                        "pre": "{\n  \"workcenterId\": $metadata.urlParameters.id,\n  \"modeId\": data.modeId? data.modeId,\n  \"eventId\": data.eventId? data.eventId\n}"
+                      },
+                      "flowId": "changeWorkcenterMode"
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.ModeForm.fn.loadData({\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": $metadata.urlParameters.id\n    }\n  },\n  \"first\": 1\n})",
+                      "transforms": {
+                        "post": "(\n$components.ModeForm.fn.loadData();\n$components.OeeForm.fn.loadData();\n$components.GoalForm.fn.loadData()\n)"
+                      }
+                    }
+                  ],
+                  "title": "Change Mode",
+                  "text": "MODE CHANGE",
+                  "customButtonColor": "#ffffff",
+                  "customTextSize": 10
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton8"
+                },
+                "parent": "VGz4CzeM9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XBitNgQ1A": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Code",
+                  "visible": true,
+                  "formElement": "ModeForm",
+                  "dataPath": "workcenter.code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workcenter.code",
+                  "query": {
+                    "fields": [
+                      "workcenter.code"
+                    ]
+                  },
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "fontSize": "h2"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text28"
+                },
+                "parent": "J85spkQxi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VGz4CzeM9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "alignItems": "center",
+                  "width": "80px",
+                  "height": "80px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container56"
+                },
+                "parent": "jyZeRfapD-",
+                "hidden": false,
+                "nodes": [
+                  "cld4fmvgm000l356d3xw8sls1"
+                ],
+                "linkedNodes": {}
+              },
+              "J85spkQxi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "500px",
+                  "height": "80",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container57"
+                },
+                "parent": "jyZeRfapD-",
+                "hidden": false,
+                "nodes": [
+                  "XBitNgQ1A",
+                  "0FihnqzuA",
+                  "clq5sfx7400a4356ew9vpp2jq",
+                  "clqe8bnm4002w356eusevkg0h",
+                  "clqe8bq790033356e5x02ytsc"
+                ],
+                "linkedNodes": {}
+              },
+              "MMP2lagLc": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Duration",
+                  "format": "text",
+                  "width": "120px",
+                  "dataPath": "durationPretty",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "(\n$dms := data.duration;\n$isNilOrEmpty($dms) ? \" \" :\n$d := $coalesce([$dms,0])/1000;\n(\n(\n\n$h := $string($d/3600) ~> $split(?,\".\");\n$m := $string(($d%3600)/60) ~> $split(?,\".\");\n$s := $string(($d%3600) % 60);\n$split := $split($string($s),\".\");\n$join([$pad($h[0],-2,'0'),$pad($m[0],-2,'0'),$pad($split[0],-2,'0') & \".\" & $pad($substring($split[1],0,2),-2,'0')],':')\n\n)\n)\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "data.duration"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn63"
+                },
+                "parent": "cld4owxna04ea356dv1fjrlh3",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cB2CPzF9D": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": id\n    }\n  },\"first\":1\n}",
+                    "fields": [
+                      "id",
+                      "updatedAt",
+                      "workcenterId",
+                      "remainingBalance",
+                      "lastProductionQuantity",
+                      "lastScrapQuantity",
+                      "counterInput",
+                      "distributionQuantity",
+                      "autoProduction",
+                      "operationCode",
+                      "operationNumber",
+                      "workOrderNumber",
+                      "productNumberRevision",
+                      "dueAt",
+                      "standardQuantity",
+                      "setupRate",
+                      "startAt"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "ProductionSetupOutput",
+                    "selectedDataChangeIndicator": "refresh"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Represents the current output of a workcenter runnning a product or workorder."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "ProductionSetupOutputForm"
+                },
+                "parent": "e2BepWGWd",
+                "hidden": false,
+                "nodes": [
+                  "zQ1IwMQ5us"
+                ],
+                "linkedNodes": {}
+              },
+              "zQ1IwMQ5us": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container66"
+                },
+                "parent": "cB2CPzF9D",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001s356k36g5fz87"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001s356k36g5fz87": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 16,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container78"
+                },
+                "parent": "zQ1IwMQ5us",
+                "hidden": false,
+                "nodes": [
+                  "zb4YCJ_RQ",
+                  "clmtbf9qt002d356k93o50ymn",
+                  "GbO6r6TPX"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001t356kkpg715h2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container70"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001u356knhos7tng"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001u356knhos7tng": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container69"
+                },
+                "parent": "clmtbf9qr001t356kkpg715h2",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001v356kxngess8l"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001v356kxngess8l": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "200px",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container68"
+                },
+                "parent": "clmtbf9qr001u356knhos7tng",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001w356kpvih0ga5",
+                  "clmtbf9qr001x356k5d8qnw63",
+                  "clmtbf9qr001y356kgd5olwee"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001w356kpvih0ga5": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 2,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Work Order#",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "dataPath": "workOrderNumber",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workOrder.number",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h4",
+                  "alignItems": "center"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text32"
+                },
+                "parent": "clmtbf9qr001v356kxngess8l",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001x356k5d8qnw63": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 2,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Product: ",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "dataPath": "productNumberRevision",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "product.code",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text33"
+                },
+                "parent": "clmtbf9qr001v356kxngess8l",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001y356kgd5olwee": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container67"
+                },
+                "parent": "clmtbf9qr001v356kxngess8l",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001z356krokzp3ws",
+                  "clmtbf9qs0020356kuej9ipcl"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qr001z356krokzp3ws": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 2,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Op #",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "alignItems": "center",
+                  "fontSize": "h6",
+                  "dataPath": "operationNumber",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workOrderProcess.productStrategyProcess.order"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text34"
+                },
+                "parent": "clmtbf9qr001y356kgd5olwee",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qs0020356kuej9ipcl": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 2,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Op Code",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "alignItems": "center",
+                  "fontSize": "h6",
+                  "dataPath": "operationCode",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workOrderProcess.productStrategyProcess.process.code"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text35"
+                },
+                "parent": "clmtbf9qr001y356kgd5olwee",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qs0022356karr3g5dk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "6px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "primary"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container71"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qs0023356kbuv55ui2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container72"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qs0024356kixzuvjtj",
+                  "clmtbf9qt0025356kcq9d0k0v"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qs0024356kixzuvjtj": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtRequired",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "text": "Produced",
+                  "query": {
+                    "fields": []
+                  },
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text36"
+                },
+                "parent": "clmtbf9qs0023356kbuv55ui2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt0025356kcq9d0k0v": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "120px",
+                  "height": "auto",
+                  "label": "Produced",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "dataPath": "productionSetup.productionRun.produced",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetup.productionRun.produced",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "fontSize": "h4",
+                  "query": {},
+                  "alignItems": "center",
+                  "format": "float",
+                  "formatString": "0"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text37"
+                },
+                "parent": "clmtbf9qs0023356kbuv55ui2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt0026356kt2siz0bd": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container73"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qt0027356kecu4enx9",
+                  "clmtbf9qt0028356kihqwsix1"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt0027356kecu4enx9": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtRequired",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Scrap",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text38"
+                },
+                "parent": "clmtbf9qt0026356kt2siz0bd",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt0028356kihqwsix1": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "120px",
+                  "height": "auto",
+                  "label": "Scrap",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "dataPath": "productionSetup.productionRun.scrap",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetup.productionRun.scrap",
+                  "fontSize": "h4",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "alignItems": "center",
+                  "format": "float",
+                  "formatString": "0"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text39"
+                },
+                "parent": "clmtbf9qt0026356kt2siz0bd",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt0029356km86jkugb": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container74"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qt002a356k5s9c6jjh",
+                  "clmtbf9qt002b356kgddy4cs4"
+                ],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt002a356k5s9c6jjh": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtRequired",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Required",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text40"
+                },
+                "parent": "clmtbf9qt0029356km86jkugb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt002b356kgddy4cs4": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "120px",
+                  "height": "auto",
+                  "label": "Total Required",
+                  "visible": true,
+                  "formElement": "ProductionSetupOutputForm",
+                  "dataPath": "productionSetup.productionRun.totalRequired",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetup.productionRun.totalRequired",
+                  "fontSize": "h4",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "alignItems": "center",
+                  "format": "float",
+                  "formatString": "0"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text41"
+                },
+                "parent": "clmtbf9qt0029356km86jkugb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt002c356kio0ai7iq": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "6px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "primary"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container75"
+                },
+                "parent": "zb4YCJ_RQ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt002d356k93o50ymn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container76"
+                },
+                "parent": "clmtbf9qr001s356k36g5fz87",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qt002e356kogos0mpg": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 4,
+                  "buttonColor": "green",
+                  "icon": {
+                    "variant": "solid",
+                    "size": "xlarge",
+                    "icon": "plus"
+                  },
+                  "width": "70px",
+                  "height": "70px",
+                  "disabled": {
+                    "__transform": "$isNilOrEmpty($components.ModeForm.data.productionRun)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": true,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "name": "productionQuantity",
+                          "description": "",
+                          "label": "Production Quantity",
+                          "type": "integer",
+                          "dataPath": "productionQuantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "productionQuantity"
+                            ]
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Record Production\""
+                      }
+                    },
+                    {
+                      "type": "flow",
+                      "flowId": "recordProduction",
+                      "transforms": {
+                        "pre": "[{\n  \"workcenterId\": $metadata.urlParameters.id,\n  \"outputId\": 1, /* This needs to be pulled */\n  \"quantity\": data.productionQuantity,\n  \"type\": \"production\"\n}]\n\n/* {\n  \"REQUEST\": {\n\n    \"productionInput\": $.data,\n    'operation': 'Record Production',\n    /* \"workcenterPosition\": $omit($.rowData ,'customData') \n    'productionSetupOutput': $data.card\n  },\n  \"ACTION\": \"Record Production/Scrap\"\n} */"
+                      },
+                      "message": {
+                        "__transform": "\"Production Recorded Successfully\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n\n  $components.ProductionSetupOutputForm.fn.loadData(\n    {\n      \"filter\": {\n        \"workcenterId\": {\n          \"_eq\": $metadata.urlParameters.id\n        }\n      }\n    }\n  );\n  $$\n)",
+                      "transforms": {
+                        "post": "($components.OeeForm.fn.loadData();\n$components.GoalForm.fn.loadData();\n$components.ProductionSetupOutputForm.fn.loadData()\n)"
+                      }
+                    }
+                  ],
+                  "title": "Produce",
+                  "customButtonColor": "#01980a",
+                  "customIconColor": "#ffffff"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton32"
+                },
+                "parent": "GbO6r6TPX",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clmtbf9qu002f356kez9hv8ya": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 4,
+                  "buttonColor": "error",
+                  "icon": {
+                    "variant": "solid",
+                    "size": "xlarge",
+                    "icon": "trash"
+                  },
+                  "width": "70px",
+                  "height": "70px",
+                  "disabled": {
+                    "__transform": "$isNilOrEmpty($components.ModeForm.data.productionRun)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": true,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "name": "scrapQuantity",
+                          "description": "",
+                          "label": "Scrap Quantity",
+                          "type": "integer",
+                          "dataPath": "scrapQuantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "scrapQuantity"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "scrapReason",
+                          "description": "",
+                          "label": "Scrap Reason",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "type": "combobox",
+                          "dataPath": "scrapReason",
+                          "queryType": "ScrapReason",
+                          "optionLimit": 100,
+                          "target": {
+                            "dataPath": "scrapReasonId"
+                          },
+                          "validation": {
+                            "required": false
+                          },
+                          "query": {
+                            "fields": [
+                              "scrapReason.id",
+                              "scrapReason.code"
+                            ]
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Record Scrap\""
+                      }
+                    },
+                    {
+                      "type": "flow",
+                      "transforms": {
+                        "pre": "[{\n  \"workcenterId\": $metadata.urlParameters.id,\n  \"outputId\": 1, /* This needs to be pulled */\n  \"quantity\": data.scrapQuantity,\n  \"type\": \"scrap\",\n  \"options\":{\n    \"scrapReasonId\": data.scrapReasonId\n  }\n}]\n\n/* {\n  \"REQUEST\": {\n\n    \"productionInput\": $.data,\n    'operation': 'Record Production',\n    /* \"workcenterPosition\": $omit($.rowData ,'customData') \n    'productionSetupOutput': $data.card\n  },\n  \"ACTION\": \"Record Production/Scrap\"\n} */"
+                      },
+                      "message": {
+                        "__transform": "\"Scrap Recorded Sucessfully\""
+                      },
+                      "flowId": "recordProduction"
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n \n  $components.ProductionSetupOutputForm.fn.loadData(\n    {\n      \"filter\": {\n        \"workcenterId\": {\n          \"_eq\": $metadata.urlParameters.id\n        }\n      }\n    }\n  )\n)",
+                      "transforms": {
+                        "post": "($components.OeeForm.fn.loadData();\n$components.GoalForm.fn.loadData();\n$components.ProductionSetupOutputForm.fn.loadData()\n)"
+                      }
+                    }
+                  ],
+                  "title": "Scrap",
+                  "customButtonColor": "#ff0000"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton33"
+                },
+                "parent": "GbO6r6TPX",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "e2BepWGWd": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container81"
+                },
+                "parent": "LgrOmaPVU",
+                "hidden": false,
+                "nodes": [
+                  "cB2CPzF9D"
+                ],
+                "linkedNodes": {}
+              },
+              "zb4YCJ_RQ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container82"
+                },
+                "parent": "clmtbf9qr001s356k36g5fz87",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qr001t356kkpg715h2",
+                  "clmtbf9qs0022356karr3g5dk",
+                  "clmtbf9qs0023356kbuv55ui2",
+                  "clmtbf9qt0026356kt2siz0bd",
+                  "clmtbf9qt0029356km86jkugb",
+                  "clmtbf9qt002c356kio0ai7iq"
+                ],
+                "linkedNodes": {}
+              },
+              "FRPBkmORs": {
+                "type": {
+                  "resolvedName": "TabBar"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "auto",
+                  "orientation": "horizontal",
+                  "justifyTabs": "start",
+                  "tabWidth": 160,
+                  "hidden": false,
+                  "tabActiveColor": "secondary",
+                  "tabs": [
+                    {
+                      "tabTitle": "Scheduled Jobs"
+                    },
+                    {
+                      "tabTitle": "Configuration"
+                    }
+                  ]
+                },
+                "displayName": "Tab Bar",
+                "custom": {
+                  "elementName": "TabBar1"
+                },
+                "parent": "eENqzKRHt",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {
+                  "TabBar1Detail0": "CYuaRpFOaf",
+                  "TabBar1Detail1": "gsEBBsxRZ",
+                  "TabBar1Detail2": "XBR2Dj_wc",
+                  "TabBar1Detail3": "D58FiO9xg"
+                }
+              },
+              "CYuaRpFOaf": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail0"
+                },
+                "parent": "FRPBkmORs",
+                "hidden": false,
+                "nodes": [
+                  "fgUnk59QA"
+                ],
+                "linkedNodes": {}
+              },
+              "gsEBBsxRZ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail1"
+                },
+                "parent": "FRPBkmORs",
+                "hidden": false,
+                "nodes": [
+                  "g-M9tAaDO"
+                ],
+                "linkedNodes": {}
+              },
+              "XBR2Dj_wc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail2"
+                },
+                "parent": "FRPBkmORs",
+                "hidden": false,
+                "nodes": [
+                  "cld4owxna04ea356dv1fjrlh3"
+                ],
+                "linkedNodes": {}
+              },
+              "14cWDFlt9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "95%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container84"
+                },
+                "parent": "w-QxuwVrk",
+                "hidden": false,
+                "nodes": [
+                  "LgrOmaPVU"
+                ],
+                "linkedNodes": {}
+              },
+              "GbO6r6TPX": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container85"
+                },
+                "parent": "clmtbf9qr001s356k36g5fz87",
+                "hidden": false,
+                "nodes": [
+                  "clmtbf9qt002e356kogos0mpg",
+                  "PSWVAfuDU",
+                  "clmtbf9qu002f356kez9hv8ya"
+                ],
+                "linkedNodes": {}
+              },
+              "LgrOmaPVU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container87"
+                },
+                "parent": "14cWDFlt9",
+                "hidden": false,
+                "nodes": [
+                  "e2BepWGWd",
+                  "WIh1O99vk"
+                ],
+                "linkedNodes": {}
+              },
+              "WIh1O99vk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container89"
+                },
+                "parent": "LgrOmaPVU",
+                "hidden": false,
+                "nodes": [
+                  "yD-mxpNxD",
+                  "8OjnXTa4k"
+                ],
+                "linkedNodes": {}
+              },
+              "yD-mxpNxD": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": "/* ON PAGE LOAD */\n$executeFlow(\n  \"getOeEsForShift\", \n  { \"workcenterId\": $metadata.urlParameters.id }\n)",
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": true,
+                      "topics": [
+                        {
+                          "topic": "oee.createUpdate"
+                        }
+                      ],
+                      "valueTransform": "\n/* ON DatA CHANGE */\n$executeFlow(\n  \"getOeEsForShift\", \n  { \"workcenterId\": $metadata.urlParameters.id }\n)"
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": \"-1\"\n    }\n  },\n  \"orderBy\": {\n      \"field\": \"startAt\",\"direction\":\"desc\"\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "totalProductionQuantity",
+                      "totalScrapQuantity",
+                      "startAt",
+                      "creditedAt",
+                      "shiftHour"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "Oee"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Measurement of OEE for a given workcenter."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "OeeForm"
+                },
+                "parent": "WIh1O99vk",
+                "hidden": false,
+                "nodes": [
+                  "-gg0OpXSAk"
+                ],
+                "linkedNodes": {}
+              },
+              "-gg0OpXSAk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container90"
+                },
+                "parent": "yD-mxpNxD",
+                "hidden": false,
+                "nodes": [
+                  "cloo9iwxs0067356korgqm8j7"
+                ],
+                "linkedNodes": {}
+              },
+              "D58FiO9xg": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail3"
+                },
+                "parent": "FRPBkmORs",
+                "hidden": false,
+                "nodes": [
+                  "_wMyxnJmC"
+                ],
+                "linkedNodes": {}
+              },
+              "_wMyxnJmC": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": "edges.node~>|$|{\n\"time\":$isNilOrEmpty(data.estimatedTime) ? \"\" : (\n$t := data.estimatedTime;\n$h := $floor($t); \n$m := $round(($t * 60)%60,0);\n$pad($string($h),-2,\"0\") & \":\" & $pad($string($m),-2,\"0\")\n) \n}|",
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "workcenter.id",
+                      "estimatedTime"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_in\": $metadata.urlParameters.id\n    },\"workOrderProcessDistributionStatus\": {\n      \"_in\": [\"New\",\"Started\",\"Hold\"]\n    }\n  },\"orderBy\": {\n    \"field\": \"scheduledStartAt\",\n    \"direction\": \"asc\"\n  }\n}",
+                    "model": "WorkOrderProcessDistributionGroup"
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "rowMultiSelectWithClick": false,
+                  "description": "Data is copied here from the Approved Workcenter Record for the process, if the \"useGlobalRates\" is true on the process - then the values are copied from the workcenter itself."
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table11"
+                },
+                "parent": "D58FiO9xg",
+                "hidden": false,
+                "nodes": [
+                  "UJm7HowM2",
+                  "ApWjhvRtA",
+                  "j8HYHUHNW",
+                  "5keExuCFJ",
+                  "vDakMTxZC",
+                  "6qIGx3Dvv"
+                ],
+                "linkedNodes": {}
+              },
+              "ApWjhvRtA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Process",
+                  "format": "text",
+                  "dataPath": "distributions.edges.0.node.workOrderProcess.code",
+                  "field": "distributions.edges.node.workOrderProcess.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn66"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "j8HYHUHNW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quantity",
+                  "format": "text",
+                  "dataPath": "requiredQuantity",
+                  "description": "What's the required quantity",
+                  "field": "requiredQuantity"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn67"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UJm7HowM2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scheduled Start At",
+                  "format": "datetime",
+                  "dataPath": "scheduledStartAt",
+                  "description": "What is the scheduled start date?",
+                  "field": "scheduledStartAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn68"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6qIGx3Dvv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start",
+                  "format": "action",
+                  "dataPath": "id",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {},
+                  "actions": [
+                    {
+                      "title": "Start",
+                      "icon": {
+                        "icon": "play",
+                        "variant": "solid"
+                      },
+                      "useIconButton": true,
+                      "disabled": {
+                        "__transform": "$not($isNilOrEmpty($components.ProductionSetupOutForm.data.id))",
+                        "__dynamicFields": {
+                          "payload": null,
+                          "context": [
+                            "components.ProductionSetupOutForm.data.id"
+                          ]
+                        },
+                        "__cacheKey": "",
+                        "__remote": false
+                      },
+                      "action": [
+                        {
+                          "type": "flow",
+                          "flowId": "createProductionSetupOutputProductionSetupBomInFuuz",
+                          "transforms": {
+                            "pre": "{\n  \"REQUEST\": {\n\n    \"workcenterId\": rowData.workcenter.id, \n   \"workOrderProcessDistributionGroupId\": rowData.id, \n  \"workOrderProcessId\": rowData.id,\n    \"workOrderProcessDistributionId\": rowData.id,\n    \"productId\": rowData.id\n  },\n  \"ACTION\": \"Load Setup\"\n}",
+                            "post": "(\n  $components.ProductionSetupOutForm.fn.loadData();\n  $components.Form11.loadData();\n  $components.Table11.fn.loadData();\n)\n  "
+                          }
+                        }
+                      ],
+                      "customButtonColor": "#048a00"
+                    }
+                  ]
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn69"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "vDakMTxZC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Status",
+                  "format": "text",
+                  "dataPath": "workOrderProcessDistributionStatus.name",
+                  "field": "workOrderProcessDistributionStatus.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn70"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "5keExuCFJ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Estimated Time",
+                  "format": "text",
+                  "dataPath": "time",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "data.time",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.time"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn71"
+                },
+                "parent": "_wMyxnJmC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PSWVAfuDU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container92"
+                },
+                "parent": "GbO6r6TPX",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cloo9iwxs0067356korgqm8j7": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Visualization",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "formElement": "OeeForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "id",
+                  "visualizationParameters": {
+                    "__transform": "/* VIS PARAMS */\n$components.OeeForm.data.oee.edges.node",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.OeeForm.data.oee"
+                      ]
+                    },
+                    "__cacheKey": "oeeVis",
+                    "__remote": false
+                  },
+                  "query": {
+                    "fields": [
+                      "creditedAt",
+                      "productionTime"
+                    ]
+                  },
+                  "visualizationChartType": "",
+                  "visualizationConfiguration": {
+                    "chart": {
+                      "paletteColors": [
+                        "#00da28",
+                        "#f70000"
+                      ]
+                    },
+                    "xAxis": {
+                      "binning": {
+                        "hour": [
+                          1
+                        ],
+                        "minute": [
+                          1,
+                          10,
+                          30
+                        ],
+                        "second": [],
+                        "millisecond": []
+                      },
+                      "outputTimeFormat": {
+                        "minute": "%b %-d, %Y, %-I:%-M %p"
+                      }
+                    },
+                    "yAxis": [
+                      {
+                        "title": "Value",
+                        "plot": [
+                          {
+                            "value": "ProductionQuantity",
+                            "type": "column",
+                            "palettecolor": "#00da28",
+                            "aggregation": "Sum"
+                          },
+                          {
+                            "value": "ScrapQuantity",
+                            "type": "column",
+                            "paletteColor": "#f70000",
+                            "aggregation": "Sum"
+                          }
+                        ]
+                      }
+                    ],
+                    "series": "Type",
+                    "extensions": {
+                      "standardRangeSelector": {
+                        "enabled": "1"
+                      }
+                    },
+                    "dataEmptyMessage": "No data found"
+                  },
+                  "visualizationTransform": "(\n  $schema := [{\n    \"field\": \"startAt\",\n    \"name\": \"Hour\",\n    \"type\": \"date\",\n    \"format\": \"%Y-%m-%dT%H:%M:%S.%LZ\"\n  }, {\n    \"field\": \"TotalProductionQuantity\",\n    \"name\": \"TotalProductionQuantity\",\n   \n    \"type\": \"number\"\n  },\n   {\n    \"field\": \"TotalScrapQuantity\",\n    \"name\": \"TotalScrapQuantity\",\n\n    \"type\": \"number\"\n  \n  }];\n\n  $data := $.(\n    [startAt, $coalesce([totalProductionQuantity,0]), $coalesce([totalScrapQuantity,0])]\n  )~> $chunk($count($schema));\n\n  {\n    \"schema\": $schema,\n    \"data\": $isNilOrEmpty($data) ? [] : $data,\n    \"xAxis\": {\n      \"initialInterval\": {\n        \"from\": $moment().add(-1,\"hour\").format(\"YYYY-MM-DD HH:mm:ss\"),\n        \"to\": $moment().format(\"YYYY-MM-DD HH:mm:ss\")\n      }\n    }\n  }\n\n)   ",
+                  "visualizationName": "Hourly Production",
+                  "visualizationImageUrl": "https://www.fusioncharts.com/dev/images/chart-anatomy/ms-column-chart-anatomy.png",
+                  "alignItems": "center"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization4",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "-gg0OpXSAk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fgUnk59QA": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "WorkOrderProcessDistribution",
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": id\n    }\n  }, \"first\": 1\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "Data in this table is used to popultae dispatch lists, and generate production setups.",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table12"
+                },
+                "parent": "CYuaRpFOaf",
+                "hidden": false,
+                "nodes": [
+                  "AcU2Ef33g",
+                  "k8p2qhmTi",
+                  "t-HLJZwdU",
+                  "jvChPaWd_"
+                ],
+                "linkedNodes": {}
+              },
+              "AcU2Ef33g": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Job Number",
+                  "format": "text",
+                  "dataPath": "workOrderNumber",
+                  "description": "job number",
+                  "field": "workOrderNumber"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn72"
+                },
+                "parent": "fgUnk59QA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "k8p2qhmTi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product",
+                  "format": "text",
+                  "dataPath": "productNumberRevision",
+                  "description": "partNumberRevision",
+                  "field": "productNumberRevision"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn73"
+                },
+                "parent": "fgUnk59QA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "t-HLJZwdU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Code",
+                  "format": "text",
+                  "dataPath": "operationCode",
+                  "description": "",
+                  "field": "operationCode"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn74"
+                },
+                "parent": "fgUnk59QA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jvChPaWd_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Priority",
+                  "format": "text",
+                  "dataPath": "priority",
+                  "description": "",
+                  "field": "priority"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn75"
+                },
+                "parent": "fgUnk59QA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8OjnXTa4k": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": id\n    }\n  },\"first\":1\n}",
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.idealAggregate",
+                      "productionRun.totalRequired",
+                      "productionRun.standardAggregate",
+                      "productionRun.totalProduction",
+                      "productionRun.produced",
+                      "productionRun.runCrewSize"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "ProductionSetup"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "This table is a list of production setup and it's attributes\nLinks out to: production setup operator, production history, production setup material, and production setup BOM\n\nProduction State Table."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "GoalForm"
+                },
+                "parent": "WIh1O99vk",
+                "hidden": false,
+                "nodes": [
+                  "TiElyOflA4"
+                ],
+                "linkedNodes": {}
+              },
+              "TiElyOflA4": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container95"
+                },
+                "parent": "8OjnXTa4k",
+                "hidden": false,
+                "nodes": [
+                  "zKddiorPX",
+                  "BBmcqXqwc"
+                ],
+                "linkedNodes": {}
+              },
+              "clorcxsqj001d356ei05eyddn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container97"
+                },
+                "parent": "zKddiorPX",
+                "hidden": false,
+                "nodes": [
+                  "clorcxsqj001e356eu2t0gfoa",
+                  "ihP4hmUHY",
+                  "w696-om7c"
+                ],
+                "linkedNodes": {}
+              },
+              "clorcxsqj001e356eu2t0gfoa": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "200",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtRequired",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Goal",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text44"
+                },
+                "parent": "clorcxsqj001d356ei05eyddn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clorcxsqk001f356eix9grhsg": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Production Target",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "dataPath": "productionRun.totalRequired",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionRun.totalRequired",
+                  "fontSize": "h3",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "alignItems": "center",
+                  "format": "float"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text45"
+                },
+                "parent": "w696-om7c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clord1kya002o356e5nnsti3y": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container99"
+                },
+                "parent": "zKddiorPX",
+                "hidden": false,
+                "nodes": [
+                  "clord1kya002p356el8aegnbk",
+                  "clord1kya002q356es84n22ch"
+                ],
+                "linkedNodes": {}
+              },
+              "clord1kya002p356el8aegnbk": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "200",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtRequired",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Run Target/Hour",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text48"
+                },
+                "parent": "clord1kya002o356e5nnsti3y",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clord1kya002q356es84n22ch": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Ideal Rate",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "dataPath": "productionRun.idealAggregate",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionRun.idealAggregate",
+                  "fontSize": "h3",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "alignItems": "end",
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.idealAggregate"
+                    ]
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text49"
+                },
+                "parent": "clord1kya002o356e5nnsti3y",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clord8miy0093356ey2490ukk": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": id\n    }\n  },\"first\":1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "ProductionSetupOutput"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Represents the current output of a workcenter runnning a product or workorder."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form15"
+                },
+                "parent": "7Pqalq181",
+                "hidden": false,
+                "nodes": [
+                  "clord8miy0094356eg6qqjaq3"
+                ],
+                "linkedNodes": {}
+              },
+              "clord8miy0094356eg6qqjaq3": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container103"
+                },
+                "parent": "clord8miy0093356ey2490ukk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "eENqzKRHt": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container104"
+                },
+                "parent": "uJGs7DP-N",
+                "hidden": false,
+                "nodes": [
+                  "FRPBkmORs"
+                ],
+                "linkedNodes": {}
+              },
+              "7Pqalq181": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container105"
+                },
+                "parent": "uJGs7DP-N",
+                "hidden": false,
+                "nodes": [
+                  "clord8miy0093356ey2490ukk"
+                ],
+                "linkedNodes": {}
+              },
+              "hFI2GmxLF": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "200px",
+                  "height": "80px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container106"
+                },
+                "parent": "jyZeRfapD-",
+                "hidden": false,
+                "nodes": [
+                  "uAMUbEAtL"
+                ],
+                "linkedNodes": {}
+              },
+              "uAMUbEAtL": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "__transform": "{\n  \"icon\": $isNilOrEmpty($components.ModeForm.data.productionRun)? \"play\" : \"stop\",\n  \"variant\": \"light\",\n  \"size\": \"icon\"\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "150px",
+                  "height": "60",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "flow",
+                      "flowId": "startStopRun",
+                      "message": {
+                        "__transform": "$isNilOrEmpty($components.ModeForm.data.productionRun)? \"Started Run\" : \"Finished Run\""
+                      },
+                      "transforms": {
+                        "pre": "{ \"workcenterId\": $metadata.urlParameters.id }",
+                        "post": "(\n$components.ModeForm.fn.loadData();\n$components.OeeForm.fn.loadData();\n$components.GoalForm.fn.loadData()\n)"
+                      }
+                    }
+                  ],
+                  "payload": {
+                    "__transform": "{ \"workcenterId\": $metadata.urlParameters.id }",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "text": {
+                    "__transform": "$isNilOrEmpty($components.ModeForm.data.productionRun)? \"Start Run\" :  $components.ModeForm.data.productionRun.number",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "customTextSize": 12,
+                  "customButtonColor": {
+                    "__transform": "$isNilOrEmpty($components.ModeForm.data.productionRun)? \"#00E034\" : \"#ff0000\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton39"
+                },
+                "parent": "hFI2GmxLF",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq0xq2fu00ed356cbbtrsaj6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container107"
+                },
+                "parent": "zKddiorPX",
+                "hidden": false,
+                "nodes": [
+                  "clq0xq2fv00ee356cwdlh1o0z",
+                  "clq0xq2fv00ef356c2alt7ukh"
+                ],
+                "linkedNodes": {}
+              },
+              "clq0xq2fv00ee356cwdlh1o0z": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "200",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "txtAttained",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Run Production",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text54"
+                },
+                "parent": "clq0xq2fu00ed356cbbtrsaj6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq0xq2fv00ef356c2alt7ukh": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Total Output",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "dataPath": "productionRun.totalProduction",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionRun.totalProduction",
+                  "fontSize": "h3",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "alignItems": "end",
+                  "query": {},
+                  "data": {
+                    "__transform": "\"\""
+                  },
+                  "format": "float",
+                  "formatString": "0"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text55"
+                },
+                "parent": "clq0xq2fu00ed356cbbtrsaj6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ihP4hmUHY": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container108"
+                },
+                "parent": "clorcxsqj001d356ei05eyddn",
+                "hidden": false,
+                "nodes": [
+                  "rgfO65YKa"
+                ],
+                "linkedNodes": {}
+              },
+              "g-M9tAaDO": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterId\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "productionRunId"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": "ProductionSetup"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "This table is a list of production setup and it's attributes\nLinks out to: production setup operator, production history, production setup material, and production setup BOM\n\nProduction State Table."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "ConfigForm"
+                },
+                "parent": "gsEBBsxRZ",
+                "hidden": false,
+                "nodes": [
+                  "3pJ3D_F6cr"
+                ],
+                "linkedNodes": {}
+              },
+              "3pJ3D_F6cr": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container109"
+                },
+                "parent": "g-M9tAaDO",
+                "hidden": false,
+                "nodes": [
+                  "Mz0iCwyqJ",
+                  "TzNN5WvOK"
+                ],
+                "linkedNodes": {}
+              },
+              "Mz0iCwyqJ": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "save"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation($payload: [ProductionRunUpdatePayloadInput!]!){\n  updateProductionRun(payload: $payload) { id }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\":{\n    \"where\":{ \"id\": $components.ConfigForm.data.productionRunId },\n    \"update\": {\n      \"runCrewSize\":  $number( $components.ConfigForm.data.productionRun.runCrewSize)\n    }\n  }\n}",
+                        "post": "$components.GoalForm.fn.loadData()"
+                      }
+                    }
+                  ]
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton40",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Save button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Save Button which saves form data.",
+                    "icon": "save",
+                    "requiresForm": true
+                  }
+                },
+                "parent": "3pJ3D_F6cr",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TzNN5WvOK": {
+                "type": {
+                  "resolvedName": "NumberInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "number",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Crew Size",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "ConfigForm",
+                  "dataPath": "productionRun.runCrewSize",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionRun.runCrewSize"
+                },
+                "displayName": "Number",
+                "custom": {
+                  "elementName": "Number1"
+                },
+                "parent": "3pJ3D_F6cr",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zKddiorPX": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "75%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container116"
+                },
+                "parent": "TiElyOflA4",
+                "hidden": false,
+                "nodes": [
+                  "clorcxsqj001d356ei05eyddn",
+                  "clord1kya002o356e5nnsti3y",
+                  "clq0xq2fu00ed356cbbtrsaj6"
+                ],
+                "linkedNodes": {}
+              },
+              "BBmcqXqwc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container117"
+                },
+                "parent": "TiElyOflA4",
+                "hidden": false,
+                "nodes": [
+                  "clq5jn9r600om356ejfo1lupj",
+                  "clq5jotmg00q4356efwer0fl8",
+                  "clq5jrmae00qi356e1i0tfsgi",
+                  "clq5js3d300r4356ec4g293b2"
+                ],
+                "linkedNodes": {}
+              },
+              "clq5jn9r600om356ejfo1lupj": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "99%",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "crewExpected",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Expected Crew",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text65"
+                },
+                "parent": "BBmcqXqwc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq5jotmg00q4356efwer0fl8": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Crew Aggregate",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "dataPath": "productionRun.crewAggregate",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionRun.crewAggregate",
+                  "fontSize": "h3",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "alignItems": "center",
+                  "format": "float"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text66"
+                },
+                "parent": "BBmcqXqwc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq5jrmae00qi356e1i0tfsgi": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "99%",
+                  "height": "auto",
+                  "label": "Text",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "runCrew",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "query": {
+                    "fields": []
+                  },
+                  "text": "Actual Crew",
+                  "fontSize": "h5"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text67"
+                },
+                "parent": "BBmcqXqwc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq5js3d300r4356ec4g293b2": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Run Crew",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "dataPath": "runCrew",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "fontSize": "h3",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "alignItems": "center",
+                  "data": {
+                    "__transform": "$isNilOrEmpty(data.productionRun.runCrewSize) ? \"Not Set\" : $not($isNilOrEmpty(data.productionRun.runCrewSize))"
+                  },
+                  "query": {
+                    "fields": []
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text68"
+                },
+                "parent": "BBmcqXqwc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq5sfx7400a4356ew9vpp2jq": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Name",
+                  "visible": true,
+                  "formElement": "ModeForm",
+                  "dataPath": "mode.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "mode.name",
+                  "query": {
+                    "fields": [
+                      "mode.name",
+                      "event.name"
+                    ]
+                  },
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "fontSize": "h3"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text70"
+                },
+                "parent": "J85spkQxi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0FihnqzuA": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "20",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": ":",
+                        "type": "header-one",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 1,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 1,
+                            "style": "fontsize-30"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text73"
+                },
+                "parent": "J85spkQxi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "w696-om7c": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container118"
+                },
+                "parent": "clorcxsqj001d356ei05eyddn",
+                "hidden": false,
+                "nodes": [
+                  "clorcxsqk001f356eix9grhsg"
+                ],
+                "linkedNodes": {}
+              },
+              "clqe8bnm4002w356eusevkg0h": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "20",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": ":",
+                        "type": "header-one",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 1,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 1,
+                            "style": "fontsize-30"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text74"
+                },
+                "parent": "J85spkQxi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqe8bq790033356e5x02ytsc": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Name",
+                  "visible": true,
+                  "formElement": "ModeForm",
+                  "dataPath": "event.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "event.name",
+                  "query": {
+                    "fields": [
+                      "event.name"
+                    ]
+                  },
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "fontSize": "h3"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text75"
+                },
+                "parent": "J85spkQxi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rgfO65YKa": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "100%",
+                  "label": "Attainment",
+                  "visible": true,
+                  "formElement": "GoalForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "calc",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "query": {
+                    "fields": [
+                      "productionRun.produced",
+                      "productionRun.totalRequired"
+                    ]
+                  },
+                  "data": {
+                    "__transform": "$sum(data.productionRun.produced/data.productionRun.totalRequired)"
+                  },
+                  "format": "float",
+                  "formatString": "0.00%",
+                  "fontSize": "h3"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text76"
+                },
+                "parent": "ihP4hmUHY",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clor8hh5x0002017gf3xt85uu",
+      "title": "Workcenter Control Panel",
+      "path": "/productionManagement/manufacturing/workcenterControlPanel/:id",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterControlPanel",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

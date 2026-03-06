@@ -1,0 +1,221 @@
+{
+  "api": "application",
+  "modelName": "IotTagUseCase",
+  "payload": [
+    {
+      "id": "Event",
+      "name": "Event",
+      "usable": true,
+      "description": "A tag used to signal that a certian event has happened on the machine.\n\nThe value of this tag should correspond to the plcCode field on the eventList in an event group.",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "workcenter": {
+            "type": "object",
+            "inputProps": {
+              "type": "combobox",
+              "padding": 8,
+              "width": "100%",
+              "height": "auto",
+              "label": "Combobox",
+              "multiselect": false,
+              "isClearable": true,
+              "api": "Application",
+              "validation": {
+                "required": false
+              },
+              "visible": true,
+              "formElement": "Form1",
+              "labelField": "code",
+              "labelPath": "code",
+              "orderByField": "code",
+              "stateTracking": "full",
+              "additionalFields": "modeGroupId",
+              "query": {
+                "fields": [
+                  "id",
+                  "code"
+                ]
+              },
+              "queryType": "Workcenter"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Mode",
+      "name": "Mode",
+      "usable": true,
+      "description": "A  tag used to signal a machine has changed its mode.\n\nThis should correspond tot he plcCode field on the eventList in a event group.",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "workcenter": {
+            "type": "object",
+            "inputProps": {
+              "type": "combobox",
+              "padding": 8,
+              "width": "100%",
+              "height": "auto",
+              "label": "Combobox",
+              "multiselect": false,
+              "isClearable": true,
+              "api": "Application",
+              "validation": {
+                "required": false
+              },
+              "visible": true,
+              "formElement": "Form1",
+              "labelField": "code",
+              "labelPath": "code",
+              "orderByField": "code",
+              "stateTracking": "full",
+              "additionalFields": "modeGroupId",
+              "query": {
+                "fields": [
+                  "id",
+                  "code"
+                ]
+              },
+              "queryType": "Workcenter"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "usable": true,
+      "description": "For tags that do not fit into one of the already defined uses cases",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "dataFlowId": {
+            "type": "string",
+            "inputProps": {
+              "type": "combobox",
+              "queryType": "DataFlow",
+              "label": "Data Flow",
+              "labelField": "name",
+              "additionalFilter": {
+                "active": {
+                  "_eq": true
+                }
+              }
+            }
+          },
+          "info": {
+            "inputProps": {
+              "type": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Production",
+      "name": "Production",
+      "usable": true,
+      "description": "A tag used to signal that a machine as produced a part",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "object",
+            "inputProps": {
+              "type": "select",
+              "padding": 8,
+              "height": "auto",
+              "label": "Workcenter Output",
+              "dialogMode": false,
+              "multiselect": false,
+              "isClearable": true,
+              "selectAll": true,
+              "searchPredicate": "contains",
+              "api": "Application",
+              "validation": {
+                "required": false
+              },
+              "visible": true,
+              "stateTracking": "full",
+              "formElement": "Form1",
+              "labelPath": "workcenter.code",
+              "additionalFilter": {
+                "__transform": "{ \"workcenterId\": { \"_eq\": $metadata.urlParameters.id } }"
+              },
+              "additionalFields": [
+                "workcenterId"
+              ],
+              "query": {
+                "fields": [
+                  "workcenter.code",
+                  "outputId"
+                ]
+              },
+              "dataModel": "ProductionSetupOutput",
+              "selectFields": [
+                "outputId",
+                "workcenter.code"
+              ],
+              "field": "productionOutputId"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "Scrap",
+      "name": "Scrap",
+      "usable": true,
+      "description": "A tag used to signal that scrap has been produced",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "object",
+            "inputProps": {
+              "type": "select",
+              "padding": 8,
+              "height": "auto",
+              "label": "Workcenter Output",
+              "dialogMode": false,
+              "multiselect": false,
+              "isClearable": true,
+              "selectAll": true,
+              "searchPredicate": "contains",
+              "api": "Application",
+              "validation": {
+                "required": false
+              },
+              "visible": true,
+              "stateTracking": "full",
+              "formElement": "Form1",
+              "labelPath": "workcenter.code",
+              "additionalFilter": {
+                "__transform": "{ \"workcenterId\": { \"_eq\": $metadata.urlParameters.id } }"
+              },
+              "additionalFields": [
+                "workcenterId"
+              ],
+              "query": {
+                "fields": [
+                  "workcenter.code",
+                  "outputId"
+                ]
+              },
+              "dataModel": "ProductionSetupOutput",
+              "selectFields": [
+                "outputId",
+                "workcenter.code"
+              ],
+              "field": "productionOutputId"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {}
+}

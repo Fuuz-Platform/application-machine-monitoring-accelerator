@@ -1,0 +1,215 @@
+{
+  "header": {
+    "id": "workcenterMode",
+    "name": "WorkcenterMode",
+    "description": "This table lists the workcenters and, modes",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "cloepdavr001o018m5uva49bb",
+    "number": "19",
+    "dataModelId": "workcenterMode",
+    "modelDefinition": {
+      "name": "WorkcenterMode",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": false
+          },
+          "labelField": "number",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "workcenterMode"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "number",
+          "type": "String!",
+          "description": "An auto-number that is created for the end-user experience.  This field is also used as the table's label.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "plcCode",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "mode",
+          "description": "",
+          "type": "Mode",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "modeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table lists the workcenters and, modes"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "cloepdavr001o018m5uva49bb",
+      "dataModelVersion": {
+        "number": "19"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloelzi7i000e01745roqeuo5",
+      "dataModelVersion": {
+        "number": "18"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnne36b2000p019l64ky6t2z",
+      "dataModelVersion": {
+        "number": "17"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj6q82i001h01a5c3cr8gw0",
+      "dataModelVersion": {
+        "number": "16"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl5vd3wff004j01agfqqzhk41",
+      "dataModelVersion": {
+        "number": "15"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

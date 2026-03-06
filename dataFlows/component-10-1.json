@@ -1,0 +1,864 @@
+{
+  "header": {
+    "id": "noModeGroupConfigured",
+    "name": "No Mode Group Configured",
+    "description": "Used for prompting an end user when no mode group has been defined.",
+    "active": true,
+    "dataFlowTypeId": "Screen",
+    "moduleId": "manufacturing"
+  },
+  "version": {
+    "id": "clp8h32hn000h01avgvib49d6",
+    "number": "0.0.31",
+    "description": "",
+    "dataFlowId": "noModeGroupConfigured",
+    "flow": {
+      "id": "clp8h32hn000h01avgvib49d6",
+      "name": "No Mode Group Configured",
+      "type": "Screen",
+      "nodes": [
+        {
+          "id": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+          "name": "If Else",
+          "type": "ifElse",
+          "data": {
+            "transform": "$not($isNilOrEmpty($components.EventCards.data))",
+            "onTrueNextNodes": [
+              "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7"
+            ],
+            "onFalseNextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+          "name": "Delay",
+          "type": "delay",
+          "data": {
+            "nextNodes": [
+              "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+              "33e1b7a4-ad41-4b0c-a570-8339d03f2197"
+            ],
+            "delay": 1000
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+          "name": "Confirm Dialog",
+          "type": "confirm",
+          "data": {
+            "messageTransform": "\"No Mode Group or Events Configured for this Workcenter\"",
+            "buttonColorTransform": "\"primary\"",
+            "onConfirmNextNodes": [],
+            "onDeclineNextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6ee16be7-552f-45b9-bdec-73dabe692ee7",
+          "name": "Request",
+          "type": "request",
+          "data": {
+            "nextNodes": [
+              "6d162681-6cb2-47ed-b79b-f2789027cf98"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+          "name": "If Else",
+          "type": "ifElse",
+          "data": {
+            "transform": "$isNilOrEmpty($components.ModeHistoryCards.data)",
+            "onTrueNextNodes": [
+              "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+              "201437b8-972f-4c16-8066-7f799c4c00a7"
+            ],
+            "onFalseNextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+          "name": "Show No Mode Error",
+          "type": "hideShowContainer",
+          "data": {
+            "action": "show",
+            "screenElementTransform": "\"Container15\"",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "201437b8-972f-4c16-8066-7f799c4c00a7",
+          "name": "Show Modes List",
+          "type": "hideShowContainer",
+          "data": {
+            "action": "hide",
+            "screenElementTransform": "\"Container8\"",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.31"
+    },
+    "diagram": {
+      "id": "clp8h32hn000h01avgvib49d6",
+      "offsetX": -249,
+      "offsetY": 55,
+      "zoom": 100,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "929d369d-e242-4d57-a907-15382176c56e",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "7e72296b-23f2-45b3-bae6-8d5804b747e1": {
+              "points": [
+                {
+                  "id": "35196a55-5443-4df8-8539-6e755120c602",
+                  "type": "point",
+                  "x": 494,
+                  "y": 204.41
+                },
+                {
+                  "id": "a5915ebe-3852-4722-9d72-082139086c0b",
+                  "type": "point",
+                  "x": 534.33,
+                  "y": 84.41
+                }
+              ],
+              "id": "7e72296b-23f2-45b3-bae6-8d5804b747e1",
+              "type": "default",
+              "selected": false,
+              "source": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+              "sourcePort": "clp8et27r002o356es64xwmms",
+              "target": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+              "targetPort": "clp8essct002e356ey1bximoh",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "069c1f74-d9ae-4d2e-8071-8d4a8b236ae4": {
+              "points": [
+                {
+                  "id": "02ce283d-6447-40b5-a6ed-28a0ef6c9a75",
+                  "type": "point",
+                  "x": 688.99,
+                  "y": 84.41
+                },
+                {
+                  "id": "881628d6-74e5-4064-9901-39f09ba93374",
+                  "type": "point",
+                  "x": 794.33,
+                  "y": 79.41
+                }
+              ],
+              "id": "069c1f74-d9ae-4d2e-8071-8d4a8b236ae4",
+              "type": "default",
+              "selected": false,
+              "source": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+              "sourcePort": "clp8essct002g356edxv1eo0n",
+              "target": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+              "targetPort": "clp8ewre2003y356e8q7kn7bm",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "fdf2c7d0-169c-4798-aced-6d908b1d1a89": {
+              "points": [
+                {
+                  "id": "c87003d1-752c-405d-b6d5-44150cc539a7",
+                  "type": "point",
+                  "x": 208.99,
+                  "y": 164.41
+                },
+                {
+                  "id": "d948a8d0-2909-4e60-90e0-dfbcde037530",
+                  "type": "point",
+                  "x": 339.33,
+                  "y": 204.41
+                }
+              ],
+              "id": "fdf2c7d0-169c-4798-aced-6d908b1d1a89",
+              "type": "default",
+              "selected": false,
+              "source": "66d25ae7-bdc5-492b-abe3-92e837ba4e31",
+              "sourcePort": "clp8f1gz7007m356en2gx1hul",
+              "target": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+              "targetPort": "clp8et27r002m356ex9ubfgag",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "be395465-49d6-4a9f-abcd-3c4233d63efc": {
+              "points": [
+                {
+                  "id": "ca9e3610-c983-42d9-952f-29d2b666819f",
+                  "type": "point",
+                  "x": 204,
+                  "y": 324.41
+                },
+                {
+                  "id": "facee65b-29db-4a29-a5c4-15ca9b610ea9",
+                  "type": "point",
+                  "x": 339.33,
+                  "y": 204.41
+                }
+              ],
+              "id": "be395465-49d6-4a9f-abcd-3c4233d63efc",
+              "type": "default",
+              "selected": false,
+              "source": "6ee16be7-552f-45b9-bdec-73dabe692ee7",
+              "sourcePort": "clp8f2snr0083356e02aqm9z5",
+              "target": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+              "targetPort": "clp8et27r002m356ex9ubfgag",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "16e72f9f-dd02-4816-992c-a0b255af613d": {
+              "points": [
+                {
+                  "id": "043b79a7-1031-4569-a3cd-75cc87f7bb7c",
+                  "type": "point",
+                  "x": 494,
+                  "y": 204.41
+                },
+                {
+                  "id": "ef641a78-209b-4198-a995-d5702b047b8b",
+                  "type": "point",
+                  "x": 539.33,
+                  "y": 329.41
+                }
+              ],
+              "id": "16e72f9f-dd02-4816-992c-a0b255af613d",
+              "type": "default",
+              "selected": false,
+              "source": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+              "sourcePort": "clp8et27r002o356es64xwmms",
+              "target": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+              "targetPort": "clp8f5wmw00e9356ebeq82xle",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "31d0d5ab-0637-4f9e-8e45-739dff1d66c5": {
+              "points": [
+                {
+                  "id": "ca3a67b2-7094-4273-bc32-7adec8770223",
+                  "type": "point",
+                  "x": 693.99,
+                  "y": 329.41
+                },
+                {
+                  "id": "e35139d3-c9f4-4ff6-9c60-08e9cffb1cb1",
+                  "type": "point",
+                  "x": 804.33,
+                  "y": 309.41
+                }
+              ],
+              "id": "31d0d5ab-0637-4f9e-8e45-739dff1d66c5",
+              "type": "default",
+              "selected": false,
+              "source": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+              "sourcePort": "clp8f5wmx00eb356eq6xgitb0",
+              "target": "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+              "targetPort": "clp8f701800ga356exsacf963",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "0611c411-6de0-4ba0-a09b-dbda05b5f363": {
+              "points": [
+                {
+                  "id": "f1ba6deb-05fc-40d7-bd3d-2af46efac864",
+                  "type": "point",
+                  "x": 693.99,
+                  "y": 329.41
+                },
+                {
+                  "id": "0f57dab7-18c9-445c-86af-af9bd8c6a2b7",
+                  "type": "point",
+                  "x": 809.33,
+                  "y": 384.41
+                }
+              ],
+              "id": "0611c411-6de0-4ba0-a09b-dbda05b5f363",
+              "type": "default",
+              "selected": false,
+              "source": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+              "sourcePort": "clp8f5wmx00eb356eq6xgitb0",
+              "target": "201437b8-972f-4c16-8066-7f799c4c00a7",
+              "targetPort": "clp8gpdkb0176356ezfy1j08n",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "b33dcc80-229c-40e6-a55d-fddc16103b39",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "dc7a34cd-9b08-4364-b854-13e95efdf2fc": {
+              "id": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+              "type": "ifElse",
+              "selected": false,
+              "x": 535,
+              "y": 45,
+              "ports": [
+                {
+                  "id": "clp8essct002e356ey1bximoh",
+                  "type": "default",
+                  "x": 526.67,
+                  "y": 76.74,
+                  "name": "clp8essct002f356eoq6in0tr",
+                  "parentNode": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+                  "links": [
+                    "7e72296b-23f2-45b3-bae6-8d5804b747e1"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8essct002g356edxv1eo0n",
+                  "type": "default",
+                  "x": 681.33,
+                  "y": 76.74,
+                  "name": "clp8essct002h356ep95mxrqa",
+                  "parentNode": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+                  "links": [
+                    "069c1f74-d9ae-4d2e-8071-8d4a8b236ae4"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "True",
+                  "fieldPath": "data.onTrueNextNodes"
+                },
+                {
+                  "id": "clp8essct002i356e1z0zjchy",
+                  "type": "default",
+                  "x": 681.33,
+                  "y": 101.9,
+                  "name": "clp8essct002j356ef12wd8ha",
+                  "parentNode": "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "False",
+                  "fieldPath": "data.onFalseNextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$not($isNilOrEmpty($components.EventCards.data))",
+                "onTrueNextNodes": [
+                  "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7"
+                ],
+                "onFalseNextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "If Else"
+            },
+            "6d162681-6cb2-47ed-b79b-f2789027cf98": {
+              "id": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+              "type": "delay",
+              "selected": false,
+              "x": 340,
+              "y": 165,
+              "ports": [
+                {
+                  "id": "clp8et27r002m356ex9ubfgag",
+                  "type": "default",
+                  "x": 331.67,
+                  "y": 196.74,
+                  "name": "clp8et27r002n356evhqjhdrd",
+                  "parentNode": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+                  "links": [
+                    "fdf2c7d0-169c-4798-aced-6d908b1d1a89",
+                    "be395465-49d6-4a9f-abcd-3c4233d63efc"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8et27r002o356es64xwmms",
+                  "type": "default",
+                  "x": 486.34,
+                  "y": 196.74,
+                  "name": "clp8et27r002p356e6p93nt4y",
+                  "parentNode": "6d162681-6cb2-47ed-b79b-f2789027cf98",
+                  "links": [
+                    "7e72296b-23f2-45b3-bae6-8d5804b747e1",
+                    "16e72f9f-dd02-4816-992c-a0b255af613d"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "dc7a34cd-9b08-4364-b854-13e95efdf2fc",
+                  "33e1b7a4-ad41-4b0c-a570-8339d03f2197"
+                ],
+                "delay": 1000
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Delay"
+            },
+            "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7": {
+              "id": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+              "type": "confirm",
+              "selected": false,
+              "x": 795,
+              "y": 40,
+              "ports": [
+                {
+                  "id": "clp8ewre2003y356e8q7kn7bm",
+                  "type": "default",
+                  "x": 786.67,
+                  "y": 71.74,
+                  "name": "clp8ewre2003z356ep379yp16",
+                  "parentNode": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+                  "links": [
+                    "069c1f74-d9ae-4d2e-8071-8d4a8b236ae4"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8ewre20040356ez8o0u3yz",
+                  "type": "default",
+                  "x": 941.34,
+                  "y": 71.74,
+                  "name": "clp8ewre20041356e7v4zyt2e",
+                  "parentNode": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Confirm",
+                  "fieldPath": "data.onConfirmNextNodes"
+                },
+                {
+                  "id": "clp8ewre20042356e6tiji345",
+                  "type": "default",
+                  "x": 941.34,
+                  "y": 96.9,
+                  "name": "clp8ewre20043356etei2o7dr",
+                  "parentNode": "e80d50b7-5d76-4f4f-8c94-30d8c54dfbd7",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Decline",
+                  "fieldPath": "data.onDeclineNextNodes"
+                }
+              ],
+              "data": {
+                "messageTransform": "\"No Mode Group or Events Configured for this Workcenter\"",
+                "buttonColorTransform": "\"primary\"",
+                "onConfirmNextNodes": [],
+                "onDeclineNextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Confirm Dialog"
+            },
+            "66d25ae7-bdc5-492b-abe3-92e837ba4e31": {
+              "id": "66d25ae7-bdc5-492b-abe3-92e837ba4e31",
+              "type": "debugSource",
+              "selected": false,
+              "x": 55,
+              "y": 125,
+              "ports": [
+                {
+                  "id": "clp8f1gz7007m356en2gx1hul",
+                  "type": "default",
+                  "x": 201.33,
+                  "y": 156.74,
+                  "name": "clp8f1gz7007n356ed8yzawz6",
+                  "parentNode": "66d25ae7-bdc5-492b-abe3-92e837ba4e31",
+                  "links": [
+                    "fdf2c7d0-169c-4798-aced-6d908b1d1a89"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {},
+                "context": {},
+                "nextNodes": [
+                  "6d162681-6cb2-47ed-b79b-f2789027cf98"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source"
+            },
+            "6ee16be7-552f-45b9-bdec-73dabe692ee7": {
+              "id": "6ee16be7-552f-45b9-bdec-73dabe692ee7",
+              "type": "request",
+              "selected": false,
+              "x": 50,
+              "y": 285,
+              "ports": [
+                {
+                  "id": "clp8f2snr0083356e02aqm9z5",
+                  "type": "default",
+                  "x": 196.34,
+                  "y": 316.74,
+                  "name": "clp8f2snr0084356e8m6q5stw",
+                  "parentNode": "6ee16be7-552f-45b9-bdec-73dabe692ee7",
+                  "links": [
+                    "be395465-49d6-4a9f-abcd-3c4233d63efc"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "6d162681-6cb2-47ed-b79b-f2789027cf98"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Request"
+            },
+            "33e1b7a4-ad41-4b0c-a570-8339d03f2197": {
+              "id": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+              "type": "ifElse",
+              "selected": true,
+              "x": 540,
+              "y": 290,
+              "ports": [
+                {
+                  "id": "clp8f5wmw00e9356ebeq82xle",
+                  "type": "default",
+                  "x": 531.67,
+                  "y": 321.74,
+                  "name": "clp8f5wmx00ea356eebj00221",
+                  "parentNode": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+                  "links": [
+                    "16e72f9f-dd02-4816-992c-a0b255af613d"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8f5wmx00eb356eq6xgitb0",
+                  "type": "default",
+                  "x": 686.33,
+                  "y": 321.74,
+                  "name": "clp8f5wmx00ec356etx9ocw6l",
+                  "parentNode": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+                  "links": [
+                    "31d0d5ab-0637-4f9e-8e45-739dff1d66c5",
+                    "0611c411-6de0-4ba0-a09b-dbda05b5f363"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "True",
+                  "fieldPath": "data.onTrueNextNodes"
+                },
+                {
+                  "id": "clp8f5wmx00ed356eu6qjrszb",
+                  "type": "default",
+                  "x": 686.33,
+                  "y": 346.9,
+                  "name": "clp8f5wmx00ee356evy64yqr8",
+                  "parentNode": "33e1b7a4-ad41-4b0c-a570-8339d03f2197",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "False",
+                  "fieldPath": "data.onFalseNextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$isNilOrEmpty($components.ModeHistoryCards.data)",
+                "onTrueNextNodes": [
+                  "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+                  "201437b8-972f-4c16-8066-7f799c4c00a7"
+                ],
+                "onFalseNextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "If Else"
+            },
+            "726ae975-fcec-4f84-89d4-d42870fdbe5d": {
+              "id": "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+              "type": "hideShowContainer",
+              "selected": false,
+              "x": 805,
+              "y": 270,
+              "ports": [
+                {
+                  "id": "clp8f701800ga356exsacf963",
+                  "type": "default",
+                  "x": 796.67,
+                  "y": 301.74,
+                  "name": "clp8f701800gb356e5ogz9m3o",
+                  "parentNode": "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+                  "links": [
+                    "31d0d5ab-0637-4f9e-8e45-739dff1d66c5"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8f701800gc356e9nr2t246",
+                  "type": "default",
+                  "x": 953.71,
+                  "y": 301.74,
+                  "name": "clp8f701800gd356evn5wnn3a",
+                  "parentNode": "726ae975-fcec-4f84-89d4-d42870fdbe5d",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "action": "show",
+                "screenElementTransform": "\"Container15\"",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Show No Mode Error"
+            },
+            "201437b8-972f-4c16-8066-7f799c4c00a7": {
+              "id": "201437b8-972f-4c16-8066-7f799c4c00a7",
+              "type": "hideShowContainer",
+              "selected": false,
+              "x": 810,
+              "y": 345,
+              "ports": [
+                {
+                  "id": "clp8gpdkb0176356ezfy1j08n",
+                  "type": "default",
+                  "x": 801.67,
+                  "y": 376.74,
+                  "name": "clp8gpdkb0177356exwvf2taf",
+                  "parentNode": "201437b8-972f-4c16-8066-7f799c4c00a7",
+                  "links": [
+                    "0611c411-6de0-4ba0-a09b-dbda05b5f363"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clp8gpdkc0178356e3pv0l08v",
+                  "type": "default",
+                  "x": 956.34,
+                  "y": 376.74,
+                  "name": "clp8gpdkc0179356e8tvajpic",
+                  "parentNode": "201437b8-972f-4c16-8066-7f799c4c00a7",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "action": "hide",
+                "screenElementTransform": "\"Container8\"",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Show Modes List"
+            }
+          }
+        }
+      ],
+      "name": "No Mode Group Configured",
+      "type": "Screen",
+      "version": "0.0.31",
+      "walkthrough": {
+        "steps": []
+      }
+    }
+  }
+}

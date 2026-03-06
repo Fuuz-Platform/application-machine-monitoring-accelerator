@@ -1,0 +1,47 @@
+{
+  "api": "application",
+  "modelName": "IotTagType",
+  "payload": [
+    {
+      "id": "FUUZ",
+      "name": "FUUZ",
+      "usable": true,
+      "description": "A value that does NOT come directly from a device. This would be a value that is is set from a data flow or some other FUUZ process .",
+      "configurationSchema": {}
+    },
+    {
+      "id": "MQTT",
+      "name": "MQTT",
+      "usable": true,
+      "description": "A value from a topic in an MQTT  Broker",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "id": "OPCUA",
+      "name": "OPCUA",
+      "usable": true,
+      "description": "A value from a node on a OPCUA server",
+      "configurationSchema": {
+        "type": "object",
+        "properties": {
+          "nodeId": {
+            "type": "string",
+            "inputProps": {
+              "type": "browseTree",
+              "loadTransform": "( $response := $executeDeviceFunction({ \"deviceId\": deviceId, \"functionId\": \"opcuaBrowse\", \"request\": requestArgs }); $not($isNilOrEmpty($response.error)) ? $throw($response.error.message) : $response.response )",
+              "mappingTransform": "$map(nodeData, function($data) { {\"label\": $data.displayName.text, \"hasPlaceHolder\": true, \"data\": { \"requestArgs\": { \"nodeId\": $data.nodeId}, \"value\": $data.nodeId  } } })"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {}
+}

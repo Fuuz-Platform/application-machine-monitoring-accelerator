@@ -1,0 +1,267 @@
+{
+  "header": {
+    "id": "eventMessage",
+    "name": "Event Message",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": true
+  },
+  "version": {
+    "id": "clot3u0za36ce01b81lz846oa",
+    "number": "0.0.2",
+    "description": "",
+    "screenId": "eventMessage",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Form": 3,
+                    "Container": 13,
+                    "Time": 6,
+                    "Checkbox": 15,
+                    "Text": 4,
+                    "Tab Bar": 1,
+                    "Action Button": 6,
+                    "Switch": 24
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "wEAzjDv-5"
+                ],
+                "linkedNodes": {}
+              },
+              "wEAzjDv-5": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "300",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container9"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "clot3kkr3003c356eelyyxw4n"
+                ],
+                "linkedNodes": {}
+              },
+              "clot3kkr3003c356eelyyxw4n": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}\n",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": "WorkcenterHistory"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)"
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form3"
+                },
+                "parent": "wEAzjDv-5",
+                "hidden": false,
+                "nodes": [
+                  "clot3kkr4003d356ersi5m6wa"
+                ],
+                "linkedNodes": {}
+              },
+              "clot3kkr4003d356ersi5m6wa": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container13"
+                },
+                "parent": "clot3kkr3003c356eelyyxw4n",
+                "hidden": false,
+                "nodes": [
+                  "clot3kkr4003e356eejiq9pca"
+                ],
+                "linkedNodes": {}
+              },
+              "clot3kkr4003e356eejiq9pca": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container10"
+                },
+                "parent": "clot3kkr4003d356ersi5m6wa",
+                "hidden": false,
+                "nodes": [
+                  "WGx8yFG6B"
+                ],
+                "linkedNodes": {}
+              },
+              "WGx8yFG6B": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Required Notes for Event:",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form3",
+                  "dataPath": "message",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Enter your notes regarding this event.",
+                  "field": "message",
+                  "multiline": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "clot3kkr4003e356eejiq9pca",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clot3q94yr43z01b8d4jxg274",
+      "title": "Event Message",
+      "path": "/productionManagement/manufacturing/eventMessage",
+      "moduleId": "manufacturing",
+      "screenId": "eventMessage",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

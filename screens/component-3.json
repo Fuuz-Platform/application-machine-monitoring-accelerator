@@ -1,0 +1,230 @@
+{
+  "header": {
+    "id": "dispatch",
+    "name": "Dispatch",
+    "description": "",
+    "active": true,
+    "moduleId": null,
+    "isWidget": false
+  },
+  "version": {
+    "id": "clpmz05h6000901724r338yft",
+    "number": "0.0.1",
+    "description": "",
+    "screenId": "dispatch",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "undefinedForm",
+          "tabTitle": "Blank Form",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 5,
+                    "Action Button": 2,
+                    "Form": 1,
+                    "Text": 2,
+                    "Display": 4,
+                    "Combobox": 1
+                  },
+                  "template": "form"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "R5TSyd0Bih"
+                ],
+                "linkedNodes": {}
+              },
+              "R5TSyd0Bih": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "model": "TransactionType"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "description": "This table is a list of systems flags that are used to describe the different  transaction types.\nLinks out to cost transaction map"
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "tvVv9-g85w"
+                ],
+                "linkedNodes": {}
+              },
+              "tvVv9-g85w": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "R5TSyd0Bih",
+                "hidden": false,
+                "nodes": [
+                  "n7utYqd3Bz"
+                ],
+                "linkedNodes": {}
+              },
+              "n7utYqd3Bz": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "tvVv9-g85w",
+                "hidden": false,
+                "nodes": [
+                  "pvsrRI37U"
+                ],
+                "linkedNodes": {}
+              },
+              "pvsrRI37U": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Distribution",
+                  "multiselect": true,
+                  "isClearable": false,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "distribution",
+                  "labelField": "number",
+                  "labelPath": "number",
+                  "orderByField": "number",
+                  "query": {
+                    "fields": [
+                      "distribution.id",
+                      "distribution.number"
+                    ]
+                  },
+                  "queryType": "WorkOrderProcessDistribution",
+                  "options": [],
+                  "additionalFields": "id",
+                  "disabled": false
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "n7utYqd3Bz",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": []
+}

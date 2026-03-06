@@ -1,0 +1,1218 @@
+{
+  "header": {
+    "id": "eventPriorityAdmin",
+    "name": "Event Priority (Admin)",
+    "description": "",
+    "active": true,
+    "moduleId": null,
+    "isWidget": false
+  },
+  "version": {
+    "id": "cloukrjze33zr0182d2j2g05e",
+    "number": "0.0.1",
+    "description": "",
+    "screenId": "eventPriorityAdmin",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "EventPriorityTable",
+          "tabTitle": "Event Priority Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Text": 2,
+                    "Integer": 4,
+                    "Checkbox": 5,
+                    "Table Column": 9
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "EventPriority",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "gu8A1VGIIe",
+                  "wtn_sBd46e",
+                  "PWw881iToV"
+                ],
+                "linkedNodes": {}
+              },
+              "gu8A1VGIIe": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "eDfDi_HQvN"
+                ],
+                "linkedNodes": {}
+              },
+              "eDfDi_HQvN": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "EventPriority",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "gu8A1VGIIe",
+                "hidden": false,
+                "nodes": [
+                  "fFQ2FeTOIi"
+                ],
+                "linkedNodes": {}
+              },
+              "fFQ2FeTOIi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "flex-end",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "background": "paper",
+                  "collapsible": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "eDfDi_HQvN",
+                "hidden": false,
+                "nodes": [
+                  "tRX4rh6MAW",
+                  "eWe7NOKmET",
+                  "SnZjo5-knb",
+                  "pl-vuceU2Y",
+                  "fd_Xw5A3Hh",
+                  "EahBr3iD1s",
+                  "latxsYfQrz",
+                  "ElzTzenWKk",
+                  "JF0KSDG0-I",
+                  "u02WGW0D5B",
+                  "ZIxrijheg0"
+                ],
+                "linkedNodes": {}
+              },
+              "tRX4rh6MAW": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "",
+                  "width": "300px",
+                  "element": "TextInput",
+                  "type": "text",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "eWe7NOKmET": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Red Minutes Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "redMinutes._gte",
+                  "field": "redMinutes",
+                  "description": "number of minutes before going red",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer1"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "SnZjo5-knb": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Red Minutes Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "redMinutes._lte",
+                  "field": "redMinutes",
+                  "description": "number of minutes before going red",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer2"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pl-vuceU2Y": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Yellow Minutes Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "yellowMinutes._gte",
+                  "field": "yellowMinutes",
+                  "description": "Number of Minutes before going Yellow",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer3"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fd_Xw5A3Hh": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Yellow Minutes Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "yellowMinutes._lte",
+                  "field": "yellowMinutes",
+                  "description": "Number of Minutes before going Yellow",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer4"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EahBr3iD1s": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Critical",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "critical",
+                  "field": "critical",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "critical._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox1"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "latxsYfQrz": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "High",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "high",
+                  "field": "high",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "high._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox2"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ElzTzenWKk": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Low",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "low",
+                  "field": "low",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "low._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox3"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "JF0KSDG0-I": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Medium",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "medium",
+                  "field": "medium",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "medium._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox4"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "u02WGW0D5B": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "usable",
+                  "field": "usable",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "usable._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox5"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZIxrijheg0": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "description",
+                  "field": "description",
+                  "description": "",
+                  "width": "300px",
+                  "element": "TextInput",
+                  "type": "text",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "description._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "fFQ2FeTOIi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wtn_sBd46e": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "FR0HUFNGpL",
+                  "bIHQC-W6Xw",
+                  "7e5UPjOTFx",
+                  "fMngVp7xOG"
+                ],
+                "linkedNodes": {}
+              },
+              "FR0HUFNGpL": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "wtn_sBd46e",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bIHQC-W6Xw": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Event Priority",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Red Minutes",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "redMinutes",
+                          "field": "redMinutes",
+                          "description": "number of minutes before going red",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Yellow Minutes",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "yellowMinutes",
+                          "field": "yellowMinutes",
+                          "description": "Number of Minutes before going Yellow",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Critical",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "critical",
+                          "field": "critical",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "High",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "high",
+                          "field": "high",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Low",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "low",
+                          "field": "low",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Medium",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "medium",
+                          "field": "medium",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateEventPriority($payload: [EventPriorityCreatePayloadInput!]!) {\n  mutation: createEventPriority(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Event Priority \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "wtn_sBd46e",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7e5UPjOTFx": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Event Priority \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Red Minutes",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "redMinutes",
+                          "field": "redMinutes",
+                          "description": "number of minutes before going red",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Yellow Minutes",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "yellowMinutes",
+                          "field": "yellowMinutes",
+                          "description": "Number of Minutes before going Yellow",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Critical",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "critical",
+                          "field": "critical",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "High",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "high",
+                          "field": "high",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Low",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "low",
+                          "field": "low",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Medium",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "medium",
+                          "field": "medium",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateEventPriority($payload: [EventPriorityUpdatePayloadInput!]!) {\n  mutation: updateEventPriority(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Event Priority \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "wtn_sBd46e",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fMngVp7xOG": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Event Priority \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteEventPriority($payload: [EventPriorityDeletePayloadInput!]!) {\n  mutation: deleteEventPriority(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Event Priority \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "wtn_sBd46e",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PWw881iToV": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "EventPriority",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "filterFormName": "Form1",
+                  "description": ""
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "oZhnOWl0pd",
+                  "rqojzspRk8",
+                  "ELd82upd8m",
+                  "HGyLv-9qpC",
+                  "AATGfqOukk",
+                  "VhGECuKLoF",
+                  "BjTeADgh4K",
+                  "G6kBZYiQcU",
+                  "DmMljyrrIQ"
+                ],
+                "linkedNodes": {}
+              },
+              "oZhnOWl0pd": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "name",
+                  "dataPath": "name",
+                  "label": "Name",
+                  "description": "",
+                  "format": "text",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/eventPriorities/\" & data.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rqojzspRk8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "redMinutes",
+                  "dataPath": "redMinutes",
+                  "label": "Red Minutes",
+                  "description": "number of minutes before going red",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ELd82upd8m": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "yellowMinutes",
+                  "dataPath": "yellowMinutes",
+                  "label": "Yellow Minutes",
+                  "description": "Number of Minutes before going Yellow",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HGyLv-9qpC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "critical",
+                  "dataPath": "critical",
+                  "label": "Critical",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AATGfqOukk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "high",
+                  "dataPath": "high",
+                  "label": "High",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VhGECuKLoF": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "low",
+                  "dataPath": "low",
+                  "label": "Low",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BjTeADgh4K": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "medium",
+                  "dataPath": "medium",
+                  "label": "Medium",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "G6kBZYiQcU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "usable",
+                  "dataPath": "usable",
+                  "label": "Usable",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DmMljyrrIQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "description",
+                  "dataPath": "description",
+                  "label": "Description",
+                  "description": "",
+                  "format": "markdown"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "PWw881iToV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": []
+}

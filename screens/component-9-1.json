@@ -1,0 +1,4471 @@
+{
+  "header": {
+    "id": "initialHomeScreen",
+    "name": "Home Screen",
+    "description": "",
+    "active": true,
+    "moduleId": "configuration",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clwqlz3s00daq0181cmp4fedq",
+    "number": "0.0.28",
+    "description": "",
+    "screenId": "initialHomeScreen",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen 2",
+          "tabTitle": "New Tab 2",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 106,
+                    "Text": 7,
+                    "Action Button": 58,
+                    "Tab Bar": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "krQS87iuy"
+                ],
+                "linkedNodes": {}
+              },
+              "krQS87iuy": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container13"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "NYKV5phZ-"
+                ],
+                "linkedNodes": {}
+              },
+              "NYKV5phZ-": {
+                "type": {
+                  "resolvedName": "TabBar"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "100%",
+                  "orientation": "vertical",
+                  "justifyTabs": "start",
+                  "tabWidth": 160,
+                  "hidden": true,
+                  "tabActiveColor": "secondary",
+                  "tabs": [
+                    {
+                      "tabTitle": "MAIN"
+                    },
+                    {
+                      "tabTitle": "ADMIN"
+                    },
+                    {
+                      "tabTitle": "SUPERVISOR"
+                    },
+                    {
+                      "tabTitle": "ALARMS"
+                    },
+                    {
+                      "tabTitle": "ANALYST"
+                    }
+                  ]
+                },
+                "displayName": "Tab Bar",
+                "custom": {
+                  "elementName": "TabBar1"
+                },
+                "parent": "krQS87iuy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {
+                  "TabBar1Detail0": "zQsSJhyYWB",
+                  "TabBar1Detail1": "xRIPy9SsZK",
+                  "TabBar1Detail2": "bJCG02Y7B",
+                  "TabBar1Detail3": "BPW1S4Xgx9",
+                  "TabBar1Detail4": "8qRlL4EIIv",
+                  "TabBar1Detail5": "2zgkMMgJI"
+                }
+              },
+              "zQsSJhyYWB": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail0"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksi002l356g834wgvgj"
+                ],
+                "linkedNodes": {}
+              },
+              "xRIPy9SsZK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail1"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fy007a356gqoqy6ums"
+                ],
+                "linkedNodes": {}
+              },
+              "bJCG02Y7B": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail2"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhng00gf356gdvoz4d1m"
+                ],
+                "linkedNodes": {}
+              },
+              "BPW1S4Xgx9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail3"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p0356gr9rg7ywj"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksi002l356g834wgvgj": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-width": "100vw",
+                    "max-height": "100vh"
+                  },
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container31"
+                },
+                "parent": "zQsSJhyYWB",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksi002m356gf0qk5uij",
+                  "clwnhgksj002s356gx96ixapc"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksi002m356gf0qk5uij": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "70",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "1px solid #d0d0d0",
+                    "borderLeft": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "10vh"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container17"
+                },
+                "parent": "clwnhgksi002l356g834wgvgj",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksi002n356gpp6k3khq",
+                  "clwnhgksi002o356gsk0c38el",
+                  "clwnhgksj002q356g5712lw6u"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksi002n356gpp6k3khq": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "33%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container14"
+                },
+                "parent": "clwnhgksi002m356gf0qk5uij",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksi002o356gsk0c38el": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "33%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container15"
+                },
+                "parent": "clwnhgksi002m356gf0qk5uij",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksi002p356gqpepwm4l"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksi002p356gqpepwm4l": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "MAIN MENU",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 9,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 9,
+                            "style": "BOLD"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 9,
+                            "style": "fontsize-18"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "clwnhgksi002o356gsk0c38el",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksj002q356g5712lw6u": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "33%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container16"
+                },
+                "parent": "clwnhgksi002m356gf0qk5uij",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksj002s356gx96ixapc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "90vh",
+                    "overflow-x": "hidden",
+                    "overflow-y": "scroll",
+                    "scrollbar-width": "none"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container30"
+                },
+                "parent": "clwnhgksi002l356g834wgvgj",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksj002t356gax57v9pi"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksj002t356gax57v9pi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container29"
+                },
+                "parent": "clwnhgksj002s356gx96ixapc",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksj002u356gnycf2els",
+                  "clwnhgksk0034356gp87phg9w",
+                  "clwnhgksk0036356gk6o12weu",
+                  "clwnhgksk0038356grjjug9ke"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksj002u356gnycf2els": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container18"
+                },
+                "parent": "clwnhgksj002t356gax57v9pi",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksj002v356gbx8xwv6u"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksj002v356gbx8xwv6u": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "screwdriver-wrench",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(1)"
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "ADMIN SETUP",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton7"
+                },
+                "parent": "clwnhgksj002u356gnycf2els",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0034356gp87phg9w": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container23"
+                },
+                "parent": "clwnhgksj002t356gax57v9pi",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksk0035356g71hrv1yw"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0035356g71hrv1yw": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "user-helmet-safety",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(2)"
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "SUPERVISOR",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton12"
+                },
+                "parent": "clwnhgksk0034356gp87phg9w",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0036356gk6o12weu": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container24"
+                },
+                "parent": "clwnhgksj002t356gax57v9pi",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksk0037356gahyjrjzo"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0037356gahyjrjzo": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "alarm-exclamation",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(3)"
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "MAINTENANCE",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton13"
+                },
+                "parent": "clwnhgksk0036356gk6o12weu",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0038356grjjug9ke": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container25"
+                },
+                "parent": "clwnhgksj002t356gax57v9pi",
+                "hidden": false,
+                "nodes": [
+                  "clwnhgksk0039356gtdjynt0a"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhgksk0039356gtdjynt0a": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "chart-mixed",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(4)"
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "ANALYST",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton14"
+                },
+                "parent": "clwnhgksk0038356grjjug9ke",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6fy007a356gqoqy6ums": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-width": "100vw",
+                    "max-height": "100vh"
+                  },
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container42"
+                },
+                "parent": "xRIPy9SsZK",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fy007b356gvmb04uum",
+                  "clwnhm6fz007h356gndpwlfph"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fy007b356gvmb04uum": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "70",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "1px solid #d0d0d0",
+                    "borderLeft": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "10vh"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container35"
+                },
+                "parent": "clwnhm6fy007a356gqoqy6ums",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fy007c356gm6dvr692",
+                  "clwnhm6fz007d356g0sd5mm7o",
+                  "clwnhm6fz007f356gdq0a435y"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fy007c356gm6dvr692": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container32"
+                },
+                "parent": "clwnhm6fy007b356gvmb04uum",
+                "hidden": false,
+                "nodes": [
+                  "clwnlrvkb00cv356gdmaj3ao5"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007d356g0sd5mm7o": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container33"
+                },
+                "parent": "clwnhm6fy007b356gvmb04uum",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fz007e356g8vzsyfxa"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007e356g8vzsyfxa": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "ADMIN MENU",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 10,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 10,
+                            "style": "BOLD"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 10,
+                            "style": "fontsize-18"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "clwnhm6fz007d356g0sd5mm7o",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007f356gdq0a435y": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container34"
+                },
+                "parent": "clwnhm6fy007b356gvmb04uum",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fz007g356gcp28tsrf"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007g356gcp28tsrf": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "house-blank",
+                    "color": "secondary",
+                    "variant": "light",
+                    "size": "large"
+                  },
+                  "width": "50",
+                  "height": "auto",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(0)"
+                    }
+                  ],
+                  "title": "Mobile Home Screen",
+                  "customIconSize": 0
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton18"
+                },
+                "parent": "clwnhm6fz007f356gdq0a435y",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007h356gndpwlfph": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "90vh",
+                    "overflow-x": "hidden",
+                    "overflow-y": "scroll",
+                    "scrollbar-width": "none"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container41"
+                },
+                "parent": "clwnhm6fy007a356gqoqy6ums",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fz007i356gq4ndsrw7"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007i356gq4ndsrw7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container40"
+                },
+                "parent": "clwnhm6fz007h356gndpwlfph",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fz007j356gbmatig0a",
+                  "clwnhm6g0007l356gdcu2tvlf",
+                  "clwnhm6g0007n356gu48wgtv0",
+                  "clwnhm6g1007p356geeessdg6",
+                  "clwnhs73w00c6356ga42k3iup",
+                  "clwnhsa3o00c8356gregplmb9",
+                  "clwnhvo9p00eb356g6sj24wbi",
+                  "clwnhvox100ed356gve5e9r6u"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007j356gbmatig0a": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container36"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6fz007k356g4p5xpcs0"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6fz007k356g4p5xpcs0": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "calendar-clock",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/system/configuration/settings/TimeZone",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "TIMEZONE",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton19"
+                },
+                "parent": "clwnhm6fz007j356gbmatig0a",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6g0007l356gdcu2tvlf": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container37"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6g0007m356gu53nkbf9"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6g0007m356gu53nkbf9": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "calendar-range",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/shiftGroups?ShiftGroupTable.Table1.view=Default",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "SHIFTS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton20"
+                },
+                "parent": "clwnhm6g0007l356gdcu2tvlf",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6g0007n356gu48wgtv0": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container38"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6g0007o356gpwbvr38h"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6g0007o356gpwbvr38h": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "file-import",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/system/integration/masterDataImport?New%20Screen.Table1.view=Default",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "IMPORT DATA",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton21"
+                },
+                "parent": "clwnhm6g0007n356gu48wgtv0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhm6g1007p356geeessdg6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container39"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhm6g1007q356g8d0dcq25"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhm6g1007q356g8d0dcq25": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "triangle-exclamation",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/eventManagement?Form%20Template.EventTable.view=Default",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "DOWNTIME EVENTS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton22"
+                },
+                "parent": "clwnhm6g1007p356geeessdg6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhs73w00c6356ga42k3iup": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container43"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhs73w00c7356gfzzsrw3z"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhs73w00c7356gfzzsrw3z": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "traffic-light-go",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/modeManagement",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "WORKCENTER MODES",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton23"
+                },
+                "parent": "clwnhs73w00c6356ga42k3iup",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhsa3o00c8356gregplmb9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container44"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhsa3o00c9356gfrmjjp79"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhsa3o00c9356gfrmjjp79": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "conveyor-belt",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/workcenters",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "WORKCENTERS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton24"
+                },
+                "parent": "clwnhsa3o00c8356gregplmb9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhvo9p00eb356g6sj24wbi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container45"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhvo9p00ec356g9zjf832f"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhvo9p00ec356g9zjf832f": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "gauge",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/approvedWorkcenters",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "RATES",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton25"
+                },
+                "parent": "clwnhvo9p00eb356g6sj24wbi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhvox100ed356gve5e9r6u": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container46"
+                },
+                "parent": "clwnhm6fz007i356gq4ndsrw7",
+                "hidden": false,
+                "nodes": [
+                  "clwnhvox100ee356gcvh7j023"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhvox100ee356gcvh7j023": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "router",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/system/internetOfThings/deviceGateways",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "GATEWAY",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton26"
+                },
+                "parent": "clwnhvox100ed356gve5e9r6u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gf356gdvoz4d1m": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-width": "100vw",
+                    "max-height": "100vh"
+                  },
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container61"
+                },
+                "parent": "bJCG02Y7B",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhng00gg356gi9d4z8um",
+                  "clwnhzhnh00gm356gbs9mfxbr"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gg356gi9d4z8um": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "70",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "1px solid #d0d0d0",
+                    "borderLeft": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "10vh"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container50"
+                },
+                "parent": "clwnhzhng00gf356gdvoz4d1m",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhng00gh356gh5p2unve",
+                  "clwnhzhng00gi356gruo343jn",
+                  "clwnhzhng00gk356g6nehp3u5"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gh356gh5p2unve": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container47"
+                },
+                "parent": "clwnhzhng00gg356gi9d4z8um",
+                "hidden": false,
+                "nodes": [
+                  "clwnlrphf00cp356g4n289g7r"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gi356gruo343jn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container48"
+                },
+                "parent": "clwnhzhng00gg356gi9d4z8um",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhng00gj356gu12xxfkx"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gj356gu12xxfkx": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "SUPERVISOR MENU",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 15,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 15,
+                            "style": "BOLD"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 15,
+                            "style": "fontsize-18"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "clwnhzhng00gi356gruo343jn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gk356g6nehp3u5": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container49"
+                },
+                "parent": "clwnhzhng00gg356gi9d4z8um",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhng00gl356g9g1gtaro"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhng00gl356g9g1gtaro": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "house-blank",
+                    "color": "secondary",
+                    "variant": "light",
+                    "size": "large"
+                  },
+                  "width": "50",
+                  "height": "auto",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(0)"
+                    }
+                  ],
+                  "title": "Mobile Home Screen",
+                  "customIconSize": 0
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton27"
+                },
+                "parent": "clwnhzhng00gk356g6nehp3u5",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhnh00gm356gbs9mfxbr": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "90vh",
+                    "overflow-x": "hidden",
+                    "overflow-y": "scroll",
+                    "scrollbar-width": "none"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container60"
+                },
+                "parent": "clwnhzhng00gf356gdvoz4d1m",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnh00gn356gjjhqvcz2"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnh00gn356gjjhqvcz2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container59"
+                },
+                "parent": "clwnhzhnh00gm356gbs9mfxbr",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnh00go356gwtmjgk1f",
+                  "clwnhzhni00gq356gohi39omp",
+                  "clwnhzhnj00gs356g78kklqot",
+                  "clwnhzhnj00gu356g2rxi9we7",
+                  "clwnhzhnk00gw356gsiydm53l",
+                  "clwnhzhnk00gy356g567e1e4z"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnh00go356gwtmjgk1f": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container51"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnh00gp356gl2ukhhuo"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnh00gp356gl2ukhhuo": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "conveyor-belt-boxes",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/productionSetups",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PRODUCTION SETUPS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton28"
+                },
+                "parent": "clwnhzhnh00go356gwtmjgk1f",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhni00gq356gohi39omp": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container52"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhni00gr356ghhgtyyh4"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhni00gr356ghhgtyyh4": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "timeline-arrow",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/workcenterHistories",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "WC HISTORY",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton29"
+                },
+                "parent": "clwnhzhni00gq356gohi39omp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhnj00gs356g78kklqot": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container53"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnj00gt356gapd9v05c"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnj00gt356gapd9v05c": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "list-timeline",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/productionHistories",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PROD HISTORY",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton30"
+                },
+                "parent": "clwnhzhnj00gs356g78kklqot",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhnj00gu356g2rxi9we7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container54"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnj00gv356grfsux0u7"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnj00gv356grfsux0u7": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "industry-windows",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/plantDashboardV2",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PLANT DASHBOARD",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton31"
+                },
+                "parent": "clwnhzhnj00gu356g2rxi9we7",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhnk00gw356gsiydm53l": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container55"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnk00gx356g9sb3a8t9"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnk00gx356g9sb3a8t9": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "layer-plus",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/workcenterGroupDashboard/:id",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "GROUP DASHBAORD",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton32"
+                },
+                "parent": "clwnhzhnk00gw356gsiydm53l",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnhzhnk00gy356g567e1e4z": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container56"
+                },
+                "parent": "clwnhzhnh00gn356gjjhqvcz2",
+                "hidden": false,
+                "nodes": [
+                  "clwnhzhnk00gz356gi109saeu"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnhzhnk00gz356gi109saeu": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "conveyor-belt",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/system/dashboard/workcenterGroupDashboardV2/:id",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "GROUP DASHBOARD 2",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton33"
+                },
+                "parent": "clwnhzhnk00gy356g567e1e4z",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8qRlL4EIIv": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail4"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200r7356gx4p7vise"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p0356gr9rg7ywj": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-width": "100vw",
+                    "max-height": "100vh"
+                  },
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container74"
+                },
+                "parent": "BPW1S4Xgx9",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p1356gzcq7xudt",
+                  "clwni770q00p7356gh084nab1"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p1356gzcq7xudt": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "70",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "1px solid #d0d0d0",
+                    "borderLeft": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "10vh"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container65"
+                },
+                "parent": "clwni770q00p0356gr9rg7ywj",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p2356g9f2avrnh",
+                  "clwni770q00p3356ge3zjrm0n",
+                  "clwni770q00p5356gb66v7ow9"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p2356g9f2avrnh": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container62"
+                },
+                "parent": "clwni770q00p1356gzcq7xudt",
+                "hidden": false,
+                "nodes": [
+                  "zilksr_QU"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p3356ge3zjrm0n": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container63"
+                },
+                "parent": "clwni770q00p1356gzcq7xudt",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p4356gcfxt6h6c"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p4356gcfxt6h6c": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "ALARMS MENU",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 11,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 11,
+                            "style": "BOLD"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 11,
+                            "style": "fontsize-18"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "clwni770q00p3356ge3zjrm0n",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni770q00p5356gb66v7ow9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container64"
+                },
+                "parent": "clwni770q00p1356gzcq7xudt",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p6356glvsjm6yu"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p6356glvsjm6yu": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "house-blank",
+                    "color": "secondary",
+                    "variant": "light",
+                    "size": "large"
+                  },
+                  "width": "50",
+                  "height": "auto",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(0)"
+                    }
+                  ],
+                  "title": "Mobile Home Screen",
+                  "customIconSize": 0
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton36"
+                },
+                "parent": "clwni770q00p5356gb66v7ow9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni770q00p7356gh084nab1": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "90vh",
+                    "overflow-x": "hidden",
+                    "overflow-y": "scroll",
+                    "scrollbar-width": "none"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container73"
+                },
+                "parent": "clwni770q00p0356gr9rg7ywj",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p8356g76ifbub7"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p8356g76ifbub7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container72"
+                },
+                "parent": "clwni770q00p7356gh084nab1",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00p9356gazm642yq"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00p9356gazm642yq": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container66"
+                },
+                "parent": "clwni770q00p8356g76ifbub7",
+                "hidden": false,
+                "nodes": [
+                  "clwni770q00pa356g0yvzrk2r"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni770q00pa356g0yvzrk2r": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "alarm-exclamation",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/alarmControlPanel",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "ALARMS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton37"
+                },
+                "parent": "clwni770q00p9356gazm642yq",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni8gd200r7356gx4p7vise": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-width": "100vw",
+                    "max-height": "100vh"
+                  },
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container82"
+                },
+                "parent": "8qRlL4EIIv",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200r8356gsykvcfru",
+                  "clwni8gd200re356ghkupj2z1"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200r8356gsykvcfru": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "70",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "1px solid #d0d0d0",
+                    "borderLeft": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "10vh"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container78"
+                },
+                "parent": "clwni8gd200r7356gx4p7vise",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200r9356g33qyvtnn",
+                  "clwni8gd200ra356g4y8qk862",
+                  "clwni8gd200rc356g48ill6r4"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200r9356g33qyvtnn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container75"
+                },
+                "parent": "clwni8gd200r8356gsykvcfru",
+                "hidden": false,
+                "nodes": [
+                  "clwnlrj3n00cf356gc0jhhmw6"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200ra356g4y8qk862": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container76"
+                },
+                "parent": "clwni8gd200r8356gsykvcfru",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200rb356g9tmwwlse"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rb356g9tmwwlse": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "ANALYST MENU",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 12,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 12,
+                            "style": "BOLD"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 12,
+                            "style": "fontsize-18"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "clwni8gd200ra356g4y8qk862",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rc356g48ill6r4": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container77"
+                },
+                "parent": "clwni8gd200r8356gsykvcfru",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200rd356gj7psvl2m"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rd356gj7psvl2m": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "house-blank",
+                    "color": "secondary",
+                    "variant": "light",
+                    "size": "large"
+                  },
+                  "width": "50",
+                  "height": "auto",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.TabBar1.fn.setTab(0)"
+                    }
+                  ],
+                  "title": "Mobile Home Screen",
+                  "customIconSize": 0
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton43"
+                },
+                "parent": "clwni8gd200rc356g48ill6r4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni8gd200re356ghkupj2z1": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "max-height": "90vh",
+                    "overflow-x": "hidden",
+                    "overflow-y": "scroll",
+                    "scrollbar-width": "none"
+                  },
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container81"
+                },
+                "parent": "clwni8gd200r7356gx4p7vise",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200rf356gcsboiekm"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rf356gcsboiekm": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 2,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container80"
+                },
+                "parent": "clwni8gd200re356ghkupj2z1",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200rg356g7fswgvqr",
+                  "clwni9p7y00t9356gu0o5txz6",
+                  "clwni9uh300ti356g91vm0byb",
+                  "clwnib41q00ud356ggyaqomg2",
+                  "clwnib4fs00uf356g8b99hlg4"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rg356g7fswgvqr": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container79"
+                },
+                "parent": "clwni8gd200rf356gcsboiekm",
+                "hidden": false,
+                "nodes": [
+                  "clwni8gd200rh356g6ixi8b7g"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni8gd200rh356g6ixi8b7g": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "alarm-exclamation",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/productionSetups",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PRODUCTION SETUPS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton44"
+                },
+                "parent": "clwni8gd200rg356g7fswgvqr",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni9p7y00t9356gu0o5txz6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container86"
+                },
+                "parent": "clwni8gd200rf356gcsboiekm",
+                "hidden": false,
+                "nodes": [
+                  "clwni9p7y00ta356g8yd4xcfy"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni9p7y00ta356g8yd4xcfy": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "calendar-range",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/workcenterHistories",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "WC HISTORY",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton48"
+                },
+                "parent": "clwni9p7y00t9356gu0o5txz6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwni9uh300ti356g91vm0byb": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container87"
+                },
+                "parent": "clwni8gd200rf356gcsboiekm",
+                "hidden": false,
+                "nodes": [
+                  "clwni9uh300tj356gf62hz1al"
+                ],
+                "linkedNodes": {}
+              },
+              "clwni9uh300tj356gf62hz1al": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "list-timeline",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/productionHistories",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PROD HISTORY",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton49"
+                },
+                "parent": "clwni9uh300ti356g91vm0byb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnib41q00ud356ggyaqomg2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container88"
+                },
+                "parent": "clwni8gd200rf356gcsboiekm",
+                "hidden": false,
+                "nodes": [
+                  "clwnib41q00ue356gfelqfplh"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnib41q00ue356gfelqfplh": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "chart-line-up",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/oees",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "OEE DATA",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton50"
+                },
+                "parent": "clwnib41q00ud356ggyaqomg2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnib4fs00uf356g8b99hlg4": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 6,
+                  "margin": 3,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 6,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px solid #d0d0d0"
+                  },
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container89"
+                },
+                "parent": "clwni8gd200rf356gcsboiekm",
+                "hidden": false,
+                "nodes": [
+                  "clwnib4fs00ug356ggqwvk4mo"
+                ],
+                "linkedNodes": {}
+              },
+              "clwnib4fs00ug356ggqwvk4mo": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 8,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "arrow-down-wide-short",
+                    "color": "primary",
+                    "variant": "light",
+                    "size": "xlarge"
+                  },
+                  "width": "120",
+                  "height": "120",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": true,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "navigation",
+                      "navigationType": "New Webpage",
+                      "target": "/productionManagement/manufacturing/productionRuns",
+                      "newWindow": true
+                    }
+                  ],
+                  "customTextSize": 12,
+                  "text": "PROD RUNS",
+                  "customIconSize": 3
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton51"
+                },
+                "parent": "clwnib4fs00uf356g8b99hlg4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2zgkMMgJI": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail5"
+                },
+                "parent": "NYKV5phZ-",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zilksr_QU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container103"
+                },
+                "parent": "clwni770q00p2356g9f2avrnh",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnlrj3n00cf356gc0jhhmw6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container104"
+                },
+                "parent": "clwni8gd200r9356g33qyvtnn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnlrphf00cp356g4n289g7r": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container105"
+                },
+                "parent": "clwnhzhng00gh356gh5p2unve",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clwnlrvkb00cv356gdmaj3ao5": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container106"
+                },
+                "parent": "clwnhm6fy007c356gm6dvr692",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clp2wkyce0013018cbdi8hd7q",
+      "title": "Home Screen",
+      "path": "/system/configuration/initialHomeScreen",
+      "moduleId": "configuration",
+      "screenId": "initialHomeScreen",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

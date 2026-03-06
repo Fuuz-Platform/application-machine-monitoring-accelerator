@@ -1,0 +1,130 @@
+{
+  "api": "application",
+  "modelName": "Topic",
+  "payload": [
+    {
+      "id": "clnm0vgbl000p019f3hts0pah",
+      "name": "plex.api.workcenters",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnm2089n000q015t4bi321p7",
+      "name": "plex.api.done",
+      "description": "",
+      "valueSchema": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string"
+          },
+          "import": {
+            "type": "string"
+          },
+          "options": {
+            "type": "object",
+            "properties": {
+              "stopAfter": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnn9thug000h01cgfbh3a9qr",
+      "name": "plex.api.productionSetups",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnnkwqn2000x01a3fkg57htb",
+      "name": "plex.api.augmentProductionSetup",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnnkx9as000y01a3fvniejhr",
+      "name": "plex.api.one.augmentProductionSetup",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnp0j398001w015thviaf1hj",
+      "name": "plex.api.workcenterHistory",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnp1pbb6001x015tgfp13gwv",
+      "name": "plex.api.productionHistory",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnsznrg50002014t0ff5gcgd",
+      "name": "plex.api.approvedWorkcenters",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnuuwl61000x018z72gy0xnu",
+      "name": "plex.api.scrap",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnxcrg9i0004017k0yse9jjc",
+      "name": "plex.api.buildings",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnxcsozc0003017jgjuqhlp3",
+      "name": "plex.api.modes",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clnxcsumy0002013k40sm0uvg",
+      "name": "plex.api.events",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clo64zl29000f0174f6co4q33",
+      "name": "plex.api.one.productionSetups",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "cloj0dvrc000m0167hfngc3ql",
+      "name": "productionSetup.modeChange",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    },
+    {
+      "id": "clq5pszed000y01apbsrnha78",
+      "name": "oee.createUpdate",
+      "description": "",
+      "valueSchema": {},
+      "webhookAccessible": false
+    }
+  ],
+  "metadata": {}
+}

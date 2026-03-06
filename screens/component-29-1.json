@@ -1,0 +1,3199 @@
+{
+  "header": {
+    "id": "workOrderProcessDistribution",
+    "name": "Work Order Process Distribution ",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clq5xbt0h000t013n8wv2cejv",
+    "number": "0.0.5",
+    "description": "",
+    "screenId": "workOrderProcessDistribution",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "WorkOrderProcessDistributionTable",
+          "tabTitle": "Work Order Process Distribution Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 9,
+                    "Combobox": 5,
+                    "Text": 21,
+                    "Float": 22,
+                    "Table Column": 47
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "WorkOrderProcessDistribution",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "JcZGUdkSqL",
+                  "K9zEpTvBOc",
+                  "m3yUcMCFx_"
+                ],
+                "linkedNodes": {}
+              },
+              "JcZGUdkSqL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "O2_fiJlOGW"
+                ],
+                "linkedNodes": {}
+              },
+              "O2_fiJlOGW": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkOrderProcessDistribution",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "JcZGUdkSqL",
+                "hidden": false,
+                "nodes": [
+                  "EeiNBYHiFy"
+                ],
+                "linkedNodes": {}
+              },
+              "EeiNBYHiFy": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": true,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "O2_fiJlOGW",
+                "hidden": false,
+                "nodes": [
+                  "Evi9p-Dj6Y",
+                  "8a5EvDtk4P",
+                  "gFmjBaY1ZZ",
+                  "NTJ3MNVe58",
+                  "tC_vQ2aOJJ",
+                  "4HOW_R9taf",
+                  "wYGbhfO7n2",
+                  "9L9kcNgPzp",
+                  "kql8qSZJ4R",
+                  "7KU5Rv3A3i",
+                  "lkChLyhJtW",
+                  "WyNvPFFms4",
+                  "trpcIzUK7K",
+                  "itj9c22Qr1",
+                  "-dgLDju8nh",
+                  "FVGMU1faB-",
+                  "HhS8ZhLYmS",
+                  "sH1BrJTOGT",
+                  "a8wEU0YZd6",
+                  "tyDTZXDY3P",
+                  "GBNVbuZYty",
+                  "HN-YY-4ps-",
+                  "gFS5-D1wHH",
+                  "VL7z8JiRtN",
+                  "CoqoB8vn6R",
+                  "0tBZa3OtlE",
+                  "DL2MWXeUXz",
+                  "_urfLxJleM",
+                  "n_vICu3y5t",
+                  "-urol3kWCR",
+                  "GesdXX47-W",
+                  "dSzY1Mh35j",
+                  "cJX0q87Rah",
+                  "3qSKq_qz8_",
+                  "L2sfA8-8gL"
+                ],
+                "linkedNodes": {}
+              },
+              "Evi9p-Dj6Y": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Created At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "createdAt",
+                  "field": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange1"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8a5EvDtk4P": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Created By User",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "createdByUser",
+                  "field": "createdByUser",
+                  "description": "The User who created this record.",
+                  "element": "Combobox",
+                  "queryType": "User",
+                  "labelField": "email",
+                  "labelPath": "email",
+                  "additionalFields": "email",
+                  "target": {
+                    "dataPath": "createdByUser.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/system/accessControl/users/\" & data.createdByUser.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "createdByUser.id",
+                      "createdByUser.email"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gFmjBaY1ZZ": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Updated At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "updatedAt",
+                  "field": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange2"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NTJ3MNVe58": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Updated By User",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "updatedByUser",
+                  "field": "updatedByUser",
+                  "description": "The User who last updated this record.",
+                  "element": "Combobox",
+                  "queryType": "User",
+                  "labelField": "email",
+                  "labelPath": "email",
+                  "additionalFields": "email",
+                  "target": {
+                    "dataPath": "updatedByUser.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/system/accessControl/users/\" & data.updatedByUser.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "updatedByUser.id",
+                      "updatedByUser.email"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox2"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tC_vQ2aOJJ": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "id",
+                  "field": "id",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "id._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4HOW_R9taf": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Number",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "number",
+                  "field": "number",
+                  "description": "Distribution or Run Number sequence",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "number._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wYGbhfO7n2": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Batch Criteria",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "batchCriteria",
+                  "field": "batchCriteria",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "batchCriteria._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9L9kcNgPzp": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Distribution Status",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "distributionStatus",
+                  "field": "distributionStatus",
+                  "description": "jobOperationStatus",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "distributionStatus._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kql8qSZJ4R": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "External Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "externalId",
+                  "field": "externalId",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "externalId._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7KU5Rv3A3i": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Job Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "jobId",
+                  "field": "jobId",
+                  "description": "jobId from API",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "jobId._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lkChLyhJtW": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Job Operation Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "jobOperationId",
+                  "field": "jobOperationId",
+                  "description": "job operation Id from API",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "jobOperationId._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text7"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WyNvPFFms4": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Operation Code",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationCode",
+                  "field": "operationCode",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "operationCode._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text8"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "trpcIzUK7K": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Operation Number",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationNumber",
+                  "field": "operationNumber",
+                  "description": "job operation number",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "operationNumber._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text9"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "itj9c22Qr1": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Part Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "partId",
+                  "field": "partId",
+                  "description": "partId from API",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "partId._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text10"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-dgLDju8nh": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Priority",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "priority",
+                  "field": "priority",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "priority._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text11"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FVGMU1faB-": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Process Type",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "processType",
+                  "field": "processType",
+                  "description": "part operation type",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "processType._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text12"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HhS8ZhLYmS": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Product Number",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productNumber",
+                  "field": "productNumber",
+                  "description": "partNumber",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "productNumber._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text13"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "sH1BrJTOGT": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Product Number Revision",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productNumberRevision",
+                  "field": "productNumberRevision",
+                  "description": "partNumberRevision",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "productNumberRevision._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text14"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a8wEU0YZd6": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Product Operation Type",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productOperationType",
+                  "field": "productOperationType",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "productOperationType._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text15"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tyDTZXDY3P": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Product Revision",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productRevision",
+                  "field": "productRevision",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "productRevision._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text16"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GBNVbuZYty": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Unit Of Measure",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "unitOfMeasure",
+                  "field": "unitOfMeasure",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "unitOfMeasure._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text17"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HN-YY-4ps-": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Work Order Number",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workOrderNumber",
+                  "field": "workOrderNumber",
+                  "description": "job number",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "workOrderNumber._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text18"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gFS5-D1wHH": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Work Order Status",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workOrderStatus",
+                  "field": "workOrderStatus",
+                  "description": "job status",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "workOrderStatus._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text19"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VL7z8JiRtN": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Work Order Type",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workOrderType",
+                  "field": "workOrderType",
+                  "description": "job type",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "workOrderType._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text20"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CoqoB8vn6R": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Actual Finish At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "actualFinishAt",
+                  "field": "actualFinishAt",
+                  "description": "What is the actual finish date? Completed Date",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange3"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0tBZa3OtlE": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Actual Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "actualStartAt",
+                  "field": "actualStartAt",
+                  "description": "What is the actual start date?",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange4"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DL2MWXeUXz": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Job Due At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "jobDueAt",
+                  "field": "jobDueAt",
+                  "description": "due date from list jobs (work order due date)",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange5"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_urfLxJleM": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Job Earliest Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "jobEarliestStartAt",
+                  "field": "jobEarliestStartAt",
+                  "description": "",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange6"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "n_vICu3y5t": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Operation Due At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationDueAt",
+                  "field": "operationDueAt",
+                  "description": "due date from list job operation api",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange7"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-urol3kWCR": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Scheduled Finish At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "scheduledFinishAt",
+                  "field": "scheduledFinishAt",
+                  "description": "What is the scheduled finish date?",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange8"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GesdXX47-W": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Scheduled Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "scheduledStartAt",
+                  "field": "scheduledStartAt",
+                  "description": "Schedule Start Date from API - list job operations",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange9"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dSzY1Mh35j": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Custom Data",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "customData",
+                  "field": "customData",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "customData._contains.value"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text21"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cJX0q87Rah": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter",
+                  "field": "workcenter",
+                  "description": "Workcenter object",
+                  "element": "Combobox",
+                  "queryType": "Workcenter",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "workcenter.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox3"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3qSKq_qz8_": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Facility",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "facility",
+                  "field": "facility",
+                  "description": "building back reference",
+                  "element": "Combobox",
+                  "queryType": "Facility",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "facility.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/facilities/\" & data.facility.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "facility.id",
+                      "facility.code"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox4"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "L2sfA8-8gL": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Production Run",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productionRun",
+                  "field": "productionRun",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "ProductionRun",
+                  "labelField": "number",
+                  "labelPath": "number",
+                  "additionalFields": "number",
+                  "target": {
+                    "dataPath": "productionRun.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/productionRuns/\" & data.productionRun.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.number"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox5"
+                },
+                "parent": "EeiNBYHiFy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "K9zEpTvBOc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "thJ7OIew-K",
+                  "34JMZH8seP",
+                  "jTvpbZTj4J",
+                  "8AWBdk7B7N"
+                ],
+                "linkedNodes": {}
+              },
+              "thJ7OIew-K": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "K9zEpTvBOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "34JMZH8seP": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$showFormDialog(\n    {\n      'title': '',\n      'formInputs': [\n    {\n    \"label\": \"Work Order Number\",\n    \"validation\": {\n      \"required\": true\n    },\n    \"dataPath\": \"workOrderNumber\",\n    \"field\": \"workOrderNumber\",\n    \"description\": \"job number\",\n    \"element\": \"TextInput\",\n    \"type\": \"text\"\n  },\n    {\n      \"label\": \"Required Quantity\",\n      \"validation\": {\n        \"required\": true\n      },\n      \"dataPath\": \"requiredQuantity\",\n      \"field\": \"requiredQuantity\",\n      \"description\": \"What's the required quantity (total) for the run\",\n      \"element\": \"FloatInput\",\n      \"type\": \"float\"\n    }, \n  \n    {\n      \"label\": \"Workcenter\",\n      \"validation\": {\n        \"required\": true\n      },\n      \"dataPath\": \"workcenter\",\n      \"field\": \"workcenter\",\n      \"description\": \"Workcenter object\",\n      \"element\": \"Combobox\",\n      \"type\": \"combobox\",\n      \"api\": \"Application\",\n      \"queryType\": \"Workcenter\",\n      \"labelField\": \"code\",\n      \"labelPath\": \"code\",\n      \"additionalFields\": \"code facilityId\",\n      \"target\": {\n        \"dataPath\": \"workcenterId\"\n      },\n      \"query\": {\n        \"fields\": [\n          \"workcenter.id\",\n          \"workcenter.code\"\n        ]\n      }\n    },\n    \n    {\n      \"label\": \"Part No Revision\",\n      \"validation\": {\n        \"required\": true\n      },\n      \"dataPath\": \"productNoRevision\",\n      \"field\": \"productNoRevision\",\n      \"description\": \"productNoRevision\",\n      \"element\": \"Combobox\",\n      \"type\": \"combobox\",\n      \"api\": \"Application\",\n      \"queryType\": \"ApprovedWorkcenter\",\n      \"labelField\": \"productNoRevision\",\n      \"labelPath\": \"productNoRevision\",\n      \"target\": {\n        \"dataPath\": \"productNoRevision\"\n      },\n      \"disabled\":{\n        \"__transform\": \"$isNilOrEmpty(data.workcenter)\"\n      },\n      \"additionalFilter\":{\n        \"__transform\": \"{ 'workcenterId': { '_eq': data.workcenter.id} }\"\n      }\n    },\n    \n    {\n      \"label\": \"Operation\",\n      \"validation\": {\n        \"required\": true\n      },\n      \"dataPath\": \"operationCode\",\n      \"field\": \"operation\",\n      \"description\": \"operation\",\n      \"element\": \"Combobox\",\n      \"type\": \"combobox\",\n      \"api\": \"Application\",\n      \"queryType\": \"ApprovedWorkcenter\",\n      \"labelField\": \"operationCode\",\n      \"labelPath\": \"operationCode\",\n      \"target\": {\n        \"dataPath\": \"operation\"\n      },\n      \"disabled\":{\n        \"__transform\": \"$isNilOrEmpty(data.productNoRevision)\"\n      },\n      \"additionalFilter\":{\n        \"__transform\": \"{ 'workcenterId': { '_eq': data.workcenter.id}, 'productNoRevision': { '_eq': data.productNoRevision.productNoRevision} }\"\n      },\n      \"additionalFields\": \"code unitsPerCycle crewSize idealRate setupCrewSize setupTime standardProductionRate standardQuantity targetRate active note operationCode operationNo productId productNo productNoRevision productOperationId productRevision workcenterId standardQuantity\"\n    }\n  \n  ], \n      'submitIcon': 'right-long'\n    }\n  )"
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "label": "Work Order Status",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderStatus",
+                          "field": "workOrderStatus",
+                          "description": "job status",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderType",
+                          "field": "workOrderType",
+                          "description": "job type",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Distribution Status",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "distributionStatus",
+                          "field": "distributionStatus",
+                          "description": "jobOperationStatus",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Operation Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productOperationType",
+                          "field": "productOperationType",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Priority",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "priority",
+                          "field": "priority",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Process Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "processType",
+                          "field": "processType",
+                          "description": "part operation type",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Batch Criteria",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "batchCriteria",
+                          "field": "batchCriteria",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Unit Of Measure",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unitOfMeasure",
+                          "field": "unitOfMeasure",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Workorder Info\""
+                      },
+                      "submitIcon": {
+                        "icon": "right-long",
+                        "color": "inherit",
+                        "variant": "duotone",
+                        "size": "icon"
+                      },
+                      "transforms": {
+                        "post": "/*WORKORDDER*/\n{\n  \"form1\": data,\n  \"form2\": result\n}"
+                      }
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "label": "Job Due At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "jobDueAt",
+                          "field": "jobDueAt",
+                          "description": "due date from list jobs (work order due date)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Job Earliest Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "jobEarliestStartAt",
+                          "field": "jobEarliestStartAt",
+                          "description": "",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Operation Due At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "operationDueAt",
+                          "field": "operationDueAt",
+                          "description": "due date from list job operation api",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Scheduled Finish At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scheduledFinishAt",
+                          "field": "scheduledFinishAt",
+                          "description": "What is the scheduled finish date?",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Scheduled Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scheduledStartAt",
+                          "field": "scheduledStartAt",
+                          "description": "Schedule Start Date from API - list job operations",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Schedulding\""
+                      },
+                      "submitIcon": {
+                        "icon": "plus",
+                        "color": "inherit",
+                        "variant": "duotone",
+                        "size": "icon"
+                      },
+                      "transforms": {
+                        "post": "{\n  \"form1\": form1,\n  \"form2\": form2,\n  \"form3\": result\n}"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkOrderProcessDistribution($payload: [WorkOrderProcessDistributionCreatePayloadInput!]!) {\n  mutation: createWorkOrderProcessDistribution(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "(\n  $create := {\n    \"number\": data.form1.number,\n    \"requiredQuantity\": data.form1.requiredQuantity,\n    \"balanceQuantity\": data.form1.requiredQuantity,\n    \"idealRate\": data.form1.operationCode.idealRate,\n    \"setupOperators\": data.form1.operationCode.setupCrewSize,\n    \"standardRate\": data.form1.operationCode.standardProductionRate,\n    \"operationCode\": data.form1.operationCode.operationCode,\n    \"operationNumber\": data.form1.operationCode.operationNo,\n    \"productId\": data.form1.operationCode.productId,\n    \"productNumber\": data.form1.operationCode.productNo,\n    \"productNumberRevision\": data.form1.operationCode.productNoRevision,\n    \"productRevision\": data.form1.operationCode.productRevision,\n    \"facilityId\": data.form1.workcenter.facilityId,\n    \"workcenterId\": data.form1.workcenter.id,\n    \"standardQuantity\": data.form1.operationCode.standardQuantity,\n    \"workOrderNumber\": data.form1.workOrderNumber\n  };\n  \n  {\n    \"payload\": {\n      \"create\": $merge([$create, data.form2, data.form3]) \n    }\n  };\n  \n)"
+                      },
+                      "message": {
+                        "__transform": "\"Work Order Process Distribution \" & data.mutation[0].number & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "K9zEpTvBOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jTvpbZTj4J": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Work Order Process Distribution \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Production Operators",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionOperators",
+                          "field": "productionOperators",
+                          "description": "Number of production operators",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Setup Rate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupRate",
+                          "field": "setupRate",
+                          "description": "What is the setup rate?",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Job Due At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "jobDueAt",
+                          "field": "jobDueAt",
+                          "description": "due date from list jobs (work order due date)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Job Earliest Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "jobEarliestStartAt",
+                          "field": "jobEarliestStartAt",
+                          "description": "",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Operation Due At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "operationDueAt",
+                          "field": "operationDueAt",
+                          "description": "due date from list job operation api",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Scheduled Finish At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scheduledFinishAt",
+                          "field": "scheduledFinishAt",
+                          "description": "What is the scheduled finish date?",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Scheduled Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scheduledStartAt",
+                          "field": "scheduledStartAt",
+                          "description": "Schedule Start Date from API - list job operations",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Workcenter",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workcenter",
+                          "field": "workcenter",
+                          "description": "Workcenter object",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Workcenter",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "workcenterId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenter.id",
+                              "workcenter.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Facility",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "facility",
+                          "field": "facility",
+                          "description": "building back reference",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Facility",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "facilityId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/facilities/\" & data.facility.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "facility.id",
+                              "facility.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Production Run",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionRun",
+                          "field": "productionRun",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ProductionRun",
+                          "labelField": "number",
+                          "labelPath": "number",
+                          "additionalFields": "number",
+                          "target": {
+                            "dataPath": "productionRunId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/productionRuns/\" & data.productionRun.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "productionRun.id",
+                              "productionRun.number"
+                            ]
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateWorkOrderProcessDistribution($payload: [WorkOrderProcessDistributionUpdatePayloadInput!]!) {\n  mutation: updateWorkOrderProcessDistribution(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Work Order Process Distribution \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "K9zEpTvBOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8AWBdk7B7N": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Work Order Process Distribution \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteWorkOrderProcessDistribution($payload: [WorkOrderProcessDistributionDeletePayloadInput!]!) {\n  mutation: deleteWorkOrderProcessDistribution(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Work Order Process Distribution \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "K9zEpTvBOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "m3yUcMCFx_": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkOrderProcessDistribution",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "Data in this table is used to popultae dispatch lists, and generate production setups.",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "ERdBUBQgPQ",
+                  "yxGACSChk",
+                  "Ng2cUuDmA1",
+                  "oCbh9qORVO",
+                  "-Bitnz2kUO",
+                  "NxwtjuupP9",
+                  "aX3btbQoCM",
+                  "1V3o8f09Bm",
+                  "yxNa9-Wkky",
+                  "MgZqAA6E5w",
+                  "4d0ko-EjAn",
+                  "2WPAVEuPHL",
+                  "FJugKxve5O",
+                  "Ks00g0pEgp",
+                  "9MlwKJiw9i",
+                  "gvCe6jteH3",
+                  "akDgHImQhr",
+                  "t-DwfD4IWZ",
+                  "ph_MudD6FD",
+                  "uGFHEuqj34",
+                  "nXa6JqdUMz",
+                  "_-eHAwlqtP",
+                  "Ny3NnDc7r6",
+                  "dlKp1UA9u5",
+                  "KVrF-H8IXN",
+                  "pMhy2w6jfH",
+                  "dzoS1yYrAC",
+                  "wBoVtLwHq3",
+                  "5azpAf_AEK",
+                  "_5cx6qqdT5",
+                  "lFg1x4H_X6",
+                  "9DQn6PnJBk",
+                  "u6vng6W-Co",
+                  "unRXMM5JEL",
+                  "Ie9U9nGupm",
+                  "x3k5hYqSvJ",
+                  "-DrZcrCBrx",
+                  "oXvZPVh6Xi",
+                  "9WzautCXX6",
+                  "7Z3eTE-7MI",
+                  "YWp8frjukO",
+                  "YrNomX2J8f",
+                  "BtrRPqdTC3",
+                  "NvuHhdxsKv",
+                  "ZerGhIYqkA",
+                  "HgIkYyHudr"
+                ],
+                "linkedNodes": {}
+              },
+              "ERdBUBQgPQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Number",
+                  "format": "text",
+                  "field": "number",
+                  "dataPath": "number",
+                  "description": "Distribution or Run Number sequence",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workOrderProcessDistributions/\" & data.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "id",
+                      "number"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ng2cUuDmA1": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Balance Quantity",
+                  "format": "float",
+                  "field": "balanceQuantity",
+                  "dataPath": "balanceQuantity",
+                  "description": "calculation (required - produced) "
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oCbh9qORVO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Cycle Time",
+                  "format": "float",
+                  "field": "cycleTime",
+                  "dataPath": "cycleTime",
+                  "description": "What is the cycle time?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-Bitnz2kUO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Duration",
+                  "format": "float",
+                  "field": "duration",
+                  "dataPath": "duration",
+                  "description": "run time - expected run time"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NxwtjuupP9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ideal Rate",
+                  "format": "float",
+                  "field": "idealRate",
+                  "dataPath": "idealRate",
+                  "description": "Ideal Rate for OEE\n\nDefault to Standard Rate if Ideal Rate is Null or 0"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "aX3btbQoCM": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Produced Quantity",
+                  "format": "float",
+                  "field": "producedQuantity",
+                  "dataPath": "producedQuantity",
+                  "description": "Total quantity produced for entire run (quantity completed from list job operations)\n\nDefault to 0 if data is null"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "1V3o8f09Bm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Operators",
+                  "format": "float",
+                  "field": "productionOperators",
+                  "dataPath": "productionOperators",
+                  "description": "Number of production operators"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yxNa9-Wkky": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Required Quantity",
+                  "format": "float",
+                  "field": "requiredQuantity",
+                  "dataPath": "requiredQuantity",
+                  "description": "What's the required quantity (total) for the run"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "MgZqAA6E5w": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrapped Quantity",
+                  "format": "float",
+                  "field": "scrappedQuantity",
+                  "dataPath": "scrappedQuantity",
+                  "description": "Total quantity scrapped for the entire run\n\ndefault to 0 if data is null"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4d0ko-EjAn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Setup Operators",
+                  "format": "float",
+                  "field": "setupOperators",
+                  "dataPath": "setupOperators",
+                  "description": "Number of setup operators"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2WPAVEuPHL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Setup Rate",
+                  "format": "float",
+                  "field": "setupRate",
+                  "dataPath": "setupRate",
+                  "description": "What is the setup rate?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FJugKxve5O": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Standard Rate",
+                  "format": "float",
+                  "field": "standardRate",
+                  "dataPath": "standardRate",
+                  "description": "Standard Production Rate or \"rate\" from list job operations api"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ks00g0pEgp": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Batch Criteria",
+                  "format": "text",
+                  "field": "batchCriteria",
+                  "dataPath": "batchCriteria",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9MlwKJiw9i": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Distribution Status",
+                  "format": "text",
+                  "field": "distributionStatus",
+                  "dataPath": "distributionStatus",
+                  "description": "jobOperationStatus"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gvCe6jteH3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "External Id",
+                  "format": "text",
+                  "field": "externalId",
+                  "dataPath": "externalId",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "akDgHImQhr": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Job Id",
+                  "format": "text",
+                  "field": "jobId",
+                  "dataPath": "jobId",
+                  "description": "jobId from API"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "t-DwfD4IWZ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Job Operation Id",
+                  "format": "text",
+                  "field": "jobOperationId",
+                  "dataPath": "jobOperationId",
+                  "description": "job operation Id from API"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ph_MudD6FD": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Code",
+                  "format": "text",
+                  "field": "operationCode",
+                  "dataPath": "operationCode",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uGFHEuqj34": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Number",
+                  "format": "text",
+                  "field": "operationNumber",
+                  "dataPath": "operationNumber",
+                  "description": "job operation number"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "nXa6JqdUMz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Id",
+                  "format": "text",
+                  "field": "productId",
+                  "dataPath": "productId",
+                  "description": "partId from API"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_-eHAwlqtP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Priority",
+                  "format": "text",
+                  "field": "priority",
+                  "dataPath": "priority",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ny3NnDc7r6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Process Type",
+                  "format": "text",
+                  "field": "processType",
+                  "dataPath": "processType",
+                  "description": "part operation type"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dlKp1UA9u5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Number",
+                  "format": "text",
+                  "field": "productNumber",
+                  "dataPath": "productNumber",
+                  "description": "partNumber"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KVrF-H8IXN": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Number Revision",
+                  "format": "text",
+                  "field": "productNumberRevision",
+                  "dataPath": "productNumberRevision",
+                  "description": "partNumberRevision"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pMhy2w6jfH": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Operation Type",
+                  "format": "text",
+                  "field": "productOperationType",
+                  "dataPath": "productOperationType",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dzoS1yYrAC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Revision",
+                  "format": "text",
+                  "field": "productRevision",
+                  "dataPath": "productRevision",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wBoVtLwHq3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Unit Of Measure",
+                  "format": "text",
+                  "field": "unitOfMeasure",
+                  "dataPath": "unitOfMeasure",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "5azpAf_AEK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Number",
+                  "format": "text",
+                  "field": "workOrderNumber",
+                  "dataPath": "workOrderNumber",
+                  "description": "job number"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_5cx6qqdT5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Status",
+                  "format": "text",
+                  "field": "workOrderStatus",
+                  "dataPath": "workOrderStatus",
+                  "description": "job status"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lFg1x4H_X6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Type",
+                  "format": "text",
+                  "field": "workOrderType",
+                  "dataPath": "workOrderType",
+                  "description": "job type"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn31"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9DQn6PnJBk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Actual Finish At",
+                  "format": "datetime",
+                  "field": "actualFinishAt",
+                  "dataPath": "actualFinishAt",
+                  "description": "What is the actual finish date? Completed Date"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn32"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "u6vng6W-Co": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Actual Start At",
+                  "format": "datetime",
+                  "field": "actualStartAt",
+                  "dataPath": "actualStartAt",
+                  "description": "What is the actual start date?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn33"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "unRXMM5JEL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Job Due At",
+                  "format": "datetime",
+                  "field": "jobDueAt",
+                  "dataPath": "jobDueAt",
+                  "description": "due date from list jobs (work order due date)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn34"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ie9U9nGupm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Job Earliest Start At",
+                  "format": "datetime",
+                  "field": "jobEarliestStartAt",
+                  "dataPath": "jobEarliestStartAt",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn35"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "x3k5hYqSvJ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Due At",
+                  "format": "datetime",
+                  "field": "operationDueAt",
+                  "dataPath": "operationDueAt",
+                  "description": "due date from list job operation api"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn36"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-DrZcrCBrx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scheduled Finish At",
+                  "format": "datetime",
+                  "field": "scheduledFinishAt",
+                  "dataPath": "scheduledFinishAt",
+                  "description": "What is the scheduled finish date?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn37"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oXvZPVh6Xi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scheduled Start At",
+                  "format": "datetime",
+                  "field": "scheduledStartAt",
+                  "dataPath": "scheduledStartAt",
+                  "description": "Schedule Start Date from API - list job operations"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn38"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9WzautCXX6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Custom Data",
+                  "format": "json",
+                  "field": "customData",
+                  "dataPath": "customData",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn39"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7Z3eTE-7MI": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Code",
+                  "format": "text",
+                  "field": "workcenter.code",
+                  "dataPath": "workcenter.code",
+                  "description": "Workcenter code",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn40"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YWp8frjukO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Facility Code",
+                  "format": "text",
+                  "field": "facility.code",
+                  "dataPath": "facility.code",
+                  "description": "",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/facilities/\" & data.facility.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "facility.id",
+                      "facility.code"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn41"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YrNomX2J8f": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Run Number",
+                  "format": "text",
+                  "field": "productionRun.number",
+                  "dataPath": "productionRun.number",
+                  "description": "Sequence - shared between multiple production Runs, if co-production",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/productionRuns/\" & data.productionRun.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.number"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn42"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BtrRPqdTC3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn43"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NvuHhdxsKv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created By User Email",
+                  "format": "text",
+                  "field": "createdByUser.email",
+                  "dataPath": "createdByUser.email",
+                  "description": "The email address of the User.  The email is also used as the username.",
+                  "linkTarget": {
+                    "__transform": "\"/system/accessControl/users/\" & data.createdByUser.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "createdByUser.id",
+                      "createdByUser.email"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn44"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZerGhIYqkA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn45"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HgIkYyHudr": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated By User Email",
+                  "format": "text",
+                  "field": "updatedByUser.email",
+                  "dataPath": "updatedByUser.email",
+                  "description": "The email address of the User.  The email is also used as the username.",
+                  "linkTarget": {
+                    "__transform": "\"/system/accessControl/users/\" & data.updatedByUser.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "updatedByUser.id",
+                      "updatedByUser.email"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn46"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yxGACSChk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Standard Quantity",
+                  "format": "text",
+                  "dataPath": "standardQuantity",
+                  "description": "",
+                  "field": "standardQuantity"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn47"
+                },
+                "parent": "m3yUcMCFx_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clpmy2x0g000401bm1svtao3k",
+      "title": "Work Order Process Distribution ",
+      "path": "/productionManagement/manufacturing/workOrderProcessDistributions",
+      "moduleId": "manufacturing",
+      "screenId": "workOrderProcessDistribution",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

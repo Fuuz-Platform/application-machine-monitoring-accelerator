@@ -1,0 +1,243 @@
+{
+  "header": {
+    "id": "alarmStateChangeScreenFlow",
+    "name": "Alarm State Change Screen Flow",
+    "description": "",
+    "active": true,
+    "dataFlowTypeId": "Screen",
+    "moduleId": "manufacturing"
+  },
+  "version": {
+    "id": "cloucuugi8hso01800vad0zn4",
+    "number": "0.0.1",
+    "description": "",
+    "dataFlowId": "alarmStateChangeScreenFlow",
+    "flow": {
+      "id": "cloucuugi8hso01800vad0zn4",
+      "name": "Alarm State Change Screen Flow",
+      "type": "Screen",
+      "nodes": [
+        {
+          "id": "dd404677-126b-42b0-a504-a379d7dc7da7",
+          "name": "Change Table Data",
+          "type": "changeTableData",
+          "data": {
+            "action": "setData",
+            "screenElementTransform": "\"AlarmTable\"",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "7f58af82-5769-402e-9517-5ad5aed1d75c",
+          "name": "Route",
+          "type": "switch",
+          "data": {
+            "branches": [
+              {
+                "name": "Is Acknowledged",
+                "nextNodes": [
+                  "dd404677-126b-42b0-a504-a379d7dc7da7"
+                ]
+              }
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.1"
+    },
+    "diagram": {
+      "id": "cloucuugi8hso01800vad0zn4",
+      "offsetX": 0,
+      "offsetY": -2,
+      "zoom": 100,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "09eb6bd5-8eed-4864-be75-4d96c4087f8f",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "8b5c6e58-cc13-4b8a-9061-9761431caf84": {
+              "points": [
+                {
+                  "id": "775fda23-64e1-459e-8924-ac99c5db67f2",
+                  "type": "point",
+                  "x": 310.68,
+                  "y": 344.53
+                },
+                {
+                  "id": "0cc82937-a20c-4db0-ab1c-9a49f542f4bc",
+                  "type": "point",
+                  "x": 434.62,
+                  "y": 299.53
+                }
+              ],
+              "id": "8b5c6e58-cc13-4b8a-9061-9761431caf84",
+              "type": "default",
+              "selected": true,
+              "source": "7f58af82-5769-402e-9517-5ad5aed1d75c",
+              "sourcePort": "cloucu4fi002d356e9n46r5un",
+              "target": "dd404677-126b-42b0-a504-a379d7dc7da7",
+              "targetPort": "cloucnxsh000t356edwsf75zr",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "8031ed9c-2dee-4f28-a985-19cda9b805c5",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "dd404677-126b-42b0-a504-a379d7dc7da7": {
+              "id": "dd404677-126b-42b0-a504-a379d7dc7da7",
+              "type": "changeTableData",
+              "selected": false,
+              "x": 435,
+              "y": 260,
+              "ports": [
+                {
+                  "id": "cloucnxsh000t356edwsf75zr",
+                  "type": "default",
+                  "x": 426.81,
+                  "y": 291.71,
+                  "name": "cloucnxsh000u356em0l2gr2j",
+                  "parentNode": "dd404677-126b-42b0-a504-a379d7dc7da7",
+                  "links": [
+                    "8b5c6e58-cc13-4b8a-9061-9761431caf84"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cloucnxsh000v356e2pp0l628",
+                  "type": "default",
+                  "x": 581.17,
+                  "y": 291.71,
+                  "name": "cloucnxsh000w356eiabd4nnd",
+                  "parentNode": "dd404677-126b-42b0-a504-a379d7dc7da7",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "action": "setData",
+                "screenElementTransform": "\"AlarmTable\"",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Change Table Data",
+              "note": "Update  State of Alarm based on Action selected"
+            },
+            "7f58af82-5769-402e-9517-5ad5aed1d75c": {
+              "id": "7f58af82-5769-402e-9517-5ad5aed1d75c",
+              "type": "switch",
+              "selected": true,
+              "x": 130,
+              "y": 305,
+              "ports": [
+                {
+                  "id": "clouctyk80024356ejr99v9rl",
+                  "type": "default",
+                  "x": 121.82,
+                  "y": 336.72,
+                  "name": "clouctyk80025356e50ow1zms",
+                  "parentNode": "7f58af82-5769-402e-9517-5ad5aed1d75c",
+                  "links": [],
+                  "in": true
+                },
+                {
+                  "id": "cloucu4fi002d356e9n46r5un",
+                  "type": "default",
+                  "x": 302.87,
+                  "y": 336.72,
+                  "name": "cloucu4fi002e356eu3h3rx2m",
+                  "parentNode": "7f58af82-5769-402e-9517-5ad5aed1d75c",
+                  "links": [
+                    "8b5c6e58-cc13-4b8a-9061-9761431caf84"
+                  ],
+                  "in": false,
+                  "groupName": "Is Acknowledged",
+                  "groupIndex": 0,
+                  "groupPath": "data.branches",
+                  "fieldLabel": null,
+                  "fieldPath": "nextNodes"
+                }
+              ],
+              "data": {
+                "branches": [
+                  {
+                    "name": "Is Acknowledged",
+                    "nextNodes": [
+                      "dd404677-126b-42b0-a504-a379d7dc7da7"
+                    ]
+                  }
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Route"
+            }
+          }
+        }
+      ],
+      "name": "Alarm State Change Screen Flow",
+      "type": "Screen",
+      "version": "0.0.1",
+      "walkthrough": {
+        "steps": []
+      }
+    }
+  }
+}

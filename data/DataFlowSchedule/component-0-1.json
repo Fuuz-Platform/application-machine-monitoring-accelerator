@@ -1,0 +1,23 @@
+{
+  "api": "application",
+  "modelName": "DataFlowSchedule",
+  "payload": [
+    {
+      "id": "clnw5uu8f000u019s9elygead",
+      "name": "Hourly OEE",
+      "description": "",
+      "active": true,
+      "inputSchema": {},
+      "dataFlowId": "calculateOee"
+    },
+    {
+      "id": "clo3b1caz000i0181f7i301g2",
+      "name": "Backfill Workcenter History",
+      "description": "",
+      "active": true,
+      "inputSchema": {},
+      "dataFlowId": "backFillEndDatesOfWorkcenterHistory"
+    }
+  ],
+  "metadata": {}
+}

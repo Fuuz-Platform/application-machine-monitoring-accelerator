@@ -1,0 +1,10 @@
+{
+  "name": "Machine Monitoring",
+  "version": "1.0.5",
+  "applicationPublisherId": null,
+  "enterpriseId": "mfgx",
+  "environmentId": "build",
+  "dependencies": {},
+  "specVersion": "2.0.0",
+  "platformVersion": "2025.1.1"
+}

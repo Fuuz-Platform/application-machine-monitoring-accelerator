@@ -1,0 +1,1920 @@
+{
+  "header": {
+    "id": "oee",
+    "name": "OEE",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clri7cscx001w016q7zlf5n84",
+    "number": "0.0.23",
+    "description": "",
+    "screenId": "oee",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "OeeTable",
+          "tabTitle": "Oee Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 5,
+                    "Text": 9,
+                    "Integer": 2,
+                    "Float": 36,
+                    "Table Column": 34,
+                    "Combobox": 1,
+                    "Select": 3
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "Oee",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "VKMsXsJ1Ax",
+                  "hOcfjqlguJ",
+                  "90k-CPDpFL"
+                ],
+                "linkedNodes": {}
+              },
+              "VKMsXsJ1Ax": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "Xks9m1wDGH"
+                ],
+                "linkedNodes": {}
+              },
+              "Xks9m1wDGH": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "Oee",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "VKMsXsJ1Ax",
+                "hidden": false,
+                "nodes": [
+                  "1NoKLinJVo"
+                ],
+                "linkedNodes": {}
+              },
+              "1NoKLinJVo": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "Xks9m1wDGH",
+                "hidden": false,
+                "nodes": [
+                  "clqct9yw400u6356eywr93ota",
+                  "oT4CdOg7x",
+                  "hPzbKsxlv",
+                  "Xovvx3NYa",
+                  "Kbu3ZVjXzV",
+                  "CK_UX_opGJ",
+                  "F5c4YMAwDL"
+                ],
+                "linkedNodes": {}
+              },
+              "Kbu3ZVjXzV": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Credited At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "creditedAt",
+                  "field": "creditedAt",
+                  "description": "Report At - is the adjusted date for the calculation - check the Shift configuration \"Credit At Start\" option - typically reserved when a shift spans more than 1 date - you have the option to adjust to the day the shift begins, or the day the shift ends.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange3"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CK_UX_opGJ": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "End At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "endAt",
+                  "field": "endAt",
+                  "description": "the actual end date/time of this shift hour",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange4"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "F5c4YMAwDL": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "startAt",
+                  "field": "startAt",
+                  "description": "The OEE Start Date",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange5"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hOcfjqlguJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "tZVH93WBYr",
+                  "D95R1u2dYV",
+                  "rTHf5CvQTf",
+                  "PSGoHkUixN"
+                ],
+                "linkedNodes": {}
+              },
+              "tZVH93WBYr": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "hOcfjqlguJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "D95R1u2dYV": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Oee",
+                      "fields": [
+                        {
+                          "label": "Shift Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shiftHour",
+                          "field": "shiftHour",
+                          "description": "This indicates the hour as it relates to the shift. An 8 hour shift for example will have Hours 1 through 8. ",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Actual Rate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "actualRate",
+                          "field": "actualRate",
+                          "description": "calculated based on units produced in the hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Availability",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "availability",
+                          "field": "availability",
+                          "description": "Total planned production time versus total time in production",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Availability Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "availabilityWeight",
+                          "field": "availabilityWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Average Cycle Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "averageCycleTime",
+                          "field": "averageCycleTime",
+                          "description": "The average cycle time per unit of output - (total produced including scrap units) \n\nFrom start of this hour til current time (at time of table update) - only production time versus total units produced",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Ideal Rate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealRate",
+                          "field": "idealRate",
+                          "description": "ideal rate - comes from either approved workcenter in the product strategy process, or from the ideal rate on the workcenter (if using a globalized rate)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Oee",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "oee",
+                          "field": "oee",
+                          "description": "OEE = Availability × Performance × Quality",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Other",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "other",
+                          "field": "other",
+                          "description": "other work center Status time in seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performance",
+                          "field": "performance",
+                          "description": "total units produced versus planned production units",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performanceWeight",
+                          "field": "performanceWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Planned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plannedDowntime",
+                          "field": "plannedDowntime",
+                          "description": "The planned Downtime in seconds - time that was not scheduled for operating.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Production Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionTime",
+                          "field": "productionTime",
+                          "description": "The production time  in seconds - considered to be 'operating' time of the workcenter.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "Quality = production  / Total  (productionQuantity + scrapQuantity)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "qualityWeight",
+                          "field": "qualityWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Production Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalProductionQuantity",
+                          "field": "totalProductionQuantity",
+                          "description": "total produced quantity of good units for this hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalQuantity",
+                          "field": "totalQuantity",
+                          "description": "(totalProductionQuantity + totalScrapQuantity)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Scrap Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalScrapQuantity",
+                          "field": "totalScrapQuantity",
+                          "description": "Total scrap units produced for this hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "totalTime",
+                          "field": "totalTime",
+                          "description": "total time",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Unplanned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unplannedDowntime",
+                          "field": "unplannedDowntime",
+                          "description": "The unplanned Downtime in seconds - time that was scheduled for production or operation, but was not able to produce.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Note",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "note",
+                          "field": "note",
+                          "description": "Any notes relevant to this run",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Product No Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNoRevision",
+                          "field": "productNoRevision",
+                          "description": "The product ID.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Code",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderCode",
+                          "field": "workOrderCode",
+                          "description": "The work order id",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Number",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderNumber",
+                          "field": "workOrderNumber",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Credited At",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "creditedAt",
+                          "field": "creditedAt",
+                          "description": "Report At - is the adjusted date for the calculation - check the Shift configuration \"Credit At Start\" option - typically reserved when a shift spans more than 1 date - you have the option to adjust to the day the shift begins, or the day the shift ends.",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "the actual end date/time of this shift hour",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The OEE Start Date",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateOee($payload: [OeeCreatePayloadInput!]!) {\n  mutation: createOee(payload: $payload) { \n    id\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Oee \" & data.mutation[0].id & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "hOcfjqlguJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rTHf5CvQTf": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Oee \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Shift Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shiftHour",
+                          "field": "shiftHour",
+                          "description": "This indicates the hour as it relates to the shift. An 8 hour shift for example will have Hours 1 through 8. ",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Actual Rate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "actualRate",
+                          "field": "actualRate",
+                          "description": "calculated based on units produced in the hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Availability",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "availability",
+                          "field": "availability",
+                          "description": "Total planned production time versus total time in production",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Availability Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "availabilityWeight",
+                          "field": "availabilityWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Average Cycle Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "averageCycleTime",
+                          "field": "averageCycleTime",
+                          "description": "The average cycle time per unit of output - (total produced including scrap units) \n\nFrom start of this hour til current time (at time of table update) - only production time versus total units produced",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Ideal Rate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealRate",
+                          "field": "idealRate",
+                          "description": "ideal rate - comes from either approved workcenter in the product strategy process, or from the ideal rate on the workcenter (if using a globalized rate)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Oee",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "oee",
+                          "field": "oee",
+                          "description": "OEE = Availability × Performance × Quality",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Other",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "other",
+                          "field": "other",
+                          "description": "other work center Status time in seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performance",
+                          "field": "performance",
+                          "description": "total units produced versus planned production units",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performanceWeight",
+                          "field": "performanceWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Planned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plannedDowntime",
+                          "field": "plannedDowntime",
+                          "description": "The planned Downtime in seconds - time that was not scheduled for operating.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Production Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionTime",
+                          "field": "productionTime",
+                          "description": "The production time  in seconds - considered to be 'operating' time of the workcenter.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "Quality = production  / Total  (productionQuantity + scrapQuantity)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality Weight",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "qualityWeight",
+                          "field": "qualityWeight",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Production Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalProductionQuantity",
+                          "field": "totalProductionQuantity",
+                          "description": "total produced quantity of good units for this hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalQuantity",
+                          "field": "totalQuantity",
+                          "description": "(totalProductionQuantity + totalScrapQuantity)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Scrap Quantity",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "totalScrapQuantity",
+                          "field": "totalScrapQuantity",
+                          "description": "Total scrap units produced for this hour",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "totalTime",
+                          "field": "totalTime",
+                          "description": "total time",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Unplanned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unplannedDowntime",
+                          "field": "unplannedDowntime",
+                          "description": "The unplanned Downtime in seconds - time that was scheduled for production or operation, but was not able to produce.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Note",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "note",
+                          "field": "note",
+                          "description": "Any notes relevant to this run",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Product No Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNoRevision",
+                          "field": "productNoRevision",
+                          "description": "The product ID.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Code",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderCode",
+                          "field": "workOrderCode",
+                          "description": "The work order id",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Work Order Number",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workOrderNumber",
+                          "field": "workOrderNumber",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Credited At",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "creditedAt",
+                          "field": "creditedAt",
+                          "description": "Report At - is the adjusted date for the calculation - check the Shift configuration \"Credit At Start\" option - typically reserved when a shift spans more than 1 date - you have the option to adjust to the day the shift begins, or the day the shift ends.",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "the actual end date/time of this shift hour",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The OEE Start Date",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateOee($payload: [OeeUpdatePayloadInput!]!) {\n  mutation: updateOee(payload: $payload) { \n    id\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Oee \" & $components.Table1.selectedRows.id) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "hOcfjqlguJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PSGoHkUixN": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": true,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Oee \" & $components.Table1.selectedRows.id) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteOee($payload: [OeeDeletePayloadInput!]!) {\n  mutation: deleteOee(payload: $payload) { \n    id\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Oee \" & $components.Table1.selectedRows.id) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "hOcfjqlguJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "90k-CPDpFL": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "Oee",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id"
+                    ],
+                    "parameters": "{\n\"orderBy\": {\n   \"field\":\"creditedAt\",\n   \"direction\":\"desc\"\n }\n }"
+                  },
+                  "selectable": "single",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "Measurement of OEE for a given workcenter.",
+                  "rowMultiSelectWithClick": false,
+                  "fontSize": 14
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "WxKkxihThe",
+                  "U_IbEmWkY",
+                  "IZKXqGQqmn",
+                  "BBEFdU9d_d",
+                  "QoEPeaGa6S",
+                  "jlwVfslAr2",
+                  "EfSme7Dng4",
+                  "QkXAPYopV_",
+                  "0krsgks966",
+                  "73uZG9lmSb",
+                  "UG4GZZv5Oy",
+                  "AkXMubd5Bv",
+                  "e9-Wrfh6eQ",
+                  "ANnBhVWDW3",
+                  "K8pF_4MM2C",
+                  "HYzT-el2ZP",
+                  "SjJyoD0uuL",
+                  "L61bBxSoA_",
+                  "H8JXYlhUJs",
+                  "rcfEt2X0-B",
+                  "A-yp-4XmTO",
+                  "Ac6MWW4yrU"
+                ],
+                "linkedNodes": {}
+              },
+              "QoEPeaGa6S": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Hour",
+                  "format": "text",
+                  "field": "shiftHour",
+                  "dataPath": "shiftHour",
+                  "description": "This indicates the hour as it relates to the shift. An 8 hour shift for example will have Hours 1 through 8. ",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EfSme7Dng4": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Availability",
+                  "format": "float",
+                  "field": "availability",
+                  "dataPath": "availability",
+                  "description": "Total planned production time versus total time in production",
+                  "query": {},
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HYzT-el2ZP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Average Cycle Time",
+                  "format": "float",
+                  "field": "averageCycleTime",
+                  "dataPath": "averageCycleTime",
+                  "description": "The average cycle time per unit of output - (total produced including scrap units) \n\nFrom start of this hour til current time (at time of table update) - only production time versus total units produced",
+                  "query": {},
+                  "formatString": "hh:mm:ss",
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "e9-Wrfh6eQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ideal Rate",
+                  "format": "float",
+                  "field": "idealRate",
+                  "dataPath": "idealRate",
+                  "description": "ideal rate - comes from either approved workcenter in the product strategy process, or from the ideal rate on the workcenter (if using a globalized rate)",
+                  "query": {},
+                  "formatString": "0.000"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jlwVfslAr2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Oee",
+                  "format": "float",
+                  "field": "oee",
+                  "dataPath": "oee",
+                  "description": "OEE = Availability × Performance × Quality",
+                  "query": {},
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "SjJyoD0uuL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Other",
+                  "format": "float",
+                  "field": "other",
+                  "dataPath": "other",
+                  "description": "other work center Status time in seconds",
+                  "formatString": "hh:mm:ss",
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0krsgks966": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Performance",
+                  "format": "float",
+                  "field": "performance",
+                  "dataPath": "performance",
+                  "description": "total units produced versus planned production units",
+                  "query": {},
+                  "formatString": "0.00%",
+                  "style": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ANnBhVWDW3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Planned Downtime",
+                  "format": "float",
+                  "field": "plannedDowntime",
+                  "dataPath": "plannedDowntime",
+                  "description": "The planned Downtime in seconds - time that was not scheduled for operating.",
+                  "query": {},
+                  "formatString": "hh:mm:ss",
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "L61bBxSoA_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Time",
+                  "format": "float",
+                  "field": "productionTime",
+                  "dataPath": "productionTime",
+                  "description": "The production time  in seconds - considered to be 'operating' time of the workcenter.",
+                  "formatString": "hh:mm:ss",
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QkXAPYopV_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quality",
+                  "format": "float",
+                  "field": "quality",
+                  "dataPath": "quality",
+                  "description": "Quality = production  / Total  (productionQuantity + scrapQuantity)",
+                  "query": {},
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AkXMubd5Bv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Total Production Quantity",
+                  "field": "totalProductionQuantity",
+                  "dataPath": "totalProductionQuantity",
+                  "description": "total produced quantity of good units for this hour where includeProductionCount=1 on the Mode"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "73uZG9lmSb": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Total Quantity",
+                  "field": "totalQuantity",
+                  "dataPath": "totalQuantity",
+                  "description": "(totalProductionQuantity + totalScrapQuantity)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UG4GZZv5Oy": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Total Scrap Quantity",
+                  "field": "totalScrapQuantity",
+                  "dataPath": "totalScrapQuantity",
+                  "description": "Total scrap units produced for this hour where includeProductionCount=1 from the Mode."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "K8pF_4MM2C": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Unplanned Downtime",
+                  "format": "float",
+                  "field": "unplannedDowntime",
+                  "dataPath": "unplannedDowntime",
+                  "description": "The unplanned Downtime in seconds - time that was scheduled for production or operation, but was not able to produce.",
+                  "formatString": "hh:mm:ss",
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IZKXqGQqmn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credited At",
+                  "format": "date",
+                  "field": "creditedAt",
+                  "dataPath": "creditedAt",
+                  "description": "Report At - is the adjusted date for the calculation - check the Shift configuration \"Credit At Start\" option - typically reserved when a shift spans more than 1 date - you have the option to adjust to the day the shift begins, or the day the shift ends.",
+                  "query": {},
+                  "style": {
+                    "fontSize": "14"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "H8JXYlhUJs": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "format": "datetime",
+                  "field": "endAt",
+                  "dataPath": "endAt",
+                  "description": "the actual end date/time of this shift hour"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rcfEt2X0-B": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start At",
+                  "format": "datetime",
+                  "field": "startAt",
+                  "dataPath": "startAt",
+                  "description": "The OEE Start Date"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BBEFdU9d_d": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Name",
+                  "format": "text",
+                  "field": "shift.name",
+                  "dataPath": "shift.name",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WxKkxihThe": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Group",
+                  "format": "text",
+                  "field": "workcenter.workcenterGroup.name",
+                  "dataPath": "workcenter.workcenterGroup.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "A-yp-4XmTO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ac6MWW4yrU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn32"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "U_IbEmWkY": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Code",
+                  "format": "text",
+                  "dataPath": "workcenter.code",
+                  "field": "workcenter.code",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn34"
+                },
+                "parent": "90k-CPDpFL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Xovvx3NYa": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Shift",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  },
+                  "queryType": "Shift",
+                  "orderByDirection": "asc",
+                  "target": {
+                    "dataPath": "shiftId._eq"
+                  },
+                  "dataPath": "shift",
+                  "description": "The shift object",
+                  "field": "shift"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hPzbKsxlv": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "dialogMode": false,
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "Form1",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code"
+                    ]
+                  },
+                  "dataModel": "Workcenter",
+                  "selectFields": [
+                    "code"
+                  ],
+                  "orderByDirection": "asc",
+                  "additionalFields": [
+                    "id",
+                    "code"
+                  ],
+                  "dataPath": "workcenter",
+                  "target": {
+                    "dataPath": "workcenterId._eq"
+                  },
+                  "description": "",
+                  "field": "workcenter"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oT4CdOg7x": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "dialogMode": false,
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "Form1",
+                  "dataPath": "workcenter.workcenterGroup",
+                  "target": {
+                    "dataPath": "workcenter.workcenterGroupId._eq"
+                  },
+                  "field": "workcenter.workcenterGroup",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "workcenterGroup.id",
+                      "workcenterGroup.name"
+                    ]
+                  },
+                  "dataModel": "WorkcenterGroup",
+                  "selectFields": [
+                    "name"
+                  ],
+                  "additionalFields": [
+                    "id",
+                    "name"
+                  ],
+                  "orderByDirection": "asc",
+                  "predicate": "_eq"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select2"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqct9yw400u6356eywr93ota": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Facility",
+                  "dialogMode": false,
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "Form1",
+                  "dataPath": "workcenter.facility",
+                  "target": {
+                    "dataPath": "workcenter.facilityId._eq"
+                  },
+                  "field": "workcenter.facility",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "workcenter.facility.id",
+                      "workcenter.facility.code"
+                    ]
+                  },
+                  "dataModel": "Facility",
+                  "selectFields": [
+                    "code"
+                  ],
+                  "additionalFields": [],
+                  "orderByDirection": "asc",
+                  "predicate": "_eq"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select3"
+                },
+                "parent": "1NoKLinJVo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnw1lz60000r013bfwop34fr",
+      "title": "OEE",
+      "path": "/productionManagement/manufacturing/oees",
+      "moduleId": "manufacturing",
+      "screenId": "oee",
+      "isMenuAccessible": true,
+      "submenu": "Reports"
+    }
+  ]
+}

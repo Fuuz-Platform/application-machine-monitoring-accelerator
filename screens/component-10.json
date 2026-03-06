@@ -1,0 +1,1133 @@
+{
+  "header": {
+    "id": "iotTag",
+    "name": "Iot Tag",
+    "description": "",
+    "active": true,
+    "moduleId": "internetOfThings",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clq2mkoy2000c016cdx41hnd7",
+    "number": "0.0.10",
+    "description": "",
+    "screenId": "iotTag",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "IotTagTable",
+          "tabTitle": "Iot Tag Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Checkbox": 2,
+                    "Text": 2,
+                    "Combobox": 3,
+                    "Table Column": 8
+                  },
+                  "module": {
+                    "id": "internetOfThings",
+                    "group": {
+                      "id": "system"
+                    }
+                  },
+                  "dataModel": "IotTag",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "ep9vJcDjpN",
+                  "UtJiLS1QJJ",
+                  "_p7u6XrYOc"
+                ],
+                "linkedNodes": {}
+              },
+              "ep9vJcDjpN": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "xa6GHGkkX-"
+                ],
+                "linkedNodes": {}
+              },
+              "xa6GHGkkX-": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "IotTag",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ep9vJcDjpN",
+                "hidden": false,
+                "nodes": [
+                  "gFtHY8m7yK"
+                ],
+                "linkedNodes": {}
+              },
+              "gFtHY8m7yK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": true,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "xa6GHGkkX-",
+                "hidden": false,
+                "nodes": [
+                  "6TKa2kjc5",
+                  "onTQBXwBkQ",
+                  "nGz25uJKNB",
+                  "uzNcXkBxEw",
+                  "NEb7t2ksAK"
+                ],
+                "linkedNodes": {}
+              },
+              "NEb7t2ksAK": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "field": "active",
+                  "description": "Is this Iot Tag active?",
+                  "element": "Checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "active._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox1"
+                },
+                "parent": "gFtHY8m7yK",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uzNcXkBxEw": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Store History",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "storeHistory",
+                  "field": "storeHistory",
+                  "description": "",
+                  "element": "Checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "storeHistory._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox2"
+                },
+                "parent": "gFtHY8m7yK",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "onTQBXwBkQ": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Device",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "device",
+                  "field": "device",
+                  "description": "A description of the device this IOT tag is linked to.",
+                  "element": "Combobox",
+                  "queryType": "Device",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "device.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "device.id",
+                      "device.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "gFtHY8m7yK",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "nGz25uJKNB": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Iot Tag Type",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "iotTagType",
+                  "field": "iotTagType",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "IotTagType",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "iotTagType.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "iotTagType.id",
+                      "iotTagType.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox2"
+                },
+                "parent": "gFtHY8m7yK",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UtJiLS1QJJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "_aZM-XSiAP",
+                  "mqhmLzTk4l",
+                  "afqAqNegp4",
+                  "bLMj9w_Sf5"
+                ],
+                "linkedNodes": {}
+              },
+              "_aZM-XSiAP": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "UtJiLS1QJJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "mqhmLzTk4l": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Iot Tag",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "The name of this tag",
+                          "element": "text",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "Is this Iot Tag active?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Store History",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "storeHistory",
+                          "field": "storeHistory",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Device",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "device",
+                          "field": "device",
+                          "description": "A description of the device this IOT tag is linked to.",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Device",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "deviceId"
+                          },
+                          "query": {
+                            "fields": [
+                              "device.id",
+                              "device.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Iot Tag Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "iotTagType",
+                          "field": "iotTagType",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTagType",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagTypeId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTagType.id",
+                              "iotTagType.name",
+                              "iotTagType.configurationSchema"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Use Case",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "iotTagUseCase",
+                          "field": "iotTagUseCase",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTagUseCase",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagUseCaseId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTagUseCase.id",
+                              "iotTagUseCase.name",
+                              "iotTagType.configurationSchema"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "query",
+                      "api": "Application",
+                      "query": "query (\n  $iotTagTypeId: String!\n  $iotTagUseCaseId: String!\n){\n  iotTagType(\n    where:{\n      id:{_eq: $iotTagTypeId}\n    }\n  ){\n    edges{\n      node{ configurationSchema}\n    }\n  }\n  \n  iotTagUseCase(\n    where:{\n      id:{_eq: $iotTagUseCaseId}\n    }\n  ){\n    edges{\n      node{ configurationSchema}\n    }\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"iotTagTypeId\": data.iotTagTypeId,\n  \"iotTagUseCaseId\": data.iotTagUseCaseId\n}"
+                      }
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "type": "json",
+                          "name": "arguments",
+                          "dataPath": "arguments",
+                          "showSchemaFields": true,
+                          "schema": {
+                            "__transform": "data.iotTagType.**.configurationSchema"
+                          },
+                          "fieldContext": {
+                            "__transform": "{\n  \"loadTransformPayload\": { \"deviceId\": data.**.deviceId },\n  \"mappingTransformPayload\": \"/*hello*/ nodeId\"\n}"
+                          },
+                          "collapsible": true,
+                          "collapsedByDefault": true,
+                          "label": "Inputs",
+                          "validation": {
+                            "required": true
+                          },
+                          "defaultValue": {
+                            "__transform": "data.iotTagType.**.configurationSchema.type = \"array\" ? [] : {}"
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "post": "$merge([\n  $omit(data, [\"iotTagType\"]),\n  {\n    \"configuration\":result.arguments\n  }\n])"
+                      },
+                      "title": {
+                        "__transform": "\"Tag Details\""
+                      }
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "type": "json",
+                          "name": "metadata",
+                          "dataPath": "metadata",
+                          "showSchemaFields": true,
+                          "schema": {
+                            "__transform": "data.iotTagUseCase.**.configurationSchema"
+                          },
+                          "fieldContext": {
+                            "__transform": "{\n  \"mappingTransformPayload\": \"metadata\"\n}"
+                          },
+                          "collapsible": true,
+                          "collapsedByDefault": true,
+                          "label": "Metadata",
+                          "validation": {
+                            "required": true
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Use Case Details\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateIotTag($payload: [IotTagCreatePayloadInput!]!) {\n  mutation: createIotTag(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": $omit(data, [\"iotTagType\", \"iotTagUseCase\"])\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Iot Tag \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "UtJiLS1QJJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "afqAqNegp4": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Iot Tag \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "The name of this tag",
+                          "element": "text",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "Is this Iot Tag active?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Store History",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "storeHistory",
+                          "field": "storeHistory",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Current Value",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "currentValue",
+                          "field": "currentValue",
+                          "description": "The current or last reported value of an IOT Tag.",
+                          "element": "JSONInput",
+                          "type": "json"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateIotTag($payload: [IotTagUpdatePayloadInput!]!) {\n  mutation: updateIotTag(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Iot Tag \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "UtJiLS1QJJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bLMj9w_Sf5": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Iot Tag \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "query",
+                      "api": "Application",
+                      "query": "query ($iotTagIds: [String!]){\n  iotTagHistoricalValue(\n    where:{\n      iotTagId:{ _in: $iotTagIds}\n    }\n    first:null\n  ){\n    edges{\n      node{\n        id\n      }\n    }\n  }\n  workcenterIotTag(\n    where:{\n      iotTagId:{ _in: $iotTagIds}\n    }\n    first:null\n  ){\n    edges{\n      node{\n        id\n      }\n    }\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"iotTagIds\":[ $components.Table1.selectedRows.id]\n}"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteIotTag(\n  $tagHistoryPayload: [IotTagHistoricalValueDeletePayloadInput!]!,\n  $workcenterTagPayload: [WorkcenterIotTagDeletePayloadInput!]!,\n  $tagPayload: [IotTagDeletePayloadInput!]!,\n  \n) {\n  deleteIotTagHistoricalValue(payload: $tagHistoryPayload){ id }\n  deleteWorkcenterIotTag(payload: $workcenterTagPayload){ id }\n  mutation: deleteIotTag(payload: $tagPayload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"tagHistoryPayload\": [data.iotTagHistoricalValue.edges.node.{\n    \"where\": { \"id\": id}\n  }],\n  \"workcenterTagPayload\": [data.workcenterIotTag.edges.node.{\n    \"where\": { \"id\": id}\n  }],\n  \"tagPayload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Iot Tag \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "UtJiLS1QJJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_p7u6XrYOc": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "IotTag",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "A reference to a single tag or memory address on a device with an optional description, path, min, and max values.",
+                  "rowMultiSelectWithClick": true
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "pCBzpO2tH",
+                  "kfUo4gYL55",
+                  "iLgvKBR3hW",
+                  "_uVVPUjAQ5",
+                  "QYS4EFeBq",
+                  "HT-MupNq5o",
+                  "XGwaFqqZxK",
+                  "yBh6U9Dnx"
+                ],
+                "linkedNodes": {}
+              },
+              "_uVVPUjAQ5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "field": "active",
+                  "dataPath": "active",
+                  "description": "Is this Iot Tag active?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XGwaFqqZxK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Store History",
+                  "format": "checkmark",
+                  "field": "storeHistory",
+                  "dataPath": "storeHistory",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HT-MupNq5o": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Current Value",
+                  "format": "json",
+                  "field": "currentValue",
+                  "dataPath": "currentValue",
+                  "description": "The current or last reported value of an IOT Tag."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "iLgvKBR3hW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Device Name",
+                  "format": "text",
+                  "field": "device.name",
+                  "dataPath": "device.name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "device.id",
+                      "device.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kfUo4gYL55": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Tag Type",
+                  "format": "text",
+                  "field": "iotTagType.name",
+                  "dataPath": "iotTagType.name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "iotTagType.id",
+                      "iotTagType.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pCBzpO2tH": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "dataPath": "name",
+                  "description": "A code representing the tag.",
+                  "field": "name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yBh6U9Dnx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Current Value Recorded At",
+                  "format": "text",
+                  "dataPath": "currentValueRecordedAt",
+                  "description": "The time at which the current value was recorded.",
+                  "field": "currentValueRecordedAt"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QYS4EFeBq": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Use Case",
+                  "format": "text",
+                  "dataPath": "iotTagUseCase.name",
+                  "field": "iotTagUseCase.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "_p7u6XrYOc",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6TKa2kjc5": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "target": {
+                    "dataPath": "name._contains"
+                  },
+                  "description": "A code representing the tag.",
+                  "field": "name",
+                  "predicate": "_contains"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "gFtHY8m7yK",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clohfeons000b01819j79glta",
+      "title": "Iot Tag",
+      "path": "/system/internetOfThings/iotTags",
+      "moduleId": "internetOfThings",
+      "screenId": "iotTag",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

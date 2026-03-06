@@ -1,0 +1,1020 @@
+{
+  "header": {
+    "id": "approvedWorkcenterForm",
+    "name": "Approved Workcenter Form",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clnunskep001e016s2l5bbydo",
+    "number": "0.0.4",
+    "description": "",
+    "screenId": "approvedWorkcenterForm",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ApprovedWorkcenterForm",
+          "tabTitle": "Approved Workcenter Form",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 5,
+                    "Action Button": 2,
+                    "Form": 1,
+                    "Text": 9,
+                    "Display": 4,
+                    "Float": 6,
+                    "Markdown": 1,
+                    "Combobox": 1
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "ApprovedWorkcenter",
+                  "template": "form"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "AtjUxTHuRz",
+                  "Agte6amdYL"
+                ],
+                "linkedNodes": {}
+              },
+              "AtjUxTHuRz": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "T_mp2yxBn9",
+                  "rmfOFJUdDL"
+                ],
+                "linkedNodes": {}
+              },
+              "T_mp2yxBn9": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "save",
+                    "size": null
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$components.Form1.formState.submitSucceeded ? $not($components.Form1.formState.dirtySinceLastSubmit) : $not($components.Form1.formState.dirty)",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Form1.formState.submitSucceeded",
+                        "components.Form1.formState.dirtySinceLastSubmit",
+                        "components.Form1.formState.dirty"
+                      ]
+                    },
+                    "__cacheKey": "saveButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $updatePayload := $components.Form1.fn.getUpdatePayload() ~> | where | {\"id\": $uriUnescapeComponent(id)} |;\n  $updatedMutation := $components.Form1.fn.getUpdateMutation();\n  \n  $mutation := {\n    \"statement\": $updatedMutation,\n    \"variables\":{ \"payload\":$updatePayload} \n  };\n    \n  \n  $mutate( $mutation );\n  $components.Form1.fn.loadData()\n)\n"
+                    }
+                  ],
+                  "title": "Save"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Save button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Save Button which saves form data.",
+                    "icon": "save"
+                  }
+                },
+                "parent": "AtjUxTHuRz",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rmfOFJUdDL": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "message": {
+                        "__transform": "\"Are you sure?\""
+                      },
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "buttonColor": "error"
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $updatePayload := $components.Form1.fn.getDeletePayload() ~> | where | {\"id\": $uriUnescapeComponent(id)} |;\n  $updatedMutation := $components.Form1.fn.getDeleteMutation();\n  \n  $mutation := {\n    \"statement\": $updatedMutation,\n    \"variables\":{ \"payload\":$updatePayload} \n  };\n    \n  \n  $mutate( $mutation );\n  \n)\n",
+                      "remote": false
+                    },
+                    {
+                      "type": "navigation",
+                      "navigationType": "Back",
+                      "back": true
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2",
+                  "editor": {
+                    "category": "Interaction",
+                    "color": "#9c5a94",
+                    "description": "Delete button which perform delete action.",
+                    "elementName": "Delete Button",
+                    "icon": "trash"
+                  }
+                },
+                "parent": "AtjUxTHuRz",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Agte6amdYL": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "ApprovedWorkcenter",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": $uriUnescapeComponent(id)\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "blockNavigationWhenDirty": true
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "0r2I1mpMIc"
+                ],
+                "linkedNodes": {}
+              },
+              "0r2I1mpMIc": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "Agte6amdYL",
+                "hidden": false,
+                "nodes": [
+                  "0Ddu1jmxZA",
+                  "rLbfUGqRXe"
+                ],
+                "linkedNodes": {}
+              },
+              "0Ddu1jmxZA": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "0r2I1mpMIc",
+                "hidden": false,
+                "nodes": [
+                  "OMKn9mjszI",
+                  "h7yUp3cfFL",
+                  "tHfdWrxppb",
+                  "24wG_FocaU",
+                  "p8IxdlfRRB",
+                  "CsDUTNlzAu",
+                  "0eOASihi7u",
+                  "7H6zaA8BVi",
+                  "Q_C61s9idQ",
+                  "JC6I57cKYd",
+                  "ibsiL1cfaN",
+                  "YBAXjrUUxY",
+                  "4TlqVsS7Rs"
+                ],
+                "linkedNodes": {}
+              },
+              "rLbfUGqRXe": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "0r2I1mpMIc",
+                "hidden": false,
+                "nodes": [
+                  "BOZ8_PKa_7",
+                  "oQenQ0co7M",
+                  "gBnVNoIDFm",
+                  "wRT-syCueH",
+                  "IAHO6eLiQt"
+                ],
+                "linkedNodes": {}
+              },
+              "BOZ8_PKa_7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "rLbfUGqRXe",
+                "hidden": false,
+                "nodes": [
+                  "8BJx-xGPtH"
+                ],
+                "linkedNodes": {}
+              },
+              "8BJx-xGPtH": {
+                "type": {
+                  "resolvedName": "Text"
+                },
+                "isCanvas": false,
+                "props": {
+                  "content": "History"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "BOZ8_PKa_7",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oQenQ0co7M": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "format": "datetime"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display1"
+                },
+                "parent": "rLbfUGqRXe",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gBnVNoIDFm": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdByUser.email",
+                  "dataPath": "createdByUser.email",
+                  "description": "The User who created this record.",
+                  "query": {
+                    "fields": [
+                      "createdByUser.id",
+                      "createdByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.createdByUser.id) ? \"/system/accessControl/users/\" & data.createdByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.createdByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "createdByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display2"
+                },
+                "parent": "rLbfUGqRXe",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wRT-syCueH": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "format": "datetime"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display3"
+                },
+                "parent": "rLbfUGqRXe",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IAHO6eLiQt": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedByUser.email",
+                  "dataPath": "updatedByUser.email",
+                  "description": "The User who last updated this record.",
+                  "query": {
+                    "fields": [
+                      "updatedByUser.id",
+                      "updatedByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.updatedByUser.id) ? \"/system/accessControl/users/\" & data.updatedByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.updatedByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "updatedByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display4"
+                },
+                "parent": "rLbfUGqRXe",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OMKn9mjszI": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Part No Revision",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "partNoRevision",
+                  "field": "partNoRevision",
+                  "description": "",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "h7yUp3cfFL": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Crew Size",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "crewSize",
+                  "field": "crewSize",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float1"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tHfdWrxppb": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Ideal Rate",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "idealRate",
+                  "field": "idealRate",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float2"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "24wG_FocaU": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Setup Crew Size",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "setupCrewSize",
+                  "field": "setupCrewSize",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float3"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "p8IxdlfRRB": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Setup Time",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "setupTime",
+                  "field": "setupTime",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float4"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CsDUTNlzAu": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Standard Production Rate",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "standardProductionRate",
+                  "field": "standardProductionRate",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float5"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0eOASihi7u": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "float",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Target Rate",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "targetRate",
+                  "field": "targetRate",
+                  "description": "",
+                  "element": "FloatInput"
+                },
+                "displayName": "Float",
+                "custom": {
+                  "elementName": "Float6"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7H6zaA8BVi": {
+                "type": {
+                  "resolvedName": "MarkdownInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "markdown",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Note",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "note",
+                  "field": "note",
+                  "description": "",
+                  "element": "MarkdownInput"
+                },
+                "displayName": "Markdown",
+                "custom": {
+                  "elementName": "Markdown1"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Q_C61s9idQ": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Operation Code",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationCode",
+                  "field": "operationCode",
+                  "description": "",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "JC6I57cKYd": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Operation No",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationNo",
+                  "field": "operationNo",
+                  "description": "",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ibsiL1cfaN": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Product No Revision",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productNoRevision",
+                  "field": "productNoRevision",
+                  "description": "",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text7"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YBAXjrUUxY": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Product Operation Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productOperationId",
+                  "field": "productOperationId",
+                  "description": "",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text8"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4TlqVsS7Rs": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter",
+                  "field": "workcenter",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "Workcenter",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "workcenterId"
+                  },
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  },
+                  "disabled": true
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "0Ddu1jmxZA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnum1cb5000r018z36reezug",
+      "title": "Approved Workcenter Form",
+      "path": "/productionManagement/manufacturing/approvedWorkcenter/:id",
+      "moduleId": "manufacturing",
+      "screenId": "approvedWorkcenterForm",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

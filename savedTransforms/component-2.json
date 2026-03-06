@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "oeeAverages",
+    "name": "OEE Averages",
+    "description": "",
+    "active": true
+  },
+  "version": {
+    "id": "clq5zjbl90009356ed795ruis",
+    "number": "1.0.1",
+    "description": null,
+    "savedTransformId": "oeeAverages",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n  ${\n    \"total\": {\n      \"availability\": $sum(availability) = 0  ? 0 : $sum(availability)  / $sum(availabilityWeight),\n      \"performance\": $sum(performance) = 0 ? 0 : $sum(performance) / $sum(performanceWeight),\n      \"quality\": $sum(quality) = 0 ? 0 : $sum(quality) / $sum(qualityWeight)\n    }\n  }\n).total ~> | $ | {\n  \"oee\": $reduce(\n    [availability, performance, quality], \n    function($value, $acc) { $isNumber($value) ? $value * $acc : $acc }\n  )\n} |\n",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

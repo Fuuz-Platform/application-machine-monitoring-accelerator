@@ -1,0 +1,914 @@
+{
+  "header": {
+    "id": "getOeEsForShiftProductionRun",
+    "name": "Get OEEs for shift Production Run",
+    "description": "Updated flow for production run dashboard",
+    "active": true,
+    "dataFlowTypeId": "Integration",
+    "moduleId": "dashboard"
+  },
+  "version": {
+    "id": "clwf6uoom15hv017ia4did3ig",
+    "number": "0.0.15",
+    "description": "",
+    "dataFlowId": "getOeEsForShiftProductionRun",
+    "flow": {
+      "id": "clwf6uoom15hv017ia4did3ig",
+      "name": "Get OEEs for shift Production Run",
+      "type": "Integration",
+      "nodes": [
+        {
+          "id": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+          "name": "Production Run Query",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "$",
+            "query": "query ProductionRun($workcenterId: String!){\n  \tproductionRun(\n    where:{\n      workcenterId:{ _eq: $workcenterId}\n      endAt:{ _isNull: true}\n    }\n  ){\n    edges{\n      node{\n        id\n        number\n        counterAccum\n        actualLaborHours\n        availability\n        averageCycleTime\n        changeoverAggregate\n        changeoverTime\n        crewAggregate\n        duration\n        earnedLaborHours\n        earnedMachineHours\n        excludedProduction\n        excludedScrap\n        idealAggregate\n        oee\n        performance\n        plannedDowntime\n        produced\n        quality\n        runCrewSize\n        runTime\n        totalScrapQuantity : scrap\n        standardAggregate\n        totalProductionQuantity : totalProduction\n        totalRequired\n        unplannedDowntime\n        externalId\n        endAt\n        startAt\n        customData\n        productionSetupId\n        unitId\n        workcenterId\n      }\n    }\n  }\n  setting(\n    where:{\n      id: {_eq: \"TimeZone\"}\n    }\n  ){\n    edges{\n    node{\n    defaultValue\n  }\n  }\n  }\n      \n}",
+            "nextNodes": [
+              "3c5e7ba5-5941-484e-9630-3ac157575b88"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+          "name": "JSONata",
+          "type": "transform",
+          "data": {
+            "transform": "{\n  \"workcenterId\": productionRun.edges.node.workcenterId,\n  \"startAt\":  productionRun.edges.node.startAt,\n  \"endTime\": $moment().format()\n}",
+            "nextNodes": [
+              "5d547549-9a81-4d26-bfa6-71d45b75c754"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+          "name": "Workcenter Query",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "$",
+            "query": "query (\n  $workcenterId: String!,\n  $startAt : DateTime,\n  $endAt: DateTime\n){\n  productionRun(\n    where:{\n      workcenterId:{ _eq: $workcenterId}\n      endAt:{ _isNull: true}\n    }\n  ){\n    edges{\n      node{\n        id\n        number\n        counterAccum\n        actualLaborHours\n        availability\n        averageCycleTime\n        changeoverAggregate\n        changeoverTime\n        crewAggregate\n        duration\n        earnedLaborHours\n        earnedMachineHours\n        excludedProduction\n        excludedScrap\n        idealAggregate\n        oee\n        performance\n        plannedDowntime\n        produced\n        quality\n        runCrewSize\n        runTime\n        totalScrapQuantity : scrap\n        standardAggregate\n        totalProductionQuantity : totalProduction\n        totalRequired\n        unplannedDowntime\n        externalId\n        endAt\n        startAt\n        customData\n        productionSetupId\n        unitId\n        workcenterId\n      }\n    }\n  }\n  \n  workcenterHistory(\n      where:{ \n        _or:[\n          {\n            _and:[\n              { occurAt:{_gte: $startAt} }\n              { occurAt:{_lt: $endAt} }\n              { workcenterId:{ _eq: $workcenterId}}\n            ]\n          },\n          {\n            _and:[\n              { endAt:{_gte: $startAt} }\n              { endAt:{_lt: $endAt} }\n              { workcenterId:{ _eq: $workcenterId}}\n            ]\n          },\n          { _and: [\n            {endAt: { _isNull: true }}\n            {occurAt: {_gte: $startAt }}\n            {occurAt: {_lt: $endAt }}\n            {workcenterId:{ _eq: $workcenterId}}\n            ]\n          }\n        ]\n      }\n      orderBy: {field: occurAt,  direction: asc}\n    ) {\n      edges {\n        node {\n          id\n          occurAt\n          endAt\n          duration\n          transactionTypeId\n          workcenterId\n          mode{\n              id\n              name\n              modeType{\n                name\n              }            \n            }\n\n        }\n      }\n    }\n  \n  productionHistory(\n    where:{\n      workcenterId:{_eq: $workcenterId }\n      occurAt:{\n        _gte: $startAt\n        _lt: $endAt\n      }\n    }\n    orderBy: {field: occurAt,  direction: asc}\n  ) {\n    edges {\n      node {\n        transactionTypeId\n        occurAt(round:{unit: hour})\n        _aggregate{\n          quantity{\n            sum\n            \n          }\n        }\n      }\n    }\n  }\n  \n  modeType{\n    edges{\n      node{\n        name\n      }\n    }\n  }\n}",
+            "nextNodes": [
+              "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "5abf02a8-0dff-4223-aa1a-d700993b0eb1",
+          "name": "Request",
+          "type": "request",
+          "data": {
+            "nextNodes": [
+              "27878415-58f2-4703-bfe8-cb89c982ec7e"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674",
+          "name": "Success Response",
+          "type": "response",
+          "data": {
+            "responseTransform": "$\n",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "4ab09f89-e2b2-4808-991b-301039714d39",
+          "name": "JSONata",
+          "type": "transform",
+          "data": {
+            "transform": "productionRun.edges.node",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+          "name": "Try Catch",
+          "type": "tryCatch",
+          "data": {
+            "tryNextNodes": [
+              "ef03ada8-dcf8-4d92-8887-07c1858e5bc6"
+            ],
+            "catchNextNodes": [
+              "7b273fa2-d453-42d7-9a5a-e80923347ac8"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "7b273fa2-d453-42d7-9a5a-e80923347ac8",
+          "name": "Failed Response",
+          "type": "response",
+          "data": {
+            "responseTransform": "$",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.14"
+    },
+    "diagram": {
+      "id": "clwf6uoom15hv017ia4did3ig",
+      "offsetX": 32.96,
+      "offsetY": 201.68,
+      "zoom": 83.14,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "c79494d3-ddb0-41be-a740-4f6d6af85bdd",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "78033026-7c0d-4e72-a468-a8da46c92fa5": {
+              "points": [
+                {
+                  "id": "3c49c08f-53e4-4c99-a930-6662fb0bec1c",
+                  "type": "point",
+                  "x": 794,
+                  "y": 209.73
+                },
+                {
+                  "id": "08b568cd-3660-43a8-8987-e4185a01efa0",
+                  "type": "point",
+                  "x": 830,
+                  "y": 209.73
+                }
+              ],
+              "id": "78033026-7c0d-4e72-a468-a8da46c92fa5",
+              "type": "default",
+              "selected": false,
+              "source": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+              "sourcePort": "clq4dghw500n7356eei7dw0s3",
+              "target": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+              "targetPort": "clq4dssou010c356exhh9ue1y",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "a7f3c3c1-ed40-4b3a-b99c-bbf1eca301f9": {
+              "points": [
+                {
+                  "id": "f8729292-cd08-4877-9e6e-e6f09fd008d0",
+                  "type": "point",
+                  "x": 984,
+                  "y": 209.73
+                },
+                {
+                  "id": "d12b9dd0-5e09-438b-9c56-cadb09aa065f",
+                  "type": "point",
+                  "x": 1020,
+                  "y": 209.73
+                }
+              ],
+              "id": "a7f3c3c1-ed40-4b3a-b99c-bbf1eca301f9",
+              "type": "default",
+              "selected": false,
+              "source": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+              "sourcePort": "clq4dssou010e356ehfvkf671",
+              "target": "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674",
+              "targetPort": "clq4e2njl015n356emhyetibk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "a2697b75-f2c8-43ef-b5f7-959c085c1d99": {
+              "points": [
+                {
+                  "id": "245bc5d7-c530-4bf4-8f8d-9addd1d7605e",
+                  "type": "point",
+                  "x": 223.98,
+                  "y": 139.73
+                },
+                {
+                  "id": "e94f8e1f-e4f9-4f7a-9284-9f322efb9dab",
+                  "type": "point",
+                  "x": 260,
+                  "y": 209.73
+                }
+              ],
+              "id": "a2697b75-f2c8-43ef-b5f7-959c085c1d99",
+              "type": "default",
+              "selected": false,
+              "source": "0f0269bd-5493-40b0-aef1-25c173ffb555",
+              "sourcePort": "clq4dbn9500jp356eypbyo4lv",
+              "target": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+              "targetPort": "clq4ff0he01dt356elmolcvjk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "2e51607d-4523-49e4-807d-aeca42463095": {
+              "points": [
+                {
+                  "id": "5501facb-fd40-466d-ac6c-8f884d5df0da",
+                  "type": "point",
+                  "x": 224,
+                  "y": 209.73
+                },
+                {
+                  "id": "df1c83f3-d3be-4313-9f5c-d84846104035",
+                  "type": "point",
+                  "x": 260,
+                  "y": 209.73
+                }
+              ],
+              "id": "2e51607d-4523-49e4-807d-aeca42463095",
+              "type": "default",
+              "selected": false,
+              "source": "5abf02a8-0dff-4223-aa1a-d700993b0eb1",
+              "sourcePort": "clq4e2imz015h356ea5ubdzob",
+              "target": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+              "targetPort": "clq4ff0he01dt356elmolcvjk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "40bfb673-d23f-4aec-8f0a-66c6a0a23af3": {
+              "points": [
+                {
+                  "id": "b60880f7-51f3-4e96-ba4d-60b509f6cab3",
+                  "type": "point",
+                  "x": 414,
+                  "y": 209.73
+                },
+                {
+                  "id": "1afb3c5b-3cab-4db6-9846-51d38b58b25d",
+                  "type": "point",
+                  "x": 450,
+                  "y": 209.73
+                }
+              ],
+              "id": "40bfb673-d23f-4aec-8f0a-66c6a0a23af3",
+              "type": "default",
+              "selected": false,
+              "source": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+              "sourcePort": "clq4ff0he01dv356e9p8q5fwm",
+              "target": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+              "targetPort": "clq4dbo7000jr356e05spa8nn",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "e1472ef5-7af5-4064-8282-75280d728f27": {
+              "points": [
+                {
+                  "id": "eafdeac5-77c7-4618-9fe1-801468acce39",
+                  "type": "point",
+                  "x": 414,
+                  "y": 234.89
+                },
+                {
+                  "id": "b86613db-6c5b-47de-8f20-e458fe8206ae",
+                  "type": "point",
+                  "x": 445,
+                  "y": 344.73
+                }
+              ],
+              "id": "e1472ef5-7af5-4064-8282-75280d728f27",
+              "type": "default",
+              "selected": false,
+              "source": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+              "sourcePort": "clq4ff0he01dx356ezgc5a5z9",
+              "target": "7b273fa2-d453-42d7-9a5a-e80923347ac8",
+              "targetPort": "clq4ffkhz01e7356et2wo7snz",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "5de435ee-120c-4a13-98aa-634b4660b146": {
+              "points": [
+                {
+                  "id": "87d2fbba-c9a6-4eb5-b8a3-1bfff01147cf",
+                  "type": "point",
+                  "x": 612.53,
+                  "y": 209.73
+                },
+                {
+                  "id": "9e8f2d3c-0936-4a1a-8916-5d99d740da14",
+                  "type": "point",
+                  "x": 640,
+                  "y": 209.73
+                }
+              ],
+              "id": "5de435ee-120c-4a13-98aa-634b4660b146",
+              "type": "default",
+              "selected": false,
+              "source": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+              "sourcePort": "clq4dbo7000jt356eplgg3yn3",
+              "target": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+              "targetPort": "clq4dghw500n5356ey4fpt6jj",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "2dbc378b-7154-466a-87b7-78f3dbd2c699",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "0f0269bd-5493-40b0-aef1-25c173ffb555": {
+              "id": "0f0269bd-5493-40b0-aef1-25c173ffb555",
+              "type": "debugSource",
+              "selected": true,
+              "x": 70,
+              "y": 100,
+              "ports": [
+                {
+                  "id": "clq4dbn9500jp356eypbyo4lv",
+                  "type": "default",
+                  "x": 215.98,
+                  "y": 131.73,
+                  "name": "clq4dbn9500jq356ea7t6wne9",
+                  "parentNode": "0f0269bd-5493-40b0-aef1-25c173ffb555",
+                  "links": [
+                    "a2697b75-f2c8-43ef-b5f7-959c085c1d99"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "workcenterId": "clostq7w49goo0177f9epgdss"
+                },
+                "context": {},
+                "nextNodes": [
+                  "27878415-58f2-4703-bfe8-cb89c982ec7e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source"
+            },
+            "ef03ada8-dcf8-4d92-8887-07c1858e5bc6": {
+              "id": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+              "type": "query",
+              "selected": false,
+              "x": 450,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4dbo7000jr356e05spa8nn",
+                  "type": "default",
+                  "x": 442,
+                  "y": 201.73,
+                  "name": "clq4dbo7000js356e8u6tuewp",
+                  "parentNode": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+                  "links": [
+                    "40bfb673-d23f-4aec-8f0a-66c6a0a23af3"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq4dbo7000jt356eplgg3yn3",
+                  "type": "default",
+                  "x": 604.53,
+                  "y": 201.73,
+                  "name": "clq4dbo7000ju356emsvwjq74",
+                  "parentNode": "ef03ada8-dcf8-4d92-8887-07c1858e5bc6",
+                  "links": [
+                    "5de435ee-120c-4a13-98aa-634b4660b146"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "$",
+                "query": "query ProductionRun($workcenterId: String!){\n  \tproductionRun(\n    where:{\n      workcenterId:{ _eq: $workcenterId}\n      endAt:{ _isNull: true}\n    }\n  ){\n    edges{\n      node{\n        id\n        number\n        counterAccum\n        actualLaborHours\n        availability\n        averageCycleTime\n        changeoverAggregate\n        changeoverTime\n        crewAggregate\n        duration\n        earnedLaborHours\n        earnedMachineHours\n        excludedProduction\n        excludedScrap\n        idealAggregate\n        oee\n        performance\n        plannedDowntime\n        produced\n        quality\n        runCrewSize\n        runTime\n        totalScrapQuantity : scrap\n        standardAggregate\n        totalProductionQuantity : totalProduction\n        totalRequired\n        unplannedDowntime\n        externalId\n        endAt\n        startAt\n        customData\n        productionSetupId\n        unitId\n        workcenterId\n      }\n    }\n  }\n  setting(\n    where:{\n      id: {_eq: \"TimeZone\"}\n    }\n  ){\n    edges{\n    node{\n    defaultValue\n  }\n  }\n  }\n      \n}",
+                "nextNodes": [
+                  "3c5e7ba5-5941-484e-9630-3ac157575b88"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Production Run Query"
+            },
+            "3c5e7ba5-5941-484e-9630-3ac157575b88": {
+              "id": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+              "type": "transform",
+              "selected": false,
+              "x": 640,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4dghw500n5356ey4fpt6jj",
+                  "type": "default",
+                  "x": 632,
+                  "y": 201.73,
+                  "name": "clq4dghw500n6356evxd1m5r7",
+                  "parentNode": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+                  "links": [
+                    "5de435ee-120c-4a13-98aa-634b4660b146"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq4dghw500n7356eei7dw0s3",
+                  "type": "default",
+                  "x": 786,
+                  "y": 201.73,
+                  "name": "clq4dghw500n8356efrpxr1k0",
+                  "parentNode": "3c5e7ba5-5941-484e-9630-3ac157575b88",
+                  "links": [
+                    "78033026-7c0d-4e72-a468-a8da46c92fa5"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "{\n  \"workcenterId\": productionRun.edges.node.workcenterId,\n  \"startAt\":  productionRun.edges.node.startAt,\n  \"endTime\": $moment().format()\n}",
+                "nextNodes": [
+                  "5d547549-9a81-4d26-bfa6-71d45b75c754"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "JSONata"
+            },
+            "5d547549-9a81-4d26-bfa6-71d45b75c754": {
+              "id": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+              "type": "query",
+              "selected": false,
+              "x": 830,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4dssou010c356exhh9ue1y",
+                  "type": "default",
+                  "x": 822,
+                  "y": 201.73,
+                  "name": "clq4dssou010d356ehity1jdy",
+                  "parentNode": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+                  "links": [
+                    "78033026-7c0d-4e72-a468-a8da46c92fa5"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq4dssou010e356ehfvkf671",
+                  "type": "default",
+                  "x": 976,
+                  "y": 201.73,
+                  "name": "clq4dssou010f356efwf0njqs",
+                  "parentNode": "5d547549-9a81-4d26-bfa6-71d45b75c754",
+                  "links": [
+                    "a7f3c3c1-ed40-4b3a-b99c-bbf1eca301f9"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "$",
+                "query": "query (\n  $workcenterId: String!,\n  $startAt : DateTime,\n  $endAt: DateTime\n){\n  productionRun(\n    where:{\n      workcenterId:{ _eq: $workcenterId}\n      endAt:{ _isNull: true}\n    }\n  ){\n    edges{\n      node{\n        id\n        number\n        counterAccum\n        actualLaborHours\n        availability\n        averageCycleTime\n        changeoverAggregate\n        changeoverTime\n        crewAggregate\n        duration\n        earnedLaborHours\n        earnedMachineHours\n        excludedProduction\n        excludedScrap\n        idealAggregate\n        oee\n        performance\n        plannedDowntime\n        produced\n        quality\n        runCrewSize\n        runTime\n        totalScrapQuantity : scrap\n        standardAggregate\n        totalProductionQuantity : totalProduction\n        totalRequired\n        unplannedDowntime\n        externalId\n        endAt\n        startAt\n        customData\n        productionSetupId\n        unitId\n        workcenterId\n      }\n    }\n  }\n  \n  workcenterHistory(\n      where:{ \n        _or:[\n          {\n            _and:[\n              { occurAt:{_gte: $startAt} }\n              { occurAt:{_lt: $endAt} }\n              { workcenterId:{ _eq: $workcenterId}}\n            ]\n          },\n          {\n            _and:[\n              { endAt:{_gte: $startAt} }\n              { endAt:{_lt: $endAt} }\n              { workcenterId:{ _eq: $workcenterId}}\n            ]\n          },\n          { _and: [\n            {endAt: { _isNull: true }}\n            {occurAt: {_gte: $startAt }}\n            {occurAt: {_lt: $endAt }}\n            {workcenterId:{ _eq: $workcenterId}}\n            ]\n          }\n        ]\n      }\n      orderBy: {field: occurAt,  direction: asc}\n    ) {\n      edges {\n        node {\n          id\n          occurAt\n          endAt\n          duration\n          transactionTypeId\n          workcenterId\n          mode{\n              id\n              name\n              modeType{\n                name\n              }            \n            }\n\n        }\n      }\n    }\n  \n  productionHistory(\n    where:{\n      workcenterId:{_eq: $workcenterId }\n      occurAt:{\n        _gte: $startAt\n        _lt: $endAt\n      }\n    }\n    orderBy: {field: occurAt,  direction: asc}\n  ) {\n    edges {\n      node {\n        transactionTypeId\n        occurAt(round:{unit: hour})\n        _aggregate{\n          quantity{\n            sum\n            \n          }\n        }\n      }\n    }\n  }\n  \n  modeType{\n    edges{\n      node{\n        name\n      }\n    }\n  }\n}",
+                "nextNodes": [
+                  "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Workcenter Query"
+            },
+            "5abf02a8-0dff-4223-aa1a-d700993b0eb1": {
+              "id": "5abf02a8-0dff-4223-aa1a-d700993b0eb1",
+              "type": "request",
+              "selected": false,
+              "x": 70,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4e2imz015h356ea5ubdzob",
+                  "type": "default",
+                  "x": 216,
+                  "y": 201.73,
+                  "name": "clq4e2imz015i356esbjrj5yk",
+                  "parentNode": "5abf02a8-0dff-4223-aa1a-d700993b0eb1",
+                  "links": [
+                    "2e51607d-4523-49e4-807d-aeca42463095"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "27878415-58f2-4703-bfe8-cb89c982ec7e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Request"
+            },
+            "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674": {
+              "id": "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674",
+              "type": "response",
+              "selected": false,
+              "x": 1020,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4e2njl015n356emhyetibk",
+                  "type": "default",
+                  "x": 1012,
+                  "y": 201.73,
+                  "name": "clq4e2njl015o356eg991kc5q",
+                  "parentNode": "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674",
+                  "links": [
+                    "a7f3c3c1-ed40-4b3a-b99c-bbf1eca301f9"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "clq4e2njl015p356e2e8elp11",
+                  "type": "default",
+                  "x": 1165.98,
+                  "y": 201.73,
+                  "name": "clq4e2njl015q356ecuou2stb",
+                  "parentNode": "f6d7fb3a-4b70-432f-bd4c-ed1ed4ad9674",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "$\n",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Success Response"
+            },
+            "4ab09f89-e2b2-4808-991b-301039714d39": {
+              "id": "4ab09f89-e2b2-4808-991b-301039714d39",
+              "type": "transform",
+              "selected": false,
+              "x": 805,
+              "y": 330,
+              "ports": [
+                {
+                  "id": "clq4ejy6f01a5356e6yf6pkaa",
+                  "type": "default",
+                  "x": 797,
+                  "y": 361.73,
+                  "name": "clq4ejy6f01a6356epy6rzlga",
+                  "parentNode": "4ab09f89-e2b2-4808-991b-301039714d39",
+                  "links": [],
+                  "in": true
+                },
+                {
+                  "id": "clq4ejy6f01a7356esqmc5fcx",
+                  "type": "default",
+                  "x": 951,
+                  "y": 361.73,
+                  "name": "clq4ejy6f01a8356erkek8w4a",
+                  "parentNode": "4ab09f89-e2b2-4808-991b-301039714d39",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "productionRun.edges.node",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "JSONata"
+            },
+            "27878415-58f2-4703-bfe8-cb89c982ec7e": {
+              "id": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+              "type": "tryCatch",
+              "selected": false,
+              "x": 260,
+              "y": 170,
+              "ports": [
+                {
+                  "id": "clq4ff0he01dt356elmolcvjk",
+                  "type": "default",
+                  "x": 252,
+                  "y": 201.73,
+                  "name": "clq4ff0he01du356epge2re4j",
+                  "parentNode": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+                  "links": [
+                    "a2697b75-f2c8-43ef-b5f7-959c085c1d99",
+                    "2e51607d-4523-49e4-807d-aeca42463095"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq4ff0he01dv356e9p8q5fwm",
+                  "type": "default",
+                  "x": 406,
+                  "y": 201.73,
+                  "name": "clq4ff0he01dw356e8ot9zc13",
+                  "parentNode": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+                  "links": [
+                    "40bfb673-d23f-4aec-8f0a-66c6a0a23af3"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Try",
+                  "fieldPath": "data.tryNextNodes"
+                },
+                {
+                  "id": "clq4ff0he01dx356ezgc5a5z9",
+                  "type": "default",
+                  "x": 406,
+                  "y": 226.89,
+                  "name": "clq4ff0he01dy356ew0xksrue",
+                  "parentNode": "27878415-58f2-4703-bfe8-cb89c982ec7e",
+                  "links": [
+                    "e1472ef5-7af5-4064-8282-75280d728f27"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Catch",
+                  "fieldPath": "data.catchNextNodes"
+                }
+              ],
+              "data": {
+                "tryNextNodes": [
+                  "ef03ada8-dcf8-4d92-8887-07c1858e5bc6"
+                ],
+                "catchNextNodes": [
+                  "7b273fa2-d453-42d7-9a5a-e80923347ac8"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Try Catch"
+            },
+            "7b273fa2-d453-42d7-9a5a-e80923347ac8": {
+              "id": "7b273fa2-d453-42d7-9a5a-e80923347ac8",
+              "type": "response",
+              "selected": false,
+              "x": 445,
+              "y": 305,
+              "ports": [
+                {
+                  "id": "clq4ffkhz01e7356et2wo7snz",
+                  "type": "default",
+                  "x": 437,
+                  "y": 336.73,
+                  "name": "clq4ffkhz01e8356ed012ikhf",
+                  "parentNode": "7b273fa2-d453-42d7-9a5a-e80923347ac8",
+                  "links": [
+                    "e1472ef5-7af5-4064-8282-75280d728f27"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "clq4ffkhz01e9356eie7rcv02",
+                  "type": "default",
+                  "x": 590.98,
+                  "y": 336.73,
+                  "name": "clq4ffkhz01ea356eb4nagiln",
+                  "parentNode": "7b273fa2-d453-42d7-9a5a-e80923347ac8",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "$",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Failed Response"
+            }
+          }
+        }
+      ],
+      "name": "Get OEEs for shift Production Run",
+      "type": "Integration",
+      "version": "0.0.14",
+      "walkthrough": {
+        "steps": [],
+        "includeIntroduction": true
+      }
+    }
+  }
+}

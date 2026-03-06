@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "visualizationDatasourceWorkcenterStatusByShift",
+    "name": "Visualization Datasource: Workcenter Status by Shift",
+    "description": "",
+    "active": true
+  },
+  "version": {
+    "id": "clqx09fqo00ey356e2oiokrc3",
+    "number": "1.0.7",
+    "description": null,
+    "savedTransformId": "visualizationDatasourceWorkcenterStatusByShift",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n  $fitModeToRange := function($startBound, $endBound, $mode){(\n  \n    $modeStart := $coalesce([ $mode.occurAt , $startBound])~>$moment(?) ;\n    $modeEnd := $coalesce([ $mode.endAt, $endBound])~>$moment(?);\n    \n    $endBoundObj := $moment($endBound);\n    $startBoundObj := $moment($startBound);\n  \n    $start := $modeStart.isAfter($startBound)? $modeStart : $startBoundObj;\n    $end := $modeEnd.isBefore($endBound)? $modeEnd : $endBoundObj;\n      \n    $isNilOrEmpty($mode.occurAt) and $isNilOrEmpty($mode.endAt)? \n      $throw(\"Mode has no occurAt or endAt\", $mode) :\n      $merge([\n        $mode,\n        {\"occurAt\": $start.format(), \"endAt\": $end.format(), \"originalTimes\":{\"occurAt\": $modeStart, \"endAt\": $endAt}}\n      ])\n  \n  )};\n  $durationOrNow := function($v){(\n    $end := $moment();\n    $mode := $fitModeToRange($$.startAt, $end.format(), $v);\n    \n    $start := $moment($mode.occurAt);\n    \n    $durationTillNow := $end.diff($start, \"seconds\");\n    \n    $coalesce([$mode.duration, $durationTillNow])\n    \n  )};\n  $date := $moment(startAt);\n  \n  $data := $leftOuterJoin( \n    [modeTypes], \n    [history], \n    'name', \n    $path(?, [\"mode\", \"modeType\", \"name\"]), \n    'history', \n    { 'grouped': true } \n  )\n    ~>$map(\n      | $ | { \"value\": $coalesce([ $sum( history.($durationOrNow($))), 0 ]) / 3600, \"label\": name }, [\"history\", \"name\"] |\n    );\n\n  {\n    \"chart\":{\n      \"caption\": \"Shift Status\",\n      \"subCaption\": $date.format(\"MM/DD\") & \" - \" & $$.shiftName,\n      \"yAxisName\": \"Time\",\n      \"numberSuffix\": \"h\"\n    },\n    \"data\": $data\n  }\n)",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

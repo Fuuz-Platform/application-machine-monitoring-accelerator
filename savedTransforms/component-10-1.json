@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "visualizationDatasourceProductionByHour",
+    "name": "Visualization Datasource: Production by Hour",
+    "description": "Auto-generated saved transform to drive visualization \"Production by Hour\".",
+    "active": true
+  },
+  "version": {
+    "id": "clq4b1xw3001c014d0jp7925l",
+    "number": "1.0.0",
+    "description": "Auto-generated saved transform version to drive visualization \"Production by Hour\".",
+    "savedTransformId": "visualizationDatasourceProductionByHour",
+    "scriptLanguageId": "JSONata",
+    "transform": "{}",
+    "inputSchema": {},
+    "outputSchema": {
+      "type": "object",
+      "required": [
+        "schema"
+      ],
+      "properties": {
+        "schema": {
+          "description": "Required to construct a timeseries chart.  See https://www.fusioncharts.com/dev/fusiontime/fusiontime-data-engine/overview#schema.",
+          "type": "array",
+          "items": {
+            "required": [
+              "name",
+              "type"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Specify the name of the column."
+              },
+              "type": {
+                "type": "string",
+                "description": "Specify the type of the column."
+              },
+              "format": {
+                "type": "string",
+                "description": "Specify the input format of the date; needed by FusionCharts to parse the date.  See https://www.fusioncharts.com/dev/fusiontime/fusiontime-attributes#date-time-format."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

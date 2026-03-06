@@ -1,0 +1,42 @@
+{
+  "api": "application",
+  "modelName": "Sequence",
+  "payload": [
+    {
+      "id": "alarms",
+      "name": "Alarms",
+      "prefix": "A",
+      "suffix": "",
+      "zeroPadding": 3
+    },
+    {
+      "id": "approvedWorkcenters",
+      "name": "Approved Workcenters",
+      "prefix": "AW",
+      "suffix": "",
+      "zeroPadding": 2
+    },
+    {
+      "id": "productionRuns",
+      "name": "Production Runs",
+      "prefix": "R",
+      "suffix": "",
+      "zeroPadding": 12
+    },
+    {
+      "id": "serialNumbers",
+      "name": "Serial Numbers",
+      "prefix": "S",
+      "suffix": "",
+      "zeroPadding": 8
+    },
+    {
+      "id": "workOrderDistributions",
+      "name": "Work Order Distributions",
+      "prefix": "W",
+      "suffix": "",
+      "zeroPadding": 0
+    }
+  ],
+  "metadata": {}
+}

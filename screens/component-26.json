@@ -1,0 +1,1402 @@
+{
+  "header": {
+    "id": "shiftGroups",
+    "name": "Shift Groups",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clt3f134w00bv01ci2tndg577",
+    "number": "0.0.22-3",
+    "description": "",
+    "screenId": "shiftGroups",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ShiftGroupTable",
+          "tabTitle": "Shift Group Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 5,
+                    "Action Button": 7,
+                    "Form": 1,
+                    "Table": 2,
+                    "Date Range": 2,
+                    "Text": 2,
+                    "Table Column": 23
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "ShiftGroup",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "ETKgAmPC-h",
+                  "tXk8r1pMMa",
+                  "Pbpq7-bQZ1"
+                ],
+                "linkedNodes": {}
+              },
+              "ETKgAmPC-h": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "CfbwWg_7QZ"
+                ],
+                "linkedNodes": {}
+              },
+              "CfbwWg_7QZ": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "ShiftGroup",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ETKgAmPC-h",
+                "hidden": false,
+                "nodes": [
+                  "cNY_nzuJaA"
+                ],
+                "linkedNodes": {}
+              },
+              "cNY_nzuJaA": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": true,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "CfbwWg_7QZ",
+                "hidden": false,
+                "nodes": [
+                  "XLo7ZnxRRr"
+                ],
+                "linkedNodes": {}
+              },
+              "XLo7ZnxRRr": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "Shift group name - Label field",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "cNY_nzuJaA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tXk8r1pMMa": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "v5z9RRFiId",
+                  "v9lm2MVjry",
+                  "DwvBY0GxRF",
+                  "-lzVSuSKOj"
+                ],
+                "linkedNodes": {}
+              },
+              "v5z9RRFiId": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "tXk8r1pMMa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "v9lm2MVjry": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Shift Group",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Shift group name - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "Shift Group is usable in other areas of the system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateShiftGroup($payload: [ShiftGroupCreatePayloadInput!]!) {\n  mutation: createShiftGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Shift Group \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "tXk8r1pMMa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DwvBY0GxRF": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Shift Group \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Shift group name - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "Shift Group is usable in other areas of the system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateShiftGroup($payload: [ShiftGroupUpdatePayloadInput!]!) {\n  mutation: updateShiftGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Shift Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "tXk8r1pMMa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-lzVSuSKOj": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Shift Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteShiftGroup($payload: [ShiftGroupDeletePayloadInput!]!) {\n  mutation: deleteShiftGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Shift Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "tXk8r1pMMa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Pbpq7-bQZ1": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "ShiftGroup",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": true,
+                  "detailHeight": 250,
+                  "hideTableHeader": false,
+                  "filterFormName": "Form1",
+                  "description": "This table is a list of existing shift groups and it's attributes \nLinks out to shift and wokcenter",
+                  "rowMultiSelectWithClick": false,
+                  "fontSize": "18"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "N1xgpzcsFV",
+                  "AehcZiHnU",
+                  "UcYNJeKRHl",
+                  "x0jnJRNIUt"
+                ],
+                "linkedNodes": {
+                  "Table1Detail": "zBKvkKHBY"
+                }
+              },
+              "N1xgpzcsFV": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "Shift group name - Label field",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "Pbpq7-bQZ1",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UcYNJeKRHl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "Pbpq7-bQZ1",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "x0jnJRNIUt": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "Pbpq7-bQZ1",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zBKvkKHBY": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Table1Detail"
+                },
+                "parent": "Pbpq7-bQZ1",
+                "hidden": false,
+                "nodes": [
+                  "TweRAaY0q",
+                  "2ldl_AE84"
+                ],
+                "linkedNodes": {}
+              },
+              "2ldl_AE84": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "selectedDataChangeIndicator": null,
+                    "model": "Shift",
+                    "parameters": "{\n  \"filter\": {\n    \"shiftGroupId\": {\n      \"_eq\": $parent.data.id \n    }\n  }\n}"
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "rowMultiSelectWithClick": false,
+                  "description": "This table is a list of all shifts and it's attributes",
+                  "fontSize": "18"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table2"
+                },
+                "parent": "zBKvkKHBY",
+                "hidden": false,
+                "nodes": [
+                  "1v4JwHWvh",
+                  "ZWgP5UtW9",
+                  "xrAwstLqG",
+                  "c5GUwmw42",
+                  "A7dvEccCa",
+                  "clnndtpsm002s356ffqb4pyjw",
+                  "clnndtwbm003a356fljxxxlzz",
+                  "clnndtzt7003k356fgx5a6ibq",
+                  "clnndu3e7003u356fngu720m2",
+                  "clnnduad6004f356fbuzkgyw7",
+                  "clnndudta004s356f54m65p6b",
+                  "clnnduk660055356fecbt4g9p"
+                ],
+                "linkedNodes": {}
+              },
+              "1v4JwHWvh": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "dataPath": "name",
+                  "description": "Shift name - Label field",
+                  "field": "name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "A7dvEccCa": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credit At Start",
+                  "format": "checkmark",
+                  "dataPath": "creditAtStart",
+                  "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                  "field": "creditAtStart",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnndtpsm002s356ffqb4pyjw": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Sunday",
+                  "format": "checkmark",
+                  "dataPath": "sunday",
+                  "description": "Does this shift apply to Sundays?",
+                  "field": "sunday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnndtwbm003a356fljxxxlzz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Monday",
+                  "format": "checkmark",
+                  "dataPath": "monday",
+                  "description": "Does this shift apply to Mondays?",
+                  "field": "monday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnndtzt7003k356fgx5a6ibq": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Tuesday",
+                  "format": "checkmark",
+                  "dataPath": "tuesday",
+                  "description": "Does this shift apply to Tuesdays?",
+                  "field": "tuesday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnndu3e7003u356fngu720m2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Wednesday",
+                  "format": "checkmark",
+                  "dataPath": "wednesday",
+                  "description": "Does this shift apply to Wednesdays?",
+                  "field": "wednesday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnnduad6004f356fbuzkgyw7": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Thursday",
+                  "format": "checkmark",
+                  "dataPath": "thursday",
+                  "description": "Does this shift apply to Thursdays?",
+                  "field": "thursday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnndudta004s356f54m65p6b": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Friday",
+                  "format": "checkmark",
+                  "dataPath": "friday",
+                  "description": "Does this shift apply to Fridays?",
+                  "field": "friday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clnnduk660055356fecbt4g9p": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Saturday",
+                  "format": "checkmark",
+                  "dataPath": "saturday",
+                  "description": "Does this shift apply to Saturdays?",
+                  "field": "saturday",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xrAwstLqG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start At",
+                  "format": "time",
+                  "dataPath": "startAt",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                  "field": "startAt",
+                  "query": {},
+                  "timeZone": "setting",
+                  "formatString": "hh:mm A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "c5GUwmw42": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "format": "time",
+                  "dataPath": "endAt",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                  "field": "endAt",
+                  "query": {},
+                  "timeZone": "setting",
+                  "formatString": "hh:mm A"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TweRAaY0q": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "46",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "zBKvkKHBY",
+                "hidden": false,
+                "nodes": [
+                  "Utye16rsp",
+                  "3qFISPRwb",
+                  "-wbg7vQvF",
+                  "oEo-8hqKN",
+                  "cXuQP_kFP"
+                ],
+                "linkedNodes": {}
+              },
+              "Utye16rsp": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "66px",
+                  "height": "40px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "screenDialog",
+                      "screenId": "shiftModal",
+                      "title": "Create Shift",
+                      "screenName": "Create Shift",
+                      "canvasDialog": {
+                        "maxWidth": "xl"
+                      },
+                      "screenParams": {
+                        "__transform": "{\n  \"shiftGroupId\": $parent.data.id\n}",
+                        "__dynamicFields": {
+                          "payload": null,
+                          "context": []
+                        },
+                        "__cacheKey": "",
+                        "__remote": false
+                      },
+                      "transforms": {
+                        "post": "$components.Table2.fn.search()"
+                      }
+                    }
+                  ],
+                  "title": "Add Shift"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton5"
+                },
+                "parent": "TweRAaY0q",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-wbg7vQvF": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "red",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "66px",
+                  "height": "40px",
+                  "disabled": {
+                    "__transform": "$count($components.Table2.selectedRows)=0",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "message": {
+                        "__transform": "\"Shift deleted\""
+                      },
+                      "mutation": "mutation($payload:[ShiftDeletePayloadInput!]!){\n  deleteShift(payload:$payload){ id }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table2.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}",
+                        "post": "$components.Table2.fn.search()"
+                      }
+                    }
+                  ],
+                  "title": "Remove Shift"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton6"
+                },
+                "parent": "TweRAaY0q",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3qFISPRwb": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "pen",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "66px",
+                  "height": "40px",
+                  "disabled": {
+                    "__transform": "$count($components.Table2.selectedRows)!=1",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "screenDialog",
+                      "screenId": "shiftModal",
+                      "title": {
+                        "__transform": "\"Edit Shift: \" \n& $components.Table2.selectRows.name"
+                      },
+                      "screenName": "Update Shift",
+                      "screenParams": {
+                        "__transform": "{\n  \"shiftGroupId\": $parent.data.id,\n  \"id\":$components.Table2.selectedRows.id\n}",
+                        "__dynamicFields": {
+                          "payload": null,
+                          "context": [
+                            "components.Table2.selectedRows.id"
+                          ]
+                        },
+                        "__cacheKey": "",
+                        "__remote": false
+                      },
+                      "canvasDialog": {
+                        "fullWidth": false,
+                        "maxWidth": "xl",
+                        "includeSubmit": false,
+                        "includeCancel": false
+                      },
+                      "transforms": {
+                        "post": "$components.Table2.fn.search()"
+                      }
+                    }
+                  ],
+                  "title": "Update Shift"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton7"
+                },
+                "parent": "TweRAaY0q",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZWgP5UtW9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "dataPath": "active",
+                  "description": "",
+                  "field": "active",
+                  "query": {},
+                  "width": "80",
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "2ldl_AE84",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AehcZiHnU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "dataPath": "usable",
+                  "description": "",
+                  "field": "usable",
+                  "style": {
+                    "alignItems": "center"
+                  },
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "Pbpq7-bQZ1",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oEo-8hqKN": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "TweRAaY0q",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cXuQP_kFP": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "Shifts In Shift Group",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 21,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 21,
+                            "style": "fontsize-16"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "TweRAaY0q",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnndlbug000h01c04i1gdd6w",
+      "title": "Shift Groups",
+      "path": "/productionManagement/manufacturing/shiftGroups",
+      "moduleId": "manufacturing",
+      "screenId": "shiftGroups",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

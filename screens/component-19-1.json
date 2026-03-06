@@ -1,0 +1,1837 @@
+{
+  "header": {
+    "id": "plantDashboardV2",
+    "name": "Plant Dashboard V2",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clvy6xav91oao015y0xfrcqzh",
+    "number": "0.0.43",
+    "description": "",
+    "screenId": "plantDashboardV2",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "Plant Homepage Dashboard",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "intervals": [],
+                  "background": "default",
+                  "data": {}
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 292,
+                    "Form": 45,
+                    "Paper": 33,
+                    "Visualization": 115,
+                    "Table": 2,
+                    "Display": 119,
+                    "Date Time": 2,
+                    "Text": 31,
+                    "Action Button": 2,
+                    "Table Column": 9,
+                    "Cards": 2,
+                    "Combobox": 1,
+                    "Date Range": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "Yh9yjam_f",
+                  "SekB0NLpJ",
+                  "BRD_GUUO8"
+                ],
+                "linkedNodes": {}
+              },
+              "Yh9yjam_f": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "150",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Header"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "4_VN_Lex8",
+                  "wjs8b_u8-"
+                ],
+                "linkedNodes": {}
+              },
+              "BRD_GUUO8": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 16,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default",
+                  "columns": 5
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Body"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "539Dj4BfL"
+                ],
+                "linkedNodes": {}
+              },
+              "cl9x7obqk0030356em37x0t0u": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "130px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container255"
+                },
+                "parent": "cTZST7ApfL",
+                "hidden": false,
+                "nodes": [
+                  "7FJiBQ5NX"
+                ],
+                "linkedNodes": {}
+              },
+              "cl9x7obqk0033356eiq2ili09": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "100%",
+                  "height": "50%",
+                  "label": "Event",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "Cards1",
+                  "dataPath": "currentWorkcenterHistory.event.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "currentWorkcenterHistory.event.name",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display116"
+                },
+                "parent": "7FJiBQ5NX",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VgeEmfp0M": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "310px",
+                  "height": "300px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container258"
+                },
+                "parent": "cTZST7ApfL",
+                "hidden": false,
+                "nodes": [
+                  "2aZEXcKEH",
+                  "11VJXXZlC"
+                ],
+                "linkedNodes": {}
+              },
+              "0804XYetC": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 4,
+                  "width": "auto",
+                  "height": "32px",
+                  "label": "Display",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h5",
+                  "formElement": "Cards1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "code",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "alignItems": "start",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/productionRunHistoryDashboard/\" & data.id",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display119"
+                },
+                "parent": "vzcQFmRQN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "asuwbLhcn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "130px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container268"
+                },
+                "parent": "cTZST7ApfL",
+                "hidden": false,
+                "nodes": [
+                  "vzcQFmRQN",
+                  "ifXTh0cF4"
+                ],
+                "linkedNodes": {}
+              },
+              "vzcQFmRQN": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "40",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container270"
+                },
+                "parent": "asuwbLhcn",
+                "hidden": false,
+                "nodes": [
+                  "0804XYetC"
+                ],
+                "linkedNodes": {}
+              },
+              "cl9x9xnmv01mk356ea1a2n5y0": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "OEE",
+                  "visible": true,
+                  "width": "150px",
+                  "height": "150px",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Chart Type",
+                  "visualizationName": "",
+                  "formElement": "Cards1",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"OEE\",\n  \"value\": $average([ $data.card.oees.edges.node.oee ]) * 100\n}",
+                    "__dynamicFields": null,
+                    "__cacheKey": "",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "OEE"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability",
+                  "visualizationChartType": "doughnut2d",
+                  "visualizationImageUrl": "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                  "visualizationTransform": "(\n  $redPercent := $coalesce([redPercent, 85]);\n  $yellowPercent := $coalesce([yellowPercent, 90]);\n{\n    \"chart\": {\n      \"caption\": caption,\n      \"animation\": false,\n      \"defaultCenterLabel\": $string($round(value)) & \"%\",\n      \"decimals\": \"0\",\n      \"startingAngle\": 90,\n      \"centerLabelFontSize\": 18,\n      \"showHoverEffect\": 0,\n      \"plotHoverEffect\": 0,\n      \"numberSuffix\": \"%\",\n      \"pieRadius\": \"70%\",\n      \"showLegend\": false,\n      \"enableRotation\": 0,\n      \"enableSlicing\": 0,\n      \"showShadow\": 1,\n      \"bgColor\": \"#FFFFFF\",\n      \"captionFontSize\": 20,\n      \"doughnutRadius\": \"75%\",\n      \"chartLeftMargin\": 4,\n      \"chartRightMargin\": 4,\n      \"chartTopMargin\": 4,\n      \"chartBottomMargin\": 4,\n      \"centerLabelColor\": \"#666666\"\n    },\n    \"data\": [\n      {\n        \"label\": caption,\n        \"value\": value,\n        \"color\": value < $redPercent ? \"#f44336\"\n          : value < $yellowPercent ? \"#ffa000\"\n          : \"#43a047\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      },\n      {\n        \"label\": \"\",\n        \"value\": $sum(100-value),\n        \"color\": \"#808080\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      }\n    ]\n  }\n)",
+                  "alignItems": "center"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization106",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "2aZEXcKEH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7FJiBQ5NX": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container272"
+                },
+                "parent": "cl9x7obqk0030356em37x0t0u",
+                "hidden": false,
+                "nodes": [
+                  "cldt8elbi01dk356dnua4eo2v",
+                  "cl9x7obqk0033356eiq2ili09"
+                ],
+                "linkedNodes": {}
+              },
+              "cldt8elbi01dk356dnua4eo2v": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "100%",
+                  "height": "50%",
+                  "label": "Mode",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "formElement": "Cards1",
+                  "dataPath": "currentWorkcenterHistory.mode.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "currentWorkcenterHistory.mode.name",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text28"
+                },
+                "parent": "7FJiBQ5NX",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gsah_-1y4": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 4,
+                  "width": "300",
+                  "height": "80",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": false,
+                  "api": "Application",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "HeaderForm",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "workcenterGroup",
+                  "query": {
+                    "fields": [
+                      "workcenter.workcenterGroup.id",
+                      "workcenter.workcenterGroup.name"
+                    ]
+                  },
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "queryType": "WorkcenterGroup",
+                  "alignItems": "start",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "QTkaMgsyg",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QTkaMgsyg": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "space-evenly",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container275"
+                },
+                "parent": "9TNQmS6DJ",
+                "hidden": false,
+                "nodes": [
+                  "gsah_-1y4",
+                  "jNCEza2v1"
+                ],
+                "linkedNodes": {}
+              },
+              "9TNQmS6DJ": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "data",
+                    "dataTransform": {
+                      "remote": false
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"first\": 1,\n  \"orderBy\": {\n    \"field\": \"updatedAt\",\n    \"direction\": \"desc\"\n  }\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "model": "Oee",
+                    "disableDataChangeIndicator": true
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Measurement of OEE for a given workcenter."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "HeaderForm"
+                },
+                "parent": "4_VN_Lex8",
+                "hidden": false,
+                "nodes": [
+                  "QTkaMgsyg"
+                ],
+                "linkedNodes": {}
+              },
+              "4_VN_Lex8": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container250"
+                },
+                "parent": "Yh9yjam_f",
+                "hidden": false,
+                "nodes": [
+                  "9TNQmS6DJ"
+                ],
+                "linkedNodes": {}
+              },
+              "wjs8b_u8-": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container"
+                },
+                "parent": "Yh9yjam_f",
+                "hidden": false,
+                "nodes": [
+                  "9Ch3xn-B2"
+                ],
+                "linkedNodes": {}
+              },
+              "9Ch3xn-B2": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "/*Plant Form*/\n{\n  \"filter\": {\n    \"id\": $isNil($components.HeaderForm.data.workcenterGroup.id)? {\"_eq\": \"-1\"},\n    \"creditedAt\": {\n       \"_eq\": $moment().tz($metadata.settings.TimeZone).startOf(\"day\").format()\n    },\n    \"workcenter\":{\n      \"workcenterGroupId\":{\n        \"_eq\": $components.HeaderForm.data.workcenterGroup.id\n      }\n    }    \n  },\n  \"first\": null\n}",
+                    "fields": [
+                      "id",
+                      "workcenterId",
+                      "workcenter.code",
+                      "workcenter.currentWorkcenterHistory.mode.name",
+                      "workcenter.currentWorkcenterHistory.event.name"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "Oee"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Measurement of OEE for a given workcenter."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "PlantForm"
+                },
+                "parent": "wjs8b_u8-",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v2004z356elv3rsulo"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v2004z356elv3rsulo": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper",
+                  "data": {},
+                  "customBackground": "#1e1e1e"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container283"
+                },
+                "parent": "9Ch3xn-B2",
+                "hidden": false,
+                "nodes": [
+                  "9OUTc5kTJ",
+                  "t8yuHokR5"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v30051356ekej7nz39": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "175",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container279"
+                },
+                "parent": "t8yuHokR5",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v30052356esxt5800h"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v30052356esxt5800h": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "OEE",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut (Small)",
+                  "formElement": "PlantForm",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"OEE\",\n  \"value\": $average(data.oee) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.PlantForm.data"
+                      ]
+                    },
+                    "__cacheKey": "visualizationParameters",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "OEE"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "oee"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization109",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "clq70z4v30051356ekej7nz39",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq70z4v30053356ehht45g3i": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "175",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container280"
+                },
+                "parent": "t8yuHokR5",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v30054356er2daopze"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v30054356er2daopze": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Availability",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut (Small)",
+                  "formElement": "PlantForm",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Availability\",\n  \"value\": $average(data.availability) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.PlantForm.data"
+                      ]
+                    },
+                    "__cacheKey": "visualizationParameters",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Availability"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization110",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "clq70z4v30053356ehht45g3i",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq70z4v30055356eg8oakesw": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container281"
+                },
+                "parent": "9OUTc5kTJ",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v30056356exnfyr29y"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v30056356exnfyr29y": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Performance",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut (Small)",
+                  "formElement": "PlantForm",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Performance\",\n  \"value\": $average(data.performance) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.PlantForm.data"
+                      ]
+                    },
+                    "__cacheKey": "visualizationParameters",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Performance"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "performance"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization111",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "clq70z4v30055356eg8oakesw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq70z4v40057356enqsmux75": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container282"
+                },
+                "parent": "9OUTc5kTJ",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v40058356e77kaoro3"
+                ],
+                "linkedNodes": {}
+              },
+              "clq70z4v40058356e77kaoro3": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Quality",
+                  "visible": true,
+                  "width": "100%",
+                  "height": "100%",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Saved Visualization",
+                  "visualizationName": "OEE Doughnut (Small)",
+                  "formElement": "PlantForm",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Quality\",\n  \"value\": $average(data.quality) * 100\n}",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.PlantForm.data"
+                      ]
+                    },
+                    "__cacheKey": "visualizationParameters",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Quality"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "quality"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization112",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "clq70z4v40057356enqsmux75",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ifXTh0cF4": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Code",
+                  "visible": true,
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h5",
+                  "formElement": "Cards1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "code",
+                  "description": "Workcenter code",
+                  "field": "code",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text30"
+                },
+                "parent": "asuwbLhcn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "539Dj4BfL": {
+                "type": {
+                  "resolvedName": "Cards"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": "query QUERY($where: WorkcenterWhereInput, $orderBy: [WorkcenterOrderByInput!], $first: Int, $after: String, $creditAt: DateTime) {\n data : workcenter(where: $where, orderBy: $orderBy, first: $first, after: $after) {\n    edges {\n      node {\n id\n        code\n        currentWorkcenterHistory {\n          event {\n            name\n            eventType {\n              color\n            }\n          }\n          mode {\n            name\n            modeType {\n              color\n            }\n          }\n        }\n        oees(\n          where:{\n            creditedAt:{_eq: $creditAt}\n          }\n        ){\n          edges{\n            node{\n              oee\n              availability\n              performance\n              quality\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+                    "dataPath": "data",
+                    "dataTransform": {
+                      "remote": false,
+                      "transform": "/*DATA TRANSFORM*/\n[edges.node]"
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"where\": {\n    \"workcenterGroupId\":{\n      \"_eq\": $coalesce([ $components.HeaderForm.data.workcenterGroup.id, \"-1\" ])\n    }\n  },\n  \"creditAt\": $moment().tz($metadata.settings.TimeZone).startOf(\"day\").format(),\n  \"first\": null,\n  \"orderBy\": {\n  \"field\": currentWorkcenterHistory.createdAt,\n  \"direction\": \"desc\"\n  }\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "model": "Workcenter"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "padding": 10,
+                  "margin": 0,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "width": "350px",
+                  "height": "600px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Cards",
+                "custom": {
+                  "elementName": "Cards1"
+                },
+                "parent": "BRD_GUUO8",
+                "hidden": false,
+                "nodes": [
+                  "-xUC3Z5Ye"
+                ],
+                "linkedNodes": {}
+              },
+              "cTZST7ApfL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 10,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "330px",
+                  "height": "580px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container285"
+                },
+                "parent": "-xUC3Z5Ye",
+                "hidden": false,
+                "nodes": [
+                  "asuwbLhcn",
+                  "cl9x7obqk0030356em37x0t0u",
+                  "VgeEmfp0M"
+                ],
+                "linkedNodes": {}
+              },
+              "clq7g4aiq001l356efaqbko85": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Availability",
+                  "visible": true,
+                  "width": "150",
+                  "height": "150",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Chart Type",
+                  "visualizationName": "",
+                  "formElement": "Cards1",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Availability\",\n  \"value\": $average([ $data.card.oees.edges.node.availability ]) * 100\n}",
+                    "__dynamicFields": null,
+                    "__cacheKey": "",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Availability"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability",
+                  "visualizationChartType": "doughnut2d",
+                  "visualizationImageUrl": "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                  "visualizationTransform": "(\n  $redPercent := $coalesce([redPercent, 85]);\n  $yellowPercent := $coalesce([yellowPercent, 90]);\n{\n    \"chart\": {\n      \"caption\": caption,\n      \"animation\": false,\n      \"defaultCenterLabel\": $string($round(value)) & \"%\",\n      \"decimals\": \"0\",\n      \"startingAngle\": 90,\n      \"centerLabelFontSize\": 18,\n      \"numberSuffix\": \"%\",\n      \"showHoverEffect\": 0,\n      \"plotHoverEffect\": 0,\n      \"showShadow\": 1,\n      \"enableSlicing\": 0,\n      \"enableRotation\": 0,\n      \"pieRadius\": \"70%\",\n      \"showLegend\": false,\n      \"captionFontSize\": 20,\n      \"doughnutRadius\": \"75%\",\n      \"bgColor\": \"#FFFFFF\",\n      \"chartLeftMargin\": 4,\n      \"chartRightMargin\": 4,\n      \"chartTopMargin\": 4,\n      \"chartBottomMargin\": 4,\n      \"centerLabelColor\": \"#666666\"\n    },\n    \"data\": [\n      {\n        \"label\": caption,\n        \"value\": value,\n        \"color\": value < $redPercent ? \"#f44336\"\n          : value < $yellowPercent ? \"#ffa000\"\n          : \"#43a047\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      },\n      {\n        \"label\": \"\",\n        \"value\": $max([100 - value, 0]),\n        \"color\": \"#808080\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      }\n    ]\n  }\n)",
+                  "alignItems": "start"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization113",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "11VJXXZlC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq7g5s2m001y356e6xedpkk4": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Performance",
+                  "visible": true,
+                  "width": "150px",
+                  "height": "150px",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Chart Type",
+                  "visualizationName": "",
+                  "formElement": "Cards1",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Performance\",\n  \"value\": $average([ $data.card.oees.edges.node.performance ]) * 100\n}",
+                    "__dynamicFields": null,
+                    "__cacheKey": "",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Performance"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability",
+                  "visualizationChartType": "doughnut2d",
+                  "visualizationImageUrl": "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                  "visualizationTransform": "(\n  $redPercent := $coalesce([redPercent, 85]);\n  $yellowPercent := $coalesce([yellowPercent, 90]);\n{\n    \"chart\": {\n      \"caption\": caption,\n      \"animation\": false,\n      \"defaultCenterLabel\": $string($round(value)) & \"%\",\n      \"decimals\": \"0\",\n      \"startingAngle\": 90,\n      \"centerLabelFontSize\": 18,\n      \"numberSuffix\": \"%\",\n      \"pieRadius\": \"70%\",\n      \"bgColor\": \"#FFFFFF\",\n      \"showHoverEffect\": 0,\n      \"plotHoverEffect\": 0,\n      \"enableSlicing\": 0,\n      \"enableRotation\": 0,\n      \"showZeroPies\": 0,\n      \"showShadow\": 1,\n      \"showLegend\": false,\n      \"captionFontSize\": 20,\n      \"doughnutRadius\": \"75%\",\n      \"chartLeftMargin\": 4,\n      \"chartRightMargin\": 4,\n      \"chartTopMargin\": 4,\n      \"chartBottomMargin\": 4,\n      \"centerLabelColor\": \"#666666\"\n    },\n    \"data\": [\n      {\n        \"label\": caption,\n        \"value\": value,\n        \"color\": value < $redPercent ? \"#f44336\"\n          : value < $yellowPercent ? \"#ffa000\"\n          : \"#43a047\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      },\n      {\n        \"label\": \"\",\n        \"value\": $max([100 - value, 0]),\n        \"color\": \"#808080\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      }\n    ]\n  }\n)",
+                  "alignItems": "start"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization114",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "2aZEXcKEH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clq7g5sz5001z356enizwy0ze": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "visualization",
+                  "padding": 0,
+                  "label": "Quality",
+                  "visible": true,
+                  "width": "150",
+                  "height": "150",
+                  "visualizationTransformRemote": false,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Chart Type",
+                  "visualizationName": "",
+                  "formElement": "Cards1",
+                  "visualizationParameters": {
+                    "__transform": "{\n  \"caption\": \"Quality\",\n  \"value\": $average([ $data.card.oees.edges.node.quality ]) * 100\n}",
+                    "__dynamicFields": null,
+                    "__cacheKey": "",
+                    "__remote": false,
+                    "__fallbackValue": {
+                      "caption": "Quality"
+                    }
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "availability",
+                  "visualizationChartType": "doughnut2d",
+                  "visualizationImageUrl": "https://images.ctfassets.net/fevtq3bap7tj/1syOLmQtwQc6gwGcEayC0O/7557c7d94e6b22a53ace78c1ee717b15/Donut_in_2D.png",
+                  "visualizationTransform": "(\n  $redPercent := $coalesce([redPercent, 85]);\n  $yellowPercent := $coalesce([yellowPercent, 90]);\n{\n    \"chart\": {\n      \"caption\": caption,\n      \"animation\": false,\n      \"defaultCenterLabel\": $string($round(value)) & \"%\",\n      \"decimals\": \"0\",\n      \"startingAngle\": 90,\n      \"centerLabelFontSize\": 18,\n      \"showHoverEffect\": 0,\n      \"plotHoverEffect\": 0,\n      \"numberSuffix\": \"%\",\n      \"pieRadius\": \"70%\",\n      \"showLegend\": false,\n      \"enableRotation\": 0,\n      \"enableSlicing\": 0,\n      \"showShadow\": 1,\n      \"bgColor\": \"#FFFFFF\",\n      \"captionFontSize\": 20,\n      \"doughnutRadius\": \"75%\",\n      \"chartLeftMargin\": 4,\n      \"chartRightMargin\": 4,\n      \"chartTopMargin\": 4,\n      \"chartBottomMargin\": 4,\n      \"centerLabelColor\": \"#666666\"\n    },\n    \"data\": [\n      {\n        \"label\": caption,\n        \"value\": value,\n        \"color\": value < $redPercent ? \"#f44336\"\n          : value < $yellowPercent ? \"#ffa000\"\n          : \"#43a047\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      },\n      {\n        \"label\": \"\",\n        \"value\": $max([100 - value, 0]),\n        \"color\": \"#808080\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      }\n    ]\n  }\n)",
+                  "alignItems": "center"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization115",
+                  "editor": {
+                    "category": "Input",
+                    "description": "Visualization type input.",
+                    "color": "#428e56",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "11VJXXZlC",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "11VJXXZlC": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "310px",
+                  "height": "150px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container286"
+                },
+                "parent": "VgeEmfp0M",
+                "hidden": false,
+                "nodes": [
+                  "clq7g5sz5001z356enizwy0ze",
+                  "clq7g4aiq001l356efaqbko85"
+                ],
+                "linkedNodes": {}
+              },
+              "2aZEXcKEH": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "310px",
+                  "height": "150px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container287"
+                },
+                "parent": "VgeEmfp0M",
+                "hidden": false,
+                "nodes": [
+                  "cl9x9xnmv01mk356ea1a2n5y0",
+                  "clq7g5s2m001y356e6xedpkk4"
+                ],
+                "linkedNodes": {}
+              },
+              "SekB0NLpJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "65",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container288"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "JzZL5R0VQ"
+                ],
+                "linkedNodes": {}
+              },
+              "zoq8QCILv": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "auto",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "Current Day OEE",
+                        "type": "header-four",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 15,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 15,
+                            "style": "fontsize-24"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text31"
+                },
+                "parent": "JzZL5R0VQ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-xUC3Z5Ye": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "330px",
+                  "height": "580px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "custom",
+                  "customBackground": {
+                    "__transform": "$data.card.currentWorkcenterHistory.mode.modeType.color\n\n",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container289"
+                },
+                "parent": "539Dj4BfL",
+                "hidden": false,
+                "nodes": [
+                  "cTZST7ApfL"
+                ],
+                "linkedNodes": {}
+              },
+              "jNCEza2v1": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "80",
+                  "height": "80",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": true,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "(\n  $components.PlantForm.fn.loadData();\n  $components.Cards1.fn.loadData();\n)"
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "QTkaMgsyg",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "JzZL5R0VQ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "65",
+                  "hidden": {
+                    "__transform": "$isNilOrEmpty($components.Cards1.data)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Cards1.data"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container290"
+                },
+                "parent": "SekB0NLpJ",
+                "hidden": false,
+                "nodes": [
+                  "zoq8QCILv"
+                ],
+                "linkedNodes": {}
+              },
+              "t8yuHokR5": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "355",
+                  "height": "150",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container291"
+                },
+                "parent": "clq70z4v2004z356elv3rsulo",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v30053356ehht45g3i",
+                  "clq70z4v30051356ekej7nz39"
+                ],
+                "linkedNodes": {}
+              },
+              "9OUTc5kTJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "355",
+                  "height": "150",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container292"
+                },
+                "parent": "clq70z4v2004z356elv3rsulo",
+                "hidden": false,
+                "nodes": [
+                  "clq70z4v40057356enqsmux75",
+                  "clq70z4v30055356eg8oakesw"
+                ],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clo0f20oq0007017c9trge4df",
+      "title": "Plant Dashboard V2",
+      "path": "/productionManagement/manufacturing/plantDashboardV2",
+      "moduleId": "manufacturing",
+      "screenId": "plantDashboardV2",
+      "isMenuAccessible": true,
+      "submenu": "Reports"
+    }
+  ]
+}

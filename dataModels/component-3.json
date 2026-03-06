@@ -1,0 +1,476 @@
+{
+  "header": {
+    "id": "event",
+    "name": "Event",
+    "description": "This table is a list of all the possible events to describe the state of the workcenters",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clq3tjay30005015pano748wo",
+    "number": "29",
+    "dataModelId": "event",
+    "modelDefinition": {
+      "name": "Event",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": false
+          },
+          "labelField": "name",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "event"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "This is the name of the event - Label field",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "eventListId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "usable",
+          "type": "Boolean!",
+          "description": "Is the event usable?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "externalId",
+          "type": "String",
+          "description": "The integer value that will be passed in by a PLC if using machine integration",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventCategoryId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventCategory",
+          "description": "",
+          "type": "EventCategory",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "eventCategoryId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventTypeId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventType",
+          "description": "",
+          "type": "EventType",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "eventTypeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventLists",
+          "description": "",
+          "type": "[EventList!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "eventId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterHistories",
+          "description": "",
+          "type": "[WorkcenterHistory!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "eventId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table is a list of all the possible events to describe the state of the workcenters"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clq3tjay30005015pano748wo",
+      "dataModelVersion": {
+        "number": "29"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp1mkw58000f014u0j9474yj",
+      "dataModelVersion": {
+        "number": "28"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clog6k5bl001d013248qacq47",
+      "dataModelVersion": {
+        "number": "27"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloes1sbm002b0179418j1c92",
+      "dataModelVersion": {
+        "number": "26"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloeqeurj001y01795hv31u3q",
+      "dataModelVersion": {
+        "number": "25"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloepevx7002001888jwiajhv",
+      "dataModelVersion": {
+        "number": "24"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloemd2rb000l01748ofvg2ny",
+      "dataModelVersion": {
+        "number": "23"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnno55d1001901c0emrehtrm",
+      "dataModelVersion": {
+        "number": "22"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnmy65a001501a3hk3m8ehc",
+      "dataModelVersion": {
+        "number": "21"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnne2xt1000s01a3h2ned2g9",
+      "dataModelVersion": {
+        "number": "20"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj6qd9u001f017tc7ih2e9r",
+      "dataModelVersion": {
+        "number": "19"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl79fbgvl0035015z13k7h392",
+      "dataModelVersion": {
+        "number": "18"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

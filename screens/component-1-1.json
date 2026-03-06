@@ -1,0 +1,1645 @@
+{
+  "header": {
+    "id": "approvedWorkcenterTable",
+    "name": "Approved Workcenter Table",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clpmy3x3q0004018m97fi2we3",
+    "number": "0.0.18",
+    "description": "",
+    "screenId": "approvedWorkcenterTable",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ApprovedWorkcenterTable",
+          "tabTitle": "Approved Workcenter Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 2,
+                    "Text": 11,
+                    "Float": 10,
+                    "Table Column": 26,
+                    "Select": 2,
+                    "Options": 2,
+                    "Switch": 1,
+                    "Combobox": 3
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "ApprovedWorkcenter",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "rZddMRbRLs",
+                  "Wf_8sTOmRa",
+                  "BSHfVMpbu4"
+                ],
+                "linkedNodes": {}
+              },
+              "rZddMRbRLs": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "4UMzBlUftx"
+                ],
+                "linkedNodes": {}
+              },
+              "4UMzBlUftx": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "ApprovedWorkcenter",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "rZddMRbRLs",
+                "hidden": false,
+                "nodes": [
+                  "rJ2s9WNge9"
+                ],
+                "linkedNodes": {}
+              },
+              "rJ2s9WNge9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": true,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "4UMzBlUftx",
+                "hidden": false,
+                "nodes": [
+                  "OVEGf1_EX",
+                  "7KK-EAxnE",
+                  "N8R4ZbaIc",
+                  "YNYtzr_iV",
+                  "uzV76YXNQ",
+                  "ttkOQ2U030",
+                  "qSt_Deofx"
+                ],
+                "linkedNodes": {}
+              },
+              "ttkOQ2U030": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Operation No",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "operationNo",
+                  "field": "operationNo",
+                  "description": "",
+                  "element": "TextInput",
+                  "target": {
+                    "dataPath": null
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Wf_8sTOmRa": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "ga5H105pb5",
+                  "hhAeXUQf5M",
+                  "X0cFgB3QMo",
+                  "2tjJWoa4wx"
+                ],
+                "linkedNodes": {}
+              },
+              "ga5H105pb5": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "Wf_8sTOmRa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hhAeXUQf5M": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Approved Workcenter",
+                      "fields": [
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "",
+                          "element": "switch",
+                          "type": "switch",
+                          "defaultValue": true,
+                          "disabled": true
+                        },
+                        {
+                          "type": "combobox",
+                          "label": "Workcenter",
+                          "dataPath": "workcenterId",
+                          "multiselect": false,
+                          "isClearable": true,
+                          "api": "Application",
+                          "validation": {
+                            "required": true
+                          },
+                          "visible": true,
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "orderByField": "code",
+                          "query": {
+                            "fields": [
+                              "id",
+                              "code"
+                            ]
+                          },
+                          "queryType": "Workcenter"
+                        },
+                        {
+                          "label": "Product No",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNo",
+                          "field": "productNo",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product No Revision",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productNoRevision",
+                          "field": "productNoRevision",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productRevision",
+                          "field": "productRevision",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Operation Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "operationCode",
+                          "field": "operationCode",
+                          "description": "Text describing the Operation being performed - Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Operation No",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "operationNo",
+                          "field": "operationNo",
+                          "description": "Numberical value of the Operation No Sequence (10,20,30, etc)- Can not be changed after initial creation",
+                          "element": "integer",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Ideal Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealRate",
+                          "field": "idealRate",
+                          "description": "Primary rate used in OEE calculations",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Standard Production Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardProductionRate",
+                          "field": "standardProductionRate",
+                          "description": "Typically used for production scheduling - but used as the fallback value if no Ideal Rate is provided for OEE calculations",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Target Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "targetRate",
+                          "field": "targetRate",
+                          "description": "Not used in any standard reporting - Optional",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Units Per Cycle",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "unitsPerCycle",
+                          "field": "unitsPerCycle",
+                          "description": "The number of units produced per 1 machine cycle",
+                          "element": "FloatInput",
+                          "type": "float",
+                          "defaultValue": 1
+                        },
+                        {
+                          "label": "Standard Quantity",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardQuantity",
+                          "field": "standardQuantity",
+                          "description": "The standard quantity is used with Auto Production which triggers this qty to be produced",
+                          "element": "FloatInput",
+                          "type": "float",
+                          "defaultValue": ""
+                        },
+                        {
+                          "label": "Setup Crew Size",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupCrewSize",
+                          "field": "setupCrewSize",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Setup Time (Hrs)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupTime",
+                          "field": "setupTime",
+                          "description": "Amount of Setup Time anticipated in Hours",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Note",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "note",
+                          "field": "note",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Product Operation Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productOperationId",
+                          "field": "productOperationId",
+                          "description": "Used with external systems only",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Product Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productId",
+                          "field": "productId",
+                          "description": "Used with external systems only",
+                          "element": "TextInput",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateApprovedWorkcenter($payload: [ApprovedWorkcenterCreatePayloadInput!]!) {\n  mutation: createApprovedWorkcenter(payload: $payload) { \n    id\n    \n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": $merge([\n      data, \n      {\n        \"operationNo\": $string(data.operationNo),\n        \"id\": $hash('sha256', $join([\n          data.workcenterId,\n          data.productNoRevision,\n          data.operationCode,\n          $string(data.operationNo)\n        ],\"::\"))\n      }])\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Approved Workcenter \" & data.mutation[0].partNoRevision & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "Wf_8sTOmRa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "X0cFgB3QMo": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Approved Workcenter \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "",
+                          "element": "switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "Product No Revision",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productNoRevision",
+                          "field": "productNoRevision",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Product No",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productNo",
+                          "field": "productNo",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Product Revision",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productRevision",
+                          "field": "productRevision",
+                          "description": "Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Operation Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "operationCode",
+                          "field": "operationCode",
+                          "description": "Text describing the Operation being performed -Can not be changed after initial creation",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Operation No",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "operationNo",
+                          "field": "operationNo",
+                          "description": "Numberical value of the Operation No Sequence (10,20,30, etc)- Can not be changed after initial creation",
+                          "element": "integer",
+                          "type": "integer",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Ideal Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealRate",
+                          "field": "idealRate",
+                          "description": "Primary rate used in OEE calculations",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Standard Production Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardProductionRate",
+                          "field": "standardProductionRate",
+                          "description": "Typically used for production scheduling - but used as the fallback value if no Ideal Rate is provided for OEE calculations",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Target Rate (Units/Hr)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "targetRate",
+                          "field": "targetRate",
+                          "description": "Not used in any standard reporting - Optional",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Units Per Cycle",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "unitsPerCycle",
+                          "field": "unitsPerCycle",
+                          "description": "The number of units produced per 1 machine cycle",
+                          "element": "FloatInput",
+                          "type": "float",
+                          "defaultValue": 1
+                        },
+                        {
+                          "label": "Standard Quantity",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardQuantity",
+                          "field": "standardQuantity",
+                          "description": "The standard quantity is used with Auto Production which triggers this qty to be produced",
+                          "element": "FloatInput",
+                          "type": "float",
+                          "defaultValue": ""
+                        },
+                        {
+                          "label": "Setup Crew Size",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupCrewSize",
+                          "field": "setupCrewSize",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Setup Time (Hrs)",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupTime",
+                          "field": "setupTime",
+                          "description": "Amount of Setup Time anticipated in Hours",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Note",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "note",
+                          "field": "note",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Product Operation Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productOperationId",
+                          "field": "productOperationId",
+                          "description": "Used with external systems only",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Product Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productId",
+                          "field": "productId",
+                          "description": "Used with external systems only",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateApprovedWorkcenter($payload: [ApprovedWorkcenterUpdatePayloadInput!]!) {\n  mutation: updateApprovedWorkcenter(payload: $payload) { \n    id\n    partNoRevision\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Approved Workcenter \" & $components.Table1.selectedRows.partNoRevision) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "Wf_8sTOmRa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2tjJWoa4wx": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Approved Workcenter \" & $components.Table1.selectedRows.partNoRevision) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteApprovedWorkcenter($payload: [ApprovedWorkcenterDeletePayloadInput!]!) {\n  mutation: deleteApprovedWorkcenter(payload: $payload) { \n    id\n    productNoRevision\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Approved Workcenter \" & $components.Table1.selectedRows.partNoRevision) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "Wf_8sTOmRa",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BSHfVMpbu4": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "ApprovedWorkcenter",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id",
+                      "productId",
+                      "productOperationId"
+                    ],
+                    "disableDataChangeIndicator": false
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "X0BbH-ULR",
+                  "2OMVJVRns",
+                  "L-dRNl361f",
+                  "_RFnTETMl",
+                  "hZq8x4wvNm",
+                  "CE66Vy1__D",
+                  "20MWQbs18L",
+                  "hdIxdEaDT",
+                  "v_FRPiU18",
+                  "lvAJYvn70J",
+                  "J5q5dD-Vk9",
+                  "VIBKukAbcL",
+                  "iRiA1AXwC",
+                  "J8w_RBk2y1",
+                  "DrR1gnRwHW",
+                  "TgbG8xC5sc",
+                  "S1K_TNVF8S",
+                  "B2lg4JgnHy",
+                  "M6SVhSVwq"
+                ],
+                "linkedNodes": {}
+              },
+              "lvAJYvn70J": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ideal Rate Units/Hr",
+                  "format": "float",
+                  "field": "idealRate",
+                  "dataPath": "idealRate",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "J8w_RBk2y1": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Setup Crew Size",
+                  "format": "float",
+                  "field": "setupCrewSize",
+                  "dataPath": "setupCrewSize",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DrR1gnRwHW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Setup Time (Hrs)",
+                  "format": "float",
+                  "field": "setupTime",
+                  "dataPath": "setupTime",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "J5q5dD-Vk9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Standard Rate Units/Hr",
+                  "format": "float",
+                  "field": "standardProductionRate",
+                  "dataPath": "standardProductionRate",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VIBKukAbcL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Target Rate Units/Hr",
+                  "format": "float",
+                  "field": "targetRate",
+                  "dataPath": "targetRate",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TgbG8xC5sc": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Note",
+                  "format": "markdown",
+                  "field": "note",
+                  "dataPath": "note",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CE66Vy1__D": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Code",
+                  "format": "text",
+                  "field": "operationCode",
+                  "dataPath": "operationCode",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "20MWQbs18L": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation No",
+                  "format": "text",
+                  "field": "operationNo",
+                  "dataPath": "operationNo",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hZq8x4wvNm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product No Revision",
+                  "format": "text",
+                  "field": "productNoRevision",
+                  "dataPath": "productNoRevision",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "L-dRNl361f": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Code",
+                  "format": "text",
+                  "field": "workcenter.code",
+                  "dataPath": "workcenter.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "S1K_TNVF8S": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "B2lg4JgnHy": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "N8R4ZbaIc": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "dialogMode": false,
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "Form1",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code",
+                      "workcenterGroup.name"
+                    ]
+                  },
+                  "dataModel": "Workcenter",
+                  "selectFields": [
+                    "code",
+                    "workcenterGroup.name"
+                  ],
+                  "dataPath": "workcenter",
+                  "target": {
+                    "dataPath": "workcenter.id._eq"
+                  },
+                  "description": "",
+                  "field": "workcenter",
+                  "predicate": "_eq",
+                  "additionalFields": [
+                    "id",
+                    "code"
+                  ]
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uzV76YXNQ": {
+                "type": {
+                  "resolvedName": "OptionsInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "options",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Operation (Options)",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "id",
+                  "formElement": "Form1",
+                  "options": {
+                    "__transform": "(\n\n$op := $query({\"statement\":'{approvedWorkcenter{edges{node{operationCode}}}}',\"variables\":{}}).approvedWorkcenter.edges.node.operationCode;\n$res := $uniq($op).{\n  \"id\":$,\n  \"label\":$\n}\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "target": {
+                    "dataPath": "operationCode._eq"
+                  },
+                  "dataPath": "op",
+                  "query": {
+                    "fields": []
+                  }
+                },
+                "displayName": "Options",
+                "custom": {
+                  "elementName": "Options1"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "M6SVhSVwq": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated By User Email",
+                  "format": "text",
+                  "dataPath": "updatedByUser.email",
+                  "field": "updatedByUser.email"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YNYtzr_iV": {
+                "type": {
+                  "resolvedName": "OptionsInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "options",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Product No Revision",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "id",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "productNoRevision._eq"
+                  },
+                  "dataPath": "productNoRevision",
+                  "options": {
+                    "__transform": "(\n\n$op := $query({\"statement\":'{approvedWorkcenter{edges{node{productNoRevision}}}}',\"variables\":{}}).approvedWorkcenter.edges.node.productNoRevision;\n$res := $uniq($op).{\n  \"id\":$,\n  \"label\":$\n}\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Options",
+                "custom": {
+                  "elementName": "Options2"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hdIxdEaDT": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Units Per Cycle",
+                  "format": "integer",
+                  "dataPath": "unitsPerCycle",
+                  "description": "The number of units produced per machine cycle - useful when leveraging cycle count tags from PLCs.",
+                  "field": "unitsPerCycle",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "v_FRPiU18": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Standard Quantity (Auto)",
+                  "format": "float",
+                  "dataPath": "standardQuantity",
+                  "description": "The Standard Quantity - or Standard Production Quantity is to be used when the PLC production tag provides a signal to \"record\" the standard quantity will be used as the intpu value for the production quantity. Alternatively, the value can be provided by the PLC explicity, as a Part Counter Tag input value OR you can use a Cycle Counter Tag input (last known value) as the production quantity to be utilized. If no values are provided, 0 will be used, unless you implement other custom logic.",
+                  "field": "standardQuantity",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_RFnTETMl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "dataPath": "active",
+                  "description": "",
+                  "field": "active",
+                  "query": {},
+                  "width": "100",
+                  "showColumnSuppressMenu": false
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "qSt_Deofx": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "",
+                  "field": "active",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7KK-EAxnE": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "workcenter.workcenterGroup.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "dataPath": "workcenter.workcenterGroup.id",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "workcenter.workcenterGroup.id.id",
+                      "workcenter.workcenterGroup.id.name"
+                    ]
+                  },
+                  "queryType": "WorkcenterGroup",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2OMVJVRns": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Group",
+                  "format": "text",
+                  "dataPath": "workcenter.workcenterGroup.name",
+                  "field": "workcenter.workcenterGroup.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OVEGf1_EX": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Building",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter.facility",
+                  "target": {
+                    "dataPath": "workcenter.facility.id._eq"
+                  },
+                  "field": "workcenter.facility",
+                  "predicate": "_eq",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "workcenter.facility.id",
+                      "workcenter.facility.code"
+                    ]
+                  },
+                  "queryType": "Facility",
+                  "orderByDirection": "asc",
+                  "disabled": false
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox2"
+                },
+                "parent": "rJ2s9WNge9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "X0BbH-ULR": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Building",
+                  "format": "text",
+                  "dataPath": "workcenter.facility.code",
+                  "field": "workcenter.facility.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "iRiA1AXwC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Crew Size",
+                  "format": "text",
+                  "dataPath": "crewSize",
+                  "description": "",
+                  "field": "crewSize"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "BSHfVMpbu4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnulx5zj001a016s1j140erv",
+      "title": "Production Rates",
+      "path": "/productionManagement/manufacturing/approvedWorkcenters",
+      "moduleId": "manufacturing",
+      "screenId": "approvedWorkcenterTable",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

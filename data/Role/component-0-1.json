@@ -1,0 +1,166 @@
+{
+  "api": "application",
+  "modelName": "Role",
+  "payload": [
+    {
+      "id": "administrator",
+      "name": "Administrator",
+      "description": "",
+      "menu": {
+        "items": [
+          {
+            "link": "/system/integration/knowledgeBase",
+            "text": "Knowledge Base",
+            "icon": "book"
+          },
+          {
+            "text": "Setup Home Page",
+            "link": "/system/configuration/initialHomeScreen",
+            "icon": "home"
+          },
+          {
+            "link": "/system/integration/masterDataImport",
+            "icon": "gear",
+            "text": "Data Imports"
+          },
+          {
+            "text": "Buildings",
+            "icon": "industry-windows",
+            "link": "/materialsManagement/inventory/facilities"
+          },
+          {
+            "text": "Workcenter Groups",
+            "link": "/productionManagement/manufacturing/workcenterGroups",
+            "icon": "layer-plus"
+          },
+          {
+            "text": "Shift Groups",
+            "icon": "calendar",
+            "link": "/productionManagement/manufacturing/shiftGroups"
+          },
+          {
+            "text": "Mode Management",
+            "icon": "wave-pulse",
+            "children": [],
+            "link": "/productionManagement/manufacturing/modeManagement"
+          },
+          {
+            "text": "Event Management",
+            "icon": "triangle-exclamation",
+            "link": "/productionManagement/manufacturing/eventManagement"
+          },
+          {
+            "text": "Workcenters",
+            "link": "/productionManagement/manufacturing/workcenters",
+            "icon": "forklift"
+          },
+          {
+            "text": "Production Rates",
+            "icon": "flux-capacitor",
+            "link": "/productionManagement/manufacturing/approvedWorkcenters"
+          },
+          {
+            "text": "Gateways",
+            "link": "/system/internetOfThings/deviceGateways",
+            "icon": "building-circle-arrow-right"
+          }
+        ],
+        "title": "Administrator Menu",
+        "icon": "screwdriver-wrench"
+      },
+      "homeScreenId": "initialHomeScreen"
+    },
+    {
+      "id": "analyst",
+      "name": "Analyst",
+      "description": "",
+      "menu": {
+        "items": [
+          {
+            "text": "Production History",
+            "link": "/productionManagement/manufacturing/productionHistories",
+            "icon": "conveyor-belt-boxes"
+          },
+          {
+            "text": "Workcenter History",
+            "link": "/productionManagement/manufacturing/workcenterHistories",
+            "icon": "history"
+          },
+          {
+            "text": "Run History",
+            "link": "/productionManagement/manufacturing/productionRuns",
+            "icon": "conveyor-belt"
+          },
+          {
+            "text": "OEE Data",
+            "link": "/productionManagement/manufacturing/oees",
+            "icon": "chart-simple"
+          }
+        ],
+        "title": "Analyst Menu",
+        "icon": "chart-scatter"
+      },
+      "homeScreenId": "initialHomeScreen"
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance",
+      "description": "",
+      "menu": {
+        "title": "Maintenance",
+        "items": [
+          {
+            "icon": "bell",
+            "link": "/productionManagement/manufacturing/alarmControlPanel",
+            "text": "Alarm Control Panel"
+          }
+        ],
+        "icon": "helmet-safety"
+      },
+      "homeScreenId": "initialHomeScreen"
+    },
+    {
+      "id": "supervisor",
+      "name": "Supervisor",
+      "description": "",
+      "menu": {
+        "icon": "user-helmet-safety",
+        "title": "Supervisor Menu",
+        "items": [
+          {
+            "text": "Setups",
+            "link": "/productionManagement/manufacturing/productionSetups",
+            "icon": "conveyor-belt-boxes"
+          },
+          {
+            "link": "/productionManagement/manufacturing/workcenterHistories",
+            "text": "Workcenter History",
+            "icon": "history"
+          },
+          {
+            "text": "Production History",
+            "link": "/productionManagement/manufacturing/productionHistories",
+            "icon": "box"
+          },
+          {
+            "link": "/productionManagement/manufacturing/plantDashboardV2",
+            "text": "Plant Dashboard",
+            "icon": "building"
+          },
+          {
+            "text": "Group Dashboard",
+            "icon": "object-group",
+            "link": "/productionManagement/manufacturing/workcenterGroupDashboard/:id"
+          },
+          {
+            "text": "Group Dashboard V2",
+            "link": "/system/dashboard/workcenterGroupDashboardV2/:id",
+            "icon": "object-group"
+          }
+        ]
+      },
+      "homeScreenId": "initialHomeScreen"
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,401 @@
+{
+  "header": {
+    "id": "mode",
+    "name": "Mode",
+    "description": "This table is a list of modes and their attributes\nLinks out to workcenter mode, and mode event.",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clp8pxq5s001201avcdgdco9z",
+    "number": "37",
+    "dataModelId": "mode",
+    "modelDefinition": {
+      "name": "Mode",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": false
+          },
+          "labelField": "name",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "mode"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "This is the name of the mode - Label field",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "idle",
+          "type": "Boolean!",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          },
+          "description": ""
+        },
+        {
+          "name": "includeProductionCounts",
+          "type": "Boolean",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "usable",
+          "type": "Boolean!",
+          "description": "This indicates that the mode is usable, can be selected in the UI.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "externalId",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeTypeId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeType",
+          "description": "",
+          "type": "ModeType",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "modeTypeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeList",
+          "description": "",
+          "type": "[ModeList!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "modeId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterHistories",
+          "description": "",
+          "type": "[WorkcenterHistory!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "modeId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table is a list of modes and their attributes\nLinks out to workcenter mode, and mode event."
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clp8pxq5s001201avcdgdco9z",
+      "dataModelVersion": {
+        "number": "37"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clog6lr3j001d013k162e7e4q",
+      "dataModelVersion": {
+        "number": "36"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clofvqypi000m011z59kfff6l",
+      "dataModelVersion": {
+        "number": "35"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloeogg6f001901791bsj1wik",
+      "dataModelVersion": {
+        "number": "34"
+      },
+      "mappingExpression": "{ \n  /* - To rename a field: */\n  \"newName\": oldName,\n  /* - To populate a default value into a newly required field: */\n  \"field\": $coalesce([field, \"Default Value\"])\n}"
+    },
+    {
+      "dataModelVersionId": "cloemzg7c000t018m1v3h0n00",
+      "dataModelVersion": {
+        "number": "33"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloem00z40007018m7m9c3npd",
+      "dataModelVersion": {
+        "number": "32"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnne31dp000l01c0hw3pgst1",
+      "dataModelVersion": {
+        "number": "31"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj6q4c60023017lhr5baepb",
+      "dataModelVersion": {
+        "number": "30"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl80lzz4c002r014pcmoz0nu5",
+      "dataModelVersion": {
+        "number": "29"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

@@ -1,0 +1,910 @@
+{
+  "header": {
+    "id": "workcenterHistory",
+    "name": "WorkcenterHistory",
+    "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clqqy2ln2000h016ifeo15v1s",
+    "number": "39",
+    "dataModelId": "workcenterHistory",
+    "modelDefinition": {
+      "name": "WorkcenterHistory",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": false
+          },
+          "labelField": "id",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "workcenterHistory"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "duration",
+          "type": "Float",
+          "description": "Duration (difference between occurAt and endAt)",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "disabled",
+          "type": "Boolean",
+          "description": "Defined \"stopped time\" for the workcenter that will be used in calculating the 'run time' durations for performance calculations of the Production Runs. \n\nThis is set based on the Event.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "includeInOee",
+          "type": "Boolean",
+          "description": "Set flag based on the Mode.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "requireNote",
+          "type": "Boolean",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "externalId",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "description": "A message related to the history record",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operationCode",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operationNumber",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productNumber",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productNumberRevision",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productRevision",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workOrderNumber",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "creditedAt",
+          "type": "DateTime",
+          "description": "Report Date -",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "endAt",
+          "type": "DateTime",
+          "description": "Time in which it ends or has been resolved.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "occurAt",
+          "type": "DateTime",
+          "description": "Time in which it occurs - logDate",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "transactionTypeId",
+          "type": "ID!",
+          "description": "Identifies the transaction type",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "transactionType",
+          "description": "Transaction type object",
+          "type": "TransactionType!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "transactionTypeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterId",
+          "type": "ID!",
+          "description": "Identifies the workcenter ",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenter",
+          "description": "Workcenter object",
+          "type": "Workcenter!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workcenterId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "event",
+          "description": "Altering the Event during a production run, updates the 'current' workcenter history record. Only new records are created, when the Mode is changed.",
+          "type": "Event",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "eventId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "mode",
+          "description": "Altering the Mode during a production run, will create new workcenter history records.",
+          "type": "Mode",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "modeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionRunId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionRun",
+          "description": "",
+          "type": "ProductionRun",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "productionRunId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shiftId",
+          "type": "ID",
+          "description": "The shift id",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shift",
+          "description": "The shift object",
+          "type": "Shift",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "shiftId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)"
+    }
+  },
+  "migration": "{ \n  /* - To rename a field: */\n  \"newName\": oldName,\n  /* - To populate a default value into a newly required field: */\n  \"field\": $coalesce([field, \"Default Value\"])\n}",
+  "migrations": [
+    {
+      "dataModelVersionId": "clqqy2ln2000h016ifeo15v1s",
+      "dataModelVersion": {
+        "number": "39"
+      },
+      "mappingExpression": "{ \n  /* - To rename a field: */\n  \"newName\": oldName,\n  /* - To populate a default value into a newly required field: */\n  \"field\": $coalesce([field, \"Default Value\"])\n}"
+    },
+    {
+      "dataModelVersionId": "clqebhdpn002l019chezsgzbz",
+      "dataModelVersion": {
+        "number": "38"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clqeb9egx002g017k3bio7uhr",
+      "dataModelVersion": {
+        "number": "37"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clpvd6vv6000401833op05j1g",
+      "dataModelVersion": {
+        "number": "36.3"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clpvd0le5000401ay4blv3f2e",
+      "dataModelVersion": {
+        "number": "36.2"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp639yxh0009014o36wzb3wc",
+      "dataModelVersion": {
+        "number": "35"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp4g71qw000w014mhs05dde3",
+      "dataModelVersion": {
+        "number": "34"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clox6scvdb2yr013tb3ps8pvu",
+      "dataModelVersion": {
+        "number": "33"
+      },
+      "mappingExpression": "{ \n  /* - To rename a field: */\n  \"workOrderNumber\": workOrderCode\n \n}"
+    },
+    {
+      "dataModelVersionId": "clou5irhwd8sn015ufl5067xq",
+      "dataModelVersion": {
+        "number": "32"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clopxu3af001q01bj4uogd6a6",
+      "dataModelVersion": {
+        "number": "31"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clopxo4i6001n01bj8cu567s0",
+      "dataModelVersion": {
+        "number": "30"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clopxme4n001c016n5cbn171c",
+      "dataModelVersion": {
+        "number": "29"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clopuvcs3000n019eepomfg91",
+      "dataModelVersion": {
+        "number": "28"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clopuh555000q01bjbylr5lac",
+      "dataModelVersion": {
+        "number": "27"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clog8bjam001t01329pv58zuk",
+      "dataModelVersion": {
+        "number": "26"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clog6m6fq001h0132anrxdyuo",
+      "dataModelVersion": {
+        "number": "25"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnpfhs7001l019l9fsu9f1u",
+      "dataModelVersion": {
+        "number": "24"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnpcamt001q01a3dyp8bkmi",
+      "dataModelVersion": {
+        "number": "23"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnno5snr001d019l479r46wk",
+      "dataModelVersion": {
+        "number": "22"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnkkoshc001h017y8pz1huz0",
+      "dataModelVersion": {
+        "number": "21"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl8vrkrmy003g016m770ce34f",
+      "dataModelVersion": {
+        "number": "20"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

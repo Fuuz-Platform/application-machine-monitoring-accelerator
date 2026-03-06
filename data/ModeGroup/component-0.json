@@ -1,0 +1,12 @@
+{
+  "api": "application",
+  "modelName": "ModeGroup",
+  "payload": [
+    {
+      "id": "cloenzw34001b0188d84le7im",
+      "name": "Default Mode Group",
+      "usable": true
+    }
+  ],
+  "metadata": {}
+}

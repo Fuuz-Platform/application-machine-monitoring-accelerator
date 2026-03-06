@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "visualizationDatasourceHourlyProduction",
+    "name": "Visualization Datasource: Hourly Production",
+    "description": "Auto-generated saved transform to drive visualization \"Hourly Production\".",
+    "active": true
+  },
+  "version": {
+    "id": "clw89xq9k002x356gkc3s4iom",
+    "number": "1.0.9",
+    "description": null,
+    "savedTransformId": "visualizationDatasourceHourlyProduction",
+    "scriptLanguageId": "JSONata",
+    "transform": "{\n  \"chart\":{\n      \"caption\": \"Production History\",\n      \"subCaption\": \"Good vs Scrap\",\n      \"xAxisName\": \"Work Center\",\n      \"yAxisName\": \"Units\",\n      \"theme\": \"fusion\"\n  },\n  \"dataset\":[\n    {\n      \"seriesname\": \"Good\",\n      \"color\": \"#00ff00\",\n      \"data\":[ $.{\n        \"value\": totalProductionQuantity\n      }]\n    },    \n    {\n      \"seriesname\": \"Scrap\",\n      \"color\": \"#ff0000\",\n      \"data\": [$.{\n        \"value\": totalScrapQuantity\n      }]\n    }  \n  ],\n  \"categories\": [\n        {\n            \"category\": [$.{\n              \"label\": $string(shiftHour)\n            }]\n        }\n    ]\n\n}",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

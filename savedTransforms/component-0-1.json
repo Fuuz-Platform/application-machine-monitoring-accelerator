@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "getShift",
+    "name": "Get Shift",
+    "description": "This flow takes in a date in utc time and will find which shift it is a part of in the timezone of the shift.\n\nIf the optional shifts param is passed in the query will not be executed\n\n",
+    "active": true
+  },
+  "version": {
+    "id": "clq4dmce50008356eetxlq66o",
+    "number": "1.0.2",
+    "description": null,
+    "savedTransformId": "getShift",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n\n  $findCreditAt := function($v){(\n    $dateInTimeZone := $momentTz($$.date, undefined, $$.timeZone);\n    /* $dateInTimeZone := $moment($$.date); */\n    $crrHour := $dateInTimeZone.hour();\n    $crrMinute := $dateInTimeZone.minute();\n    \n    /* If we're after midnight, we'd need to subtract a day. */\n    $offsetToMakeDateBeOnStartOfShift := $crrHour < $v.startHour ? -1 : 0;\n    \n    /* If we're before midnight, we'd need to add a day. */\n    $offsetToMakeDateBeOnEndOfShift := $crrHour < $v.startHour ? 0 : 1;\n    \n    /* If the shift \"starts\" after it \"ends\", it bridges midnight. */\n    $shiftBridgesMidnight := $v.startHour > $v.endHour;\n\n    /* \n      LMENARD 11-2-22\n      Decide which offset to use based on the creditAtStart flag on the shift. \n      If the shift doesn't bridge midnight, we don't need to adjust anything at all.\n      I feel like this whole thing could be simpler...\n    */\n    $offsetToUse := $shiftBridgesMidnight \n      ? $v.creditAtStart ? $offsetToMakeDateBeOnStartOfShift : $offsetToMakeDateBeOnEndOfShift\n      : 0;\n      \n    $dateInTimeZone.add($offsetToUse, \"day\").startOf(\"day\").format();\n      \n  )};\n  \n  $allShifts := $isNilOrEmpty(shifts)? $query({\n    \"statement\": 'query Shift($where:ShiftWhereInput){\n      shift(where:$where) {\n        edges {\n          node {\n            id\n            name\n            startHour\n            startMinute\n            endHour\n            endMinute\n            creditAtStart\n            timeZone\n\n            monday\n            tuesday\n            wednesday\n            thursday\n            friday\n            saturday\n            sunday\n          }\n        }\n      }\n    }\n    ',\n  \"variables\":{\"where\": {\"shiftGroups\":{\"_all\":{\"shiftGroupId\":{\"_eq\":$coalesce([$$.shiftGroupId,\"Default\"])}}\n  }}}}).shift.edges.node\n  :\n  shifts;\n  \n  $shift := $filter(\n    $allShifts,\n    function($v){(\n      $dateInTimeZone := $momentTz($$.date, undefined, $$.timeZone);\n      /* $dateInTimeZone := $moment($$.date); */\n      $crrHour := $dateInTimeZone.hour();\n      $crrMinute := $dateInTimeZone.minute();\n      $dayOfWeek := $dateInTimeZone.format(\"dddd\")~>$lowercase;\n      \n      $lookup($v, $dayOfWeek) and\n      (\n        /* Logic for when the shift starts and ends on the same day*/\n        (\n          (\n            $v.startHour < $v.endHour and\n            (\n                $v.startHour < $crrHour or\n                (\n                  $v.startHour = $crrHour and\n                  $v.startMinute <= $crrMinute\n                )\n\n            ) and\n            (\n              $v.endHour > $crrHour or\n              (\n                $v.endHour = $crrHour and\n                $v.endMinute > $crrMinute\n              )\n            )\n          )\n          or\n          /* Logic for when the shift starts and ends on different day*/\n          (\n            $v.startHour > $v.endHour and\n            (\n\n                $v.startHour < $crrHour or\n                (\n                  $v.startHour = $crrHour and\n                  $v.startMinute <= $crrMinute\n                ) or\n                (\n                  $v.endHour > $crrHour or\n                  (\n                    $v.endHour = $crrHour and\n                    $v.endMinute > $crrMinute\n                  )\n                )\n            )\n\n          )\n        )\n      )\n    )}\n  );\n  \n  \n  \n  $shift~>| $ | { \"creditAt\": $findCreditAt($) } |\n \n)",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "shifts": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "shiftGroupId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    },
+    "outputSchema": {}
+  }
+}

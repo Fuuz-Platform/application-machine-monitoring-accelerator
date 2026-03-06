@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "calcAv",
+    "name": "Calc Av",
+    "description": "",
+    "active": true
+  },
+  "version": {
+    "id": "clpvq5qol000d01ayegaxc5u0",
+    "number": "0.0.1",
+    "description": null,
+    "savedTransformId": "calcAv",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n  $timeZone := setting.edges.node.defaultValue;\n  $shifts := productionSetup.edges[0].node.workcenter.shiftGroup.shifts.edges.node;\n  \n  $dateToInt := function($hour, $minute){\n      ($string($hour) & $pad($string($minute), -2, \"0\"))~>$number\n   };\n  $findCreditAtAll := function($start, $timeZone, $v){(\n    $dateInTimeZone := $momentTz($start, undefined, $timeZone);\n    $daysDaysFromStartDate := $v.day;\n    \n    $shiftCrossesMidnight := $v.endHour < $v.startHour;\n    $offsetToUse := $shiftCrossesMidnight? \n      $v.creditAtStart? 0 : 1\n    :\n    0;\n    \n    $dateInTimeZone.add($offsetToUse+$v.day, \"day\").startOf(\"day\").format();\n      \n  )};\n  $findCreditAt := $findCreditAtAll($state.context.startTime, $timeZone, ?);\n  $getShiftsInRange := function($shifts){(\n    $map(\n      $shifts,\n      function($v){(\n        $startInTimeZone := $momentTz($state.context.startTime, undefined, $timeZone);\n        $endInTimeZone := $momentTz($state.context.endTime, undefined, $timeZone);\n        $dayDiff := $endInTimeZone.date() - $startInTimeZone.date();\n\n        /*If the range spans more then a single day then we need to condsider that the 1D collision dection wont work.\n          Break this into once per day per shift to decide if we should include a shift more then once.\n        */\n        [0..$dayDiff].(\n          /*if this is the first day of the range we should use the start time otherwise we can just use the start of the day*/ \n          $start := $=0? $dateToInt($startInTimeZone.hour(), $startInTimeZone.minute()): 0;\n          /*Same logic as the start time just for the end of the day*/\n          $end := $=$dayDiff? $dateToInt($endInTimeZone.hour(), $endInTimeZone.minute()): 2359;\n\n          $shiftStart := $dateToInt($v.startHour, $v.startMinute);\n          $shiftEnd := $dateToInt($v.endHour, $v.endMinute);\n\n          /* Its possible we might hit a shift twice if it spans more then one day here we adjust the day that it counts towards based on the creditAt */\n          $result := ($shiftStart < $shiftEnd and $end >= $shiftStart and $shiftEnd > $start)? \n            {\"hit\": true, \"day\": $} :\n          ($shiftStart > $shiftEnd and ($end >= $shiftStart or $start >= $shiftStart )  )?\n            {\"hit\": true, \"day\": $v.creditAtStart? $ : $+1} :\n          ($shiftStart > $shiftEnd and ($end < $shiftEnd or $start < $shiftEnd )  )?\n            {\"hit\": true, \"day\": $v.creditAtStart? $-1 : $} :\n            {\"hit\": false};\n\n\n           $result.hit?   $merge([$v, {\"day\": $result.day, \"start\": $start, \"end\": $end, \"ss\": $shiftStart, \"se\": $shiftEnd, \"hit\": $result.hit}]) \n        );\n\n      )}\n  )\n    ~>$flatten\n    ~>$uniqBy(?, $pick(?, [\"id\", \"day\"])~>$values~>$join(?, \"::\") )\n    ~>$filter($isNil~>$not)^(day, startHour, startMinute)\n     ~> | $ | { \"creditAt\": $findCreditAt($) } | \n  )};\n\n  \n  \n \n)",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

@@ -1,0 +1,1944 @@
+{
+  "header": {
+    "id": "workcenterList",
+    "name": "Workcenter List",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clqr2650o000w014w09z109qb",
+    "number": "0.0.23",
+    "description": "",
+    "screenId": "workcenterList",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "WorkcenterTable",
+          "tabTitle": "Workcenter Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 5,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 2,
+                    "Text": 6,
+                    "Checkbox": 9,
+                    "Combobox": 5,
+                    "Table Column": 21,
+                    "Switch": 5,
+                    "Select": 1,
+                    "Options": 1
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "Workcenter",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "REKkijP8Zb",
+                  "kdxxuA6qDP",
+                  "WDgOhGfeE2"
+                ],
+                "linkedNodes": {}
+              },
+              "REKkijP8Zb": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "yEW8-LIq6S"
+                ],
+                "linkedNodes": {}
+              },
+              "yEW8-LIq6S": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "Workcenter",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "REKkijP8Zb",
+                "hidden": false,
+                "nodes": [
+                  "DRXNMQRtns"
+                ],
+                "linkedNodes": {}
+              },
+              "DRXNMQRtns": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "yEW8-LIq6S",
+                "hidden": false,
+                "nodes": [
+                  "nIcTh8UAjF",
+                  "hSmvInIDT",
+                  "N4UpP7m5C",
+                  "clok1te4301bz356ex9fbyz8r",
+                  "vb3QZc8k3",
+                  "EhQPM27q7",
+                  "Hb9kLXJYq",
+                  "cloycfzef0024356e6ubdvw4u",
+                  "cloycgc8n002e356ewsqzp798",
+                  "cloycgu0q002t356epdodfi63",
+                  "0FFHW6z5b"
+                ],
+                "linkedNodes": {}
+              },
+              "nIcTh8UAjF": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Building",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "facility",
+                  "field": "facility",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "Facility",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "facility.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "facility.id",
+                      "facility.code"
+                    ]
+                  },
+                  "orderByField": "name",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kdxxuA6qDP": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "YQRaE1827y",
+                  "wMc-T7mqPh",
+                  "6pDPtUPin3",
+                  "3eydM3CEQ2",
+                  "0Yixvt1Xo"
+                ],
+                "linkedNodes": {}
+              },
+              "YQRaE1827y": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "kdxxuA6qDP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wMc-T7mqPh": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Workcenter",
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "code",
+                          "field": "code",
+                          "description": "Workcenter code",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": false
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "Is the workcenter active?",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "Workcenter Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workcenterGroup",
+                          "field": "name",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "WorkcenterGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "workcenterGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenterGroup.id",
+                              "workcenterGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Mode Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "modeGroup",
+                          "field": "name",
+                          "description": "A mode group must be defined in order to utilize OEE",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ModeGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "modeGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "modeGroup.id",
+                              "modeGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "Workcenter description",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Label field - workcenter name\n",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "PLC Name",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plcName",
+                          "field": "plcName",
+                          "description": "Used with External Systems in some cases",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Multi Out Capable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "multiOutCapable",
+                          "field": "multiOutCapable",
+                          "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time.",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Workcenter History Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workcenterHistorySync",
+                          "field": "workcenterHistorySync",
+                          "description": "Use this when the workcenter is not integrated and you need historical records pulled from an external system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Production History Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionHistorySync",
+                          "field": "productionHistorySync",
+                          "description": "Use this when the workcenter is not integrated and you need historical records pulled from an external system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Auto Production",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "autoProduction",
+                          "field": "autoProduction",
+                          "description": "If True - this workcenter is capable of entering Auto Production from PLC intputs.",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Run Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "runSync",
+                          "field": "runSync",
+                          "description": "If True - the user is allowed to pull run information from a 3rd party system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Building",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "facility",
+                          "field": "facility",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Facility",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "facilityId"
+                          },
+                          "query": {
+                            "fields": [
+                              "facility.id",
+                              "facility.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Screen",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "screen",
+                          "field": "screen",
+                          "description": "Only used if you have custom dashboards per workcenter",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Screen",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "disabled": true,
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "screenId"
+                          },
+                          "query": {
+                            "fields": [
+                              "screen.id",
+                              "screen.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Shift Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shiftGroup",
+                          "field": "shiftGroup",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ShiftGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "shiftGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "shiftGroup.id",
+                              "shiftGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Custom Data",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "customData",
+                          "field": "customData",
+                          "description": "A collection of extra data points that can vary depending on the source of the workcenters.",
+                          "element": "JSONInput",
+                          "type": "json"
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "Links out to another system",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkcenter($payload: [WorkcenterCreatePayloadInput!]!) {\n  mutation: createWorkcenter(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Workcenter \" & data.mutation[0].code & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "kdxxuA6qDP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6pDPtUPin3": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Workcenter \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "code",
+                          "field": "code",
+                          "description": "Workcenter code",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Label field - workcenter name\n",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "Is the workcenter active?",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Workcenter Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workcenterGroup",
+                          "field": "name",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "WorkcenterGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "workcenterGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenterGroup.id",
+                              "workcenterGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Mode Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "modeGroup",
+                          "field": "name",
+                          "description": "A mode group must be defined in order to utilize OEE",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ModeGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "modeGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "modeGroup.id",
+                              "modeGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "Workcenter description",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        },
+                        {
+                          "label": "Multi Out Capable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "multiOutCapable",
+                          "field": "multiOutCapable",
+                          "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time.",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Workcenter History Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workcenterHistorySync",
+                          "field": "workcenterHistorySync",
+                          "description": "Use when the workcenter is not integrated and you need data from another system to backfill history records in Fuuz",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Production History Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionHistorySync",
+                          "field": "productionHistorySync",
+                          "description": "Use this when the workcenter is not integrated and you need historical records pulled from an external system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Auto Production",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "autoProduction",
+                          "field": "autoProduction",
+                          "description": "If True - this workcenter is capable of entering Auto Production from PLC intputs.",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "Run Sync",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "runSync",
+                          "field": "runSync",
+                          "description": "If True - the user will be able to sync runs with a 3rd party system",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaltValue": false
+                        },
+                        {
+                          "label": "PLC Name",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plcName",
+                          "field": "plcName",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Building",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "facility",
+                          "field": "facility",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Facility",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "facilityId"
+                          },
+                          "query": {
+                            "fields": [
+                              "facility.id",
+                              "facility.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Shift Group",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "shiftGroup",
+                          "field": "shiftGroup",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ShiftGroup",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "shiftGroupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "shiftGroup.id",
+                              "shiftGroup.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Screen",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "screen",
+                          "field": "screen",
+                          "description": "Only used if you have customized dashboards for specific workcenters",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Screen",
+                          "disabled": true,
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "screenId"
+                          },
+                          "query": {
+                            "fields": [
+                              "screen.id",
+                              "screen.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Custom Data",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "customData",
+                          "field": "customData",
+                          "description": "A collection of extra data points that can vary depending on the source of the workcenters.",
+                          "element": "JSONInput",
+                          "disabled": true,
+                          "type": "json"
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "Links out to another system",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateWorkcenter($payload: [WorkcenterUpdatePayloadInput!]!) {\n  mutation: updateWorkcenter(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "kdxxuA6qDP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3eydM3CEQ2": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Workcenter \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteWorkcenter($payload: [WorkcenterDeletePayloadInput!]!) {\n  mutation: deleteWorkcenter(payload: $payload) { \n    id\n    code\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter \" & $components.Table1.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "kdxxuA6qDP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WDgOhGfeE2": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "Workcenter",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": true,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "This table lists workcenters and it's attributes\nLinks out to workcenter source location, work order process distribution and, product setup material",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "4TimlpjWGQ",
+                  "Mi4RpSjXQ",
+                  "Bu7xyLjSP",
+                  "HgwwrbaocD",
+                  "KrDzHGWHgm",
+                  "4_FCwBXPt4",
+                  "kKR6Z24d3u",
+                  "QRY0i8VIPS",
+                  "2_6lxYTmc",
+                  "kXoZE0VCJ",
+                  "qoXUeF01l",
+                  "s0DPQBWv0I",
+                  "EK-2QSQDXC",
+                  "k3cq_J6Nt",
+                  "8DW6-DGlPG",
+                  "GpLPH28d-k",
+                  "AsZhSeF_wU"
+                ],
+                "linkedNodes": {}
+              },
+              "4TimlpjWGQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Code",
+                  "format": "text",
+                  "field": "code",
+                  "dataPath": "code",
+                  "description": "Workcenter code",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workcenter/\" & data.id",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4_FCwBXPt4": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "field": "active",
+                  "dataPath": "active",
+                  "description": "Is the workcenter active?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kKR6Z24d3u": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Multi Out Capable",
+                  "format": "checkmark",
+                  "field": "multiOutCapable",
+                  "dataPath": "multiOutCapable",
+                  "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QRY0i8VIPS": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "History Sync",
+                  "format": "checkmark",
+                  "field": "workcenterHistorySync",
+                  "dataPath": "workcenterHistorySync",
+                  "description": "If History Sync is true - Fuuz will import the workcenter history transaction records from an external system for this workcenter. Do not turn this on, if you have this workcenter integrated to Fuuz."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "s0DPQBWv0I": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "format": "markdown",
+                  "field": "description",
+                  "dataPath": "description",
+                  "description": "Workcenter description"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AsZhSeF_wU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "External Id",
+                  "format": "text",
+                  "field": "externalId",
+                  "dataPath": "externalId",
+                  "description": "Links out to another system"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HgwwrbaocD": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "Label field - workcenter name\n"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KrDzHGWHgm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "PLC Name",
+                  "format": "text",
+                  "field": "plcName",
+                  "dataPath": "plcName",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EK-2QSQDXC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Group",
+                  "format": "text",
+                  "field": "shiftGroup.name",
+                  "dataPath": "shiftGroup.name",
+                  "description": "Shift group name - Label field",
+                  "query": {
+                    "fields": [
+                      "shiftGroup.id",
+                      "shiftGroup.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8DW6-DGlPG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GpLPH28d-k": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EhQPM27q7": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "150px",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "target": {
+                    "dataPath": "active._eq"
+                  },
+                  "description": "Is the workcenter active?",
+                  "field": "active",
+                  "defaultValue": true,
+                  "predicate": "_eq"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Mi4RpSjXQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Group",
+                  "format": "text",
+                  "dataPath": "workcenterGroup.name",
+                  "field": "workcenterGroup.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0Yixvt1Xo": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "file-import",
+                    "color": "inherit",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation ($payload: [PublishMessagePayloadInput!]!){\n  publishMessages(payload: $payload){\n    topic{ id }\n  }\n}",
+                      "transforms": {
+                        "pre": "(\n  {\n    \"payload\":[\n      {\n        \"topic\":{\n          \"name\": $appConfig.plexApiImports.options.topicPrefix & \".done\"\n        },\n        \"messages\":[{\n          \"value\":{\n            \"start\": \"workcenters\",\n            \"options\": {\n              \"stopAfter\": true\n            }\n          }\n        }]\n      }\n    ]\n  }\n)"
+                      }
+                    }
+                  ],
+                  "title": "Import Workcenters"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton5"
+                },
+                "parent": "kdxxuA6qDP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kXoZE0VCJ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Auto Production",
+                  "format": "checkmark",
+                  "dataPath": "autoProduction",
+                  "description": "Enable Auto Production for the workcenter - will still require user to initiate auto-production from a dashboard - this will produce into Fuuz first automatically based on PLC input. Requires customer specific implimentations.",
+                  "field": "autoProduction",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "vb3QZc8k3": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Mode Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "modeGroup",
+                  "target": {
+                    "dataPath": "modeGroup.id._eq"
+                  },
+                  "description": "",
+                  "field": "modeGroup",
+                  "predicate": "_eq",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "modeGroup.id",
+                      "modeGroup.name"
+                    ]
+                  },
+                  "queryType": "ModeGroup",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox4"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "k3cq_J6Nt": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Mode Group",
+                  "format": "text",
+                  "dataPath": "modeGroup.name",
+                  "field": "modeGroup.name",
+                  "description": "Mode Group linked to this workcenter."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2_6lxYTmc": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Sync",
+                  "format": "checkmark",
+                  "dataPath": "productionHistorySync",
+                  "description": "Syncronize Production history for this workcenter - Only use, if you are not reporting production through Fuuz directly or via PLC integration. The use here would be if production / scrap entries are being done in an external system, this boolean is used to indicate you want those records pulled from that external system, into Fuuz for analysis.",
+                  "field": "productionHistorySync",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "N4UpP7m5C": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "select",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "dialogMode": false,
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "full",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "id._eq"
+                  },
+                  "dataPath": "id",
+                  "predicate": "_eq",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  },
+                  "dataModel": "Workcenter",
+                  "selectFields": [
+                    "code"
+                  ],
+                  "additionalFields": [
+                    "active",
+                    "facility.code"
+                  ],
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clok1te4301bz356ex9fbyz8r": {
+                "type": {
+                  "resolvedName": "OptionsInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "options",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "PLC Name",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "id",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": "plcName._eq"
+                  },
+                  "dataPath": "plcName",
+                  "options": {
+                    "__transform": "(\n\n$op := $query({\"statement\":'{workcenter{edges{node{plcName}}}}',\"variables\":{}}).workcenter.edges.node.plcName;\n$res := $uniq($op).{\n  \"id\":$,\n  \"label\":$\n}\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "predicate": "_eq"
+                },
+                "displayName": "Options",
+                "custom": {
+                  "elementName": "Options1"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Bu7xyLjSP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Building",
+                  "format": "text",
+                  "dataPath": "facility.code",
+                  "field": "facility.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hSmvInIDT": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenterGroup",
+                  "target": {
+                    "dataPath": "workcenterGroup.id._eq"
+                  },
+                  "description": "",
+                  "field": "workcenterGroup",
+                  "predicate": "_eq",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "workcenterGroup.id",
+                      "workcenterGroup.name"
+                    ]
+                  },
+                  "queryType": "WorkcenterGroup",
+                  "orderByDirection": "asc",
+                  "disabled": false
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox5"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Hb9kLXJYq": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Multi Out Capable",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "multiOutCapable",
+                  "target": {
+                    "dataPath": "multiOutCapable._eq"
+                  },
+                  "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time.",
+                  "field": "multiOutCapable",
+                  "predicate": "_eq"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox4"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cloycfzef0024356e6ubdvw4u": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Workcenter History Sync",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenterHistorySync",
+                  "target": {
+                    "dataPath": "workcenterHistorySync._eq"
+                  },
+                  "description": "",
+                  "field": "workcenterHistorySync",
+                  "predicate": "_eq"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox5"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cloycgc8n002e356ewsqzp798": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Production History Sync",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productionHistorySync",
+                  "target": {
+                    "dataPath": "productionHistorySync._eq"
+                  },
+                  "description": "Syncronize Production history for this workcenter - Only use, if you are not reporting production through Fuuz directly or via PLC integration. The use here would be if production / scrap entries are being done in an external system, this boolean is used to indicate you want those records pulled from that external system, into Fuuz for analysis.",
+                  "field": "productionHistorySync",
+                  "predicate": "_eq"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox6"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cloycgu0q002t356epdodfi63": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Auto Production",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "autoProduction",
+                  "target": {
+                    "dataPath": "autoProduction._eq"
+                  },
+                  "description": "",
+                  "field": "autoProduction",
+                  "predicate": "_eq"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox8"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0FFHW6z5b": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "checkbox",
+                  "padding": 8,
+                  "width": "150",
+                  "height": "auto",
+                  "label": "Run Sync",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "runSync",
+                  "target": {
+                    "dataPath": "runSync._eq"
+                  },
+                  "description": "When True, runs will be able to be synchronized from a 3rd party system. When set to False, all production runs will be initiated only through Fuuz/ or via your PLC integration with Fuuz. The Synch option will not be available to the end user for a given workcenter when this is False.",
+                  "field": "runSync",
+                  "predicate": "_eq"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox9"
+                },
+                "parent": "DRXNMQRtns",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "qoXUeF01l": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Sync",
+                  "format": "checkmark",
+                  "dataPath": "runSync",
+                  "description": "When True, runs will be able to be synchronized from a 3rd party system. When set to False, all production runs will be initiated only through Fuuz/ or via your PLC integration with Fuuz. The Synch option will not be available to the end user for a given workcenter when this is False.",
+                  "field": "runSync",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "WDgOhGfeE2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnn5ln520003019lbrtwgcew",
+      "title": "Workcenter List",
+      "path": "/productionManagement/manufacturing/workcenters",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterList",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

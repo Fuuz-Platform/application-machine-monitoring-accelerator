@@ -1,0 +1,2201 @@
+{
+  "header": {
+    "id": "startStopRun",
+    "name": "Start Stop Run",
+    "description": "",
+    "active": true,
+    "dataFlowTypeId": "System",
+    "moduleId": "manufacturing"
+  },
+  "version": {
+    "id": "clxjg5wm025x9012ue4r3dios",
+    "number": "0.0.47",
+    "description": "",
+    "dataFlowId": "startStopRun",
+    "flow": {
+      "id": "clxjg5wm025x9012ue4r3dios",
+      "name": "Start Stop Run",
+      "type": "System",
+      "nodes": [
+        {
+          "id": "6dedc01d-3b34-47ab-be58-79baff1774af",
+          "name": "Query",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "$",
+            "query": "query ($workcenterId: String!) {\n  productionSetupOutput(where: {workcenterId: {_eq: $workcenterId}}) {\n    total\n    edges {\n      node {\n        id\n        productNumberRevision\n        outputId\n        counterInput\n        cycleTime\n        distributionQuantity\n        idealRate\n        lastProductionQuantity\n        lastScrapQuantity\n        producedQuantity\n        remainingBalance\n        scrappedQuantity\n        setupRate\n        standardQuantity\n        standardRate\n        unitPerCycle\n        autoProduction\n        containerType\n        distributionStatus\n        externalId\n        lastScrapReasonExt\n        operationCode\n        operationNumber\n        productId\n        productName\n        productNumber\n        productOperationId\n        productRevision\n        workOrderNumber\n        dueAt\n        scheduledStartAt\n        startAt\n        customData\n        workcenterId\n        approvedWorkcenterId\n        lastScrapReasonId\n        productionSetupId\n   \n      }\n    }\n  }\n  productionSetup(where: {workcenterId: {_eq: $workcenterId}}){\n    edges{\n      node{\n\t\t\t\tid\n        productionRunId\n        workcenterId\n      }\n    }\n  }\n  workcenter(where:{id:{ _eq: $workcenterId}}){\n    edges{\n      node{\n        shiftGroup{\n          shifts{\n            edges{\n              node{\n                id\n                name\n                creditAtStart\n                monday\n                tuesday\n                wednesday\n                thursday\n                friday\n                saturday\n                sunday\n                startHour\n                startMinute\n                endHour\n                endMinute            \n              }\n            }\n          }\n        }\n        currentWorkcenterHistory{\n          modeId\n          eventId          \n        }\n      }\n    }\n  }\n  setting(where:{id:{_eq: \"TimeZone\"}}){\n    edges{\n      node{\n        defaultValue\n      }\n    }\n  }\n}\n",
+            "nextNodes": [
+              "0acda2cc-09f5-42e4-b4ca-ca5929f8452f"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+          "name": "Prepare Payload",
+          "type": "transform",
+          "data": {
+            "transform": "(\n  $defaultToZero := function($value){ $coalesce([$value, 0]) };\n  $outputs := productionSetupOutput.edges.node;\n  $now := $moment().format();\n  $runId := $cuid();\n  $workcenterHistoryId := $cuid();\n\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $now,\n      \"shifts\": workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timeZone\": setting.edges.node.defaultValue\n    }\n  );\n  \n  {\n    \"shift\": $shift,\n    \"runPayload\":{\n      \"create\": {\n        \"id\": $runId,\n        \"idealAggregate\": $sum([$outputs.idealRate.($defaultToZero($))]),\n        \"standardAggregate\": $sum([$outputs.standardRate.($defaultToZero($))]),\n        \"averageCycleTime\": 0,\n        \"changeoverAggregate\": $sum([$outputs.setupRate.($defaultToZero($))]),\n        \"runCrewSize\": productionSetup.edges.node.crewSize,\n        \"workcenterId\":productionSetup.edges.node.workcenterId,\n        \"startAt\": $now,\n        \"productionSetupId\": productionSetup.edges.node.id,\n        \"totalRequired\": $sum([$outputs.distributionQuantity.($defaultToZero($))]),\n        \"excludedProduction\": 0,\n        \"excludedScrap\":0,\n        \"crewAggregate\": $sum([$outputs.productionOperators.($defaultToZero($))]),\n        \"oee\": 1,\n        \"performance\": 1,\n        \"availability\": 1,\n        \"quality\": 1\n      }\n    },\n    \"workOrderDistributionPayload\":productionSetupOutput.edges.node.{\n      \"create\":{\n        \"number\": data.form1.number,\n        \"requiredQuantity\": producedQuantity + scrappedQuantity + remainingBalance,\n        \"balanceQuantity\": remainingBalance,\n        \"idealRate\":idealRate,\n        \"setupOperators\": $$.productionSetup.edges.node.crewSize,\n        \"standardRate\": standardRate,\n        \"operationCode\": operationCode,\n        \"operationNumber\": operationNumber,\n        \"productId\": productId,\n        \"productNumber\": productNumber,\n        \"productNumberRevision\": productRevision,\n        \"productRevision\": productNumberRevision,\n        /* \"facilityId\": data.form1.workcenter.facilityId, */\n        \"workcenterId\": workcenterId,\n        \"standardQuantity\": standardQuantity,\n        \"workOrderNumber\": workOrderNumber,\n        \"productionRunId\": $runId\n      }\n    },\n    \"setupPayload\":{\n      \"where\":{ \"id\": productionSetup.edges.node.id },\n      \"update\":{ \"productionRunId\": $runId}\n      \n    },\n    \"workcenterHistoryPayload\":[\n      {\n        \"create\": $merge([\n          { \n            \"id\": $cuid(),\n            \"transactionTypeId\": \"Production Setup Add\",\n            \"productionRunId\": $runId,\n            \"workcenterId\": productionSetup.edges.node.workcenterId,\n            \"shiftId\": $shift.id,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"occurAt\": $now,\n            \"endAt\":  $now,\n            \"duration\": 0\n\n          },\n          workcenter.edges.node.currentWorkcenterHistory\n        ])\n      },\n      {\n        \"create\": $merge([\n          { \n            \"id\": $workcenterHistoryId,\n            \"transactionTypeId\": \"Mode Change\",\n            \"productionRunId\": $runId,\n            \"workcenterId\": productionSetup.edges.node.workcenterId,\n            \"shiftId\": $shift.id,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"occurAt\": $now\n          },\n          workcenter.edges.node.currentWorkcenterHistory\n        ])\n      }\n    ],\n    \"workcenterPayload\":{\n      \"where\":{ \"id\": productionSetup.edges.node.workcenterId },\n      \"update\":{\n        \"currentWorkcenterHistoryId\": $workcenterHistoryId\n      }\n    }\n  } \n  \n)",
+            "nextNodes": [
+              "51b6fcce-e18b-4749-a53f-69b7a9003b5d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+          "name": "Starting a new Run",
+          "type": "ifElse",
+          "data": {
+            "onTrueNextNodes": [
+              "df0192e5-de37-41e2-8966-2d74ede0fb84"
+            ],
+            "transform": "$isNilOrEmpty( productionSetup.edges.node.productionRunId )",
+            "onFalseNextNodes": [
+              "7a73c80d-2229-4fb2-b7d0-079b56b76209"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+          "name": "Create Run",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "$",
+            "mutation": "mutation (\n  $runPayload: [ProductionRunCreatePayloadInput!]!,\n  $setupPayload: [ProductionSetupUpdatePayloadInput!]!\n  $workcenterHistoryPayload: [WorkcenterHistoryCreatePayloadInput!]!\n  $workcenterPayload: [WorkcenterUpdatePayloadInput!]!\n  $workOrderDistributionPayload: [WorkOrderProcessDistributionCreatePayloadInput!]!\n){\n  createProductionRun(payload: $runPayload){ id }\n  updateProductionSetup(payload: $setupPayload){ id }  \n  createWorkcenterHistory(payload: $workcenterHistoryPayload){ id }\n  updateWorkcenter(payload:$workcenterPayload ){ id }\n  createWorkOrderProcessDistribution(payload: $workOrderDistributionPayload) { id }\n}",
+            "nextNodes": [
+              "41137c32-c94c-42db-b033-759e67e61ccd"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "d441abc8-d5e3-4ae5-b084-85a9ff70f9ef",
+          "name": "Request",
+          "type": "request",
+          "data": {
+            "nextNodes": [
+              "6dedc01d-3b34-47ab-be58-79baff1774af"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "41137c32-c94c-42db-b033-759e67e61ccd",
+          "name": "Response",
+          "type": "response",
+          "data": {
+            "responseTransform": "$",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "24189c65-1148-4b2d-a613-e76139d000a0",
+          "name": "Clear Run",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "$",
+            "mutation": "mutation (\n  $runPayload: [ProductionRunUpdatePayloadInput!]!,\n  $setupPayload: [ProductionSetupUpdatePayloadInput!]!,\n  $workcenterHistoryPayload: [WorkcenterHistoryCreatePayloadInput!]!\n  $workcenterPayload: [WorkcenterUpdatePayloadInput!]!\n  \n){\n  createWorkcenterHistory(payload: $workcenterHistoryPayload){ id }\n  updateProductionRun(payload: $runPayload){ id }\n  updateProductionSetup(payload: $setupPayload){ id }  \n  updateWorkcenter(payload:$workcenterPayload ){ id }\n}",
+            "nextNodes": [
+              "41137c32-c94c-42db-b033-759e67e61ccd"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+          "name": "Set Context",
+          "type": "setContext",
+          "data": {
+            "transform": "$merge([\n  $,\n  { \"endAt\": $moment().format() }\n])",
+            "nextNodes": [
+              "f079c2d9-ea5e-4dc4-b739-3b837a75e47f"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+          "name": "Query Get Run StartTime ",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{ \"productionRunId\": $.productionSetup.edges.node.productionRunId}",
+            "query": "query ($productionRunId: String!) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{ startAt }\n    }\n  }\n}\n\n",
+            "nextNodes": [
+              "817ccbe9-683d-42df-b70a-4b8d837a22ea"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+          "name": "Prepare Payload",
+          "type": "transform",
+          "data": {
+            "transform": "(\n\n  $workcenterHistoryId := $cuid();\n  $calculateSeconds := function($startBound, $endBound, $mode){(\n  \n    $modeStart := $mode.occurAt? $moment($mode.occurAt);\n    $modeEnd := $mode.endAt? $moment($mode.endAt);\n    \n    $endBoundObj := $moment($endBound);\n    $startBoundObj := $moment($startBound);\n  \n    $start := $mode.occurAt and $modeStart.isAfter($startBound)? $modeStart : $startBoundObj;\n    $end := $mode.endAt and $modeEnd.isBefore($endBound)? $modeEnd : $endBoundObj;\n      \n    $isNilOrEmpty($mode.occurAt) and $isNilOrEmpty($mode.endAt)? \n      $throw(\"Mode has no occurAt or endAt\", $mode) :\n      $end.diff($start, \"seconds\")   \n  \n  )};\n  $time := $calculateSeconds(productionRun.edges.node.startAt, $state.context.endAt, ?);\n\n  $totalProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts].quantity), 0 ]);\n  $totalScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts].quantity), 0]);\n  $totalProduction := $totalProduced + $totalScrap;\n  \n  $totalExcludedProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts=false].quantity), 0 ]);\n  $totalExcludedScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts = false].quantity), 0]);\n  \n  $runCrewSize := $coalesce([productionRun.edges.node.runCrewSize, 0]);\n  $crewAggregate := $coalesce([productionRun.edges.node.crewAggregate, 0]);\n  $standardRate := productionRun.edges.node.standardAggregate;\n  \n  $end := $moment( $state.context.endAt );\n  $start := $moment( productionRun.edges.node.startAt );\n  $duration := $end.diff($start, \"seconds\");\n  \n  $idealRateSeconds := productionRun.edges.node.idealAggregate / 3600;\n  $now := $moment().format();\n  \n  /* Mode Type is changeover */\n  $changeoverTime := $reduce(\n    [workcenterHistory.edges.node[modeType.changeover]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is plannedDowntime */\n  $plannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.plannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is unplannedDowntime */\n  $unplannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.unplannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n  $downTime := $unplannedDowntime + $plannedDowntime;\n  $runTime := $duration - $downTime;\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $state.context.endAt,\n      \"shifts\": $state.context.workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timeZone\": $state.context.setting.edges.node.defaultValue\n    }\n    );\n    \n  $plannedProductionTime := $duration - $plannedDowntime;\n  $availability := $duration? $runTime / $plannedProductionTime : 1;\n  $pref := $runTime > 0? \n    ($idealRateSeconds? $totalProduction / $runTime / $idealRateSeconds : 1 ) \n    : 0 ;\n  $quality := $totalProduction=0? 1 : $totalProduced / $totalProduction;\n  \n  $oee := $availability * $pref * $quality;\n  \n  \n  {\n    \"runPayload\":{\n      \"where\": { \"id\": productionRun.edges.node.id},\n      \"update\":  {\n        \"produced\": $totalProduced,\n        \"scrap\": $totalScrap,\n        \"averageCycleTime\": $totalProduction > 0? $runTime / $totalProduction : 0, \n        \"earnedLaborHours\": $standardRate? \n          ($totalProduced / $standardRate * $crewAggregate) : \n          0,\n        \"earnedMachineHours\": $standardRate? $totalProduced / $standardRate : 0,\n        \"excludedScrap\": $totalExcludedScrap,\n        \"excludedProduction\": $totalExcludedProduced,\n        \"totalProduction\": $totalProduction,\n        \"endAt\": $state.context.endAt,\n        \"duration\": $duration,\n        \"quality\": $quality,\n        \"performance\": $pref,\n        \"runTime\": $runTime,\n        \"changeoverTime\": $changeoverTime,\n        \"plannedDowntime\": $plannedDowntime,\n        \"unplannedDowntime\": $unplannedDowntime,\n        \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n        \"actualLaborHours\": $runtTime *  $runCrewSize,\n        \"availability\": $availability,\n        \"oee\": $oee\n      }\n    },\n    \"setupPayload\":{\n      \"where\": { \"id\": $state.context.productionSetup.edges.node.id },\n      \"update\":{ \"productionRunId\": null }\n    },\n    \"workcenterHistoryPayload\":[\n      {\n        \"create\": $merge([\n          { \n            \"id\": $cuid(),\n            \"transactionTypeId\": \"Production Setup clear\",\n            \"productionRunId\": productionRun.edges.node.id,\n            \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"shiftId\": $shift.id,\n            \"occurAt\": $now,\n            \"endAt\": $now,\n            \"duration\": 0\n          },\n          $state.context.workcenter.edges.node.currentWorkcenterHistory\n        ])\n      },\n      {\n        \"create\": $merge([\n          { \n            \"id\": $workcenterHistoryId,\n            \"transactionTypeId\": \"Mode Change\",\n            \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"shiftId\": $shift.id,\n            \"occurAt\": $now\n          },\n          $state.context.workcenter.edges.node.currentWorkcenterHistory\n        ])\n      }\n    ],\n    \"workcenterPayload\":[{\n      \"where\":{ \"id\": $state.context.productionSetup.edges.node.workcenterId },\n      \"update\":{\n        \"currentWorkcenterHistoryId\": $workcenterHistoryId\n      }\n    }]\n  }\n  \n  \n)\n",
+            "nextNodes": [
+              "24189c65-1148-4b2d-a613-e76139d000a0"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+          "name": "Query History",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{ \n  \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n  \"productionRunId\": $state.context.productionSetup.edges.node.productionRunId,\n  \"startTime\": productionRun.edges.node.startAt,\n  \"endTime\": $state.context.endAt\n}",
+            "query": "query (\n  $workcenterId: String!,\n  $productionRunId: String!\n  $startTime: DateTime!,\n  $endTime: DateTime!\n) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{\n        id\n        runCrewSize\n        crewAggregate\n        standardAggregate\n        startAt\n        idealAggregate\n      }\n    }\n  }\n  productionHistory(where: {productionRunId: {_eq: $productionRunId}}) {\n    total\n    edges {\n      node {\n        id\n        idealRate\n        quantity\n        standardRate\n        includeInProductionCounts\n        employeeName\n        externalId\n        heatCode\n        heatNo\n        lotNo\n        masterUnitNo\n        operationCode\n        operationNumber\n        productNumber\n        productNumberRevision\n        productRevision\n        scrapReasonExt\n        serialNo\n        trackingNo\n        unit\n        workOrderNumber\n        creditedAt\n        occurAt\n        customData\n        externalResponse\n        shiftId\n        transactionTypeId\n        approvedWorkcenterId\n        productionRunId\n        scrapReasonId\n        workcenterId\n      }\n    }\n  }\n  workcenterHistory(\n    where:{ \n      workcenterId:{_eq: $workcenterId}\n      _or:[\n        {\n          _and:[\n            { occurAt:{_gte: $startTime} }\n            { occurAt:{_lt: $endTime} }\n          ]\n        },\n        {\n          _and:[\n            { endAt:{_gte: $startTime} }\n            { endAt:{_lt: $endTime} }\n          ]\n        },\n        { \n        \tendAt: { _isNull: true },\n          occurAt: {_lt: $endTime}\n        }\n      ]\n    }\n    first: null\n\t) {\n    edges {\n      node {\n        id\n        occurAt\n        endAt\n        duration\n        creditedAt\n        transactionTypeId\n        workcenterId\n        \n        mode{\n          name\n          \n          \n          modeType{\n      \t\t\tproduction\n          }\n        }\n        event{\n          name\n          eventType{\n            name\n            plannedDowntime\n            running\n            unplannedDowntime\n          }\n        }\n        \n        shift{\n          id\n          name\n          startHour\n          startMinute\n          endHour\n          endMinute\n        }\n      }\n    }\n  }\n}\n\n",
+            "nextNodes": [
+              "6daf3d1e-aee8-4072-af0c-468a4237ab39"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "e22fff6d-bce3-45b6-9e7f-5f699ee93559",
+          "name": "Data Changes",
+          "type": "dataChanges",
+          "data": {
+            "api": "Application",
+            "type": "ProductionHistory",
+            "operations": [
+              "Create"
+            ],
+            "nextNodes": [
+              "5aad3408-937c-482f-a665-3f601c8483a1"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "5aad3408-937c-482f-a665-3f601c8483a1",
+          "name": "Input Payload",
+          "type": "transform",
+          "data": {
+            "transform": "{ \"workcenterId\": value.after.workcenterId}",
+            "nextNodes": [
+              "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+          "name": "Query",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "$",
+            "query": "query ($workcenterId: String!) {\n  productionSetupOutput(where: {workcenterId: {_eq: $workcenterId}}) {\n    total\n    edges {\n      node {\n        id\n        productNumberRevision\n        outputId\n        counterInput\n        cycleTime\n        distributionQuantity\n        idealRate\n        lastProductionQuantity\n        lastScrapQuantity\n        producedQuantity\n        remainingBalance\n        scrappedQuantity\n        setupRate\n        standardQuantity\n        standardRate\n        unitPerCycle\n        autoProduction\n        containerType\n        distributionStatus\n        externalId\n        lastScrapReasonExt\n        operationCode\n        operationNumber\n        productId\n        productName\n        productNumber\n        productOperationId\n        productRevision\n        workOrderNumber\n        dueAt\n        scheduledStartAt\n        startAt\n        customData\n        workcenterId\n        approvedWorkcenterId\n        lastScrapReasonId\n        productionSetupId\n      }\n    }\n  }\n  productionSetup(where: {workcenterId: {_eq: $workcenterId}}){\n    edges{\n      node{\n\t\t\t\tid\n        productionRunId\n        workcenterId\n      }\n    }\n  }\n  workcenter(where:{id:{ _eq: $workcenterId}}){\n    edges{\n      node{\n        shiftGroup{\n          shifts{\n            edges{\n              node{\n                id\n                name\n                creditAtStart\n                monday\n                tuesday\n                wednesday\n                thursday\n                friday\n                saturday\n                sunday\n                startHour\n                startMinute\n                endHour\n                endMinute            \n              }\n            }\n          }\n        }\n        currentWorkcenterHistory{\n          modeId\n          eventId          \n        }\n      }\n    }\n  }\n  setting(where:{id:{_eq: \"TimeZone\"}}){\n    edges{\n      node{\n        defaultValue\n      }\n    }\n  }\n}\n",
+            "nextNodes": [
+              "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "ac642bc9-c79c-49bd-b647-3df8c59c6ceb",
+          "name": "Update Run",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "$",
+            "mutation": "mutation ( $runPayload: [ProductionRunUpdatePayloadInput!]! ){\n  updateProductionRun(payload: $runPayload){ id }\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+          "name": "Set Context",
+          "type": "setContext",
+          "data": {
+            "transform": "$merge([\n  $,\n  { \"endAt\": $moment().format() }\n])",
+            "nextNodes": [
+              "b93e59ab-7796-4946-abbe-888148eeca9d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "b93e59ab-7796-4946-abbe-888148eeca9d",
+          "name": "Query Get Run StartTime ",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{ \"productionRunId\": $.productionSetup.edges.node.productionRunId}",
+            "query": "query ($productionRunId: String!) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{ startAt }\n    }\n  }\n}\n\n",
+            "nextNodes": [
+              "8944a19d-0e3a-4b19-aae0-4fac8e2947ee"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+          "name": "Prepare Payload",
+          "type": "transform",
+          "data": {
+            "transform": "(\n\n  $workcenterHistoryId := $cuid();\n  $calculateSeconds := function($startBound, $endBound, $mode){(\n  \n    $modeStart := $mode.occurAt? $moment($mode.occurAt);\n    $modeEnd := $mode.endAt? $moment($mode.endAt);\n    \n    $endBoundObj := $moment($endBound);\n    $startBoundObj := $moment($startBound);\n  \n    $start := $mode.occurAt and $modeStart.isAfter($startBound)? $modeStart : $startBoundObj;\n    $end := $mode.endAt and $modeEnd.isBefore($endBound)? $modeEnd : $endBoundObj;\n      \n    $isNilOrEmpty($mode.occurAt) and $isNilOrEmpty($mode.endAt)? \n      $throw(\"Mode has no occurAt or endAt\", $mode) :\n      $end.diff($start, \"seconds\")   \n  \n  )};\n  $time := $calculateSeconds(productionRun.edges.node.startAt, $state.context.endAt, ?);\n\n  $totalProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts].quantity), 0 ]);\n  $totalScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts].quantity), 0]);\n  $totalProduction := $totalProduced + $totalScrap;\n  \n  $totalExcludedProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts=false].quantity), 0 ]);\n  $totalExcludedScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts = false].quantity), 0]);\n  \n  $runCrewSize := $coalesce([productionRun.edges.node.runCrewSize, 0]);\n  $crewAggregate := $coalesce([productionRun.edges.node.crewAggregate, 0]);\n  $standardRate := productionRun.edges.node.standardAggregate;\n  \n  $end := $moment( $state.context.endAt );\n  $start := $moment( productionRun.edges.node.startAt );\n  $duration := $end.diff($start, \"seconds\");\n  \n  $idealRateSeconds := productionRun.edges.node.idealAggregate / 3600;\n  $now := $moment().format();\n  \n  /* Mode Type is changeover */\n  $changeoverTime := $reduce(\n    [workcenterHistory.edges.node[modeType.changeover]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is plannedDowntime */\n  $plannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.plannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is unplannedDowntime */\n  $unplannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.unplannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n  $downTime := $unplannedDowntime + $plannedDowntime;\n  $runTime := $duration - $downTime;\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $state.context.endAt,\n      \"shifts\": $state.context.workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timezone\": $state.context.setting.edges.node.defaultValue\n    }\n  );\n  \n  $plannedProductionTime := $duration - $plannedDowntime;\n  $availability := $duration? $runTime / $plannedProductionTime : 1;\n    $pref := $runTime > 0? \n    ($idealRateSeconds? $totalProduction / $runTime / $idealRateSeconds : 1 ) \n    : 0 ;\n  $quality := $totalProduction=0? 1 : $totalProduced / $totalProduction;\n  \n  $oee := $availability * $pref * $quality;\n  \n  {\n    \"runPayload\":{\n      \"where\": { \"id\": productionRun.edges.node.id},\n      \"update\":  {\n        \"produced\": $totalProduced,\n        \"scrap\": $totalScrap,\n        \"averageCycleTime\": $totalProduction > 0?  $runTime / $totalProduction, \n        \"earnedLaborHours\": $standardRate? \n          ($totalProduced / $standardRate * $crewAggregate) : \n          0,\n        \"earnedMachineHours\": $standardRate? $totalProduced / $standardRate : 0,\n        \"excludedScrap\": $totalExcludedScrap,\n        \"excludedProduction\": $totalExcludedProduced,\n        \"totalProduction\": $totalProduction,\n        \"quality\": $quality,\n        \"performance\": $pref ,\n        \"runTime\": $runTime,\n        \"changeoverTime\": $changeoverTime,\n        \"plannedDowntime\": $plannedDowntime,\n        \"unplannedDowntime\": $unplannedDowntime,\n        \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n        \"actualLaborHours\": $runtTime * $runCrewSize,\n        \"availability\": $availability,\n        \"oee\": $oee\n      }\n    }\n  }\n  \n  \n)\n",
+            "nextNodes": [
+              "ac642bc9-c79c-49bd-b647-3df8c59c6ceb"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+          "name": "Query History",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{ \n  \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n  \"productionRunId\": $state.context.productionSetup.edges.node.productionRunId,\n  \"startTime\": productionRun.edges.node.startAt,\n  \"endTime\": $state.context.endAt\n}",
+            "query": "query (\n  $workcenterId: String!,\n  $productionRunId: String!\n  $startTime: DateTime!,\n  $endTime: DateTime!\n) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{\n        id\n        runCrewSize\n        crewAggregate\n        standardAggregate\n        startAt\n        idealAggregate\n      }\n    }\n  }\n  productionHistory(where: {productionRunId: {_eq: $productionRunId}}) {\n    total\n    edges {\n      node {\n        id\n        idealRate\n        quantity\n        standardRate\n        includeInProductionCounts\n        employeeName\n        externalId\n        heatCode\n        heatNo\n        lotNo\n        masterUnitNo\n        operationCode\n        operationNumber\n        productNumber\n        productNumberRevision\n        productRevision\n        scrapReasonExt\n        serialNo\n        trackingNo\n        unit\n        workOrderNumber\n        creditedAt\n        occurAt\n        customData\n        externalResponse\n        shiftId\n        transactionTypeId\n        approvedWorkcenterId\n        productionRunId\n        scrapReasonId\n        workcenterId\n      }\n    }\n  }\n  workcenterHistory(\n    where:{ \n      workcenterId:{_eq: $workcenterId}\n      _or:[\n        {\n          _and:[\n            { occurAt:{_gte: $startTime} }\n            { occurAt:{_lt: $endTime} }\n          ]\n        },\n        {\n          _and:[\n            { endAt:{_gte: $startTime} }\n            { endAt:{_lt: $endTime} }\n          ]\n        },\n        { \n        \tendAt: { _isNull: true },\n          occurAt: {_lt: $endTime}\n        }\n      ]\n    }\n    first: null\n\t) {\n    edges {\n      node {\n        id\n        occurAt\n        endAt\n        duration\n        creditedAt\n        transactionTypeId\n        workcenterId\n        \n        mode{\n          name\n          \n          \n          modeType{\n      \t\t\tproduction\n          }\n        }\n        event{\n          name\n          eventType{\n            name\n            plannedDowntime\n            running\n            unplannedDowntime\n          }\n        }\n        \n        shift{\n          id\n          name\n          startHour\n          startMinute\n          endHour\n          endMinute\n        }\n      }\n    }\n  }\n}\n\n",
+            "nextNodes": [
+              "3360a345-ef70-41e5-94a3-b2ee32b4c463"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.46"
+    },
+    "diagram": {
+      "id": "clxjg5wm025x9012ue4r3dios",
+      "offsetX": -438.24,
+      "offsetY": -101.59,
+      "zoom": 83.33,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "0aaa2a99-1210-4fd4-88b9-1abd941867b0",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "dbab3d65-25f0-4add-a618-1a1344aa2ac8": {
+              "points": [
+                {
+                  "id": "d65c5319-1a55-461d-ba5a-dd49200e664f",
+                  "type": "point",
+                  "x": 363.98,
+                  "y": 279.73
+                },
+                {
+                  "id": "dcb764a5-e662-47f6-b49e-701b684558ab",
+                  "type": "point",
+                  "x": 400,
+                  "y": 279.73
+                }
+              ],
+              "id": "dbab3d65-25f0-4add-a618-1a1344aa2ac8",
+              "type": "default",
+              "selected": false,
+              "source": "16e3be77-45c6-437c-8018-0fff658f0976",
+              "sourcePort": "clprczu1f02b4356egbu9wgjc",
+              "target": "6dedc01d-3b34-47ab-be58-79baff1774af",
+              "targetPort": "clprd2qq102bb356e27zyuoql",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "0a4f3eb5-6736-455a-a7a4-945cdf29192c": {
+              "points": [
+                {
+                  "id": "17f62cf0-7367-442d-9143-f8771feb1b83",
+                  "type": "point",
+                  "x": 738.98,
+                  "y": 279.73
+                },
+                {
+                  "id": "10af9a09-7d94-434f-92c8-4e25deb18722",
+                  "type": "point",
+                  "x": 790,
+                  "y": 264.73
+                }
+              ],
+              "id": "0a4f3eb5-6736-455a-a7a4-945cdf29192c",
+              "type": "default",
+              "selected": false,
+              "source": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+              "sourcePort": "clpre59a102oi356ezyc0u334",
+              "target": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+              "targetPort": "clprd3s2002bq356eac25tkja",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "968588a0-1452-401a-a397-c8d9d1f32a58": {
+              "points": [
+                {
+                  "id": "e1813107-0d23-4167-8154-09369f09da62",
+                  "type": "point",
+                  "x": 554,
+                  "y": 279.73
+                },
+                {
+                  "id": "7dc8d99f-42af-43d9-aaa1-f870a537bc20",
+                  "type": "point",
+                  "x": 585,
+                  "y": 279.73
+                }
+              ],
+              "id": "968588a0-1452-401a-a397-c8d9d1f32a58",
+              "type": "default",
+              "selected": false,
+              "source": "6dedc01d-3b34-47ab-be58-79baff1774af",
+              "sourcePort": "clprd2qq102bd356e6v32oz3j",
+              "target": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+              "targetPort": "clpre59a102og356eo7y07od0",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "23231814-7e68-4a5d-8bc4-95fcae9aca2b": {
+              "points": [
+                {
+                  "id": "c0f5a011-816d-4e24-8354-a3db62e4cbb0",
+                  "type": "point",
+                  "x": 944,
+                  "y": 264.73
+                },
+                {
+                  "id": "6c6c5273-95e0-4d11-988a-4d6ba026ba34",
+                  "type": "point",
+                  "x": 970,
+                  "y": 264.73
+                }
+              ],
+              "id": "23231814-7e68-4a5d-8bc4-95fcae9aca2b",
+              "type": "default",
+              "selected": false,
+              "source": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+              "sourcePort": "clprd3s2002bs356enm4wy8as",
+              "target": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+              "targetPort": "clprecbt002sp356e80kg6jpw",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "a70d4906-63dd-4395-9a35-1e345cb00eef": {
+              "points": [
+                {
+                  "id": "da1be13c-81e5-430a-92be-e8aca3261164",
+                  "type": "point",
+                  "x": 364,
+                  "y": 339.73
+                },
+                {
+                  "id": "bfc91ffd-d1a6-4419-bd66-39b6d9fc8979",
+                  "type": "point",
+                  "x": 400,
+                  "y": 279.73
+                }
+              ],
+              "id": "a70d4906-63dd-4395-9a35-1e345cb00eef",
+              "type": "default",
+              "selected": false,
+              "source": "d441abc8-d5e3-4ae5-b084-85a9ff70f9ef",
+              "sourcePort": "clpreh4sz02zk356ex62q20mx",
+              "target": "6dedc01d-3b34-47ab-be58-79baff1774af",
+              "targetPort": "clprd2qq102bb356e27zyuoql",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "2a92fbec-f840-4370-9ad7-4937dac26625": {
+              "points": [
+                {
+                  "id": "441e5ab1-8840-41a6-a8c0-507e781ca5a1",
+                  "type": "point",
+                  "x": 1124,
+                  "y": 264.73
+                },
+                {
+                  "id": "b2ffb229-1da4-42a6-b70b-823e43fa3bd3",
+                  "type": "point",
+                  "x": 1725,
+                  "y": 269.73
+                }
+              ],
+              "id": "2a92fbec-f840-4370-9ad7-4937dac26625",
+              "type": "default",
+              "selected": false,
+              "source": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+              "sourcePort": "clprecbt002sr356e95jzng00",
+              "target": "41137c32-c94c-42db-b033-759e67e61ccd",
+              "targetPort": "clpreh5o102zm356e1ytuhyxk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "beb69dbc-f8a1-41b3-8c2e-91f8eba7fa1c": {
+              "points": [
+                {
+                  "id": "e9b11fe6-d2c2-4fef-a26a-0d61405277e6",
+                  "type": "point",
+                  "x": 1684,
+                  "y": 339.73
+                },
+                {
+                  "id": "2e854355-d817-4dcc-b399-41e1014728e3",
+                  "type": "point",
+                  "x": 1725,
+                  "y": 269.73
+                }
+              ],
+              "id": "beb69dbc-f8a1-41b3-8c2e-91f8eba7fa1c",
+              "type": "default",
+              "selected": false,
+              "source": "24189c65-1148-4b2d-a613-e76139d000a0",
+              "sourcePort": "clprei7dc030i356each742wr",
+              "target": "41137c32-c94c-42db-b033-759e67e61ccd",
+              "targetPort": "clpreh5o102zm356e1ytuhyxk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "97a38579-d9d3-4500-bb57-51d9ded372a6": {
+              "points": [
+                {
+                  "id": "f614eac1-3ba5-46bd-b034-a32a6a0fcb4d",
+                  "type": "point",
+                  "x": 944,
+                  "y": 339.73
+                },
+                {
+                  "id": "24f4ae8a-a374-4d06-b552-762243fa5d9f",
+                  "type": "point",
+                  "x": 970,
+                  "y": 339.73
+                }
+              ],
+              "id": "97a38579-d9d3-4500-bb57-51d9ded372a6",
+              "type": "default",
+              "selected": false,
+              "source": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+              "sourcePort": "clprh4g93041m356ebt4vecud",
+              "target": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+              "targetPort": "clprh53t3041r356edv86fq00",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "fe5f0d9a-6a53-447c-9b62-caeeb81ea363": {
+              "points": [
+                {
+                  "id": "f1cd7641-324e-4030-9e6d-cda2caae9d51",
+                  "type": "point",
+                  "x": 1148.81,
+                  "y": 339.73
+                },
+                {
+                  "id": "58ae8cac-e270-47ad-8097-df3f9c17a7e3",
+                  "type": "point",
+                  "x": 1175,
+                  "y": 339.73
+                }
+              ],
+              "id": "fe5f0d9a-6a53-447c-9b62-caeeb81ea363",
+              "type": "default",
+              "selected": false,
+              "source": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+              "sourcePort": "clprh53t3041t356e4t6fwmkv",
+              "target": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+              "targetPort": "clpst0sek052y356eu8e8cyp5",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "815f04f2-1800-4f01-a468-b06b47c4a373": {
+              "points": [
+                {
+                  "id": "6f084165-b3cb-4343-8bd3-cb21b78eff88",
+                  "type": "point",
+                  "x": 1329,
+                  "y": 339.73
+                },
+                {
+                  "id": "15a98e91-c86c-47f1-9f6b-c2b60be46657",
+                  "type": "point",
+                  "x": 1355,
+                  "y": 339.73
+                }
+              ],
+              "id": "815f04f2-1800-4f01-a468-b06b47c4a373",
+              "type": "default",
+              "selected": false,
+              "source": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+              "sourcePort": "clpst0sek0530356ej8glm44f",
+              "target": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+              "targetPort": "clpso0l16046l356en5grhxsk",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "39f8fa22-10eb-4a7f-9ea7-fbb9d29c2ffb": {
+              "points": [
+                {
+                  "id": "da63799e-5405-43ec-af7b-84b3477cde8e",
+                  "type": "point",
+                  "x": 1509,
+                  "y": 339.73
+                },
+                {
+                  "id": "3f31ce22-1187-4759-96e4-0eb3ba2fc234",
+                  "type": "point",
+                  "x": 1530,
+                  "y": 339.73
+                }
+              ],
+              "id": "39f8fa22-10eb-4a7f-9ea7-fbb9d29c2ffb",
+              "type": "default",
+              "selected": false,
+              "source": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+              "sourcePort": "clpso0l16046n356e3nkwehhr",
+              "target": "24189c65-1148-4b2d-a613-e76139d000a0",
+              "targetPort": "clprei7dc030g356eoiq857j3",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "a79cb9d3-fa9e-4576-b9b8-5bf1c7a89b9a": {
+              "points": [
+                {
+                  "id": "0030d05d-7eed-4c77-b4d9-4966dc970b9a",
+                  "type": "point",
+                  "x": 354,
+                  "y": 564.73
+                },
+                {
+                  "id": "325991bd-71d0-48f5-86fa-397a29f53560",
+                  "type": "point",
+                  "x": 380,
+                  "y": 564.73
+                }
+              ],
+              "id": "a79cb9d3-fa9e-4576-b9b8-5bf1c7a89b9a",
+              "type": "default",
+              "selected": false,
+              "source": "e22fff6d-bce3-45b6-9e7f-5f699ee93559",
+              "sourcePort": "clq5jz7cf0032356esy29ekop",
+              "target": "5aad3408-937c-482f-a665-3f601c8483a1",
+              "targetPort": "clq5jzybt003c356eu7u28hac",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "414fc6b1-857b-4b54-8335-61cd9833ef7e": {
+              "points": [
+                {
+                  "id": "e2716393-b05b-47c8-8e1d-43294a583a89",
+                  "type": "point",
+                  "x": 534,
+                  "y": 564.73
+                },
+                {
+                  "id": "6adf159a-2fd2-4d09-a81d-23634b14a056",
+                  "type": "point",
+                  "x": 570,
+                  "y": 564.73
+                }
+              ],
+              "id": "414fc6b1-857b-4b54-8335-61cd9833ef7e",
+              "type": "default",
+              "selected": false,
+              "source": "5aad3408-937c-482f-a665-3f601c8483a1",
+              "sourcePort": "clq5jzybt003e356exmwe7v3s",
+              "target": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+              "targetPort": "clq5k0n6m005e356ez51tbowo",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "079cd715-1513-4bdc-94e5-4d3c7374d8ba": {
+              "points": [
+                {
+                  "id": "cc1bf5b2-3434-478c-b473-dea60a465e88",
+                  "type": "point",
+                  "x": 919,
+                  "y": 564.73
+                },
+                {
+                  "id": "d64aa349-708f-4a21-8cc9-4e3cc436d3db",
+                  "type": "point",
+                  "x": 945,
+                  "y": 564.73
+                }
+              ],
+              "id": "079cd715-1513-4bdc-94e5-4d3c7374d8ba",
+              "type": "default",
+              "source": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+              "sourcePort": "clq5k11el0066356evzl5qtba",
+              "target": "b93e59ab-7796-4946-abbe-888148eeca9d",
+              "targetPort": "clq5k11ep006g356ek892led7",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "fe4f948f-945a-4efb-83e9-373a7cf6b0eb": {
+              "points": [
+                {
+                  "id": "60f5788e-ef51-42fa-986a-d5ea01880b31",
+                  "type": "point",
+                  "x": 1123.81,
+                  "y": 564.73
+                },
+                {
+                  "id": "685e9b1f-63a5-405c-97bb-4e16e6260d1b",
+                  "type": "point",
+                  "x": 1150,
+                  "y": 564.73
+                }
+              ],
+              "id": "fe4f948f-945a-4efb-83e9-373a7cf6b0eb",
+              "type": "default",
+              "source": "b93e59ab-7796-4946-abbe-888148eeca9d",
+              "sourcePort": "clq5k11ep006i356ehu76spf0",
+              "target": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+              "targetPort": "clq5k11ev0074356e51s48k3r",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "3e46caab-ad0c-4455-8a9c-adac48bd5ce1": {
+              "points": [
+                {
+                  "id": "0ea41b95-cc79-40e5-abd8-628aa755895f",
+                  "type": "point",
+                  "x": 1484,
+                  "y": 564.73
+                },
+                {
+                  "id": "b595bcc2-8c67-445d-abd5-17134a41307a",
+                  "type": "point",
+                  "x": 1505,
+                  "y": 564.73
+                }
+              ],
+              "id": "3e46caab-ad0c-4455-8a9c-adac48bd5ce1",
+              "type": "default",
+              "source": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+              "sourcePort": "clq5k11es006u356ed0i0nryt",
+              "target": "ac642bc9-c79c-49bd-b647-3df8c59c6ceb",
+              "targetPort": "clq5k11ei005s356eiag8c4l3",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "9b8d76f0-5966-42ba-af00-45a3d14098ac": {
+              "points": [
+                {
+                  "id": "8a308a6f-3b44-43ee-9e64-a3f47029e1f9",
+                  "type": "point",
+                  "x": 1304,
+                  "y": 564.73
+                },
+                {
+                  "id": "b93d1f40-0e25-468c-8cd6-4b17ffc62714",
+                  "type": "point",
+                  "x": 1330,
+                  "y": 564.73
+                }
+              ],
+              "id": "9b8d76f0-5966-42ba-af00-45a3d14098ac",
+              "type": "default",
+              "source": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+              "sourcePort": "clq5k11ev0076356ekalhjtxo",
+              "target": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+              "targetPort": "clq5k11es006s356em5h8fjfc",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "9fbc298c-8368-47a8-9d48-02e2a99539d4": {
+              "points": [
+                {
+                  "id": "934b511a-9337-4015-8947-c38c09a43139",
+                  "type": "point",
+                  "x": 724,
+                  "y": 564.73
+                },
+                {
+                  "id": "77530c0f-4c8b-48b9-90b6-099cada8ce85",
+                  "type": "point",
+                  "x": 765,
+                  "y": 564.73
+                }
+              ],
+              "id": "9fbc298c-8368-47a8-9d48-02e2a99539d4",
+              "type": "default",
+              "selected": false,
+              "source": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+              "sourcePort": "clq5k0n6m005g356en0wm4kx3",
+              "target": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+              "targetPort": "clq5k11el0064356e8ramvffq",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "6f49affb-e741-4a6d-8f93-600f949f45ff": {
+              "points": [
+                {
+                  "id": "48b58b41-616d-48c9-a6c4-245a8699968d",
+                  "type": "point",
+                  "x": 533.98,
+                  "y": 634.73
+                },
+                {
+                  "id": "a367a517-dc08-4a79-828e-48c23eeef640",
+                  "type": "point",
+                  "x": 570,
+                  "y": 564.73
+                }
+              ],
+              "id": "6f49affb-e741-4a6d-8f93-600f949f45ff",
+              "type": "default",
+              "selected": false,
+              "source": "2a00a95b-114e-46c6-826f-16ffc9dad756",
+              "sourcePort": "clq5k4yo2008q356els3uur46",
+              "target": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+              "targetPort": "clq5k0n6m005e356ez51tbowo",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "5e72db3b-04bd-4da2-8b5d-c8f271f0fb53": {
+              "points": [
+                {
+                  "id": "7dc49064-ce01-4e3a-9bca-6c659ab71cb7",
+                  "type": "point",
+                  "x": 738.98,
+                  "y": 304.89
+                },
+                {
+                  "id": "61071c29-d35e-4567-b10e-07addf1cb51e",
+                  "type": "point",
+                  "x": 790,
+                  "y": 339.73
+                }
+              ],
+              "id": "5e72db3b-04bd-4da2-8b5d-c8f271f0fb53",
+              "type": "default",
+              "selected": false,
+              "source": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+              "sourcePort": "clpre59a102ok356eiovhn6in",
+              "target": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+              "targetPort": "clprh4g93041k356ev5e5aio0",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "4ac842c8-bb9d-4344-98a0-79965ceda808",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "16e3be77-45c6-437c-8018-0fff658f0976": {
+              "id": "16e3be77-45c6-437c-8018-0fff658f0976",
+              "type": "debugSource",
+              "selected": false,
+              "x": 210,
+              "y": 240,
+              "ports": [
+                {
+                  "id": "clprczu1f02b4356egbu9wgjc",
+                  "type": "default",
+                  "x": 355.98,
+                  "y": 271.73,
+                  "name": "clprczu1f02b5356eg4slpl27",
+                  "parentNode": "16e3be77-45c6-437c-8018-0fff658f0976",
+                  "links": [
+                    "dbab3d65-25f0-4add-a618-1a1344aa2ac8"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "workcenterId": "clostq7w49goo0177f9epgdss"
+                },
+                "context": {},
+                "nextNodes": [
+                  "6dedc01d-3b34-47ab-be58-79baff1774af"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source"
+            },
+            "6dedc01d-3b34-47ab-be58-79baff1774af": {
+              "id": "6dedc01d-3b34-47ab-be58-79baff1774af",
+              "type": "query",
+              "selected": false,
+              "x": 400,
+              "y": 240,
+              "ports": [
+                {
+                  "id": "clprd2qq102bb356e27zyuoql",
+                  "type": "default",
+                  "x": 392,
+                  "y": 271.73,
+                  "name": "clprd2qq102bc356exqhkdaz6",
+                  "parentNode": "6dedc01d-3b34-47ab-be58-79baff1774af",
+                  "links": [
+                    "dbab3d65-25f0-4add-a618-1a1344aa2ac8",
+                    "a70d4906-63dd-4395-9a35-1e345cb00eef"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprd2qq102bd356e6v32oz3j",
+                  "type": "default",
+                  "x": 546,
+                  "y": 271.73,
+                  "name": "clprd2qq102be356ea26zciam",
+                  "parentNode": "6dedc01d-3b34-47ab-be58-79baff1774af",
+                  "links": [
+                    "968588a0-1452-401a-a397-c8d9d1f32a58"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "$",
+                "query": "query ($workcenterId: String!) {\n  productionSetupOutput(where: {workcenterId: {_eq: $workcenterId}}) {\n    total\n    edges {\n      node {\n        id\n        productNumberRevision\n        outputId\n        counterInput\n        cycleTime\n        distributionQuantity\n        idealRate\n        lastProductionQuantity\n        lastScrapQuantity\n        producedQuantity\n        remainingBalance\n        scrappedQuantity\n        setupRate\n        standardQuantity\n        standardRate\n        unitPerCycle\n        autoProduction\n        containerType\n        distributionStatus\n        externalId\n        lastScrapReasonExt\n        operationCode\n        operationNumber\n        productId\n        productName\n        productNumber\n        productOperationId\n        productRevision\n        workOrderNumber\n        dueAt\n        scheduledStartAt\n        startAt\n        customData\n        workcenterId\n        approvedWorkcenterId\n        lastScrapReasonId\n        productionSetupId\n   \n      }\n    }\n  }\n  productionSetup(where: {workcenterId: {_eq: $workcenterId}}){\n    edges{\n      node{\n\t\t\t\tid\n        productionRunId\n        workcenterId\n      }\n    }\n  }\n  workcenter(where:{id:{ _eq: $workcenterId}}){\n    edges{\n      node{\n        shiftGroup{\n          shifts{\n            edges{\n              node{\n                id\n                name\n                creditAtStart\n                monday\n                tuesday\n                wednesday\n                thursday\n                friday\n                saturday\n                sunday\n                startHour\n                startMinute\n                endHour\n                endMinute            \n              }\n            }\n          }\n        }\n        currentWorkcenterHistory{\n          modeId\n          eventId          \n        }\n      }\n    }\n  }\n  setting(where:{id:{_eq: \"TimeZone\"}}){\n    edges{\n      node{\n        defaultValue\n      }\n    }\n  }\n}\n",
+                "nextNodes": [
+                  "0acda2cc-09f5-42e4-b4ca-ca5929f8452f"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query"
+            },
+            "df0192e5-de37-41e2-8966-2d74ede0fb84": {
+              "id": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+              "type": "transform",
+              "selected": true,
+              "x": 790,
+              "y": 225,
+              "ports": [
+                {
+                  "id": "clprd3s2002bq356eac25tkja",
+                  "type": "default",
+                  "x": 782,
+                  "y": 256.73,
+                  "name": "clprd3s2002br356e4am5kdpx",
+                  "parentNode": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+                  "links": [
+                    "0a4f3eb5-6736-455a-a7a4-945cdf29192c"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprd3s2002bs356enm4wy8as",
+                  "type": "default",
+                  "x": 936,
+                  "y": 256.73,
+                  "name": "clprd3s2002bt356epp7s3zpx",
+                  "parentNode": "df0192e5-de37-41e2-8966-2d74ede0fb84",
+                  "links": [
+                    "23231814-7e68-4a5d-8bc4-95fcae9aca2b"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "(\n  $defaultToZero := function($value){ $coalesce([$value, 0]) };\n  $outputs := productionSetupOutput.edges.node;\n  $now := $moment().format();\n  $runId := $cuid();\n  $workcenterHistoryId := $cuid();\n\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $now,\n      \"shifts\": workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timeZone\": setting.edges.node.defaultValue\n    }\n  );\n  \n  {\n    \"shift\": $shift,\n    \"runPayload\":{\n      \"create\": {\n        \"id\": $runId,\n        \"idealAggregate\": $sum([$outputs.idealRate.($defaultToZero($))]),\n        \"standardAggregate\": $sum([$outputs.standardRate.($defaultToZero($))]),\n        \"averageCycleTime\": 0,\n        \"changeoverAggregate\": $sum([$outputs.setupRate.($defaultToZero($))]),\n        \"runCrewSize\": productionSetup.edges.node.crewSize,\n        \"workcenterId\":productionSetup.edges.node.workcenterId,\n        \"startAt\": $now,\n        \"productionSetupId\": productionSetup.edges.node.id,\n        \"totalRequired\": $sum([$outputs.distributionQuantity.($defaultToZero($))]),\n        \"excludedProduction\": 0,\n        \"excludedScrap\":0,\n        \"crewAggregate\": $sum([$outputs.productionOperators.($defaultToZero($))]),\n        \"oee\": 1,\n        \"performance\": 1,\n        \"availability\": 1,\n        \"quality\": 1\n      }\n    },\n    \"workOrderDistributionPayload\":productionSetupOutput.edges.node.{\n      \"create\":{\n        \"number\": data.form1.number,\n        \"requiredQuantity\": producedQuantity + scrappedQuantity + remainingBalance,\n        \"balanceQuantity\": remainingBalance,\n        \"idealRate\":idealRate,\n        \"setupOperators\": $$.productionSetup.edges.node.crewSize,\n        \"standardRate\": standardRate,\n        \"operationCode\": operationCode,\n        \"operationNumber\": operationNumber,\n        \"productId\": productId,\n        \"productNumber\": productNumber,\n        \"productNumberRevision\": productRevision,\n        \"productRevision\": productNumberRevision,\n        /* \"facilityId\": data.form1.workcenter.facilityId, */\n        \"workcenterId\": workcenterId,\n        \"standardQuantity\": standardQuantity,\n        \"workOrderNumber\": workOrderNumber,\n        \"productionRunId\": $runId\n      }\n    },\n    \"setupPayload\":{\n      \"where\":{ \"id\": productionSetup.edges.node.id },\n      \"update\":{ \"productionRunId\": $runId}\n      \n    },\n    \"workcenterHistoryPayload\":[\n      {\n        \"create\": $merge([\n          { \n            \"id\": $cuid(),\n            \"transactionTypeId\": \"Production Setup Add\",\n            \"productionRunId\": $runId,\n            \"workcenterId\": productionSetup.edges.node.workcenterId,\n            \"shiftId\": $shift.id,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"occurAt\": $now,\n            \"endAt\":  $now,\n            \"duration\": 0\n\n          },\n          workcenter.edges.node.currentWorkcenterHistory\n        ])\n      },\n      {\n        \"create\": $merge([\n          { \n            \"id\": $workcenterHistoryId,\n            \"transactionTypeId\": \"Mode Change\",\n            \"productionRunId\": $runId,\n            \"workcenterId\": productionSetup.edges.node.workcenterId,\n            \"shiftId\": $shift.id,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"occurAt\": $now\n          },\n          workcenter.edges.node.currentWorkcenterHistory\n        ])\n      }\n    ],\n    \"workcenterPayload\":{\n      \"where\":{ \"id\": productionSetup.edges.node.workcenterId },\n      \"update\":{\n        \"currentWorkcenterHistoryId\": $workcenterHistoryId\n      }\n    }\n  } \n  \n)",
+                "nextNodes": [
+                  "51b6fcce-e18b-4749-a53f-69b7a9003b5d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Prepare Payload"
+            },
+            "0acda2cc-09f5-42e4-b4ca-ca5929f8452f": {
+              "id": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+              "type": "ifElse",
+              "selected": false,
+              "x": 585,
+              "y": 240,
+              "ports": [
+                {
+                  "id": "clpre59a102og356eo7y07od0",
+                  "type": "default",
+                  "x": 577,
+                  "y": 271.73,
+                  "name": "clpre59a102oh356epwmh3br3",
+                  "parentNode": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+                  "links": [
+                    "968588a0-1452-401a-a397-c8d9d1f32a58"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clpre59a102oi356ezyc0u334",
+                  "type": "default",
+                  "x": 730.98,
+                  "y": 271.73,
+                  "name": "clpre59a102oj356eixlpq6r7",
+                  "parentNode": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+                  "links": [
+                    "0a4f3eb5-6736-455a-a7a4-945cdf29192c"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "True",
+                  "fieldPath": "data.onTrueNextNodes"
+                },
+                {
+                  "id": "clpre59a102ok356eiovhn6in",
+                  "type": "default",
+                  "x": 730.98,
+                  "y": 296.89,
+                  "name": "clpre59a102ol356eukiqrdfb",
+                  "parentNode": "0acda2cc-09f5-42e4-b4ca-ca5929f8452f",
+                  "links": [
+                    "5e72db3b-04bd-4da2-8b5d-c8f271f0fb53"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "False",
+                  "fieldPath": "data.onFalseNextNodes"
+                }
+              ],
+              "data": {
+                "onTrueNextNodes": [
+                  "df0192e5-de37-41e2-8966-2d74ede0fb84"
+                ],
+                "transform": "$isNilOrEmpty( productionSetup.edges.node.productionRunId )",
+                "onFalseNextNodes": [
+                  "7a73c80d-2229-4fb2-b7d0-079b56b76209"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Starting a new Run"
+            },
+            "51b6fcce-e18b-4749-a53f-69b7a9003b5d": {
+              "id": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+              "type": "mutate",
+              "selected": false,
+              "x": 970,
+              "y": 225,
+              "ports": [
+                {
+                  "id": "clprecbt002sp356e80kg6jpw",
+                  "type": "default",
+                  "x": 962,
+                  "y": 256.73,
+                  "name": "clprecbt002sq356el7001dil",
+                  "parentNode": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+                  "links": [
+                    "23231814-7e68-4a5d-8bc4-95fcae9aca2b"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprecbt002sr356e95jzng00",
+                  "type": "default",
+                  "x": 1116,
+                  "y": 256.73,
+                  "name": "clprecbt002ss356efipxn10d",
+                  "parentNode": "51b6fcce-e18b-4749-a53f-69b7a9003b5d",
+                  "links": [
+                    "2a92fbec-f840-4370-9ad7-4937dac26625"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "$",
+                "mutation": "mutation (\n  $runPayload: [ProductionRunCreatePayloadInput!]!,\n  $setupPayload: [ProductionSetupUpdatePayloadInput!]!\n  $workcenterHistoryPayload: [WorkcenterHistoryCreatePayloadInput!]!\n  $workcenterPayload: [WorkcenterUpdatePayloadInput!]!\n  $workOrderDistributionPayload: [WorkOrderProcessDistributionCreatePayloadInput!]!\n){\n  createProductionRun(payload: $runPayload){ id }\n  updateProductionSetup(payload: $setupPayload){ id }  \n  createWorkcenterHistory(payload: $workcenterHistoryPayload){ id }\n  updateWorkcenter(payload:$workcenterPayload ){ id }\n  createWorkOrderProcessDistribution(payload: $workOrderDistributionPayload) { id }\n}",
+                "nextNodes": [
+                  "41137c32-c94c-42db-b033-759e67e61ccd"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Create Run"
+            },
+            "d441abc8-d5e3-4ae5-b084-85a9ff70f9ef": {
+              "id": "d441abc8-d5e3-4ae5-b084-85a9ff70f9ef",
+              "type": "request",
+              "selected": false,
+              "x": 210,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clpreh4sz02zk356ex62q20mx",
+                  "type": "default",
+                  "x": 356,
+                  "y": 331.73,
+                  "name": "clpreh4sz02zl356ewtdywi2h",
+                  "parentNode": "d441abc8-d5e3-4ae5-b084-85a9ff70f9ef",
+                  "links": [
+                    "a70d4906-63dd-4395-9a35-1e345cb00eef"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "6dedc01d-3b34-47ab-be58-79baff1774af"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Request"
+            },
+            "41137c32-c94c-42db-b033-759e67e61ccd": {
+              "id": "41137c32-c94c-42db-b033-759e67e61ccd",
+              "type": "response",
+              "selected": false,
+              "x": 1725,
+              "y": 230,
+              "ports": [
+                {
+                  "id": "clpreh5o102zm356e1ytuhyxk",
+                  "type": "default",
+                  "x": 1717,
+                  "y": 261.73,
+                  "name": "clpreh5o202zn356euxxo5p74",
+                  "parentNode": "41137c32-c94c-42db-b033-759e67e61ccd",
+                  "links": [
+                    "2a92fbec-f840-4370-9ad7-4937dac26625",
+                    "beb69dbc-f8a1-41b3-8c2e-91f8eba7fa1c"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "clpreh5o202zo356e6w4kh413",
+                  "type": "default",
+                  "x": 1870.98,
+                  "y": 261.73,
+                  "name": "clpreh5o202zp356ebaiy6ldo",
+                  "parentNode": "41137c32-c94c-42db-b033-759e67e61ccd",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "$",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Response"
+            },
+            "24189c65-1148-4b2d-a613-e76139d000a0": {
+              "id": "24189c65-1148-4b2d-a613-e76139d000a0",
+              "type": "mutate",
+              "selected": false,
+              "x": 1530,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clprei7dc030g356eoiq857j3",
+                  "type": "default",
+                  "x": 1522,
+                  "y": 331.73,
+                  "name": "clprei7dc030h356eap71cfqf",
+                  "parentNode": "24189c65-1148-4b2d-a613-e76139d000a0",
+                  "links": [
+                    "39f8fa22-10eb-4a7f-9ea7-fbb9d29c2ffb"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprei7dc030i356each742wr",
+                  "type": "default",
+                  "x": 1676,
+                  "y": 331.73,
+                  "name": "clprei7dc030j356eo8bdkw0r",
+                  "parentNode": "24189c65-1148-4b2d-a613-e76139d000a0",
+                  "links": [
+                    "beb69dbc-f8a1-41b3-8c2e-91f8eba7fa1c"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "$",
+                "mutation": "mutation (\n  $runPayload: [ProductionRunUpdatePayloadInput!]!,\n  $setupPayload: [ProductionSetupUpdatePayloadInput!]!,\n  $workcenterHistoryPayload: [WorkcenterHistoryCreatePayloadInput!]!\n  $workcenterPayload: [WorkcenterUpdatePayloadInput!]!\n  \n){\n  createWorkcenterHistory(payload: $workcenterHistoryPayload){ id }\n  updateProductionRun(payload: $runPayload){ id }\n  updateProductionSetup(payload: $setupPayload){ id }  \n  updateWorkcenter(payload:$workcenterPayload ){ id }\n}",
+                "nextNodes": [
+                  "41137c32-c94c-42db-b033-759e67e61ccd"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Clear Run"
+            },
+            "7a73c80d-2229-4fb2-b7d0-079b56b76209": {
+              "id": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+              "type": "setContext",
+              "selected": false,
+              "x": 790,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clprh4g93041k356ev5e5aio0",
+                  "type": "default",
+                  "x": 782,
+                  "y": 331.73,
+                  "name": "clprh4g93041l356eb8dm2scf",
+                  "parentNode": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+                  "links": [
+                    "5e72db3b-04bd-4da2-8b5d-c8f271f0fb53"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprh4g93041m356ebt4vecud",
+                  "type": "default",
+                  "x": 936,
+                  "y": 331.73,
+                  "name": "clprh4g93041n356e37twf4jz",
+                  "parentNode": "7a73c80d-2229-4fb2-b7d0-079b56b76209",
+                  "links": [
+                    "97a38579-d9d3-4500-bb57-51d9ded372a6"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$merge([\n  $,\n  { \"endAt\": $moment().format() }\n])",
+                "nextNodes": [
+                  "f079c2d9-ea5e-4dc4-b739-3b837a75e47f"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Set Context"
+            },
+            "f079c2d9-ea5e-4dc4-b739-3b837a75e47f": {
+              "id": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+              "type": "query",
+              "selected": false,
+              "x": 970,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clprh53t3041r356edv86fq00",
+                  "type": "default",
+                  "x": 962,
+                  "y": 331.73,
+                  "name": "clprh53t3041s356ediji14of",
+                  "parentNode": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+                  "links": [
+                    "97a38579-d9d3-4500-bb57-51d9ded372a6"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clprh53t3041t356e4t6fwmkv",
+                  "type": "default",
+                  "x": 1140.81,
+                  "y": 331.73,
+                  "name": "clprh53t3041u356eie6lj533",
+                  "parentNode": "f079c2d9-ea5e-4dc4-b739-3b837a75e47f",
+                  "links": [
+                    "fe5f0d9a-6a53-447c-9b62-caeeb81ea363"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{ \"productionRunId\": $.productionSetup.edges.node.productionRunId}",
+                "query": "query ($productionRunId: String!) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{ startAt }\n    }\n  }\n}\n\n",
+                "nextNodes": [
+                  "817ccbe9-683d-42df-b70a-4b8d837a22ea"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query Get Run StartTime "
+            },
+            "6daf3d1e-aee8-4072-af0c-468a4237ab39": {
+              "id": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+              "type": "transform",
+              "selected": false,
+              "x": 1355,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clpso0l16046l356en5grhxsk",
+                  "type": "default",
+                  "x": 1347,
+                  "y": 331.73,
+                  "name": "clpso0l16046m356epmji4zgd",
+                  "parentNode": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+                  "links": [
+                    "815f04f2-1800-4f01-a468-b06b47c4a373"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clpso0l16046n356e3nkwehhr",
+                  "type": "default",
+                  "x": 1501,
+                  "y": 331.73,
+                  "name": "clpso0l16046o356esweeippg",
+                  "parentNode": "6daf3d1e-aee8-4072-af0c-468a4237ab39",
+                  "links": [
+                    "39f8fa22-10eb-4a7f-9ea7-fbb9d29c2ffb"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "(\n\n  $workcenterHistoryId := $cuid();\n  $calculateSeconds := function($startBound, $endBound, $mode){(\n  \n    $modeStart := $mode.occurAt? $moment($mode.occurAt);\n    $modeEnd := $mode.endAt? $moment($mode.endAt);\n    \n    $endBoundObj := $moment($endBound);\n    $startBoundObj := $moment($startBound);\n  \n    $start := $mode.occurAt and $modeStart.isAfter($startBound)? $modeStart : $startBoundObj;\n    $end := $mode.endAt and $modeEnd.isBefore($endBound)? $modeEnd : $endBoundObj;\n      \n    $isNilOrEmpty($mode.occurAt) and $isNilOrEmpty($mode.endAt)? \n      $throw(\"Mode has no occurAt or endAt\", $mode) :\n      $end.diff($start, \"seconds\")   \n  \n  )};\n  $time := $calculateSeconds(productionRun.edges.node.startAt, $state.context.endAt, ?);\n\n  $totalProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts].quantity), 0 ]);\n  $totalScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts].quantity), 0]);\n  $totalProduction := $totalProduced + $totalScrap;\n  \n  $totalExcludedProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts=false].quantity), 0 ]);\n  $totalExcludedScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts = false].quantity), 0]);\n  \n  $runCrewSize := $coalesce([productionRun.edges.node.runCrewSize, 0]);\n  $crewAggregate := $coalesce([productionRun.edges.node.crewAggregate, 0]);\n  $standardRate := productionRun.edges.node.standardAggregate;\n  \n  $end := $moment( $state.context.endAt );\n  $start := $moment( productionRun.edges.node.startAt );\n  $duration := $end.diff($start, \"seconds\");\n  \n  $idealRateSeconds := productionRun.edges.node.idealAggregate / 3600;\n  $now := $moment().format();\n  \n  /* Mode Type is changeover */\n  $changeoverTime := $reduce(\n    [workcenterHistory.edges.node[modeType.changeover]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is plannedDowntime */\n  $plannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.plannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is unplannedDowntime */\n  $unplannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.unplannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n  $downTime := $unplannedDowntime + $plannedDowntime;\n  $runTime := $duration - $downTime;\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $state.context.endAt,\n      \"shifts\": $state.context.workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timeZone\": $state.context.setting.edges.node.defaultValue\n    }\n    );\n    \n  $plannedProductionTime := $duration - $plannedDowntime;\n  $availability := $duration? $runTime / $plannedProductionTime : 1;\n  $pref := $runTime > 0? \n    ($idealRateSeconds? $totalProduction / $runTime / $idealRateSeconds : 1 ) \n    : 0 ;\n  $quality := $totalProduction=0? 1 : $totalProduced / $totalProduction;\n  \n  $oee := $availability * $pref * $quality;\n  \n  \n  {\n    \"runPayload\":{\n      \"where\": { \"id\": productionRun.edges.node.id},\n      \"update\":  {\n        \"produced\": $totalProduced,\n        \"scrap\": $totalScrap,\n        \"averageCycleTime\": $totalProduction > 0? $runTime / $totalProduction : 0, \n        \"earnedLaborHours\": $standardRate? \n          ($totalProduced / $standardRate * $crewAggregate) : \n          0,\n        \"earnedMachineHours\": $standardRate? $totalProduced / $standardRate : 0,\n        \"excludedScrap\": $totalExcludedScrap,\n        \"excludedProduction\": $totalExcludedProduced,\n        \"totalProduction\": $totalProduction,\n        \"endAt\": $state.context.endAt,\n        \"duration\": $duration,\n        \"quality\": $quality,\n        \"performance\": $pref,\n        \"runTime\": $runTime,\n        \"changeoverTime\": $changeoverTime,\n        \"plannedDowntime\": $plannedDowntime,\n        \"unplannedDowntime\": $unplannedDowntime,\n        \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n        \"actualLaborHours\": $runtTime *  $runCrewSize,\n        \"availability\": $availability,\n        \"oee\": $oee\n      }\n    },\n    \"setupPayload\":{\n      \"where\": { \"id\": $state.context.productionSetup.edges.node.id },\n      \"update\":{ \"productionRunId\": null }\n    },\n    \"workcenterHistoryPayload\":[\n      {\n        \"create\": $merge([\n          { \n            \"id\": $cuid(),\n            \"transactionTypeId\": \"Production Setup clear\",\n            \"productionRunId\": productionRun.edges.node.id,\n            \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"shiftId\": $shift.id,\n            \"occurAt\": $now,\n            \"endAt\": $now,\n            \"duration\": 0\n          },\n          $state.context.workcenter.edges.node.currentWorkcenterHistory\n        ])\n      },\n      {\n        \"create\": $merge([\n          { \n            \"id\": $workcenterHistoryId,\n            \"transactionTypeId\": \"Mode Change\",\n            \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n            \"creditedAt\": $coalesce([ $shift.creditAt, $moment().startOf(\"day\").format()]),\n            \"shiftId\": $shift.id,\n            \"occurAt\": $now\n          },\n          $state.context.workcenter.edges.node.currentWorkcenterHistory\n        ])\n      }\n    ],\n    \"workcenterPayload\":[{\n      \"where\":{ \"id\": $state.context.productionSetup.edges.node.workcenterId },\n      \"update\":{\n        \"currentWorkcenterHistoryId\": $workcenterHistoryId\n      }\n    }]\n  }\n  \n  \n)\n",
+                "nextNodes": [
+                  "24189c65-1148-4b2d-a613-e76139d000a0"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Prepare Payload",
+              "note": "Caclulate all Aggregates and times based on workcenter changes."
+            },
+            "817ccbe9-683d-42df-b70a-4b8d837a22ea": {
+              "id": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+              "type": "query",
+              "selected": false,
+              "x": 1175,
+              "y": 300,
+              "ports": [
+                {
+                  "id": "clpst0sek052y356eu8e8cyp5",
+                  "type": "default",
+                  "x": 1167,
+                  "y": 331.73,
+                  "name": "clpst0sek052z356ezg2v74yq",
+                  "parentNode": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+                  "links": [
+                    "fe5f0d9a-6a53-447c-9b62-caeeb81ea363"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clpst0sek0530356ej8glm44f",
+                  "type": "default",
+                  "x": 1321,
+                  "y": 331.73,
+                  "name": "clpst0sek0531356en4b861dk",
+                  "parentNode": "817ccbe9-683d-42df-b70a-4b8d837a22ea",
+                  "links": [
+                    "815f04f2-1800-4f01-a468-b06b47c4a373"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{ \n  \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n  \"productionRunId\": $state.context.productionSetup.edges.node.productionRunId,\n  \"startTime\": productionRun.edges.node.startAt,\n  \"endTime\": $state.context.endAt\n}",
+                "query": "query (\n  $workcenterId: String!,\n  $productionRunId: String!\n  $startTime: DateTime!,\n  $endTime: DateTime!\n) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{\n        id\n        runCrewSize\n        crewAggregate\n        standardAggregate\n        startAt\n        idealAggregate\n      }\n    }\n  }\n  productionHistory(where: {productionRunId: {_eq: $productionRunId}}) {\n    total\n    edges {\n      node {\n        id\n        idealRate\n        quantity\n        standardRate\n        includeInProductionCounts\n        employeeName\n        externalId\n        heatCode\n        heatNo\n        lotNo\n        masterUnitNo\n        operationCode\n        operationNumber\n        productNumber\n        productNumberRevision\n        productRevision\n        scrapReasonExt\n        serialNo\n        trackingNo\n        unit\n        workOrderNumber\n        creditedAt\n        occurAt\n        customData\n        externalResponse\n        shiftId\n        transactionTypeId\n        approvedWorkcenterId\n        productionRunId\n        scrapReasonId\n        workcenterId\n      }\n    }\n  }\n  workcenterHistory(\n    where:{ \n      workcenterId:{_eq: $workcenterId}\n      _or:[\n        {\n          _and:[\n            { occurAt:{_gte: $startTime} }\n            { occurAt:{_lt: $endTime} }\n          ]\n        },\n        {\n          _and:[\n            { endAt:{_gte: $startTime} }\n            { endAt:{_lt: $endTime} }\n          ]\n        },\n        { \n        \tendAt: { _isNull: true },\n          occurAt: {_lt: $endTime}\n        }\n      ]\n    }\n    first: null\n\t) {\n    edges {\n      node {\n        id\n        occurAt\n        endAt\n        duration\n        creditedAt\n        transactionTypeId\n        workcenterId\n        \n        mode{\n          name\n          \n          \n          modeType{\n      \t\t\tproduction\n          }\n        }\n        event{\n          name\n          eventType{\n            name\n            plannedDowntime\n            running\n            unplannedDowntime\n          }\n        }\n        \n        shift{\n          id\n          name\n          startHour\n          startMinute\n          endHour\n          endMinute\n        }\n      }\n    }\n  }\n}\n\n",
+                "nextNodes": [
+                  "6daf3d1e-aee8-4072-af0c-468a4237ab39"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query History"
+            },
+            "e22fff6d-bce3-45b6-9e7f-5f699ee93559": {
+              "id": "e22fff6d-bce3-45b6-9e7f-5f699ee93559",
+              "type": "dataChanges",
+              "selected": false,
+              "x": 200,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5jz7cf0032356esy29ekop",
+                  "type": "default",
+                  "x": 346,
+                  "y": 556.73,
+                  "name": "clq5jz7cf0033356eci853r9c",
+                  "parentNode": "e22fff6d-bce3-45b6-9e7f-5f699ee93559",
+                  "links": [
+                    "a79cb9d3-fa9e-4576-b9b8-5bf1c7a89b9a"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Message",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "type": "ProductionHistory",
+                "operations": [
+                  "Create"
+                ],
+                "nextNodes": [
+                  "5aad3408-937c-482f-a665-3f601c8483a1"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Data Changes"
+            },
+            "5aad3408-937c-482f-a665-3f601c8483a1": {
+              "id": "5aad3408-937c-482f-a665-3f601c8483a1",
+              "type": "transform",
+              "selected": false,
+              "x": 380,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5jzybt003c356eu7u28hac",
+                  "type": "default",
+                  "x": 372,
+                  "y": 556.73,
+                  "name": "clq5jzybt003d356epblbmuj9",
+                  "parentNode": "5aad3408-937c-482f-a665-3f601c8483a1",
+                  "links": [
+                    "a79cb9d3-fa9e-4576-b9b8-5bf1c7a89b9a"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5jzybt003e356exmwe7v3s",
+                  "type": "default",
+                  "x": 526,
+                  "y": 556.73,
+                  "name": "clq5jzybt003f356ej08abynh",
+                  "parentNode": "5aad3408-937c-482f-a665-3f601c8483a1",
+                  "links": [
+                    "414fc6b1-857b-4b54-8335-61cd9833ef7e"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "{ \"workcenterId\": value.after.workcenterId}",
+                "nextNodes": [
+                  "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Input Payload"
+            },
+            "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13": {
+              "id": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+              "type": "query",
+              "selected": false,
+              "x": 570,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k0n6m005e356ez51tbowo",
+                  "type": "default",
+                  "x": 562,
+                  "y": 556.73,
+                  "name": "clq5k0n6m005f356eenyb7f3j",
+                  "parentNode": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+                  "links": [
+                    "414fc6b1-857b-4b54-8335-61cd9833ef7e",
+                    "6f49affb-e741-4a6d-8f93-600f949f45ff"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k0n6m005g356en0wm4kx3",
+                  "type": "default",
+                  "x": 716,
+                  "y": 556.73,
+                  "name": "clq5k0n6m005h356e5at4dpep",
+                  "parentNode": "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13",
+                  "links": [
+                    "9fbc298c-8368-47a8-9d48-02e2a99539d4"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "$",
+                "query": "query ($workcenterId: String!) {\n  productionSetupOutput(where: {workcenterId: {_eq: $workcenterId}}) {\n    total\n    edges {\n      node {\n        id\n        productNumberRevision\n        outputId\n        counterInput\n        cycleTime\n        distributionQuantity\n        idealRate\n        lastProductionQuantity\n        lastScrapQuantity\n        producedQuantity\n        remainingBalance\n        scrappedQuantity\n        setupRate\n        standardQuantity\n        standardRate\n        unitPerCycle\n        autoProduction\n        containerType\n        distributionStatus\n        externalId\n        lastScrapReasonExt\n        operationCode\n        operationNumber\n        productId\n        productName\n        productNumber\n        productOperationId\n        productRevision\n        workOrderNumber\n        dueAt\n        scheduledStartAt\n        startAt\n        customData\n        workcenterId\n        approvedWorkcenterId\n        lastScrapReasonId\n        productionSetupId\n      }\n    }\n  }\n  productionSetup(where: {workcenterId: {_eq: $workcenterId}}){\n    edges{\n      node{\n\t\t\t\tid\n        productionRunId\n        workcenterId\n      }\n    }\n  }\n  workcenter(where:{id:{ _eq: $workcenterId}}){\n    edges{\n      node{\n        shiftGroup{\n          shifts{\n            edges{\n              node{\n                id\n                name\n                creditAtStart\n                monday\n                tuesday\n                wednesday\n                thursday\n                friday\n                saturday\n                sunday\n                startHour\n                startMinute\n                endHour\n                endMinute            \n              }\n            }\n          }\n        }\n        currentWorkcenterHistory{\n          modeId\n          eventId          \n        }\n      }\n    }\n  }\n  setting(where:{id:{_eq: \"TimeZone\"}}){\n    edges{\n      node{\n        defaultValue\n      }\n    }\n  }\n}\n",
+                "nextNodes": [
+                  "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query"
+            },
+            "ac642bc9-c79c-49bd-b647-3df8c59c6ceb": {
+              "id": "ac642bc9-c79c-49bd-b647-3df8c59c6ceb",
+              "type": "mutate",
+              "selected": false,
+              "x": 1505,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k11ei005s356eiag8c4l3",
+                  "type": "default",
+                  "x": 1497,
+                  "y": 556.73,
+                  "name": "clq5k11ei005t356e15lxlk2k",
+                  "parentNode": "ac642bc9-c79c-49bd-b647-3df8c59c6ceb",
+                  "links": [
+                    "3e46caab-ad0c-4455-8a9c-adac48bd5ce1"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k11ei005u356e7qcti185",
+                  "type": "default",
+                  "x": 1651,
+                  "y": 556.73,
+                  "name": "clq5k11ei005v356eymqp1kyc",
+                  "parentNode": "ac642bc9-c79c-49bd-b647-3df8c59c6ceb",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "$",
+                "mutation": "mutation ( $runPayload: [ProductionRunUpdatePayloadInput!]! ){\n  updateProductionRun(payload: $runPayload){ id }\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Update Run"
+            },
+            "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e": {
+              "id": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+              "type": "setContext",
+              "selected": false,
+              "x": 765,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k11el0064356e8ramvffq",
+                  "type": "default",
+                  "x": 757,
+                  "y": 556.73,
+                  "name": "clq5k11el0065356exgnvt0vm",
+                  "parentNode": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+                  "links": [
+                    "9fbc298c-8368-47a8-9d48-02e2a99539d4"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k11el0066356evzl5qtba",
+                  "type": "default",
+                  "x": 911,
+                  "y": 556.73,
+                  "name": "clq5k11el0067356evcupg7o2",
+                  "parentNode": "6f7f1b0d-79f5-48b3-958a-47f7f0714b2e",
+                  "links": [
+                    "079cd715-1513-4bdc-94e5-4d3c7374d8ba"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$merge([\n  $,\n  { \"endAt\": $moment().format() }\n])",
+                "nextNodes": [
+                  "b93e59ab-7796-4946-abbe-888148eeca9d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Set Context"
+            },
+            "b93e59ab-7796-4946-abbe-888148eeca9d": {
+              "id": "b93e59ab-7796-4946-abbe-888148eeca9d",
+              "type": "query",
+              "selected": false,
+              "x": 945,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k11ep006g356ek892led7",
+                  "type": "default",
+                  "x": 937,
+                  "y": 556.73,
+                  "name": "clq5k11ep006h356esw2dehlj",
+                  "parentNode": "b93e59ab-7796-4946-abbe-888148eeca9d",
+                  "links": [
+                    "079cd715-1513-4bdc-94e5-4d3c7374d8ba"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k11ep006i356ehu76spf0",
+                  "type": "default",
+                  "x": 1115.81,
+                  "y": 556.73,
+                  "name": "clq5k11ep006j356efs8zxi8t",
+                  "parentNode": "b93e59ab-7796-4946-abbe-888148eeca9d",
+                  "links": [
+                    "fe4f948f-945a-4efb-83e9-373a7cf6b0eb"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{ \"productionRunId\": $.productionSetup.edges.node.productionRunId}",
+                "query": "query ($productionRunId: String!) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{ startAt }\n    }\n  }\n}\n\n",
+                "nextNodes": [
+                  "8944a19d-0e3a-4b19-aae0-4fac8e2947ee"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query Get Run StartTime "
+            },
+            "3360a345-ef70-41e5-94a3-b2ee32b4c463": {
+              "id": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+              "type": "transform",
+              "selected": false,
+              "x": 1330,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k11es006s356em5h8fjfc",
+                  "type": "default",
+                  "x": 1322,
+                  "y": 556.73,
+                  "name": "clq5k11es006t356eu5ulrw5t",
+                  "parentNode": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+                  "links": [
+                    "9b8d76f0-5966-42ba-af00-45a3d14098ac"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k11es006u356ed0i0nryt",
+                  "type": "default",
+                  "x": 1476,
+                  "y": 556.73,
+                  "name": "clq5k11es006v356e3ztfinpr",
+                  "parentNode": "3360a345-ef70-41e5-94a3-b2ee32b4c463",
+                  "links": [
+                    "3e46caab-ad0c-4455-8a9c-adac48bd5ce1"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "(\n\n  $workcenterHistoryId := $cuid();\n  $calculateSeconds := function($startBound, $endBound, $mode){(\n  \n    $modeStart := $mode.occurAt? $moment($mode.occurAt);\n    $modeEnd := $mode.endAt? $moment($mode.endAt);\n    \n    $endBoundObj := $moment($endBound);\n    $startBoundObj := $moment($startBound);\n  \n    $start := $mode.occurAt and $modeStart.isAfter($startBound)? $modeStart : $startBoundObj;\n    $end := $mode.endAt and $modeEnd.isBefore($endBound)? $modeEnd : $endBoundObj;\n      \n    $isNilOrEmpty($mode.occurAt) and $isNilOrEmpty($mode.endAt)? \n      $throw(\"Mode has no occurAt or endAt\", $mode) :\n      $end.diff($start, \"seconds\")   \n  \n  )};\n  $time := $calculateSeconds(productionRun.edges.node.startAt, $state.context.endAt, ?);\n\n  $totalProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts].quantity), 0 ]);\n  $totalScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts].quantity), 0]);\n  $totalProduction := $totalProduced + $totalScrap;\n  \n  $totalExcludedProduced := $coalesce( [$sum(productionHistory.edges.node[transactionTypeId=\"Production Add\" and includeInProductionCounts=false].quantity), 0 ]);\n  $totalExcludedScrap := $coalesce([$sum(productionHistory.edges.node[transactionTypeId=\"Scrap Add\" and includeInProductionCounts = false].quantity), 0]);\n  \n  $runCrewSize := $coalesce([productionRun.edges.node.runCrewSize, 0]);\n  $crewAggregate := $coalesce([productionRun.edges.node.crewAggregate, 0]);\n  $standardRate := productionRun.edges.node.standardAggregate;\n  \n  $end := $moment( $state.context.endAt );\n  $start := $moment( productionRun.edges.node.startAt );\n  $duration := $end.diff($start, \"seconds\");\n  \n  $idealRateSeconds := productionRun.edges.node.idealAggregate / 3600;\n  $now := $moment().format();\n  \n  /* Mode Type is changeover */\n  $changeoverTime := $reduce(\n    [workcenterHistory.edges.node[modeType.changeover]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is plannedDowntime */\n  $plannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.plannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n   /* Event Type is unplannedDowntime */\n  $unplannedDowntime := $reduce(\n    [workcenterHistory.edges.node[event.eventType.unplannedDowntime]],\n    function($acc, $crr){ $acc + $time($crr) },\n    0\n  );\n  $downTime := $unplannedDowntime + $plannedDowntime;\n  $runTime := $duration - $downTime;\n  $shift := $executeTransform(\n    \"getShift\",\n    {\n      \"date\": $state.context.endAt,\n      \"shifts\": $state.context.workcenter.edges.node.shiftGroup.shifts.edges.node,\n      \"timezone\": $state.context.setting.edges.node.defaultValue\n    }\n  );\n  \n  $plannedProductionTime := $duration - $plannedDowntime;\n  $availability := $duration? $runTime / $plannedProductionTime : 1;\n    $pref := $runTime > 0? \n    ($idealRateSeconds? $totalProduction / $runTime / $idealRateSeconds : 1 ) \n    : 0 ;\n  $quality := $totalProduction=0? 1 : $totalProduced / $totalProduction;\n  \n  $oee := $availability * $pref * $quality;\n  \n  {\n    \"runPayload\":{\n      \"where\": { \"id\": productionRun.edges.node.id},\n      \"update\":  {\n        \"produced\": $totalProduced,\n        \"scrap\": $totalScrap,\n        \"averageCycleTime\": $totalProduction > 0?  $runTime / $totalProduction, \n        \"earnedLaborHours\": $standardRate? \n          ($totalProduced / $standardRate * $crewAggregate) : \n          0,\n        \"earnedMachineHours\": $standardRate? $totalProduced / $standardRate : 0,\n        \"excludedScrap\": $totalExcludedScrap,\n        \"excludedProduction\": $totalExcludedProduced,\n        \"totalProduction\": $totalProduction,\n        \"quality\": $quality,\n        \"performance\": $pref ,\n        \"runTime\": $runTime,\n        \"changeoverTime\": $changeoverTime,\n        \"plannedDowntime\": $plannedDowntime,\n        \"unplannedDowntime\": $unplannedDowntime,\n        \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n        \"actualLaborHours\": $runtTime * $runCrewSize,\n        \"availability\": $availability,\n        \"oee\": $oee\n      }\n    }\n  }\n  \n  \n)\n",
+                "nextNodes": [
+                  "ac642bc9-c79c-49bd-b647-3df8c59c6ceb"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Prepare Payload",
+              "note": "Caclulate all Aggregates and times based on workcenter changes."
+            },
+            "8944a19d-0e3a-4b19-aae0-4fac8e2947ee": {
+              "id": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+              "type": "query",
+              "selected": false,
+              "x": 1150,
+              "y": 525,
+              "ports": [
+                {
+                  "id": "clq5k11ev0074356e51s48k3r",
+                  "type": "default",
+                  "x": 1142,
+                  "y": 556.73,
+                  "name": "clq5k11ev0075356ev423p3jv",
+                  "parentNode": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+                  "links": [
+                    "fe4f948f-945a-4efb-83e9-373a7cf6b0eb"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clq5k11ev0076356ekalhjtxo",
+                  "type": "default",
+                  "x": 1296,
+                  "y": 556.73,
+                  "name": "clq5k11ev0077356e2bkgotdu",
+                  "parentNode": "8944a19d-0e3a-4b19-aae0-4fac8e2947ee",
+                  "links": [
+                    "9b8d76f0-5966-42ba-af00-45a3d14098ac"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{ \n  \"workcenterId\": $state.context.productionSetup.edges.node.workcenterId,\n  \"productionRunId\": $state.context.productionSetup.edges.node.productionRunId,\n  \"startTime\": productionRun.edges.node.startAt,\n  \"endTime\": $state.context.endAt\n}",
+                "query": "query (\n  $workcenterId: String!,\n  $productionRunId: String!\n  $startTime: DateTime!,\n  $endTime: DateTime!\n) {\n  productionRun(where:{ id:{_eq: $productionRunId }}){\n    edges{\n      node{\n        id\n        runCrewSize\n        crewAggregate\n        standardAggregate\n        startAt\n        idealAggregate\n      }\n    }\n  }\n  productionHistory(where: {productionRunId: {_eq: $productionRunId}}) {\n    total\n    edges {\n      node {\n        id\n        idealRate\n        quantity\n        standardRate\n        includeInProductionCounts\n        employeeName\n        externalId\n        heatCode\n        heatNo\n        lotNo\n        masterUnitNo\n        operationCode\n        operationNumber\n        productNumber\n        productNumberRevision\n        productRevision\n        scrapReasonExt\n        serialNo\n        trackingNo\n        unit\n        workOrderNumber\n        creditedAt\n        occurAt\n        customData\n        externalResponse\n        shiftId\n        transactionTypeId\n        approvedWorkcenterId\n        productionRunId\n        scrapReasonId\n        workcenterId\n      }\n    }\n  }\n  workcenterHistory(\n    where:{ \n      workcenterId:{_eq: $workcenterId}\n      _or:[\n        {\n          _and:[\n            { occurAt:{_gte: $startTime} }\n            { occurAt:{_lt: $endTime} }\n          ]\n        },\n        {\n          _and:[\n            { endAt:{_gte: $startTime} }\n            { endAt:{_lt: $endTime} }\n          ]\n        },\n        { \n        \tendAt: { _isNull: true },\n          occurAt: {_lt: $endTime}\n        }\n      ]\n    }\n    first: null\n\t) {\n    edges {\n      node {\n        id\n        occurAt\n        endAt\n        duration\n        creditedAt\n        transactionTypeId\n        workcenterId\n        \n        mode{\n          name\n          \n          \n          modeType{\n      \t\t\tproduction\n          }\n        }\n        event{\n          name\n          eventType{\n            name\n            plannedDowntime\n            running\n            unplannedDowntime\n          }\n        }\n        \n        shift{\n          id\n          name\n          startHour\n          startMinute\n          endHour\n          endMinute\n        }\n      }\n    }\n  }\n}\n\n",
+                "nextNodes": [
+                  "3360a345-ef70-41e5-94a3-b2ee32b4c463"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query History"
+            },
+            "2a00a95b-114e-46c6-826f-16ffc9dad756": {
+              "id": "2a00a95b-114e-46c6-826f-16ffc9dad756",
+              "type": "debugSource",
+              "selected": false,
+              "x": 380,
+              "y": 595,
+              "ports": [
+                {
+                  "id": "clq5k4yo2008q356els3uur46",
+                  "type": "default",
+                  "x": 525.98,
+                  "y": 626.73,
+                  "name": "clq5k4yo2008r356eg423xqf8",
+                  "parentNode": "2a00a95b-114e-46c6-826f-16ffc9dad756",
+                  "links": [
+                    "6f49affb-e741-4a6d-8f93-600f949f45ff"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "workcenterId": "clostq7w49goo0177f9epgdss"
+                },
+                "context": {},
+                "nextNodes": [
+                  "eb4a20a1-8f32-41ab-a674-a8ec7ca96b13"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source"
+            }
+          }
+        }
+      ],
+      "name": "Start Stop Run",
+      "type": "System",
+      "version": "0.0.46",
+      "walkthrough": {
+        "steps": [],
+        "includeIntroduction": true
+      }
+    }
+  }
+}

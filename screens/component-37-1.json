@@ -1,0 +1,1246 @@
+{
+  "header": {
+    "id": "workcenterGroups",
+    "name": "Workcenter Groups",
+    "description": "Workcenter Groups",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clqjplodi000i012m1wfq7by4",
+    "number": "0.0.11",
+    "description": "",
+    "screenId": "workcenterGroups",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "WorkcenterGroupTable",
+          "tabTitle": "Workcenter Group Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 2,
+                    "Date Range": 2,
+                    "Text": 3,
+                    "Checkbox": 1,
+                    "Table Column": 20,
+                    "Switch": 1,
+                    "Options": 1
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "WorkcenterGroup",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "RigP4NLxHJ",
+                  "7eUHCphh87",
+                  "gKbqBxVtK6"
+                ],
+                "linkedNodes": {}
+              },
+              "RigP4NLxHJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "sSQbjBb6BI"
+                ],
+                "linkedNodes": {}
+              },
+              "sSQbjBb6BI": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterGroup",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "RigP4NLxHJ",
+                "hidden": false,
+                "nodes": [
+                  "XEbSBgy4EN"
+                ],
+                "linkedNodes": {}
+              },
+              "XEbSBgy4EN": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "sSQbjBb6BI",
+                "hidden": false,
+                "nodes": [
+                  "clok343k0000k356e4avukxgd",
+                  "kzoYJSkVQ"
+                ],
+                "linkedNodes": {}
+              },
+              "7eUHCphh87": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "h8-go5BZRe",
+                  "y53Z7l5CiB",
+                  "a7LHyMawWb",
+                  "54V7DYsLJK"
+                ],
+                "linkedNodes": {}
+              },
+              "h8-go5BZRe": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "7eUHCphh87",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "y53Z7l5CiB": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Workcenter Group",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Custom Data",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "customData",
+                          "field": "customData",
+                          "description": "",
+                          "element": "JSONInput",
+                          "type": "json"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkcenterGroup($payload: [WorkcenterGroupCreatePayloadInput!]!) {\n  mutation: createWorkcenterGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Workcenter Group \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "7eUHCphh87",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a7LHyMawWb": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Workcenter Group \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "External Id",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "externalId",
+                          "field": "externalId",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Custom Data",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "customData",
+                          "field": "customData",
+                          "description": "",
+                          "element": "JSONInput",
+                          "type": "json"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateWorkcenterGroup($payload: [WorkcenterGroupUpdatePayloadInput!]!) {\n  mutation: updateWorkcenterGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "7eUHCphh87",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "54V7DYsLJK": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteWorkcenterGroup($payload: [WorkcenterGroupDeletePayloadInput!]!) {\n  mutation: deleteWorkcenterGroup(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Group \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "7eUHCphh87",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gKbqBxVtK6": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterGroup",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": true,
+                  "detailHeight": 300,
+                  "filterFormName": "Form1",
+                  "description": "Workcenter Groups are used to generate collections of workcenters to be displayed on plant level dashboards - these groups may or may not align with your configuration in the ERP",
+                  "rowMultiSelectWithClick": false,
+                  "views": [
+                    {
+                      "unique": false,
+                      "fields": [],
+                      "name": "Default",
+                      "rowLimit": 500,
+                      "isDefault": true,
+                      "columns": [
+                        {
+                          "id": "TableColumn1",
+                          "label": "Name"
+                        },
+                        {
+                          "id": "TableColumn6",
+                          "label": "Updated At"
+                        },
+                        {
+                          "id": "TableColumn5",
+                          "label": "Created At"
+                        },
+                        {
+                          "id": "TableColumn2",
+                          "label": "Usable"
+                        }
+                      ]
+                    }
+                  ],
+                  "fontSize": "18"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "xLs6lixad0",
+                  "w2dPl8kM6",
+                  "0bBBjko0Pw",
+                  "PIqAxmxx85",
+                  "q_LjKVqf6k",
+                  "CuF0bNEm87"
+                ],
+                "linkedNodes": {
+                  "Table1Detail": "8Aq15na5N"
+                }
+              },
+              "xLs6lixad0": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0bBBjko0Pw": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "field": "usable",
+                  "dataPath": "usable",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PIqAxmxx85": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "External Id",
+                  "format": "text",
+                  "field": "externalId",
+                  "dataPath": "externalId",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "q_LjKVqf6k": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CuF0bNEm87": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kzoYJSkVQ": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Usable",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "usable",
+                  "target": {
+                    "dataPath": "usable._eq"
+                  },
+                  "description": "",
+                  "field": "usable",
+                  "defaultValue": true,
+                  "predicate": "_eq"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "XEbSBgy4EN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8Aq15na5N": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Table1Detail"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [
+                  "IWKP10731"
+                ],
+                "linkedNodes": {}
+              },
+              "IWKP10731": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "selectedDataChangeIndicator": null,
+                    "model": "Workcenter",
+                    "parameters": "{\n  \"filter\": {\n    \"workcenterGroupId\": {\n      \"_eq\": $parent.data.id \n    }\n  }\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "This table lists workcenters and it's attributes\nLinks out to workcenter source location, work order process distribution and, product setup material",
+                  "rowMultiSelectWithClick": false,
+                  "fontSize": "18"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table2"
+                },
+                "parent": "8Aq15na5N",
+                "hidden": false,
+                "nodes": [
+                  "sLo8Ru29V",
+                  "0D_Ce2AuX",
+                  "ThYHu5RJJ",
+                  "CFkjHafx8",
+                  "XJbuSmA_u",
+                  "FG2Ds9ci8",
+                  "nxYapyByO",
+                  "oFfvM1KpR",
+                  "-FZiYUgV5",
+                  "JJh-vJbk8",
+                  "jGjupRX5Q",
+                  "ggDFaTziY",
+                  "EgBxqwWOz"
+                ],
+                "linkedNodes": {}
+              },
+              "sLo8Ru29V": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Code",
+                  "format": "text",
+                  "dataPath": "code",
+                  "description": "Workcenter code",
+                  "field": "code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ggDFaTziY": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "dataPath": "active",
+                  "description": "Is the workcenter active?",
+                  "field": "active",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EgBxqwWOz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "format": "text",
+                  "dataPath": "description",
+                  "description": "Workcenter description",
+                  "field": "description"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0D_Ce2AuX": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "description": "Label field - workcenter name\n",
+                  "dataPath": "name",
+                  "field": "name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XJbuSmA_u": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Type",
+                  "format": "text",
+                  "dataPath": "workcenterType",
+                  "description": "",
+                  "field": "workcenterType"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FG2Ds9ci8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Multi Out Capable",
+                  "format": "checkmark",
+                  "dataPath": "multiOutCapable",
+                  "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time.",
+                  "field": "multiOutCapable",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "nxYapyByO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter History Sync",
+                  "format": "checkmark",
+                  "dataPath": "workcenterHistorySync",
+                  "description": "",
+                  "field": "workcenterHistorySync",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "JJh-vJbk8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Auto Production",
+                  "format": "checkmark",
+                  "dataPath": "autoProduction",
+                  "description": "",
+                  "field": "autoProduction",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jGjupRX5Q": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "PLC Name",
+                  "format": "text",
+                  "dataPath": "plcName",
+                  "description": "",
+                  "field": "plcName"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CFkjHafx8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "format": "checkmark",
+                  "dataPath": "active",
+                  "description": "Is the workcenter active?",
+                  "field": "active",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oFfvM1KpR": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production History Sync",
+                  "format": "checkmark",
+                  "dataPath": "productionHistorySync",
+                  "description": "Syncronize Production history for this workcenter - Only use, if you are not reporting production through Fuuz directly or via PLC integration. The use here would be if production / scrap entries are being done in an external system, this boolean is used to indicate you want those records pulled from that external system, into Fuuz for analysis.",
+                  "field": "productionHistorySync",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clok343k0000k356e4avukxgd": {
+                "type": {
+                  "resolvedName": "OptionsInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "options",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Group Name",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "stateTracking": "id",
+                  "formElement": "Form1",
+                  "options": {
+                    "__transform": "(\n\n$op := $query({\"statement\":'{workcenterGroup{edges{node{name}}}}',\"variables\":{}}).workcenterGroup.edges.node.name;\n$res := $uniq($op).{\n  \"id\":$,\n  \"label\":$\n}\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "target": {
+                    "dataPath": "name._eq"
+                  },
+                  "dataPath": "name",
+                  "query": {
+                    "fields": []
+                  },
+                  "predicate": "_eq"
+                },
+                "displayName": "Options",
+                "custom": {
+                  "elementName": "Options1"
+                },
+                "parent": "XEbSBgy4EN",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ThYHu5RJJ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Building",
+                  "format": "text",
+                  "dataPath": "facility.code",
+                  "field": "facility.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "w2dPl8kM6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Id",
+                  "format": "text",
+                  "dataPath": "id",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "gKbqBxVtK6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-FZiYUgV5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Sync",
+                  "format": "checkmark",
+                  "dataPath": "runSync",
+                  "description": "When True, runs will be able to be synchronized from a 3rd party system. When set to False, all production runs will be initiated only through Fuuz/ or via your PLC integration with Fuuz. The Synch option will not be available to the end user for a given workcenter when this is False.",
+                  "field": "runSync",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "IWKP10731",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnolemt5000w015tc1ttgzti",
+      "title": "Workcenter Groups",
+      "path": "/productionManagement/manufacturing/workcenterGroups",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterGroups",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

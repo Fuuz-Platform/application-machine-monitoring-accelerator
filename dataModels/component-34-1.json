@@ -1,0 +1,1325 @@
+{
+  "header": {
+    "id": "workcenter",
+    "name": "Workcenter",
+    "description": "This table lists workcenters and it's attributes\nLinks out to workcenter source location, work order process distribution and, product setup material",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clpzkrvq10003017vcpn00wmz",
+    "number": "75",
+    "dataModelId": "workcenter",
+    "modelDefinition": {
+      "name": "Workcenter",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": true
+          },
+          "labelField": "code",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "workcenter"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "code",
+          "type": "String!",
+          "description": "Workcenter code",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "active",
+          "type": "Boolean!",
+          "description": "Is the workcenter active?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": true
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "autoProduction",
+          "type": "Boolean",
+          "description": "Defines whether Auto Production is enabled, or disabled for this workcenter. When auto production is available to the workcenter, the operator may opt into auto-production for any of the production outputs on their control panel, this would then require additional association between the outputs (i.e. cavities) and their respective PLC tags - when appropriate for multiple outputs.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "multiOutCapable",
+          "type": "Boolean",
+          "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time. If this is disabled, the end user will only ever be able to create a single production output for this workcenter from their control panel. This also affects workcenter synchronization from 3rd party systems. ",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionHistorySync",
+          "type": "Boolean",
+          "description": "Syncronize Production history for this workcenter - Only use, if you are not reporting production through Fuuz directly or via PLC integration. The use here would be if production / scrap entries are being done in an external system, this boolean is used to indicate you want those records pulled from that external system, into Fuuz for analysis.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "runSync",
+          "type": "Boolean",
+          "description": "When True, runs will be able to be synchronized from a 3rd party system. When set to False, all production runs will be initiated only through Fuuz/ or via your PLC integration with Fuuz. The Synch option will not be available to the end user for a given workcenter when this is False.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterHistorySync",
+          "type": "Boolean!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "description": "Workcenter description",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "externalId",
+          "type": "String",
+          "description": "Links out to another system",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "name",
+          "type": "String!",
+          "description": "Label field - workcenter name\n",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "plcName",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterType",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "A collection of extra data points that can vary depending on the source of the workcenters.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "calendarId",
+          "type": "ID",
+          "description": "Identifies the calendar",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "calendar",
+          "description": "Calendar object",
+          "type": "Calendar",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "calendarId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "currentWorkcenterHistoryId",
+          "type": "ID",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          },
+          "description": ""
+        },
+        {
+          "name": "currentWorkcenterHistory",
+          "description": "",
+          "type": "WorkcenterHistory",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "currentWorkcenterHistoryId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "facilityId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "facility",
+          "description": "",
+          "type": "Facility",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "facilityId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeGroupId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeGroup",
+          "description": "",
+          "type": "ModeGroup",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "modeGroupId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "printerId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "printer",
+          "description": "",
+          "type": "Device",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "printerId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetupId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetup",
+          "description": "",
+          "type": "ProductionSetup",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "productionSetupId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "screenId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "screen",
+          "description": "",
+          "type": "Screen",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "screenId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shiftGroupId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "shiftGroup",
+          "description": "",
+          "type": "ShiftGroup",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "shiftGroupId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterGroupId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterGroup",
+          "description": "",
+          "type": "WorkcenterGroup",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workcenterGroupId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterModes",
+          "description": "",
+          "type": "[WorkcenterMode!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "approvedWorkcenters",
+          "description": "",
+          "type": "[ApprovedWorkcenter!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oees",
+          "description": "",
+          "type": "[Oee!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetupOutputs",
+          "description": "",
+          "type": "[ProductionSetupOutput!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterIotTags",
+          "description": "",
+          "type": "[WorkcenterIotTag!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionRuns",
+          "description": "",
+          "type": "[ProductionRun!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "alarms",
+          "description": "",
+          "type": "[Alarm!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcenterId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenterHistories",
+          "description": "",
+          "type": "[WorkcenterHistory!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "workcentersId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table lists workcenters and it's attributes\nLinks out to workcenter source location, work order process distribution and, product setup material"
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clpzkrvq10003017vcpn00wmz",
+      "dataModelVersion": {
+        "number": "75"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clpzkqjbb0002016m01oyh1gp",
+      "dataModelVersion": {
+        "number": "74"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp4g5u9v000o013ah2xafnty",
+      "dataModelVersion": {
+        "number": "73"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp4fr36j000o015ecgp1auc2",
+      "dataModelVersion": {
+        "number": "72"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clouhek7mmheo018f0a6f8wp7",
+      "dataModelVersion": {
+        "number": "71"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clou5hgbpbhox018014pa2ldh",
+      "dataModelVersion": {
+        "number": "70"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "closvvwt9009d018m56d1h4s9",
+      "dataModelVersion": {
+        "number": "69"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloprnudr0004017o0yjq6phj",
+      "dataModelVersion": {
+        "number": "68"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloj15hs1000v0167h4my82pa",
+      "dataModelVersion": {
+        "number": "67"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloj0rska000p0167bryx1373",
+      "dataModelVersion": {
+        "number": "66"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloilv2di0003017a9gycfoct",
+      "dataModelVersion": {
+        "number": "65"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloge87v1002h01327oxt1mhy",
+      "dataModelVersion": {
+        "number": "64"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloex75pm002u018828ptgq31",
+      "dataModelVersion": {
+        "number": "63"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloepakra001g0179ayvn5u3x",
+      "dataModelVersion": {
+        "number": "62"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clo0hdjyh000n017c4l345tux",
+      "dataModelVersion": {
+        "number": "61"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clo0h9w4k000h017c91csbwyi",
+      "dataModelVersion": {
+        "number": "60"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clo0gentn000a016mdzxm3iw1",
+      "dataModelVersion": {
+        "number": "59"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clo0fpojl00080142evgjh5vr",
+      "dataModelVersion": {
+        "number": "58"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnxwnzjn000p016958sw5zve",
+      "dataModelVersion": {
+        "number": "57"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnqhsn9i0002014qew6o1lc5",
+      "dataModelVersion": {
+        "number": "56"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnol1ddv000m0131emqf2j1v",
+      "dataModelVersion": {
+        "number": "55"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnnc3a9d000m01cgfpc24s6b",
+      "dataModelVersion": {
+        "number": "54"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnn93j2a000901a3bppdbxik",
+      "dataModelVersion": {
+        "number": "53"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnm1cv5x000d019d64gf39ik",
+      "dataModelVersion": {
+        "number": "52"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnkmqz2c001w017yh3kn8miu",
+      "dataModelVersion": {
+        "number": "51"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnkkg8nh0017019e3h6e7w1y",
+      "dataModelVersion": {
+        "number": "50"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj7nvwz002601a553mw4jqn",
+      "dataModelVersion": {
+        "number": "49"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj6fqkj001001a51yk7hezi",
+      "dataModelVersion": {
+        "number": "48"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl8tb4qnc00210188dgkag0q2",
+      "dataModelVersion": {
+        "number": "47"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

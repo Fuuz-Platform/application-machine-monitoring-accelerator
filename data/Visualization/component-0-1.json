@@ -1,0 +1,167 @@
+{
+  "api": "application",
+  "modelName": "Visualization",
+  "payload": [
+    {
+      "id": "hourlyProduction",
+      "visualizationTypeId": "mscolumn2d",
+      "name": "Hourly Production",
+      "configuration": {
+        "FusionCharts": {
+          "dataEmptyMessage": "No Data To Display",
+          "dataLoadErrorMessage": "Error Loading Data",
+          "dataInvalidMessage": "Invalid Data",
+          "dataLoadStartMessage": "Data Loading...",
+          "loadMessage": "Chart Loading..."
+        },
+        "dataset": {
+          "data": []
+        }
+      },
+      "previewParameters": [
+        {
+          "shiftHour": 1,
+          "totalProductionQuantity": 0,
+          "totalScrapQuantity": 0
+        },
+        {
+          "shiftHour": 2,
+          "totalProductionQuantity": 0,
+          "totalScrapQuantity": 0
+        },
+        {
+          "shiftHour": 3,
+          "totalProductionQuantity": 0,
+          "totalScrapQuantity": 0
+        },
+        {
+          "shiftHour": 4,
+          "totalProductionQuantity": 0,
+          "totalScrapQuantity": 0
+        }
+      ],
+      "datasourceSavedTransformId": "visualizationDatasourceHourlyProduction"
+    },
+    {
+      "id": "modeAndEventsSingleWorkcenterGantt",
+      "visualizationTypeId": "gantt",
+      "name": "Mode and Events Single Workcenter Gantt",
+      "configuration": {
+        "chart": {
+          "bgColor": "#ffffff",
+          "canvasBgColor": "#ffffff",
+          "showShadow": 1,
+          "manageResize": 1,
+          "taskHoverFillColor": "",
+          "showHoverEffect": 1,
+          "showProcessHoverBand": 1,
+          "processHoverBandColor": "#ffffff"
+        },
+        "tasks": {
+          "task": [
+            {
+              "borderColor": "#000000",
+              "borderThickness": 2,
+              "showBorder": 1
+            }
+          ]
+        },
+        "processes": {
+          "process": []
+        }
+      },
+      "previewParameters": null,
+      "datasourceSavedTransformId": "clom5iz1r000e017wc5uv0g6b"
+    },
+    {
+      "id": "oeeDoughnut",
+      "visualizationTypeId": "doughnut2d",
+      "name": "OEE Doughnut",
+      "configuration": {
+        "chart": {
+          "showLegend": false,
+          "startingAngle": 90,
+          "captionFontSize": 24,
+          "centerLabelFontSize": 24,
+          "centerLabelColor": "#666666",
+          "pieRadius": "75%",
+          "doughnutRadius": "80%",
+          "showHoverEffect": 0,
+          "plotHoverEffect": 0,
+          "enableRotation": 0,
+          "enableSlicing": 0,
+          "chartTopMargin": 4,
+          "chartRightMargin": 4,
+          "chartLeftMargin": 4,
+          "chartBottomMargin": 4,
+          "decimals": 0,
+          "numberSuffix": "%",
+          "showZeroPies": 1
+        }
+      },
+      "previewParameters": {
+        "value": 39,
+        "caption": "OEE"
+      },
+      "datasourceSavedTransformId": "visualizationDatasourceOeeDoughnut"
+    },
+    {
+      "id": "oeeDoughnutSmall",
+      "visualizationTypeId": "doughnut2d",
+      "name": "OEE Doughnut (Small)",
+      "configuration": {
+        "chart": {
+          "showLegend": false,
+          "startingAngle": 90,
+          "captionFontSize": 14,
+          "centerLabelFontSize": 18,
+          "centerLabelColor": "#666666",
+          "pieRadius": "70%",
+          "doughnutRadius": "75%",
+          "chartTopMargin": 4,
+          "chartRightMargin": 4,
+          "chartLeftMargin": 4,
+          "chartBottomMargin": 4,
+          "showHoverEffect": 0,
+          "plotHoverEffect": 0,
+          "enableRotation": 0,
+          "enableSlicing": 0,
+          "decimals": 0,
+          "numberSuffix": "%",
+          "showZeroPies": 1
+        },
+        "FusionCharts": {
+          "dataEmptyMessage": "Select Group and Search"
+        }
+      },
+      "previewParameters": {
+        "caption": "Quality"
+      },
+      "datasourceSavedTransformId": "visualizationDatasourceOeeDoughnut"
+    },
+    {
+      "id": "workcenterStatusByShift",
+      "visualizationTypeId": "scrollstackedbar2d",
+      "name": "Workcenter Status by Shift",
+      "configuration": {
+        "chart": {
+          "plottooltext": "<b>$seriesName</b><hr>$label: <b>$dataValue</b>",
+          "caption": "Shift Status",
+          "numVisiblePlot": 8,
+          "numberSuffix": "h"
+        }
+      },
+      "previewParameters": null,
+      "datasourceSavedTransformId": "visualizationDatasourceWorkcenterStatusByShift"
+    },
+    {
+      "id": "workcenterStatusByShiftBar",
+      "visualizationTypeId": "bar2d",
+      "name": "Workcenter Status By Shift bar",
+      "configuration": {},
+      "previewParameters": null,
+      "datasourceSavedTransformId": "visualizationDatasourceWorkcenterStatusByShift"
+    }
+  ],
+  "metadata": {}
+}

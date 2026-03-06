@@ -1,0 +1,2309 @@
+{
+  "header": {
+    "id": "workcenterDetail",
+    "name": "Workcenter Detail",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clpzlzkt7000d016m93c4eyfj",
+    "number": "0.0.19",
+    "description": "",
+    "screenId": "workcenterDetail",
+    "design": {
+      "components": [
+        {
+          "name": "WorkcenterForm",
+          "tabTitle": "Workcenter",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 5,
+                    "Action Button": 2,
+                    "Form": 1,
+                    "Text": 6,
+                    "Display": 4,
+                    "Checkbox": 5,
+                    "Markdown": 1,
+                    "JSON": 1,
+                    "Combobox": 9,
+                    "Switch": 6
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "Workcenter",
+                  "template": "form"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "JOGPg03r9F",
+                  "3w7z8m1o4C"
+                ],
+                "linkedNodes": {}
+              },
+              "JOGPg03r9F": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "XoS9JWEY_h",
+                  "3HiM26_qjO"
+                ],
+                "linkedNodes": {}
+              },
+              "XoS9JWEY_h": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "save",
+                    "size": "icon",
+                    "variant": "light"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$components.Form1.formState.submitSucceeded ? $not($components.Form1.formState.dirtySinceLastSubmit) : $not($components.Form1.formState.dirty)",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Form1.formState.submitSucceeded",
+                        "components.Form1.formState.dirtySinceLastSubmit",
+                        "components.Form1.formState.dirty"
+                      ]
+                    },
+                    "__cacheKey": "saveButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Form1.fn.save()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Save"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Save button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Save Button which saves form data.",
+                    "icon": "save"
+                  }
+                },
+                "parent": "JOGPg03r9F",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3HiM26_qjO": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": true,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "message": {
+                        "__transform": "\"Are you sure?\""
+                      },
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "buttonColor": "error"
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Form1.fn.delete()",
+                      "remote": false
+                    },
+                    {
+                      "type": "navigation",
+                      "navigationType": "Back",
+                      "back": true
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2",
+                  "editor": {
+                    "category": "Interaction",
+                    "color": "#9c5a94",
+                    "description": "Delete button which perform delete action.",
+                    "elementName": "Delete Button",
+                    "icon": "trash"
+                  }
+                },
+                "parent": "JOGPg03r9F",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3w7z8m1o4C": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "Workcenter",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "blockNavigationWhenDirty": true
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "FY3MzQbeBl"
+                ],
+                "linkedNodes": {}
+              },
+              "FY3MzQbeBl": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "3w7z8m1o4C",
+                "hidden": false,
+                "nodes": [
+                  "1GX3SVC5tk",
+                  "wMf-j1DycL"
+                ],
+                "linkedNodes": {}
+              },
+              "1GX3SVC5tk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "FY3MzQbeBl",
+                "hidden": false,
+                "nodes": [
+                  "pojINq0IiT",
+                  "mXVPvSaug",
+                  "5xjJwehLd",
+                  "Sj5wtelxF",
+                  "o-C1n4zWd",
+                  "04icg4JRF",
+                  "clpzl26e1001p356ea3nyqvjc",
+                  "mqZPbeOj57",
+                  "nGhVI-9KAC",
+                  "MwgE7MhmTb",
+                  "emwaYuMnZs",
+                  "IEurd7BCCt",
+                  "0t4bl9ovDm",
+                  "lteEt2078",
+                  "ZE11liSP0F",
+                  "UtT2KXRnuU"
+                ],
+                "linkedNodes": {}
+              },
+              "wMf-j1DycL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "FY3MzQbeBl",
+                "hidden": false,
+                "nodes": [
+                  "7gdv3TQVxn",
+                  "a_b9fDY6mt",
+                  "uJvJD87nAT",
+                  "TV9Sgxd3u8",
+                  "BbEVP6GPK_",
+                  "_6f3v8w-3r",
+                  "XGZsgVczJs",
+                  "vJgrEVYAjz",
+                  "-FE3udmHu2",
+                  "HQRPACUyhF"
+                ],
+                "linkedNodes": {}
+              },
+              "7gdv3TQVxn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [
+                  "0rR0tzuGLs"
+                ],
+                "linkedNodes": {}
+              },
+              "0rR0tzuGLs": {
+                "type": {
+                  "resolvedName": "Text"
+                },
+                "isCanvas": false,
+                "props": {
+                  "content": "History"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "7gdv3TQVxn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a_b9fDY6mt": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "format": "datetime"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display1"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "uJvJD87nAT": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdByUser.email",
+                  "dataPath": "createdByUser.email",
+                  "description": "The User who created this record.",
+                  "query": {
+                    "fields": [
+                      "createdByUser.id",
+                      "createdByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.createdByUser.id) ? \"/system/accessControl/users/\" & data.createdByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.createdByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "createdByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display2"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TV9Sgxd3u8": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "format": "datetime"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display3"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BbEVP6GPK_": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedByUser.email",
+                  "dataPath": "updatedByUser.email",
+                  "description": "The User who last updated this record.",
+                  "query": {
+                    "fields": [
+                      "updatedByUser.id",
+                      "updatedByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.updatedByUser.id) ? \"/system/accessControl/users/\" & data.updatedByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.updatedByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "updatedByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display4"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pojINq0IiT": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Code",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "code",
+                  "field": "code",
+                  "description": "Workcenter code",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "mqZPbeOj57": {
+                "type": {
+                  "resolvedName": "MarkdownInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "markdown",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Description",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "description",
+                  "field": "description",
+                  "description": "Workcenter description",
+                  "element": "MarkdownInput"
+                },
+                "displayName": "Markdown",
+                "custom": {
+                  "elementName": "Markdown1"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_6f3v8w-3r": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "External Id",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "externalId",
+                  "field": "externalId",
+                  "description": "Links out to another system",
+                  "element": "TextInput",
+                  "disabled": true
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "MwgE7MhmTb": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "Label field - workcenter name\n",
+                  "element": "TextInput"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XGZsgVczJs": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Plc Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "plcName",
+                  "field": "plcName",
+                  "description": "Sometimes used with external systems - generally you should use the Device/Tags.",
+                  "element": "TextInput"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "emwaYuMnZs": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Workcenter Type",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenterType",
+                  "field": "workcenterType",
+                  "description": "",
+                  "element": "TextInput"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "vJgrEVYAjz": {
+                "type": {
+                  "resolvedName": "JSONInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "json",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Custom Data",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "showEditor": true,
+                  "formElement": "Form1",
+                  "dataPath": "customData",
+                  "field": "customData",
+                  "description": "A collection of extra data points that can vary depending on the source of the workcenters.",
+                  "element": "JSONInput"
+                },
+                "displayName": "JSON",
+                "custom": {
+                  "elementName": "Json1"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HQRPACUyhF": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Calendar",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "calendar",
+                  "field": "calendar",
+                  "description": "Calendar object",
+                  "element": "Combobox",
+                  "queryType": "Calendar",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "calendarId"
+                  },
+                  "query": {
+                    "fields": [
+                      "calendar.id",
+                      "calendar.name"
+                    ]
+                  },
+                  "disabled": true
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-FE3udmHu2": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Current Workcenter History",
+                  "multiselect": false,
+                  "isClearable": false,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "currentWorkcenterHistory",
+                  "field": "currentWorkcenterHistory",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "WorkcenterHistory",
+                  "labelField": "id",
+                  "labelPath": "id",
+                  "additionalFields": "id",
+                  "target": {
+                    "dataPath": "currentWorkcenterHistoryId"
+                  },
+                  "query": {
+                    "fields": [
+                      "currentWorkcenterHistory.id",
+                      "currentWorkcenterHistory.id"
+                    ]
+                  },
+                  "disabled": true
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox2"
+                },
+                "parent": "wMf-j1DycL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IEurd7BCCt": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Building",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "facility",
+                  "field": "facility",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "Facility",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "facilityId"
+                  },
+                  "query": {
+                    "fields": [
+                      "facility.id",
+                      "facility.code"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox3"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0t4bl9ovDm": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Mode Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "modeGroup",
+                  "field": "modeGroup",
+                  "description": "Required for OEE to function.",
+                  "element": "Combobox",
+                  "queryType": "ModeGroup",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "modeGroupId"
+                  },
+                  "query": {
+                    "fields": [
+                      "modeGroup.id",
+                      "modeGroup.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox4"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UtT2KXRnuU": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Screen",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "screen",
+                  "field": "screen",
+                  "description": "Must be enabled to support custom implementations with several control panel versions.",
+                  "element": "Combobox",
+                  "queryType": "Screen",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "screenId"
+                  },
+                  "query": {
+                    "fields": [
+                      "screen.id",
+                      "screen.name"
+                    ]
+                  },
+                  "disabled": true
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox6"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZE11liSP0F": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Shift Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "shiftGroup",
+                  "field": "shiftGroup",
+                  "description": "Required for OEE calculations to function.",
+                  "element": "Combobox",
+                  "queryType": "ShiftGroup",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "shiftGroupId"
+                  },
+                  "query": {
+                    "fields": [
+                      "shiftGroup.id",
+                      "shiftGroup.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox7"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "nGhVI-9KAC": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenterGroup",
+                  "field": "workcenterGroup",
+                  "description": "Used in various dashboards for reporting.",
+                  "element": "Combobox",
+                  "queryType": "WorkcenterGroup",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "workcenterGroupId"
+                  },
+                  "query": {
+                    "fields": [
+                      "workcenterGroup.id",
+                      "workcenterGroup.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox8"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "mXVPvSaug": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Is the workcenter active?",
+                  "field": "active",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "5xjJwehLd": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Multi Out Capable",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "multiOutCapable",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "If True - this workcenter is capable of producing multiple outputs, if false, only 1 output will ever be produced at a time.",
+                  "field": "multiOutCapable"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch2"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Sj5wtelxF": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Workcenter History Sync",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenterHistorySync",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Synchronize workcenter history for this machine - only use this, if you are not tracking mode/event changes in Fuuz - for workcenters that are not integrated, or not using any Fuuz screens.",
+                  "field": "workcenterHistorySync"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch3"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "o-C1n4zWd": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Production History Sync",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "productionHistorySync",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Syncronize Production history for this workcenter - Only use, if you are not reporting production through Fuuz directly or via PLC integration. The use here would be if production / scrap entries are being done in an external system, this boolean is used to indicate you want those records pulled from that external system, into Fuuz for analysis.",
+                  "field": "productionHistorySync"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch4"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "04icg4JRF": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Auto Production",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "autoProduction",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Enables a user to enable Auto Production for any production Output associated to this workcenter This will be triggered only from PLC Tags where use case is production or scrap. Manual production entries will still be reported regardless of this flag.",
+                  "field": "autoProduction"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch5"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lteEt2078": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Printer  Device",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "printer.id",
+                      "printer.name"
+                    ]
+                  },
+                  "queryType": "Device",
+                  "orderByDirection": "asc",
+                  "dataPath": "printer",
+                  "target": {
+                    "dataPath": "printerId"
+                  },
+                  "description": "Select the printer device that will be used if auto-printing production labels. \nIf no device is selected, no labels will be printed.",
+                  "field": "printer"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox9"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpzl26e1001p356ea3nyqvjc": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Run Sync",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "runSync",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "When True, runs will be able to be synchronized from a 3rd party system. When set to False, all production runs will be initiated only through Fuuz/ or via your PLC integration with Fuuz. The Synch option will not be available to the end user for a given workcenter when this is False.",
+                  "field": "runSync"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch6"
+                },
+                "parent": "1GX3SVC5tk",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "Tags",
+          "tabTitle": "Tags",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 5,
+                    "Form": 1,
+                    "Table": 1,
+                    "Combobox": 1,
+                    "Table Column": 3
+                  },
+                  "module": {
+                    "id": "internetOfThings",
+                    "group": {
+                      "id": "system"
+                    }
+                  },
+                  "dataModel": "WorkcenterIotTag",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "f6-1uq2znf",
+                  "8nqIQX5R7u",
+                  "mEVNd7qeOb"
+                ],
+                "linkedNodes": {}
+              },
+              "f6-1uq2znf": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "SfF3yEvR8B"
+                ],
+                "linkedNodes": {}
+              },
+              "SfF3yEvR8B": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterIotTag",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "f6-1uq2znf",
+                "hidden": false,
+                "nodes": [
+                  "aN0janvulL"
+                ],
+                "linkedNodes": {}
+              },
+              "aN0janvulL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "SfF3yEvR8B",
+                "hidden": false,
+                "nodes": [
+                  "646rUkkMjj"
+                ],
+                "linkedNodes": {}
+              },
+              "646rUkkMjj": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Iot Tag",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "iotTag",
+                  "field": "iotTag",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "IotTag",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "additionalFields": "name",
+                  "target": {
+                    "dataPath": "iotTag.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "iotTag.id",
+                      "iotTag.name"
+                    ]
+                  }
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox1"
+                },
+                "parent": "aN0janvulL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8nqIQX5R7u": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "5TiyfRNth4",
+                  "H7forIdvY",
+                  "UuTYsscuzd",
+                  "yw7mxN9qsK",
+                  "XJqv1HXGTa"
+                ],
+                "linkedNodes": {}
+              },
+              "5TiyfRNth4": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "8nqIQX5R7u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UuTYsscuzd": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "link",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Workcenter Iot Tag",
+                      "fields": [
+                        {
+                          "label": "Iot Tag",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "iotTag",
+                          "field": "iotTag",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTag",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTag.id",
+                              "iotTag.name"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkcenterIotTag($payload: [WorkcenterIotTagCreatePayloadInput!]!) {\n  mutation: createWorkcenterIotTag(payload: $payload) { \n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": $merge([data, {\"workcenterId\": $metadata.urlParameters.id}])\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Workcenter Iot Tag \" & data.mutation[0].label & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Link Existing Tag"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "8nqIQX5R7u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yw7mxN9qsK": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Workcenter Iot Tag \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Iot Tag",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "iotTag",
+                          "field": "iotTag",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTag",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTag.id",
+                              "iotTag.name"
+                            ]
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateWorkcenterIotTag($payload: [WorkcenterIotTagUpdatePayloadInput!]!) {\n  mutation: updateWorkcenterIotTag(payload: $payload) { \n    id\n    label\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Iot Tag \" & $components.Table1.selectedRows.label) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "8nqIQX5R7u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XJqv1HXGTa": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "link-slash",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Iot Tag \" & $components.Table1.selectedRows.label) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteWorkcenterIotTag($payload: [WorkcenterIotTagDeletePayloadInput!]!) {\n  mutation: deleteWorkcenterIotTag(payload: $payload) { \n    id\n    \n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Workcenter Iot Tag \" & $components.Table1.selectedRows.label) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Unlink Tag"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "8nqIQX5R7u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "mEVNd7qeOb": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "WorkcenterIotTag",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "parameters": "{\n  \"filter\":{\n    \"workcenterId\":{\n      \"_eq\": id\n    }\n  }\n}"
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "H81K5XEOXO",
+                  "k7IKFXamdX",
+                  "FJIWqXSfZI"
+                ],
+                "linkedNodes": {}
+              },
+              "H81K5XEOXO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Iot Tag",
+                  "format": "text",
+                  "field": "iotTag.name",
+                  "dataPath": "iotTag.name",
+                  "description": "A code representing the tag.",
+                  "query": {
+                    "fields": [
+                      "iotTag.id",
+                      "iotTag.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "mEVNd7qeOb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "k7IKFXamdX": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Device Driver",
+                  "format": "text",
+                  "field": "iotTag.device.deviceDriver.name",
+                  "dataPath": "iotTag.device.deviceDriver.name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "iotTag.device.deviceDriver.id",
+                      "iotTag.device.deviceDriver.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "mEVNd7qeOb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FJIWqXSfZI": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Device",
+                  "format": "text",
+                  "field": "iotTag.device.name",
+                  "dataPath": "iotTag.device.name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "iotTag.device.id",
+                      "iotTag.device.name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "mEVNd7qeOb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "H7forIdvY": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Iot Tag",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "The name of this tag",
+                          "element": "text",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "Is this Iot Tag active?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Store History",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "storeHistory",
+                          "field": "storeHistory",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Device",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "device",
+                          "field": "device",
+                          "description": "A description of the device this IOT tag is linked to.",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Device",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "deviceId"
+                          },
+                          "query": {
+                            "fields": [
+                              "device.id",
+                              "device.name"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Iot Tag Type",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "iotTagType",
+                          "field": "iotTagType",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTagType",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagTypeId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTagType.id",
+                              "iotTagType.name",
+                              "iotTagType.configurationSchema"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Use Case",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "iotTagUseCase",
+                          "field": "iotTagUseCase",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "IotTagUseCase",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "target": {
+                            "dataPath": "iotTagUseCaseId"
+                          },
+                          "query": {
+                            "fields": [
+                              "iotTagUseCase.id",
+                              "iotTagUseCase.name",
+                              "iotTagType.configurationSchema"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "query",
+                      "api": "Application",
+                      "query": "query (\n  $iotTagTypeId: String!\n  $iotTagUseCaseId: String!\n){\n  iotTagType(\n    where:{\n      id:{_eq: $iotTagTypeId}\n    }\n  ){\n    edges{\n      node{ configurationSchema}\n    }\n  }\n  \n  iotTagUseCase(\n    where:{\n      id:{_eq: $iotTagUseCaseId}\n    }\n  ){\n    edges{\n      node{ configurationSchema}\n    }\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"iotTagTypeId\": data.iotTagTypeId,\n  \"iotTagUseCaseId\": data.iotTagUseCaseId\n}"
+                      }
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "type": "json",
+                          "name": "arguments",
+                          "dataPath": "arguments",
+                          "showSchemaFields": true,
+                          "schema": {
+                            "__transform": "data.iotTagType.**.configurationSchema"
+                          },
+                          "fieldContext": {
+                            "__transform": "{\n  \"loadTransformPayload\": { \"deviceId\": data.**.deviceId },\n  \"mappingTransformPayload\": \"/*hello*/ nodeId\"\n}"
+                          },
+                          "collapsible": true,
+                          "collapsedByDefault": true,
+                          "label": "Inputs",
+                          "validation": {
+                            "required": true
+                          },
+                          "defaultValue": {
+                            "__transform": "data.iotTagType.**.configurationSchema.type = \"array\" ? [] : {}"
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "post": "$merge([\n  $omit(data, [\"iotTagType\"]),\n  {\n    \"configuration\":result.arguments\n  }\n])"
+                      },
+                      "title": {
+                        "__transform": "\"Tag Details\""
+                      }
+                    },
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "type": "json",
+                          "name": "metadata",
+                          "dataPath": "metadata",
+                          "showSchemaFields": true,
+                          "schema": {
+                            "__transform": "data.iotTagUseCase.**.configurationSchema"
+                          },
+                          "fieldContext": {
+                            "__transform": "{\n  \"mappingTransformPayload\": \"metadata\"\n}"
+                          },
+                          "collapsible": true,
+                          "collapsedByDefault": true,
+                          "label": "Metadata",
+                          "validation": {
+                            "required": true
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Use Case Details\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateIotTag($payload: [IotTagCreatePayloadInput!]!) {\n  mutation: createIotTag(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": $omit(data, [\"iotTagType\", \"iotTagUseCase\"])\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Iot Tag \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateWorkcenterIotTag($payload: [WorkcenterIotTagCreatePayloadInput!]!) {\n  mutation: createWorkcenterIotTag(payload: $payload) { \n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\":[\n    {\n      \"create\":{\n        \"workcenterId\": $metadata.urlParameters.id,\n        \"iotTagId\": data.mutation.id\n      }\n    }\n  ]\n\n  \n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create New Tag and Link"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton5",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Create button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Create Button which open form.",
+                    "icon": "plus",
+                    "requiresTable": true
+                  }
+                },
+                "parent": "8nqIQX5R7u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cloexagpz002z018823qp1sje",
+      "title": "Workcenter Detail",
+      "path": "/productionManagement/manufacturing/workcenter/:id",
+      "moduleId": "manufacturing",
+      "screenId": "workcenterDetail",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

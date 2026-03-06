@@ -1,0 +1,653 @@
+{
+  "header": {
+    "id": "iotTagTypeDetail",
+    "name": "Iot Tag Type Detail",
+    "description": "",
+    "active": true,
+    "moduleId": "internetOfThings",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clo91itnw000w017z89d4drf8",
+    "number": "0.0.1",
+    "description": "",
+    "screenId": "iotTagTypeDetail",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "IotTagTypeForm",
+          "tabTitle": "Iot Tag Type Form",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 5,
+                    "Action Button": 2,
+                    "Form": 1,
+                    "Text": 2,
+                    "Display": 4,
+                    "Checkbox": 1,
+                    "Markdown": 1,
+                    "JSON": 1
+                  },
+                  "module": {
+                    "id": "internetOfThings",
+                    "group": {
+                      "id": "system"
+                    }
+                  },
+                  "dataModel": "IotTagType",
+                  "template": "form"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "EeyjKG_-On",
+                  "c78B-X9dJT"
+                ],
+                "linkedNodes": {}
+              },
+              "EeyjKG_-On": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "pmobu8rmMa",
+                  "VGdY5Krsa_"
+                ],
+                "linkedNodes": {}
+              },
+              "pmobu8rmMa": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "save",
+                    "size": null
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$components.Form1.formState.submitSucceeded ? $not($components.Form1.formState.dirtySinceLastSubmit) : $not($components.Form1.formState.dirty)",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Form1.formState.submitSucceeded",
+                        "components.Form1.formState.dirtySinceLastSubmit",
+                        "components.Form1.formState.dirty"
+                      ]
+                    },
+                    "__cacheKey": "saveButton",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Form1.fn.save()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Save"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Save button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Save Button which saves form data.",
+                    "icon": "save"
+                  }
+                },
+                "parent": "EeyjKG_-On",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VGdY5Krsa_": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "message": {
+                        "__transform": "\"Are you sure?\""
+                      },
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "buttonColor": "error"
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Form1.fn.delete()",
+                      "remote": false
+                    },
+                    {
+                      "type": "navigation",
+                      "navigationType": "Back",
+                      "back": true
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2",
+                  "editor": {
+                    "category": "Interaction",
+                    "color": "#9c5a94",
+                    "description": "Delete button which perform delete action.",
+                    "elementName": "Delete Button",
+                    "icon": "trash"
+                  }
+                },
+                "parent": "EeyjKG_-On",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "c78B-X9dJT": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "IotTagType",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "blockNavigationWhenDirty": true
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "VImpZtPyyu"
+                ],
+                "linkedNodes": {}
+              },
+              "VImpZtPyyu": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "c78B-X9dJT",
+                "hidden": false,
+                "nodes": [
+                  "yeU_DiWNUo",
+                  "aRM5ijFSOR"
+                ],
+                "linkedNodes": {}
+              },
+              "yeU_DiWNUo": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "column",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "VImpZtPyyu",
+                "hidden": false,
+                "nodes": [
+                  "-4hwKEfxJM",
+                  "NVH0sqYuo2",
+                  "Rs5moGYb02",
+                  "HW7Wr_QOPZ"
+                ],
+                "linkedNodes": {}
+              },
+              "aRM5ijFSOR": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "column",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "50%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "background": "default"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "VImpZtPyyu",
+                "hidden": false,
+                "nodes": [
+                  "vWNx1nvKq6",
+                  "sDrSlScIUu",
+                  "huMjLMwQWQ",
+                  "VEGsKdBYrP",
+                  "4TcViQVk7k"
+                ],
+                "linkedNodes": {}
+              },
+              "vWNx1nvKq6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "aRM5ijFSOR",
+                "hidden": false,
+                "nodes": [
+                  "BfRuFN-PPJ"
+                ],
+                "linkedNodes": {}
+              },
+              "BfRuFN-PPJ": {
+                "type": {
+                  "resolvedName": "Text"
+                },
+                "isCanvas": false,
+                "props": {
+                  "content": "History"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "vWNx1nvKq6",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "sDrSlScIUu": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "format": "datetime"
+                },
+                "displayName": "Display",
+                "custom": {
+                  "elementName": "Display1"
+                },
+                "parent": "aRM5ijFSOR",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "huMjLMwQWQ": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Created By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "createdByUser.email",
+                  "dataPath": "createdByUser.email",
+                  "description": "The User who created this record.",
+                  "query": {
+                    "fields": [
+                      "createdByUser.id",
+                      "createdByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.createdByUser.id) ? \"/system/accessControl/users/\" & data.createdByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.createdByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "createdByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Display",
+                "custom": {
+                  "elementName": "Display2"
+                },
+                "parent": "aRM5ijFSOR",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VEGsKdBYrP": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated At",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "format": "datetime"
+                },
+                "displayName": "Display",
+                "custom": {
+                  "elementName": "Display3"
+                },
+                "parent": "aRM5ijFSOR",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4TcViQVk7k": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "label": "Updated By User",
+                  "visible": true,
+                  "formElement": "Form1",
+                  "field": "updatedByUser.email",
+                  "dataPath": "updatedByUser.email",
+                  "description": "The User who last updated this record.",
+                  "query": {
+                    "fields": [
+                      "updatedByUser.id",
+                      "updatedByUser.email"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "$exists(data.updatedByUser.id) ? \"/system/accessControl/users/\" & data.updatedByUser.id",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.updatedByUser.id"
+                      ],
+                      "context": []
+                    },
+                    "__cacheKey": "updatedByUser",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Display",
+                "custom": {
+                  "elementName": "Display4"
+                },
+                "parent": "aRM5ijFSOR",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-4hwKEfxJM": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "validation": {
+                    "required": true
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "",
+                  "element": "TextInput",
+                  "type": "text"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "yeU_DiWNUo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NVH0sqYuo2": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "validation": {
+                    "required": true
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "usable",
+                  "field": "usable",
+                  "description": "",
+                  "element": "Checkbox",
+                  "type": "checkbox"
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox1"
+                },
+                "parent": "yeU_DiWNUo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Rs5moGYb02": {
+                "type": {
+                  "resolvedName": "MarkdownInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "description",
+                  "field": "description",
+                  "description": "",
+                  "element": "MarkdownInput",
+                  "type": "markdown"
+                },
+                "displayName": "Markdown",
+                "custom": {
+                  "elementName": "Markdown1"
+                },
+                "parent": "yeU_DiWNUo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HW7Wr_QOPZ": {
+                "type": {
+                  "resolvedName": "JSONInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Configuration Schema",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "configurationSchema",
+                  "field": "configurationSchema",
+                  "description": "",
+                  "element": "JSONInput",
+                  "type": "json"
+                },
+                "displayName": "JSON",
+                "custom": {
+                  "elementName": "Json1"
+                },
+                "parent": "yeU_DiWNUo",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clo91izlh000y015tdc380nqt",
+      "title": "Iot Tag Type Detail",
+      "path": "/system/internetOfThings/iotTagType/:id",
+      "moduleId": "internetOfThings",
+      "screenId": "iotTagTypeDetail",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

@@ -1,0 +1,2119 @@
+{
+  "header": {
+    "id": "transactionTypes",
+    "name": "Transaction Types",
+    "description": "Transaction Types",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clqqu50a4000d016i4n321zm3",
+    "number": "0.0.4",
+    "description": "",
+    "screenId": "transactionTypes",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "TransactionTypeTable",
+          "tabTitle": "Transaction Type Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Date Range": 2,
+                    "Text": 2,
+                    "Checkbox": 32,
+                    "Table Column": 36
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "TransactionType",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "bEvLLMH-wi",
+                  "m3Q4xZ2fyD",
+                  "7RKYitgBQH"
+                ],
+                "linkedNodes": {}
+              },
+              "bEvLLMH-wi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "YPb03Q-uJX"
+                ],
+                "linkedNodes": {}
+              },
+              "YPb03Q-uJX": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "TransactionType",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "bEvLLMH-wi",
+                "hidden": false,
+                "nodes": [
+                  "3p2IZNJ3mU"
+                ],
+                "linkedNodes": {}
+              },
+              "3p2IZNJ3mU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "YPb03Q-uJX",
+                "hidden": false,
+                "nodes": [
+                  "pQFKRewHC2"
+                ],
+                "linkedNodes": {}
+              },
+              "pQFKRewHC2": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "Label field",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "3p2IZNJ3mU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "m3Q4xZ2fyD": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "j8ql0C87yM",
+                  "2RqTh5-Z81",
+                  "hNPvV3aQR4",
+                  "ncJ46cdtzM"
+                ],
+                "linkedNodes": {}
+              },
+              "j8ql0C87yM": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "m3Q4xZ2fyD",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hNPvV3aQR4": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": true,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Transaction Type",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Activity Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "activityUpdate",
+                          "field": "activityUpdate",
+                          "description": "Operator activity update",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Badge In",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "badgeIn",
+                          "field": "badgeIn",
+                          "description": "System flag that  indicates if a user is logged in",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Badge Out",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "badgeOut",
+                          "field": "badgeOut",
+                          "description": "System flag that  indicates if the user is logged out",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Event Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "eventUpdate",
+                          "field": "eventUpdate",
+                          "description": "System flag that  indicates whether the transaction even is updated",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Inventory Adjustment",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryAdjustment",
+                          "field": "inventoryAdjustment",
+                          "description": "System flag that  indicates if Inventory adjustments were done",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Inventory Hold",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryHold",
+                          "field": "inventoryHold",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Inventory Merge",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryMerge",
+                          "field": "inventoryMerge",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Inventory Move",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryMove",
+                          "field": "inventoryMove",
+                          "description": "System flag that  indicates if Inventory movement was done",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Inventory Split",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventorySplit",
+                          "field": "inventorySplit",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Material Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "materialLoad",
+                          "field": "materialLoad",
+                          "description": "System flag that  indicates if material has been loaded",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Material Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "materialUnload",
+                          "field": "materialUnload",
+                          "description": "System flag that  indicates if material has been unloaded",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Mode Change",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "modeChange",
+                          "field": "modeChange",
+                          "description": "System flag that  indicates whether the transaction is in change mode",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Production Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionAdd",
+                          "field": "productionAdd",
+                          "description": "System flag that  indicates if production is added",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Production Material Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionMaterialLoad",
+                          "field": "productionMaterialLoad",
+                          "description": "Material has been loaded to workcenter (productionSetupMaterial)",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Production Material Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionMaterialUnload",
+                          "field": "productionMaterialUnload",
+                          "description": "material has been unloaded from workcenter(productionSetupMaterial)",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Production Setup Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionSetupAdd",
+                          "field": "productionSetupAdd",
+                          "description": "System flag that  indicates if a production setup is added",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Production Setup Clear",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionSetupClear",
+                          "field": "productionSetupClear",
+                          "description": "System flag that  indicates if the Production setup is cleared",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Receipt Confirm",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "receiptConfirm",
+                          "field": "receiptConfirm",
+                          "description": "System flag that  indicates if the receipt is confirmed",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Scrap Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "scrapAdd",
+                          "field": "scrapAdd",
+                          "description": "System flag that  indicates if scrap is added",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Shipment Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentLoad",
+                          "field": "shipmentLoad",
+                          "description": "System flag that  indicates if shipment is loaded ",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Shipment Ship",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentShip",
+                          "field": "shipmentShip",
+                          "description": "System flag that  indicates if shipment is shipped",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Shipment Stage",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentStage",
+                          "field": "shipmentStage",
+                          "description": "System flag that  indicates if the transaction stage is shipping",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Shipment Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentUnload",
+                          "field": "shipmentUnload",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Sub Event Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "subEventUpdate",
+                          "field": "subEventUpdate",
+                          "description": "System flag that  indicates whether the transaction sub even is updated",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Create",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferCreate",
+                          "field": "transferCreate",
+                          "description": "System flag that  indicates if transfer was created",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferLoad",
+                          "field": "transferLoad",
+                          "description": "System flag that  indicates if transfer was loaded",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Ship",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferShip",
+                          "field": "transferShip",
+                          "description": "System flag that  indicates if transfer was shipped",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Stage",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferStage",
+                          "field": "transferStage",
+                          "description": "System flag that  indicates if transaction is in transfer stage",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferUnload",
+                          "field": "transferUnload",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Transfer Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferUpdate",
+                          "field": "transferUpdate",
+                          "description": "System flag that  indicates if transfer was updated",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "System flag that  indicates whether the transaction is usable",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Work Order Complete",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workOrderComplete",
+                          "field": "workOrderComplete",
+                          "description": "System flag that  indicates the Work Order has been completed",
+                          "element": "Switch",
+                          "type": "switch"
+                        },
+                        {
+                          "label": "Color",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "color",
+                          "field": "color",
+                          "description": "Used in visualizations to change the color of transactions matching this type.",
+                          "element": "colorInput",
+                          "type": "color"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateTransactionType($payload: [TransactionTypeCreatePayloadInput!]!) {\n  mutation: createTransactionType(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Transaction Type \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "m3Q4xZ2fyD",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2RqTh5-Z81": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Transaction Type \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Label field",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": false
+                        },
+                        {
+                          "label": "Activity Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "activityUpdate",
+                          "field": "activityUpdate",
+                          "description": "Operator activity update",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Badge In",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "badgeIn",
+                          "field": "badgeIn",
+                          "description": "System flag that  indicates if a user is logged in",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Badge Out",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "badgeOut",
+                          "field": "badgeOut",
+                          "description": "System flag that  indicates if the user is logged out",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Event Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "eventUpdate",
+                          "field": "eventUpdate",
+                          "description": "System flag that  indicates whether the transaction even is updated",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Inventory Adjustment",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryAdjustment",
+                          "field": "inventoryAdjustment",
+                          "description": "System flag that  indicates if Inventory adjustments were done",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Inventory Hold",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryHold",
+                          "field": "inventoryHold",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Inventory Merge",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryMerge",
+                          "field": "inventoryMerge",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Inventory Move",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventoryMove",
+                          "field": "inventoryMove",
+                          "description": "System flag that  indicates if Inventory movement was done",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Inventory Split",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "inventorySplit",
+                          "field": "inventorySplit",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Material Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "materialLoad",
+                          "field": "materialLoad",
+                          "description": "System flag that  indicates if material has been loaded",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Material Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "materialUnload",
+                          "field": "materialUnload",
+                          "description": "System flag that  indicates if material has been unloaded",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Mode Change",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "modeChange",
+                          "field": "modeChange",
+                          "description": "System flag that  indicates whether the transaction is in change mode",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Production Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionAdd",
+                          "field": "productionAdd",
+                          "description": "System flag that  indicates if production is added",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Production Material Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionMaterialLoad",
+                          "field": "productionMaterialLoad",
+                          "description": "Material has been loaded to workcenter (productionSetupMaterial)",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Production Material Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionMaterialUnload",
+                          "field": "productionMaterialUnload",
+                          "description": "material has been unloaded from workcenter(productionSetupMaterial)",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Production Setup Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionSetupAdd",
+                          "field": "productionSetupAdd",
+                          "description": "System flag that  indicates if a production setup is added",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Production Setup Clear",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "productionSetupClear",
+                          "field": "productionSetupClear",
+                          "description": "System flag that  indicates if the Production setup is cleared",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Receipt Confirm",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "receiptConfirm",
+                          "field": "receiptConfirm",
+                          "description": "System flag that  indicates if the receipt is confirmed",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Scrap Add",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "scrapAdd",
+                          "field": "scrapAdd",
+                          "description": "System flag that  indicates if scrap is added",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Shipment Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentLoad",
+                          "field": "shipmentLoad",
+                          "description": "System flag that  indicates if shipment is loaded ",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Shipment Ship",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentShip",
+                          "field": "shipmentShip",
+                          "description": "System flag that  indicates if shipment is shipped",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Shipment Stage",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentStage",
+                          "field": "shipmentStage",
+                          "description": "System flag that  indicates if the transaction stage is shipping",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Shipment Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "shipmentUnload",
+                          "field": "shipmentUnload",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Sub Event Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "subEventUpdate",
+                          "field": "subEventUpdate",
+                          "description": "System flag that  indicates whether the transaction sub even is updated",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Create",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferCreate",
+                          "field": "transferCreate",
+                          "description": "System flag that  indicates if transfer was created",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Load",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferLoad",
+                          "field": "transferLoad",
+                          "description": "System flag that  indicates if transfer was loaded",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Ship",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferShip",
+                          "field": "transferShip",
+                          "description": "System flag that  indicates if transfer was shipped",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Stage",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferStage",
+                          "field": "transferStage",
+                          "description": "System flag that  indicates if transaction is in transfer stage",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Unload",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferUnload",
+                          "field": "transferUnload",
+                          "description": "",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Transfer Update",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "transferUpdate",
+                          "field": "transferUpdate",
+                          "description": "System flag that  indicates if transfer was updated",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "System flag that  indicates whether the transaction is usable",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Work Order Complete",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "workOrderComplete",
+                          "field": "workOrderComplete",
+                          "description": "System flag that  indicates if work order was completed ",
+                          "element": "Switch",
+                          "type": "switch",
+                          "disabled": true
+                        },
+                        {
+                          "label": "Color",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "color",
+                          "field": "color",
+                          "description": "Used in visualizations to change the color of transactions matching this type.",
+                          "element": "colorInput",
+                          "type": "color"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateTransactionType($payload: [TransactionTypeUpdatePayloadInput!]!) {\n  mutation: updateTransactionType(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Transaction Type \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "m3Q4xZ2fyD",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ncJ46cdtzM": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": true,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Transaction Type \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteTransactionType($payload: [TransactionTypeDeletePayloadInput!]!) {\n  mutation: deleteTransactionType(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Transaction Type \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "m3Q4xZ2fyD",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7RKYitgBQH": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "TransactionType",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "This table is a list of systems flags that are used to describe the different  transaction types.\nLinks out to cost transaction map",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "9WoijAqgrO",
+                  "IJOJJxeOco",
+                  "j0hFJjqUEo",
+                  "prkCbv8G08",
+                  "6ZTVWBFQky",
+                  "m5a8k03cUG",
+                  "a_poBzYVl2",
+                  "stbZK3FW4Y",
+                  "AjYD7pAVo_",
+                  "ByB6euLXoU",
+                  "L5KAW7a_Dt",
+                  "lyYGCqA6fl",
+                  "2uae_YKNBB",
+                  "dSomGs4gcW",
+                  "mIbZ9i5df3",
+                  "T2xPKzX3Og",
+                  "kBm9VSJviG",
+                  "eDXvjrcBTG",
+                  "lR_dqwQ1JX",
+                  "UOYa-jftry",
+                  "lNE6AgkMea",
+                  "by4RYnFKnd",
+                  "xfs7DoXiER",
+                  "Si5P0ZvNHT",
+                  "Xnmzf0V6Jn",
+                  "H7UQLdelcs",
+                  "40_CSO-Zua",
+                  "GQJM5rRUQK",
+                  "EREq77wAII",
+                  "jI-WaPn9hM",
+                  "KEgVplvxYj",
+                  "AzK5vO6Cj-",
+                  "SBIUMU_lnI",
+                  "X9XeWWoGlH",
+                  "b9J_EYo0Fi"
+                ],
+                "linkedNodes": {}
+              },
+              "9WoijAqgrO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "Label field",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name",
+                      "color"
+                    ]
+                  },
+                  "style": {
+                    "__transform": "{\"background\": data.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IJOJJxeOco": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Activity Update",
+                  "format": "checkmark",
+                  "field": "activityUpdate",
+                  "dataPath": "activityUpdate",
+                  "description": "Operator activity update"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "j0hFJjqUEo": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Badge In",
+                  "format": "checkmark",
+                  "field": "badgeIn",
+                  "dataPath": "badgeIn",
+                  "description": "System flag that  indicates if a user is logged in"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "prkCbv8G08": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Badge Out",
+                  "format": "checkmark",
+                  "field": "badgeOut",
+                  "dataPath": "badgeOut",
+                  "description": "System flag that  indicates if the user is logged out"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6ZTVWBFQky": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Update",
+                  "format": "checkmark",
+                  "field": "eventUpdate",
+                  "dataPath": "eventUpdate",
+                  "description": "System flag that  indicates whether the transaction even is updated"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "m5a8k03cUG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Inventory Adjustment",
+                  "format": "checkmark",
+                  "field": "inventoryAdjustment",
+                  "dataPath": "inventoryAdjustment",
+                  "description": "System flag that  indicates if Inventory adjustments were done"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a_poBzYVl2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Inventory Hold",
+                  "format": "checkmark",
+                  "field": "inventoryHold",
+                  "dataPath": "inventoryHold",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "stbZK3FW4Y": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Inventory Merge",
+                  "format": "checkmark",
+                  "field": "inventoryMerge",
+                  "dataPath": "inventoryMerge",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AjYD7pAVo_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Inventory Move",
+                  "format": "checkmark",
+                  "field": "inventoryMove",
+                  "dataPath": "inventoryMove",
+                  "description": "System flag that  indicates if Inventory movement was done"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ByB6euLXoU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Inventory Split",
+                  "format": "checkmark",
+                  "field": "inventorySplit",
+                  "dataPath": "inventorySplit",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "L5KAW7a_Dt": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Material Load",
+                  "format": "checkmark",
+                  "field": "materialLoad",
+                  "dataPath": "materialLoad",
+                  "description": "System flag that  indicates if material has been loaded"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lyYGCqA6fl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Material Unload",
+                  "format": "checkmark",
+                  "field": "materialUnload",
+                  "dataPath": "materialUnload",
+                  "description": "System flag that  indicates if material has been unloaded"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2uae_YKNBB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Mode Change",
+                  "format": "checkmark",
+                  "field": "modeChange",
+                  "dataPath": "modeChange",
+                  "description": "System flag that  indicates whether the transaction is in change mode"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dSomGs4gcW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Add",
+                  "format": "checkmark",
+                  "field": "productionAdd",
+                  "dataPath": "productionAdd",
+                  "description": "System flag that  indicates if production is added"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "mIbZ9i5df3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Material Load",
+                  "format": "checkmark",
+                  "field": "productionMaterialLoad",
+                  "dataPath": "productionMaterialLoad",
+                  "description": "Material has been loaded to workcenter (productionSetupMaterial)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "T2xPKzX3Og": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Material Unload",
+                  "format": "checkmark",
+                  "field": "productionMaterialUnload",
+                  "dataPath": "productionMaterialUnload",
+                  "description": "material has been unloaded from workcenter(productionSetupMaterial)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kBm9VSJviG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Setup Add",
+                  "format": "checkmark",
+                  "field": "productionSetupAdd",
+                  "dataPath": "productionSetupAdd",
+                  "description": "System flag that  indicates if a production setup is added"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "eDXvjrcBTG": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Setup Clear",
+                  "format": "checkmark",
+                  "field": "productionSetupClear",
+                  "dataPath": "productionSetupClear",
+                  "description": "System flag that  indicates if the Production setup is cleared"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lR_dqwQ1JX": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Receipt Confirm",
+                  "format": "checkmark",
+                  "field": "receiptConfirm",
+                  "dataPath": "receiptConfirm",
+                  "description": "System flag that  indicates if the receipt is confirmed"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UOYa-jftry": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap Add",
+                  "format": "checkmark",
+                  "field": "scrapAdd",
+                  "dataPath": "scrapAdd",
+                  "description": "System flag that  indicates if scrap is added"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lNE6AgkMea": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shipment Load",
+                  "format": "checkmark",
+                  "field": "shipmentLoad",
+                  "dataPath": "shipmentLoad",
+                  "description": "System flag that  indicates if shipment is loaded "
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "by4RYnFKnd": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shipment Ship",
+                  "format": "checkmark",
+                  "field": "shipmentShip",
+                  "dataPath": "shipmentShip",
+                  "description": "System flag that  indicates if shipment is shipped"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xfs7DoXiER": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shipment Stage",
+                  "format": "checkmark",
+                  "field": "shipmentStage",
+                  "dataPath": "shipmentStage",
+                  "description": "System flag that  indicates if the transaction stage is shipping"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Si5P0ZvNHT": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shipment Unload",
+                  "format": "checkmark",
+                  "field": "shipmentUnload",
+                  "dataPath": "shipmentUnload",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Xnmzf0V6Jn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Sub Event Update",
+                  "format": "checkmark",
+                  "field": "subEventUpdate",
+                  "dataPath": "subEventUpdate",
+                  "description": "System flag that  indicates whether the transaction sub even is updated"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "H7UQLdelcs": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Create",
+                  "format": "checkmark",
+                  "field": "transferCreate",
+                  "dataPath": "transferCreate",
+                  "description": "System flag that  indicates if transfer was created"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "40_CSO-Zua": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Load",
+                  "format": "checkmark",
+                  "field": "transferLoad",
+                  "dataPath": "transferLoad",
+                  "description": "System flag that  indicates if transfer was loaded"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GQJM5rRUQK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Ship",
+                  "format": "checkmark",
+                  "field": "transferShip",
+                  "dataPath": "transferShip",
+                  "description": "System flag that  indicates if transfer was shipped"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EREq77wAII": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Stage",
+                  "format": "checkmark",
+                  "field": "transferStage",
+                  "dataPath": "transferStage",
+                  "description": "System flag that  indicates if transaction is in transfer stage"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jI-WaPn9hM": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Unload",
+                  "format": "checkmark",
+                  "field": "transferUnload",
+                  "dataPath": "transferUnload",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KEgVplvxYj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transfer Update",
+                  "format": "checkmark",
+                  "field": "transferUpdate",
+                  "dataPath": "transferUpdate",
+                  "description": "System flag that  indicates if transfer was updated"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn31"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "AzK5vO6Cj-": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "field": "usable",
+                  "dataPath": "usable",
+                  "description": "System flag that  indicates whether the transaction is usable"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn32"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "SBIUMU_lnI": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Complete",
+                  "format": "checkmark",
+                  "field": "workOrderComplete",
+                  "dataPath": "workOrderComplete",
+                  "description": "System flag that  indicates if work order was completed "
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn33"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "X9XeWWoGlH": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn35"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "b9J_EYo0Fi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn36"
+                },
+                "parent": "7RKYitgBQH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clnoiqv1b00050131bu6shy9k",
+      "title": "Transaction Types",
+      "path": "/productionManagement/manufacturing/transactionTypes",
+      "moduleId": "manufacturing",
+      "screenId": "transactionTypes",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

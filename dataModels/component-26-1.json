@@ -1,0 +1,488 @@
+{
+  "header": {
+    "id": "productionSetup",
+    "name": "ProductionSetup",
+    "description": "This table is a list of production setup and it's attributes\nLinks out to: production setup operator, production history, production setup material, and production setup BOM\n\nProduction State Table.",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clq2n129c0009014t4gw61ftt",
+    "number": "53",
+    "dataModelId": "productionSetup",
+    "modelDefinition": {
+      "name": "ProductionSetup",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "retentionDays": 120,
+            "exposed": false
+          },
+          "labelField": "workcenterId",
+          "triggers": {},
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "productionSetup"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "workcenterId",
+          "type": "ID",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          },
+          "description": ""
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "description": "Note for any static notes/bulletins to be displayed on dashboards",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "A collection of custom data attibutes for the production setup.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operators",
+          "type": "JSON",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "eventId",
+          "type": "ID",
+          "description": "Identifies the event",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "event",
+          "description": "event object",
+          "type": "Event",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "eventId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "modeId",
+          "type": "ID",
+          "description": "Current Mode of workcenter",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "mode",
+          "description": "",
+          "type": "Mode",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "modeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionRunId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionRun",
+          "description": "",
+          "type": "ProductionRun",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "productionRunId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workcenter",
+          "description": "",
+          "type": "Workcenter",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workcenterId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetupOutputs",
+          "description": "",
+          "type": "[ProductionSetupOutput!]!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "id",
+                  "to": "productionSetupId"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "This table is a list of production setup and it's attributes\nLinks out to: production setup operator, production history, production setup material, and production setup BOM\n\nProduction State Table."
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clq2n129c0009014t4gw61ftt",
+      "dataModelVersion": {
+        "number": "53"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clq0ytqbv0006014l5v3x27wt",
+      "dataModelVersion": {
+        "number": "52"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp9xml2a0008017q6cq0fiju",
+      "dataModelVersion": {
+        "number": "51"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp9xiail000701896nx89ebu",
+      "dataModelVersion": {
+        "number": "50"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp9tvxvi0004018gge4y4sja",
+      "dataModelVersion": {
+        "number": "49"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clp8tlfkh001d01761eymgpt4",
+      "dataModelVersion": {
+        "number": "48"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "closxh0eb2tvo01b8dr6z140w",
+      "dataModelVersion": {
+        "number": "47"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "closo3fm9yibb01ar6r0c8k0k",
+      "dataModelVersion": {
+        "number": "46"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cloge6khw002f0132a3pe1dox",
+      "dataModelVersion": {
+        "number": "45"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clo0gey03000d01428tth1oda",
+      "dataModelVersion": {
+        "number": "44"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnkm14zz001i017yh9rcfhtc",
+      "dataModelVersion": {
+        "number": "43"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "clnj75vo5001q017z5i22b7ur",
+      "dataModelVersion": {
+        "number": "42"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cl835e8mq001l015x94rf6gnv",
+      "dataModelVersion": {
+        "number": "41"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

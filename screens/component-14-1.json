@@ -1,0 +1,130 @@
+{
+  "header": {
+    "id": "knowledgeBase",
+    "name": "Knowledge Base",
+    "description": "",
+    "active": true,
+    "moduleId": "integration",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clrb21c360011013ggvca5f1n",
+    "number": "0.0.5",
+    "description": "",
+    "screenId": "knowledgeBase",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Text": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "eVypdZEAc"
+                ],
+                "linkedNodes": {}
+              },
+              "eVypdZEAc": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "100%",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": " ",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [],
+                        "entityRanges": [
+                          {
+                            "offset": 0,
+                            "length": 1,
+                            "key": 0
+                          }
+                        ],
+                        "data": {}
+                      },
+                      {
+                        "key": "1951n",
+                        "text": "",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {
+                      "0": {
+                        "type": "EMBEDDED_LINK",
+                        "mutability": "MUTABLE",
+                        "data": {
+                          "src": "https://community.fuuz.com/space/PM",
+                          "height": "1900",
+                          "width": "1600"
+                        }
+                      }
+                    }
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clpa45vrh000u018g1q1610ht",
+      "title": "Knowledge Base",
+      "path": "/system/integration/knowledgeBase",
+      "moduleId": "integration",
+      "screenId": "knowledgeBase",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

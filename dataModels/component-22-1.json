@@ -1,0 +1,209 @@
+{
+  "header": {
+    "id": "oeeDimensionOeeConfiguration",
+    "name": "OeeDimensionOeeConfiguration",
+    "description": "",
+    "dataModelKindId": "reference"
+  },
+  "version": {
+    "id": "clnjaipxd003701a5963ohja0",
+    "number": "5",
+    "dataModelId": "oeeDimensionOeeConfiguration",
+    "modelDefinition": {
+      "name": "OeeDimensionOeeConfiguration",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "manufacturing",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "indices": [
+            {
+              "unique": true,
+              "fields": [
+                "oeeConfigurationId",
+                "oeeDimensionId"
+              ]
+            }
+          ],
+          "labelField": "id",
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "oeeDimensionOeeConfiguration"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "oeeConfigurationId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeConfiguration",
+          "description": "",
+          "type": "OeeConfiguration",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "oeeConfigurationId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeDimensionId",
+          "type": "ID",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "oeeDimension",
+          "description": "",
+          "type": "OeeDimension",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "oeeDimensionId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": ""
+    }
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "clnjaipxd003701a5963ohja0",
+      "dataModelVersion": {
+        "number": "5"
+      },
+      "mappingExpression": "$"
+    },
+    {
+      "dataModelVersionId": "cln4vn2gt003e014hdjbsc39r",
+      "dataModelVersion": {
+        "number": "4"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

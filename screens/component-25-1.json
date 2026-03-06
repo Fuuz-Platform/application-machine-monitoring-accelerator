@@ -1,0 +1,1871 @@
+{
+  "header": {
+    "id": "shiftAdminOnly",
+    "name": "Shift (Admin Only)",
+    "description": "",
+    "active": true,
+    "moduleId": null,
+    "isWidget": false
+  },
+  "version": {
+    "id": "clp9ydn7d000r018g82mm9mma",
+    "number": "0.0.1",
+    "description": "",
+    "screenId": "shiftAdminOnly",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ShiftTable",
+          "tabTitle": "Shift Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Text": 2,
+                    "Integer": 8,
+                    "Checkbox": 9,
+                    "Date Range": 2,
+                    "Table Column": 17
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "Shift",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "agW_kJNmvV",
+                  "LtBH8ij0HG",
+                  "NH6MdBWqHn"
+                ],
+                "linkedNodes": {}
+              },
+              "agW_kJNmvV": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "iIv7JWvIKS"
+                ],
+                "linkedNodes": {}
+              },
+              "iIv7JWvIKS": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "Shift",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "agW_kJNmvV",
+                "hidden": false,
+                "nodes": [
+                  "sj67PLMc4u"
+                ],
+                "linkedNodes": {}
+              },
+              "sj67PLMc4u": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "flex-end",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "background": "paper",
+                  "collapsible": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "iIv7JWvIKS",
+                "hidden": false,
+                "nodes": [
+                  "AGKDv09kJ9",
+                  "lZkS_T9H7u",
+                  "LJYNrC-ItN",
+                  "-qG317-gSR",
+                  "FrrUqpl0OE",
+                  "8_ZU905sj1",
+                  "I0RLWRm7j1",
+                  "zy4_ByHRe-",
+                  "YLiaxALJwi",
+                  "tgflvW_fMn",
+                  "F0Tf7FL9J0",
+                  "HpktQzna-R",
+                  "_qd0uEdU6Q",
+                  "xUee5ptxHl",
+                  "7j_4VzKU46",
+                  "pD7iQyjVsA",
+                  "XGuOOxzys2",
+                  "XoYsM1RnpB",
+                  "H9oIEDgdHe",
+                  "Sb57ypncIB",
+                  "EfeySkkQx-"
+                ],
+                "linkedNodes": {}
+              },
+              "AGKDv09kJ9": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "Shift name - Label field",
+                  "width": "300px",
+                  "element": "TextInput",
+                  "type": "text",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lZkS_T9H7u": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End Hour Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "endHour._gte",
+                  "field": "endHour",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer1"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "LJYNrC-ItN": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End Hour Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "endHour._lte",
+                  "field": "endHour",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer2"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-qG317-gSR": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End Minute Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "endMinute._gte",
+                  "field": "endMinute",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer3"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "FrrUqpl0OE": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End Minute Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "endMinute._lte",
+                  "field": "endMinute",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer4"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8_ZU905sj1": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start Hour Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "startHour._gte",
+                  "field": "startHour",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer5"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "I0RLWRm7j1": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start Hour Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "startHour._lte",
+                  "field": "startHour",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer6"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zy4_ByHRe-": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start Minute Min",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "startMinute._gte",
+                  "field": "startMinute",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_gte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer7"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YLiaxALJwi": {
+                "type": {
+                  "resolvedName": "IntegerInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start Minute Max",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "startMinute._lte",
+                  "field": "startMinute",
+                  "description": "",
+                  "width": "300px",
+                  "element": "IntegerInput",
+                  "type": "integer",
+                  "predicate": "_lte"
+                },
+                "displayName": "Integer",
+                "custom": {
+                  "elementName": "Integer8"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tgflvW_fMn": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Active",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "field": "active",
+                  "description": "",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "active._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox1"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "F0Tf7FL9J0": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credit At Start",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "creditAtStart",
+                  "field": "creditAtStart",
+                  "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "creditAtStart._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox2"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HpktQzna-R": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Friday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "friday",
+                  "field": "friday",
+                  "description": "Does this shift apply to Fridays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "friday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox3"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_qd0uEdU6Q": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Monday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "monday",
+                  "field": "monday",
+                  "description": "Does this shift apply to Mondays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "monday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox4"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xUee5ptxHl": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Saturday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "saturday",
+                  "field": "saturday",
+                  "description": "Does this shift apply to Saturdays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "saturday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox5"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7j_4VzKU46": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Sunday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "sunday",
+                  "field": "sunday",
+                  "description": "Does this shift apply to Sundays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "sunday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox6"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pD7iQyjVsA": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Thursday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "thursday",
+                  "field": "thursday",
+                  "description": "Does this shift apply to Thursdays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "thursday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox7"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XGuOOxzys2": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Tuesday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "tuesday",
+                  "field": "tuesday",
+                  "description": "Does this shift apply to Tuesdays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "tuesday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox8"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XoYsM1RnpB": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Wednesday",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "wednesday",
+                  "field": "wednesday",
+                  "description": "Does this shift apply to Wednesdays?",
+                  "width": "300px",
+                  "element": "Checkbox",
+                  "type": "checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "wednesday._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox9"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "H9oIEDgdHe": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Time Zone",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "timeZone",
+                  "field": "timeZone",
+                  "description": "",
+                  "width": "300px",
+                  "element": "TextInput",
+                  "type": "text",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "timeZone._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Sb57ypncIB": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "endAt",
+                  "field": "endAt",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                  "width": "300px",
+                  "element": "DateRangeInput",
+                  "type": "timeRange"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange1"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EfeySkkQx-": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "formElement": "Form1",
+                  "dataPath": "startAt",
+                  "field": "startAt",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                  "width": "300px",
+                  "element": "DateRangeInput",
+                  "type": "timeRange"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange2"
+                },
+                "parent": "sj67PLMc4u",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "LtBH8ij0HG": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "borderRadius": 0,
+                  "shadow": false,
+                  "flexDirection": "row",
+                  "flexWrap": true,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "EUrYSMz1GT",
+                  "zOZmdnW_c8",
+                  "G3tGHqflhE",
+                  "Ea7BO85opc"
+                ],
+                "linkedNodes": {}
+              },
+              "EUrYSMz1GT": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "LtBH8ij0HG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zOZmdnW_c8": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Shift",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Shift name - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "End Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endHour",
+                          "field": "endHour",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "End Minute",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endMinute",
+                          "field": "endMinute",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Start Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startHour",
+                          "field": "startHour",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Start Minute",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startMinute",
+                          "field": "startMinute",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Credit At Start",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "creditAtStart",
+                          "field": "creditAtStart",
+                          "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Friday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "friday",
+                          "field": "friday",
+                          "description": "Does this shift apply to Fridays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Monday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "monday",
+                          "field": "monday",
+                          "description": "Does this shift apply to Mondays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Saturday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "saturday",
+                          "field": "saturday",
+                          "description": "Does this shift apply to Saturdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Sunday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "sunday",
+                          "field": "sunday",
+                          "description": "Does this shift apply to Sundays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Thursday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "thursday",
+                          "field": "thursday",
+                          "description": "Does this shift apply to Thursdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Tuesday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "tuesday",
+                          "field": "tuesday",
+                          "description": "Does this shift apply to Tuesdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Wednesday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "wednesday",
+                          "field": "wednesday",
+                          "description": "Does this shift apply to Wednesdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Time Zone",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "timeZone",
+                          "field": "timeZone",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                          "element": "TimeInput",
+                          "type": "time"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                          "element": "TimeInput",
+                          "type": "time"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateShift($payload: [ShiftCreatePayloadInput!]!) {\n  mutation: createShift(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Shift \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "LtBH8ij0HG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "G3tGHqflhE": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Shift \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "Shift name - Label field",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "End Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endHour",
+                          "field": "endHour",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "End Minute",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endMinute",
+                          "field": "endMinute",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Start Hour",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startHour",
+                          "field": "startHour",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Start Minute",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startMinute",
+                          "field": "startMinute",
+                          "description": "",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Active",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "active",
+                          "field": "active",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Credit At Start",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "creditAtStart",
+                          "field": "creditAtStart",
+                          "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Friday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "friday",
+                          "field": "friday",
+                          "description": "Does this shift apply to Fridays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Monday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "monday",
+                          "field": "monday",
+                          "description": "Does this shift apply to Mondays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Saturday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "saturday",
+                          "field": "saturday",
+                          "description": "Does this shift apply to Saturdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Sunday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "sunday",
+                          "field": "sunday",
+                          "description": "Does this shift apply to Sundays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Thursday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "thursday",
+                          "field": "thursday",
+                          "description": "Does this shift apply to Thursdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Tuesday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "tuesday",
+                          "field": "tuesday",
+                          "description": "Does this shift apply to Tuesdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Wednesday",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "wednesday",
+                          "field": "wednesday",
+                          "description": "Does this shift apply to Wednesdays?",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Time Zone",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "timeZone",
+                          "field": "timeZone",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                          "element": "TimeInput",
+                          "type": "time"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                          "element": "TimeInput",
+                          "type": "time"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateShift($payload: [ShiftUpdatePayloadInput!]!) {\n  mutation: updateShift(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Shift \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "LtBH8ij0HG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ea7BO85opc": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Shift \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteShift($payload: [ShiftDeletePayloadInput!]!) {\n  mutation: deleteShift(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Shift \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "LtBH8ij0HG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NH6MdBWqHn": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "Shift",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "single",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "filterFormName": "Form1",
+                  "description": "This table is a list of all shifts and it's attributes"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "KM72sHe7ch",
+                  "3dwav3icoP",
+                  "A6yqOzybCB",
+                  "WFkGY2AkOX",
+                  "XUPRo2Yh1u",
+                  "rv3HPjU48d",
+                  "rnWE3MR5ds",
+                  "loiHtEozmH",
+                  "iofOwMO2rh",
+                  "nk95CyDhBL",
+                  "zksyCj2olk",
+                  "YhIz78pnyl",
+                  "1fWlYvNO8J",
+                  "YEScJ7peFB",
+                  "i-FSGYS2F6",
+                  "hdUrVBSWI4",
+                  "i0ziAOI434"
+                ],
+                "linkedNodes": {}
+              },
+              "KM72sHe7ch": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "name",
+                  "dataPath": "name",
+                  "label": "Name",
+                  "description": "Shift name - Label field",
+                  "format": "text",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/shifts/\" & data.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3dwav3icoP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "endHour",
+                  "dataPath": "endHour",
+                  "label": "End Hour",
+                  "description": "",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "A6yqOzybCB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "endMinute",
+                  "dataPath": "endMinute",
+                  "label": "End Minute",
+                  "description": "",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WFkGY2AkOX": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "startHour",
+                  "dataPath": "startHour",
+                  "label": "Start Hour",
+                  "description": "",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XUPRo2Yh1u": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "startMinute",
+                  "dataPath": "startMinute",
+                  "label": "Start Minute",
+                  "description": "",
+                  "format": "integer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rv3HPjU48d": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "active",
+                  "dataPath": "active",
+                  "label": "Active",
+                  "description": "",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rnWE3MR5ds": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "creditAtStart",
+                  "dataPath": "creditAtStart",
+                  "label": "Credit At Start",
+                  "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "loiHtEozmH": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "friday",
+                  "dataPath": "friday",
+                  "label": "Friday",
+                  "description": "Does this shift apply to Fridays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "iofOwMO2rh": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "monday",
+                  "dataPath": "monday",
+                  "label": "Monday",
+                  "description": "Does this shift apply to Mondays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "nk95CyDhBL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "saturday",
+                  "dataPath": "saturday",
+                  "label": "Saturday",
+                  "description": "Does this shift apply to Saturdays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zksyCj2olk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "sunday",
+                  "dataPath": "sunday",
+                  "label": "Sunday",
+                  "description": "Does this shift apply to Sundays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YhIz78pnyl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "thursday",
+                  "dataPath": "thursday",
+                  "label": "Thursday",
+                  "description": "Does this shift apply to Thursdays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "1fWlYvNO8J": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "tuesday",
+                  "dataPath": "tuesday",
+                  "label": "Tuesday",
+                  "description": "Does this shift apply to Tuesdays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YEScJ7peFB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "wednesday",
+                  "dataPath": "wednesday",
+                  "label": "Wednesday",
+                  "description": "Does this shift apply to Wednesdays?",
+                  "format": "checkmark"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "i-FSGYS2F6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "timeZone",
+                  "dataPath": "timeZone",
+                  "label": "Time Zone",
+                  "description": "",
+                  "format": "text"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hdUrVBSWI4": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "endAt",
+                  "dataPath": "endAt",
+                  "label": "End At",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                  "format": "time"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "i0ziAOI434": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "field": "startAt",
+                  "dataPath": "startAt",
+                  "label": "Start At",
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                  "format": "time"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "NH6MdBWqHn",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": []
+}

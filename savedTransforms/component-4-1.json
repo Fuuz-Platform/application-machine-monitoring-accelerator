@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "visualizationDatasourceOeeDoughnut",
+    "name": "Visualization Datasource: OEE Doughnut",
+    "description": "",
+    "active": true
+  },
+  "version": {
+    "id": "clpkso8ju00af01swhf0bg182",
+    "number": "1.0.0",
+    "description": "",
+    "savedTransformId": "visualizationDatasourceOeeDoughnut",
+    "scriptLanguageId": "JSONata",
+    "transform": "(\n  $redPercent := $coalesce([redPercent, 85]);\n  $yellowPercent := $coalesce([yellowPercent, 90]);\n\n  {\n    \"chart\": {\n      \"caption\": caption,\n      \"defaultCenterLabel\": $string($round(value)) & \"%\"\n    },\n    \"data\": [\n      {\n        \"label\": \"OEE\",\n        \"value\": value,\n        \"color\": value < $redPercent ? \"#f44336\"\n          : value < $yellowPercent ? \"#ffa000\"\n          : \"#43a047\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      },\n      {\n        \"label\": \"\",\n        \"value\": $max([100 - value, 0]),\n        \"color\": \"#808080\",\n        \"showLabel\": \"0\",\n        \"showValue\": \"0\"\n      }\n    ]\n  }\n)",
+    "inputSchema": {},
+    "outputSchema": {}
+  }
+}

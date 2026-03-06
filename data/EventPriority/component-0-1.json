@@ -1,0 +1,59 @@
+{
+  "api": "application",
+  "modelName": "EventPriority",
+  "payload": [
+    {
+      "id": "clou6bp2hf7ir0180app5hxfw",
+      "name": "Critical",
+      "redMinutes": 30,
+      "yellowMinutes": 15,
+      "critical": true,
+      "high": false,
+      "low": false,
+      "medium": false,
+      "usable": true,
+      "description": "",
+      "configurationSchema": null
+    },
+    {
+      "id": "clou6bxllgn59015u25vm9rgt",
+      "name": "High",
+      "redMinutes": 60,
+      "yellowMinutes": 30,
+      "critical": false,
+      "high": true,
+      "low": false,
+      "medium": false,
+      "usable": true,
+      "description": "",
+      "configurationSchema": null
+    },
+    {
+      "id": "clou6c3mfgp1b015udmpo4irj",
+      "name": "Low",
+      "redMinutes": 240,
+      "yellowMinutes": 120,
+      "critical": false,
+      "high": false,
+      "low": true,
+      "medium": false,
+      "usable": true,
+      "description": "",
+      "configurationSchema": null
+    },
+    {
+      "id": "clou6c9u3ilw60171hm6u2wxu",
+      "name": "Medium",
+      "redMinutes": 120,
+      "yellowMinutes": 60,
+      "critical": false,
+      "high": false,
+      "low": false,
+      "medium": true,
+      "usable": true,
+      "description": "",
+      "configurationSchema": null
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,1637 @@
+{
+  "packageDefinition": {
+    "name": "Machine Monitoring"
+  },
+  "packageDefinitionVersion": {
+    "id": "cm6save7a001h356jc3tf23zw",
+    "version": "1.0.5",
+    "packageDefinitionId": "machineMonitoring",
+    "exportedFileId": null
+  },
+  "packageDefinitionSelections": [
+    {
+      "id": "cm6savep6001i356jo1svkt8w",
+      "api": "application",
+      "modelName": "Visualization",
+      "selected": [
+        {
+          "id": "hourlyProduction",
+          "label": "Hourly Production"
+        },
+        {
+          "id": "modeAndEventsSingleWorkcenterGantt",
+          "label": "Mode and Events Single Workcenter Gantt"
+        },
+        {
+          "id": "oeeDoughnut",
+          "label": "OEE Doughnut"
+        },
+        {
+          "id": "oeeDoughnutSmall",
+          "label": "OEE Doughnut (Small)"
+        },
+        {
+          "id": "workcenterStatusByShiftBar",
+          "label": "Workcenter Status By Shift bar"
+        },
+        {
+          "id": "workcenterStatusByShift",
+          "label": "Workcenter Status by Shift"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "visualizationTypeId"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "configuration"
+        },
+        {
+          "name": "previewParameters"
+        },
+        {
+          "name": "datasourceSavedTransformId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001j356jbow581ua",
+      "api": "application",
+      "modelName": "Topic",
+      "selected": [
+        {
+          "id": "clnm0vgbl000p019f3hts0pah",
+          "label": "clnm0vgbl000p019f3hts0pah"
+        },
+        {
+          "id": "clnm2089n000q015t4bi321p7",
+          "label": "clnm2089n000q015t4bi321p7"
+        },
+        {
+          "id": "clnn9thug000h01cgfbh3a9qr",
+          "label": "clnn9thug000h01cgfbh3a9qr"
+        },
+        {
+          "id": "clnnkwqn2000x01a3fkg57htb",
+          "label": "clnnkwqn2000x01a3fkg57htb"
+        },
+        {
+          "id": "clnnkx9as000y01a3fvniejhr",
+          "label": "clnnkx9as000y01a3fvniejhr"
+        },
+        {
+          "id": "clnp0j398001w015thviaf1hj",
+          "label": "clnp0j398001w015thviaf1hj"
+        },
+        {
+          "id": "clnp1pbb6001x015tgfp13gwv",
+          "label": "clnp1pbb6001x015tgfp13gwv"
+        },
+        {
+          "id": "clnsznrg50002014t0ff5gcgd",
+          "label": "clnsznrg50002014t0ff5gcgd"
+        },
+        {
+          "id": "clnuuwl61000x018z72gy0xnu",
+          "label": "clnuuwl61000x018z72gy0xnu"
+        },
+        {
+          "id": "clnxcrg9i0004017k0yse9jjc",
+          "label": "clnxcrg9i0004017k0yse9jjc"
+        },
+        {
+          "id": "clnxcsozc0003017jgjuqhlp3",
+          "label": "clnxcsozc0003017jgjuqhlp3"
+        },
+        {
+          "id": "clnxcsumy0002013k40sm0uvg",
+          "label": "clnxcsumy0002013k40sm0uvg"
+        },
+        {
+          "id": "clo64zl29000f0174f6co4q33",
+          "label": "clo64zl29000f0174f6co4q33"
+        },
+        {
+          "id": "cloj0dvrc000m0167hfngc3ql",
+          "label": "cloj0dvrc000m0167hfngc3ql"
+        },
+        {
+          "id": "clq5pszed000y01apbsrnha78",
+          "label": "clq5pszed000y01apbsrnha78"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "valueSchema"
+        },
+        {
+          "name": "webhookAccessible"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001k356jawhyiowz",
+      "api": "application",
+      "modelName": "Role",
+      "selected": [
+        {
+          "id": "administrator",
+          "label": "Administrator"
+        },
+        {
+          "id": "analyst",
+          "label": "Analyst"
+        },
+        {
+          "id": "maintenance",
+          "label": "Maintenance"
+        },
+        {
+          "id": "supervisor",
+          "label": "Supervisor"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "menu"
+        },
+        {
+          "name": "homeScreenId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001l356jv1luy5py",
+      "api": "application",
+      "modelName": "ApplicationConfiguration",
+      "selected": [
+        {
+          "id": "machineMonitoring",
+          "label": "Machine Monitoring"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "configSchema"
+        },
+        {
+          "name": "configJson"
+        },
+        {
+          "name": "moduleId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001m356ja2tuss56",
+      "api": "application",
+      "modelName": "Shift",
+      "selected": [
+        {
+          "id": "clnov58ic001f01312c2j3cbm",
+          "label": "Shift 1"
+        },
+        {
+          "id": "clnoviwcz001s015t7vased0d",
+          "label": "Shift 2"
+        },
+        {
+          "id": "clnovjcbw001f015v2ara6lqi",
+          "label": "Shift 3"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "endHour"
+        },
+        {
+          "name": "endMinute"
+        },
+        {
+          "name": "startHour"
+        },
+        {
+          "name": "startMinute"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "creditAtStart"
+        },
+        {
+          "name": "friday"
+        },
+        {
+          "name": "monday"
+        },
+        {
+          "name": "saturday"
+        },
+        {
+          "name": "sunday"
+        },
+        {
+          "name": "thursday"
+        },
+        {
+          "name": "tuesday"
+        },
+        {
+          "name": "wednesday"
+        },
+        {
+          "name": "timeZone"
+        },
+        {
+          "name": "endAt"
+        },
+        {
+          "name": "startAt"
+        },
+        {
+          "name": "shiftGroupId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001n356j64ffhdse",
+      "api": "application",
+      "modelName": "ShiftGroup",
+      "selected": [
+        {
+          "id": "clnnc9n7i000b01c0fd2r8mqd",
+          "label": "Default Shift Group"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001o356jnrxawwjr",
+      "api": "application",
+      "modelName": "ModeGroup",
+      "selected": [
+        {
+          "id": "cloenzw34001b0188d84le7im",
+          "label": "Default Mode Group"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001p356jg9xnijx1",
+      "api": "application",
+      "modelName": "EventGroup",
+      "selected": [
+        {
+          "id": "cloeq3zwq001x01794yuz9hnv",
+          "label": "Default Event Group"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001q356j8sqthd8f",
+      "api": "application",
+      "modelName": "IotTagUseCase",
+      "selected": [
+        {
+          "id": "Event",
+          "label": "Event"
+        },
+        {
+          "id": "Mode",
+          "label": "Mode"
+        },
+        {
+          "id": "Other",
+          "label": "Other"
+        },
+        {
+          "id": "Production",
+          "label": "Production"
+        },
+        {
+          "id": "Scrap",
+          "label": "Scrap"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "configurationSchema"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001r356jkvh0prjc",
+      "api": "application",
+      "modelName": "IotTagType",
+      "selected": [
+        {
+          "id": "FUUZ",
+          "label": "FUUZ"
+        },
+        {
+          "id": "MQTT",
+          "label": "MQTT"
+        },
+        {
+          "id": "OPCUA",
+          "label": "OPCUA"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "configurationSchema"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001s356jy5dglok1",
+      "api": "application",
+      "modelName": "TransactionType",
+      "selected": [
+        {
+          "id": "Activity Update",
+          "label": "Activity Update"
+        },
+        {
+          "id": "Badge In",
+          "label": "Badge In"
+        },
+        {
+          "id": "Badge Out",
+          "label": "Badge Out"
+        },
+        {
+          "id": "Event Update",
+          "label": "Event Update"
+        },
+        {
+          "id": "Inventory Adjustment",
+          "label": "Inventory Adjustment"
+        },
+        {
+          "id": "Inventory Merge",
+          "label": "Inventory Merge"
+        },
+        {
+          "id": "Inventory Move",
+          "label": "Inventory Move"
+        },
+        {
+          "id": "Inventory Split",
+          "label": "Inventory Split"
+        },
+        {
+          "id": "Material Load",
+          "label": "Material Load"
+        },
+        {
+          "id": "Material Unload",
+          "label": "Material Unload"
+        },
+        {
+          "id": "Mode Change",
+          "label": "Mode Change"
+        },
+        {
+          "id": "Production Add",
+          "label": "Production Add"
+        },
+        {
+          "id": "Production Load",
+          "label": "Production Load"
+        },
+        {
+          "id": "Production Setup Add",
+          "label": "Production Setup Add"
+        },
+        {
+          "id": "Production Setup Clear",
+          "label": "Production Setup Clear"
+        },
+        {
+          "id": "Production Unload",
+          "label": "Production Unload"
+        },
+        {
+          "id": "Receipt Confirm",
+          "label": "Receipt Confirm"
+        },
+        {
+          "id": "Scrap Add",
+          "label": "Scrap Add"
+        },
+        {
+          "id": "Shipment Load",
+          "label": "Shipment Load"
+        },
+        {
+          "id": "Shipment Ship",
+          "label": "Shipment Ship"
+        },
+        {
+          "id": "Shipment Stage",
+          "label": "Shipment Stage"
+        },
+        {
+          "id": "Transfer Create",
+          "label": "Transfer Create"
+        },
+        {
+          "id": "Transfer Load",
+          "label": "Transfer Load"
+        },
+        {
+          "id": "Transfer Ship",
+          "label": "Transfer Ship"
+        },
+        {
+          "id": "Transfer Stage",
+          "label": "Transfer Stage"
+        },
+        {
+          "id": "Transfer Update",
+          "label": "Transfer Update"
+        },
+        {
+          "id": "Work Order Complete",
+          "label": "Work Order Complete"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "activityUpdate"
+        },
+        {
+          "name": "badgeIn"
+        },
+        {
+          "name": "badgeOut"
+        },
+        {
+          "name": "eventUpdate"
+        },
+        {
+          "name": "inventoryAdjustment"
+        },
+        {
+          "name": "inventoryHold"
+        },
+        {
+          "name": "inventoryMerge"
+        },
+        {
+          "name": "inventoryMove"
+        },
+        {
+          "name": "inventorySplit"
+        },
+        {
+          "name": "materialLoad"
+        },
+        {
+          "name": "materialUnload"
+        },
+        {
+          "name": "modeChange"
+        },
+        {
+          "name": "productionAdd"
+        },
+        {
+          "name": "productionMaterialLoad"
+        },
+        {
+          "name": "productionMaterialUnload"
+        },
+        {
+          "name": "productionSetupAdd"
+        },
+        {
+          "name": "productionSetupClear"
+        },
+        {
+          "name": "receiptConfirm"
+        },
+        {
+          "name": "scrapAdd"
+        },
+        {
+          "name": "shipmentLoad"
+        },
+        {
+          "name": "shipmentShip"
+        },
+        {
+          "name": "shipmentStage"
+        },
+        {
+          "name": "shipmentUnload"
+        },
+        {
+          "name": "subEventUpdate"
+        },
+        {
+          "name": "transferCreate"
+        },
+        {
+          "name": "transferLoad"
+        },
+        {
+          "name": "transferShip"
+        },
+        {
+          "name": "transferStage"
+        },
+        {
+          "name": "transferUnload"
+        },
+        {
+          "name": "transferUpdate"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "workOrderComplete"
+        },
+        {
+          "name": "color"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001t356jga7be2dx",
+      "api": "application",
+      "modelName": "DataFlowScheduleFrequency",
+      "selected": [
+        {
+          "id": "clnw6c6sn000s01586rzc8d93",
+          "label": "Every 10 minutes"
+        },
+        {
+          "id": "clv408j2b15cg019hc0w4hbvg",
+          "label": "Every 5 Minutes"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "valid"
+        },
+        {
+          "name": "lastExecution"
+        },
+        {
+          "name": "payload"
+        },
+        {
+          "name": "status"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "dataFlowScheduleId"
+        },
+        {
+          "name": "scheduleTypeId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001u356jiuenyjk7",
+      "api": "application",
+      "modelName": "DataFlowSchedule",
+      "selected": [
+        {
+          "id": "clo3b1caz000i0181f7i301g2",
+          "label": "Backfill Workcenter History"
+        },
+        {
+          "id": "clnw5uu8f000u019s9elygead",
+          "label": "Hourly OEE"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "inputSchema"
+        },
+        {
+          "name": "dataFlowId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001v356joxvfbnud",
+      "api": "application",
+      "modelName": "EventPriority",
+      "selected": [
+        {
+          "id": "clou6bp2hf7ir0180app5hxfw",
+          "label": "Critical"
+        },
+        {
+          "id": "clou6bxllgn59015u25vm9rgt",
+          "label": "High"
+        },
+        {
+          "id": "clou6c3mfgp1b015udmpo4irj",
+          "label": "Low"
+        },
+        {
+          "id": "clou6c9u3ilw60171hm6u2wxu",
+          "label": "Medium"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "redMinutes"
+        },
+        {
+          "name": "yellowMinutes"
+        },
+        {
+          "name": "critical"
+        },
+        {
+          "name": "high"
+        },
+        {
+          "name": "low"
+        },
+        {
+          "name": "medium"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "configurationSchema"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001w356jkb02txoz",
+      "api": "application",
+      "modelName": "EventType",
+      "selected": [
+        {
+          "id": "cloephxs1001p0174h51remxs",
+          "label": "Blocked"
+        },
+        {
+          "id": "cloepi38m001q01749rsc1t2m",
+          "label": "Disabled"
+        },
+        {
+          "id": "cloepi9bn001r01744env7gg6",
+          "label": "Idle"
+        },
+        {
+          "id": "cloepilm3002501883m8g7ln9",
+          "label": "Planned Downtime"
+        },
+        {
+          "id": "cloepjsty001s017440df6gwf",
+          "label": "Running"
+        },
+        {
+          "id": "cloepk4hc001u01796mp0hs6z",
+          "label": "Starved"
+        },
+        {
+          "id": "cloepjicl00260188hkw9e1mv",
+          "label": "Unplanned Downtime"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "blocked"
+        },
+        {
+          "name": "disabled"
+        },
+        {
+          "name": "idle"
+        },
+        {
+          "name": "plannedDowntime"
+        },
+        {
+          "name": "running"
+        },
+        {
+          "name": "starved"
+        },
+        {
+          "name": "unplannedDowntime"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "color"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001x356jdv5r086z",
+      "api": "application",
+      "modelName": "ModeType",
+      "selected": [
+        {
+          "id": "cloeps1mg00290188c2tde7ec",
+          "label": "Changeover"
+        },
+        {
+          "id": "cloepsbiq001w018mf668fs6g",
+          "label": "Disabled"
+        },
+        {
+          "id": "cloenpr980019018881a85w0h",
+          "label": "Idle"
+        },
+        {
+          "id": "cloept5l8002a0188fv596b94",
+          "label": "Maintenance"
+        },
+        {
+          "id": "cloepuwnw001w0179fpcdbrsd",
+          "label": "Other"
+        },
+        {
+          "id": "cloenl3n6001e0174ebvn4kfg",
+          "label": "Production"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "changeover"
+        },
+        {
+          "name": "disabled"
+        },
+        {
+          "name": "idle"
+        },
+        {
+          "name": "maintenance"
+        },
+        {
+          "name": "other"
+        },
+        {
+          "name": "production"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "color"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001y356jnyn4e41l",
+      "api": "application",
+      "modelName": "SavedTransform",
+      "selected": [
+        {
+          "id": "getShift",
+          "label": "Get Shift"
+        },
+        {
+          "id": "getShiftsInRange",
+          "label": "Get Shifts in Range"
+        },
+        {
+          "id": "oeeAverages",
+          "label": "OEE Averages"
+        },
+        {
+          "id": "clom5iz1r000e017wc5uv0g6b",
+          "label": "Visualization Datasource: Mode and Events Single Workcenter Gantt"
+        },
+        {
+          "id": "visualizationDatasourceOeeDoughnut",
+          "label": "Visualization Datasource: OEE Doughnut"
+        },
+        {
+          "id": "visualizationDatasourceWorkcenterStatusByShift",
+          "label": "Visualization Datasource: Workcenter Status by Shift"
+        },
+        {
+          "id": "visualizationDatasourceWorkcenterUtilizationByDay",
+          "label": "Visualization Datasource: Workcenter Utilization by Day"
+        },
+        {
+          "id": "getCurrentWorkcenterShift",
+          "label": "Get Current Workcenter Shift"
+        },
+        {
+          "id": "calcAv",
+          "label": "Calc Av"
+        },
+        {
+          "id": "visualizationDatasourceHourlyProduction",
+          "label": "Visualization Datasource: Hourly Production"
+        },
+        {
+          "id": "visualizationDatasourceProductionByHour",
+          "label": "Visualization Datasource: Production by Hour"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep6001z356jydisc1r1",
+      "api": "application",
+      "modelName": "Screen",
+      "selected": [
+        {
+          "id": "approvedWorkcenterForm",
+          "label": "Approved Workcenter Form"
+        },
+        {
+          "id": "approvedWorkcenterTable",
+          "label": "Approved Workcenter Table"
+        },
+        {
+          "id": "buildings",
+          "label": "Buildings"
+        },
+        {
+          "id": "dispatch",
+          "label": "Dispatch"
+        },
+        {
+          "id": "embeddedPage",
+          "label": "Embedded Page"
+        },
+        {
+          "id": "eventManagement",
+          "label": "Event Management"
+        },
+        {
+          "id": "eventMessage",
+          "label": "Event Message"
+        },
+        {
+          "id": "eventPriorityAdmin",
+          "label": "Event Priority (Admin)"
+        },
+        {
+          "id": "eventTypes",
+          "label": "Event Types"
+        },
+        {
+          "id": "initialHomeScreen",
+          "label": "Home Screen"
+        },
+        {
+          "id": "iotTag",
+          "label": "Iot Tag"
+        },
+        {
+          "id": "iotTagType",
+          "label": "Iot Tag Type"
+        },
+        {
+          "id": "iotTagTypeDetail",
+          "label": "Iot Tag Type Detail"
+        },
+        {
+          "id": "iotTagUseCase",
+          "label": "Iot Tag Use Case"
+        },
+        {
+          "id": "knowledgeBase",
+          "label": "Knowledge Base"
+        },
+        {
+          "id": "modeManagement",
+          "label": "Mode Management"
+        },
+        {
+          "id": "modeTypes",
+          "label": "Mode Types"
+        },
+        {
+          "id": "oee",
+          "label": "OEE"
+        },
+        {
+          "id": "claqzaw34001t0190d1ybf1mj",
+          "label": "OeeConfiguration Table"
+        },
+        {
+          "id": "plantDashboardV2",
+          "label": "Plant Dashboard V2"
+        },
+        {
+          "id": "productionHistory",
+          "label": "Production History"
+        },
+        {
+          "id": "productionRunAnalysis",
+          "label": "Production Run Analysis"
+        },
+        {
+          "id": "productionRunHistory",
+          "label": "Production Run History"
+        },
+        {
+          "id": "productionSetups",
+          "label": "Production Setups"
+        },
+        {
+          "id": "scrapReasonCodes",
+          "label": "Scrap Reason Codes"
+        },
+        {
+          "id": "shiftAdminOnly",
+          "label": "Shift (Admin Only)"
+        },
+        {
+          "id": "shiftGroups",
+          "label": "Shift Groups"
+        },
+        {
+          "id": "shiftModal",
+          "label": "Shift Modal"
+        },
+        {
+          "id": "transactionTypes",
+          "label": "Transaction Types"
+        },
+        {
+          "id": "workOrderProcessDistribution",
+          "label": "Work Order Process Distribution "
+        },
+        {
+          "id": "workcenterByHour",
+          "label": "Workcenter By Hour"
+        },
+        {
+          "id": "workcenterControlPanel",
+          "label": "Workcenter Control Panel"
+        },
+        {
+          "id": "workcenterDashboard",
+          "label": "Workcenter Dashboard"
+        },
+        {
+          "id": "workcenterDetail",
+          "label": "Workcenter Detail"
+        },
+        {
+          "id": "workcenterGroupDashboard",
+          "label": "Workcenter Group Dashboard"
+        },
+        {
+          "id": "workcenterGroupDashboardV2",
+          "label": "Workcenter Group Dashboard V2"
+        },
+        {
+          "id": "workcenterGroupModeHistory",
+          "label": "Workcenter Group Mode History"
+        },
+        {
+          "id": "workcenterGroups",
+          "label": "Workcenter Groups"
+        },
+        {
+          "id": "workcenterHistory",
+          "label": "Workcenter History"
+        },
+        {
+          "id": "workcenterList",
+          "label": "Workcenter List"
+        },
+        {
+          "id": "workcenterModeChange",
+          "label": "Workcenter Mode Change"
+        },
+        {
+          "id": "eventCategories",
+          "label": "Event Categories"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "isWidget"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep60020356jgror4u7d",
+      "api": "application",
+      "modelName": "DataFlow",
+      "selected": [
+        {
+          "id": "alarmStateChangeScreenFlow",
+          "label": "Alarm State Change Screen Flow"
+        },
+        {
+          "id": "backFillEndDatesOfWorkcenterHistory",
+          "label": "Back Fill End Dates of Workcenter History"
+        },
+        {
+          "id": "calculateOee",
+          "label": "Calculate OEE"
+        },
+        {
+          "id": "changeWorkcenterMode",
+          "label": "Change Workcenter Mode"
+        },
+        {
+          "id": "controlPanelRouter",
+          "label": "Control Panel Router"
+        },
+        {
+          "id": "createDeviceSubscriptionFromIotTags",
+          "label": "Create Device Subscription From Iot Tags"
+        },
+        {
+          "id": "createHistoricalIotTagValues",
+          "label": "Create Historical IOT Tag Values"
+        },
+        {
+          "id": "iotTagHandler",
+          "label": "IOT Tag Handler"
+        },
+        {
+          "id": "loadWorkcenterOutputs",
+          "label": "Load Workcenter Outputs"
+        },
+        {
+          "id": "modeEventGanttDataFromWorkcenterHistory",
+          "label": "Mode Event Gantt Data from Workcenter History"
+        },
+        {
+          "id": "noModeGroupConfigured",
+          "label": "No Mode Group Configured"
+        },
+        {
+          "id": "publishOnProductionSetupModeChange",
+          "label": "Publish on Production Setup Mode Change"
+        },
+        {
+          "id": "recordProduction",
+          "label": "Record Production"
+        },
+        {
+          "id": "startStopRun",
+          "label": "Start Stop Run"
+        },
+        {
+          "id": "updateIotTagByDeviceSubscriptions",
+          "label": "Update Iot Tag by Device Subscriptions"
+        },
+        {
+          "id": "workcenterModeChangeLaunch",
+          "label": "WorkcenterModeChangeLaunch"
+        },
+        {
+          "id": "getOeEsForShift",
+          "label": "Get OEEs for shift"
+        },
+        {
+          "id": "createAlarmOnEvent",
+          "label": "Create Alarm on Event"
+        },
+        {
+          "id": "getOeEsForShiftProductionRun",
+          "label": "getOeEsForShiftProductionRun"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "dataFlowTypeId"
+        },
+        {
+          "name": "moduleId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ]
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep60021356jges36tj4",
+      "api": "application",
+      "modelName": "Sequence",
+      "selected": [
+        {
+          "id": "alarms",
+          "label": "Alarms"
+        },
+        {
+          "id": "approvedWorkcenters",
+          "label": "Approved Workcenters"
+        },
+        {
+          "id": "productionRuns",
+          "label": "Production Runs"
+        },
+        {
+          "id": "serialNumbers",
+          "label": "Serial Numbers"
+        },
+        {
+          "id": "workOrderDistributions",
+          "label": "Work Order Distributions"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "prefix"
+        },
+        {
+          "name": "suffix"
+        },
+        {
+          "name": "zeroPadding"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    },
+    {
+      "id": "cm6savep60022356jqvsmlzws",
+      "api": "application",
+      "modelName": "DataModel",
+      "selected": [
+        {
+          "id": "alarm",
+          "label": "Alarm"
+        },
+        {
+          "id": "alarmStatus",
+          "label": "AlarmStatus"
+        },
+        {
+          "id": "approvedWorkcenter",
+          "label": "ApprovedWorkcenter"
+        },
+        {
+          "id": "event",
+          "label": "Event"
+        },
+        {
+          "id": "eventCategory",
+          "label": "EventCategory"
+        },
+        {
+          "id": "eventGroup",
+          "label": "EventGroup"
+        },
+        {
+          "id": "eventList",
+          "label": "EventList"
+        },
+        {
+          "id": "eventPriority",
+          "label": "EventPriority"
+        },
+        {
+          "id": "eventType",
+          "label": "EventType"
+        },
+        {
+          "id": "facility",
+          "label": "Facility"
+        },
+        {
+          "id": "iotTag",
+          "label": "IotTag"
+        },
+        {
+          "id": "iotTagHistoricalValue",
+          "label": "IotTagHistoricalValue"
+        },
+        {
+          "id": "iotTagType",
+          "label": "IotTagType"
+        },
+        {
+          "id": "iotTagUseCase",
+          "label": "IotTagUseCase"
+        },
+        {
+          "id": "mode",
+          "label": "Mode"
+        },
+        {
+          "id": "modeGroup",
+          "label": "ModeGroup"
+        },
+        {
+          "id": "modeList",
+          "label": "ModeList"
+        },
+        {
+          "id": "modeType",
+          "label": "ModeType"
+        },
+        {
+          "id": "oee",
+          "label": "Oee"
+        },
+        {
+          "id": "oeeAggregate",
+          "label": "OeeAggregate"
+        },
+        {
+          "id": "oeeConfiguration",
+          "label": "OeeConfiguration"
+        },
+        {
+          "id": "oeeDimension",
+          "label": "OeeDimension"
+        },
+        {
+          "id": "oeeDimensionOeeConfiguration",
+          "label": "OeeDimensionOeeConfiguration"
+        },
+        {
+          "id": "oeeTimeFrame",
+          "label": "OeeTimeFrame"
+        },
+        {
+          "id": "productionHistory",
+          "label": "ProductionHistory"
+        },
+        {
+          "id": "productionRun",
+          "label": "ProductionRun"
+        },
+        {
+          "id": "productionSetup",
+          "label": "ProductionSetup"
+        },
+        {
+          "id": "productionSetupOutput",
+          "label": "ProductionSetupOutput"
+        },
+        {
+          "id": "scrapReason",
+          "label": "ScrapReason"
+        },
+        {
+          "id": "shift",
+          "label": "Shift"
+        },
+        {
+          "id": "shiftGroup",
+          "label": "ShiftGroup"
+        },
+        {
+          "id": "test",
+          "label": "Test"
+        },
+        {
+          "id": "transactionType",
+          "label": "TransactionType"
+        },
+        {
+          "id": "workOrderProcessDistribution",
+          "label": "WorkOrderProcessDistribution"
+        },
+        {
+          "id": "workcenter",
+          "label": "Workcenter"
+        },
+        {
+          "id": "workcenterGroup",
+          "label": "WorkcenterGroup"
+        },
+        {
+          "id": "workcenterHistory",
+          "label": "WorkcenterHistory"
+        },
+        {
+          "id": "workcenterIotTag",
+          "label": "WorkcenterIotTag"
+        },
+        {
+          "id": "workcenterMode",
+          "label": "WorkcenterMode"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "dataModelKindId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cm6save7a001h356jc3tf23zw"
+    }
+  ]
+}

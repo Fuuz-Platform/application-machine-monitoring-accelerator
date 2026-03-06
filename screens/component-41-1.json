@@ -1,0 +1,1052 @@
+{
+  "header": {
+    "id": "eventCategories",
+    "name": "Event Categories",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clq412zyg000j014d324a0ofy",
+    "number": "0.0.5",
+    "description": "",
+    "screenId": "eventCategories",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "EventCategoryTable",
+          "tabTitle": "Event Category Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 3,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 1,
+                    "Text": 3,
+                    "Checkbox": 8,
+                    "Table Column": 12
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "EventCategory",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "PvvkLCKs5D",
+                  "UG1PFZHX48",
+                  "7uJ--fn7IU"
+                ],
+                "linkedNodes": {}
+              },
+              "PvvkLCKs5D": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "IsljprWtaX"
+                ],
+                "linkedNodes": {}
+              },
+              "IsljprWtaX": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "EventCategory",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "PvvkLCKs5D",
+                "hidden": false,
+                "nodes": [
+                  "ZdCoRxKzt-"
+                ],
+                "linkedNodes": {}
+              },
+              "ZdCoRxKzt-": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": true,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "IsljprWtaX",
+                "hidden": false,
+                "nodes": [
+                  "B4NtFlcKe8"
+                ],
+                "linkedNodes": {}
+              },
+              "B4NtFlcKe8": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "field": "name",
+                  "description": "",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "name._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "ZdCoRxKzt-",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UG1PFZHX48": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "rTaiTs8wUW",
+                  "WZJ8-jFuW7",
+                  "i0AT0zpOFD",
+                  "Ehd1TJlFuO"
+                ],
+                "linkedNodes": {}
+              },
+              "rTaiTs8wUW": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "UG1PFZHX48",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WZJ8-jFuW7": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Event Category",
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Ancillary",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "ancillary",
+                          "field": "ancillary",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with ancillary equipment such as fixtures, tools, gages, etc..",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Equipment",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "equipment",
+                          "field": "equipment",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with physical equipment.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Labor",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "labor",
+                          "field": "labor",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with labor, availability.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Material",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "material",
+                          "field": "material",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with materials.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Other",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "other",
+                          "field": "other",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with things that do not fall into a standard category.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Quality",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with product or process quality related issues.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Support",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "support",
+                          "field": "support",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with support or interdepartmental conditions.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Schedule",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "schedule",
+                          "field": "schedule",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with schedule related conditions.",
+                          "element": "Checkbox",
+                          "defaultValue": false,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Checkbox",
+                          "defaultValue": true,
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateEventCategory($payload: [EventCategoryCreatePayloadInput!]!) {\n  mutation: createEventCategory(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Event Category \" & data.mutation[0].name & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "UG1PFZHX48",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "i0AT0zpOFD": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Event Category \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Name",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "name",
+                          "field": "name",
+                          "description": "",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Ancillary",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "ancillary",
+                          "field": "ancillary",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with ancillary equipment such as fixtures, tools, gages, etc..",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Equipment",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "equipment",
+                          "field": "equipment",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with physical equipment.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Labor",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "labor",
+                          "field": "labor",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with labor, availability.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Material",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "material",
+                          "field": "material",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with materials.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Other",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "other",
+                          "field": "other",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with things that do not fall into a standard category.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Quality",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with product or process quality related issues.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Support",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "support",
+                          "field": "support",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with support or interdepartmental conditions.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Schedule",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "schedule",
+                          "field": "schedule",
+                          "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with the production schedule related - either materials arriving, or lack of scheduled work.",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "usable",
+                          "field": "usable",
+                          "description": "",
+                          "element": "Checkbox",
+                          "type": "checkbox"
+                        },
+                        {
+                          "label": "Description",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "description",
+                          "field": "description",
+                          "description": "",
+                          "element": "MarkdownInput",
+                          "type": "markdown"
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateEventCategory($payload: [EventCategoryUpdatePayloadInput!]!) {\n  mutation: updateEventCategory(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Event Category \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "UG1PFZHX48",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Ehd1TJlFuO": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Event Category \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteEventCategory($payload: [EventCategoryDeletePayloadInput!]!) {\n  mutation: deleteEventCategory(payload: $payload) { \n    id\n    name\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Event Category \" & $components.Table1.selectedRows.name) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "UG1PFZHX48",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7uJ--fn7IU": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "EventCategory",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "single",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "filterFormName": "Form1",
+                  "description": "",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "ASyMDEdfIm",
+                  "k1AHsQEGR6",
+                  "dnx_1XcR3c",
+                  "9rAL0keXiK",
+                  "lW648fVWDU",
+                  "TN7CesgNjx",
+                  "z1w1WqjcAl",
+                  "r_ALZ7Fgzi",
+                  "sdBcvwFdyy",
+                  "Izn9HZG-AL",
+                  "HAuY-u2gZW"
+                ],
+                "linkedNodes": {}
+              },
+              "ASyMDEdfIm": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "field": "name",
+                  "dataPath": "name",
+                  "description": "",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "k1AHsQEGR6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ancillary",
+                  "format": "checkmark",
+                  "field": "ancillary",
+                  "dataPath": "ancillary",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with ancillary equipment such as fixtures, tools, gages, etc.."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dnx_1XcR3c": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Equipment",
+                  "format": "checkmark",
+                  "field": "equipment",
+                  "dataPath": "equipment",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with physical equipment."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9rAL0keXiK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Labor",
+                  "format": "checkmark",
+                  "field": "labor",
+                  "dataPath": "labor",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with labor, availability."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lW648fVWDU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Material",
+                  "format": "checkmark",
+                  "field": "material",
+                  "dataPath": "material",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with materials."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "TN7CesgNjx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Other",
+                  "format": "checkmark",
+                  "field": "other",
+                  "dataPath": "other",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with things that do not fall into a standard category."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "z1w1WqjcAl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quality",
+                  "format": "checkmark",
+                  "field": "quality",
+                  "dataPath": "quality",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with product or process quality related issues."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "r_ALZ7Fgzi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Support",
+                  "format": "checkmark",
+                  "field": "support",
+                  "dataPath": "support",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with support or interdepartmental conditions."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Izn9HZG-AL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "field": "usable",
+                  "dataPath": "usable",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HAuY-u2gZW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "format": "markdown",
+                  "field": "description",
+                  "dataPath": "description",
+                  "description": ""
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "sdBcvwFdyy": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Schedule",
+                  "format": "checkmark",
+                  "field": "schedule",
+                  "dataPath": "schedule",
+                  "description": "Used to idenfity categories of downtime events that pertain specifically to trouble with the production schedule related - either materials arriving, or lack of scheduled work.",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "7uJ--fn7IU",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clq40zgkv000e015qfnr3gdqs",
+      "title": "Event Categories",
+      "path": "/productionManagement/manufacturing/eventCategories",
+      "moduleId": "manufacturing",
+      "screenId": "eventCategories",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

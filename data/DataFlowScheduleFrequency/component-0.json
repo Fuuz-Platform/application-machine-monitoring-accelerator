@@ -1,0 +1,53 @@
+{
+  "api": "application",
+  "modelName": "DataFlowScheduleFrequency",
+  "payload": [
+    {
+      "id": "clnw6c6sn000s01586rzc8d93",
+      "name": "Every 10 minutes",
+      "active": true,
+      "valid": true,
+      "lastExecution": "2025-02-05T19:22:15.513Z",
+      "payload": null,
+      "status": {
+        "message": "Successfully ran schedule",
+        "info": {
+          "id": "cron_cm6ru1h0k000m01wh1xdz8532",
+          "typeName": "cron",
+          "config": {
+            "cronString": "*/10 * * * *"
+          }
+        }
+      },
+      "config": {
+        "cronString": "*/10 * * * *"
+      },
+      "dataFlowScheduleId": "clnw5uu8f000u019s9elygead",
+      "scheduleTypeId": "cron"
+    },
+    {
+      "id": "clv408j2b15cg019hc0w4hbvg",
+      "name": "Every 5 Minutes",
+      "active": true,
+      "valid": true,
+      "lastExecution": "2024-05-31T15:12:42.249Z",
+      "payload": null,
+      "status": {
+        "message": "Successfully ran schedule",
+        "info": {
+          "id": "cron_clwuiwx45000q01z4av07gkh7",
+          "typeName": "cron",
+          "config": {
+            "cronString": "*/5 * * * *"
+          }
+        }
+      },
+      "config": {
+        "cronString": "*/5 * * * *"
+      },
+      "dataFlowScheduleId": "clo3b1caz000i0181f7i301g2",
+      "scheduleTypeId": "cron"
+    }
+  ],
+  "metadata": {}
+}

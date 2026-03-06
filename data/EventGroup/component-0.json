@@ -1,0 +1,12 @@
+{
+  "api": "application",
+  "modelName": "EventGroup",
+  "payload": [
+    {
+      "id": "cloeq3zwq001x01794yuz9hnv",
+      "name": "Default Event Group",
+      "usable": true
+    }
+  ],
+  "metadata": {}
+}

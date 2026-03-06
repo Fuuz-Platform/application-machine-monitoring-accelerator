@@ -1,0 +1,33 @@
+{
+  "api": "application",
+  "modelName": "ApplicationConfiguration",
+  "payload": [
+    {
+      "id": "machineMonitoring",
+      "name": "Machine Monitoring",
+      "description": "",
+      "configSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      },
+      "configJson": {
+        "workcenterHistory": {
+          "options": {
+            "changeModeBasedOnEvent": false
+          },
+          "intergration": {
+            "flowId": null
+          }
+        },
+        "productionHistory": {
+          "intergration": {
+            "flowId": null
+          }
+        }
+      },
+      "moduleId": "manufacturing"
+    }
+  ],
+  "metadata": {}
+}

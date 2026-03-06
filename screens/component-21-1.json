@@ -1,0 +1,2014 @@
+{
+  "header": {
+    "id": "productionRunAnalysis",
+    "name": "Production Run Analysis",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clqr1lumi000j017kdgfhhk5g",
+    "number": "0.0.42",
+    "description": "",
+    "screenId": "productionRunAnalysis",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 4,
+                    "Form": 1,
+                    "Select": 1,
+                    "Text": 19,
+                    "Tab Bar": 1,
+                    "Table": 6,
+                    "Table Column": 54,
+                    "Visualization": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "_Z_n0Soqk",
+                  "e0tUIHkL7"
+                ],
+                "linkedNodes": {}
+              },
+              "_Z_n0Soqk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "340",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "W1JSX6-z5"
+                ],
+                "linkedNodes": {}
+              },
+              "W1JSX6-z5": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "remote": true,
+                      "transform": "edges.node~>| $ |\n\n{\n\"runDuration\": duration > 0 ? duration : $sum(runTime+changeoverTime+unplannedDowntime+plannedDowntime),\n\n\"runNumber\": $isNilOrEmpty(data.endAt) ? number & \" - RUNNING\" : number\n}\n\n|"
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "changeoverAggregate",
+                      "performance",
+                      "quality",
+                      "duration",
+                      "runTime",
+                      "changeoverTime",
+                      "unplannedDowntime",
+                      "plannedDowntime",
+                      "oee",
+                      "availability",
+                      "quality",
+                      "number",
+                      "endAt"
+                    ],
+                    "disableDataChangeIndicator": true,
+                    "model": "ProductionRun"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": ""
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form"
+                },
+                "parent": "_Z_n0Soqk",
+                "hidden": false,
+                "nodes": [
+                  "kOV_ep4Pug"
+                ],
+                "linkedNodes": {}
+              },
+              "kOV_ep4Pug": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 4,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "W1JSX6-z5",
+                "hidden": false,
+                "nodes": [
+                  "rNdmT3uR7",
+                  "meKAzfGu3",
+                  "b1gDuXQAW",
+                  "clpbaaf95002o356ezyhzn39g",
+                  "clpbad76g004x356eh2tu8wqz",
+                  "clpbagqpr007l356exf3jxgvq",
+                  "clpbalap200bf356enslw91wf",
+                  "clpbang2000da356e4i0561t9",
+                  "clpbao62j00e4356em4vkmrni",
+                  "clpbaojyn00ex356ecxpwr9cx",
+                  "clpbaraoi00g1356ep6o2phnw",
+                  "clpbayw8p00qc356e2vsr3bo7",
+                  "clpbasogw00gz356eml0fef7z",
+                  "clqqv3wbw00ka356ehijcyoeo",
+                  "clqdty4lr005k356eg33tm785",
+                  "clqdtzqmk0064356ebstmwqxc",
+                  "clpbau7ix00jz356e5wn7vwph",
+                  "K3kF1RXNa"
+                ],
+                "linkedNodes": {}
+              },
+              "rNdmT3uR7": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Number",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "runNumber",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h4",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "data.runNumber"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "b1gDuXQAW": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Started",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "startAt",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The actual date/time of when this Run began (ie production setup added)",
+                  "field": "startAt",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "format": "datetime",
+                  "fontSize": "h6"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbaaf95002o356ezyhzn39g": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Ended",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "endAt",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The actual date/time of when this Run ended (ie. production setup cleared)",
+                  "field": "endAt",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "format": "datetime",
+                  "fontSize": "h6"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "meKAzfGu3": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "workcenter.code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "workcenter.code",
+                  "fontSize": "h6",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbad76g004x356eh2tu8wqz": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Total Duration",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "runDuration",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {
+                    "fields": []
+                  },
+                  "format": "float",
+                  "formatString": "hh:mm:ss",
+                  "data": {
+                    "__transform": "data.runDuration",
+                    "__dynamicFields": {
+                      "payload": []
+                    }
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text5"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbagqpr007l356exf3jxgvq": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Production Time",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "runTime",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Run Time (seconds) Aggregation:\n\nThe aggregation looks at workcenterHistory records, that fall between the productionRun.startAt and productionRun.endAt to determine based on the Events (not Modes) whether the time was spend up, or down.\n\nPlanned Production Time = resource shift availability (total hours) between productionRun.startAt & productionRun.EndAt (do not excluded plannedDowntime, include all 'avialable' time); Planned Prod Time is always based on the calendar Available time for the workcenter. User must adjust the calendar - when appropriate to adjust the planned production time.\n\nRun Time = Planned Production Time (Minus)-\n\nworkcenterHistory records where PlannedDowntime Or UnPlannedDowntime ==1",
+                  "field": "runTime",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbalap200bf356enslw91wf": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Cycle Time",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "averageCycleTime",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "description": "Average Cycle time (seconds)\n\n((produced + scrap) / RunTime",
+                  "field": "averageCycleTime",
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text7"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbang2000da356e4i0561t9": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Total Good Units",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "produced",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Total produced where includeInProductionCounts = 1\n\nThis  is the total throughput for the entire production run in good units made.",
+                  "field": "produced",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text8"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbao62j00e4356em4vkmrni": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Total Scrap Units",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "scrap",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Total Scrap where includeInProductionCounts = 1",
+                  "field": "scrap",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text9"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbaojyn00ex356ecxpwr9cx": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Unplanned Downtime",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "unplannedDowntime",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.unplannedDowntime=true\n\nDuration in Seconds",
+                  "field": "unplannedDowntime",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text10"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbaraoi00g1356ep6o2phnw": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Planned Downtime",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "plannedDowntime",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.plannedDowntime=true\n\nDuration in Seconds",
+                  "field": "plannedDowntime",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text11"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbasogw00gz356eml0fef7z": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Changeover Expected",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "changeoverAggregate",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Sum of all changeoverTimes of all production outputs for the run.",
+                  "field": "changeoverAggregate",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {
+                    "fields": []
+                  },
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text12"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbau7ix00jz356e5wn7vwph": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Quality",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "quality",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "scrap / totalProduction\n\ntotalProduction (produced + scrap), Where WorkcenterMode.includeInProductionCounts = 1",
+                  "field": "quality",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h5",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "0.00%"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text14"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbayw8p00qc356e2vsr3bo7": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Ideal Aggregate (Per Hour)",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "idealAggregate",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Sum of all Ideal rates for all production outputs - this defines the total expected throughput per hour for this Run.",
+                  "field": "idealAggregate",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {},
+                  "format": "float"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text15"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "e0tUIHkL7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "K2w-Fd5Ms"
+                ],
+                "linkedNodes": {}
+              },
+              "K2w-Fd5Ms": {
+                "type": {
+                  "resolvedName": "TabBar"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "auto",
+                  "orientation": "horizontal",
+                  "justifyTabs": "start",
+                  "tabWidth": 160,
+                  "hidden": false,
+                  "tabActiveColor": "secondary",
+                  "tabs": [
+                    {
+                      "tabTitle": "Production HIstory"
+                    },
+                    {
+                      "tabTitle": "Workcenter History"
+                    }
+                  ]
+                },
+                "displayName": "Tab Bar",
+                "custom": {
+                  "elementName": "TabBar1"
+                },
+                "parent": "e0tUIHkL7",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {
+                  "TabBar1Detail0": "IdpvQCCHOn",
+                  "TabBar1Detail1": "TTIjUF1yDK",
+                  "TabBar1Detail2": "G_E81cAdPU"
+                }
+              },
+              "IdpvQCCHOn": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "400",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail0"
+                },
+                "parent": "K2w-Fd5Ms",
+                "hidden": false,
+                "nodes": [
+                  "clqdunzfi000x356eicpn1gnp"
+                ],
+                "linkedNodes": {}
+              },
+              "TTIjUF1yDK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "400",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail1"
+                },
+                "parent": "K2w-Fd5Ms",
+                "hidden": false,
+                "nodes": [
+                  "clqdunw0z000i356e1on1gdis"
+                ],
+                "linkedNodes": {}
+              },
+              "G_E81cAdPU": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "350",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "TabBar1Detail2"
+                },
+                "parent": "K2w-Fd5Ms",
+                "hidden": false,
+                "nodes": [
+                  "clpbby9b401b0356e7i90a94d"
+                ],
+                "linkedNodes": {}
+              },
+              "clpbby9b401b0356e7i90a94d": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": "refresh",
+                    "model": "WorkcenterHistory",
+                    "parameters": "{\n  \"filter\": {\n    \"productionRunId\": {\n      \"_eq\": id\n    }\n  },\n   \"orderBy\": {\n   \"field\":\"createdAt\",\n   \"direction\":\"asc\"\n }\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)",
+                  "fontSize": "14",
+                  "filterFormName": "Form",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table4"
+                },
+                "parent": "G_E81cAdPU",
+                "hidden": false,
+                "nodes": [
+                  "clpbby9b401b2356ehq4jmhxv",
+                  "clpbby9b401b5356egkj6zmx1",
+                  "clpbby9b401b6356e2o6l7oqi",
+                  "clpbby9b401b7356e476eg0h1",
+                  "clpbbzutg01dd356ebcemngca",
+                  "clpbc01fh01dl356ef1fr2ysj",
+                  "Nyqe7_72J",
+                  "clpbc0js701dz356eav894dhk",
+                  "clpbc0pmo01e6356ellmhiy1d",
+                  "arrZTSRAB"
+                ],
+                "linkedNodes": {}
+              },
+              "clpbby9b401b2356ehq4jmhxv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transaction Type",
+                  "format": "text",
+                  "dataPath": "transactionType.name",
+                  "field": "transactionType.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbby9b401b5356egkj6zmx1": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Message",
+                  "format": "text",
+                  "dataPath": "message",
+                  "description": "A message related to the history record",
+                  "field": "message"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbby9b401b6356e2o6l7oqi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Occur At",
+                  "format": "datetime",
+                  "dataPath": "occurAt",
+                  "description": "Time in which it occurs - logDate",
+                  "field": "occurAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbby9b401b7356e476eg0h1": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "format": "datetime",
+                  "dataPath": "endAt",
+                  "description": "Time in which it ends or has been resolved.",
+                  "field": "endAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbbzutg01dd356ebcemngca": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credited At",
+                  "format": "datetime",
+                  "dataPath": "creditedAt",
+                  "description": "Report Date -",
+                  "field": "creditedAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbc01fh01dl356ef1fr2ysj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Alarm Number",
+                  "format": "text",
+                  "dataPath": " ",
+                  "field": "alarm.number"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Nyqe7_72J": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Name",
+                  "format": "text",
+                  "dataPath": "shift.name",
+                  "field": "shift.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbc0js701dz356eav894dhk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Mode",
+                  "format": "text",
+                  "dataPath": "mode.name",
+                  "field": "mode.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clpbc0pmo01e6356ellmhiy1d": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event",
+                  "format": "text",
+                  "dataPath": "event.name",
+                  "field": "event.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "arrZTSRAB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created",
+                  "format": "datetime",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "field": "createdAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "clpbby9b401b0356e7i90a94d",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "K3kF1RXNa": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Performance",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "performance",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Performance = (idealRate * totalCount) / runTime\n\ntotalCount = produced+scrap\n\nincludeInProductionCounts = 1",
+                  "field": "performance",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h5",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "0.00%"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text16"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdty4lr005k356eg33tm785": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run OEE",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "oee",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "",
+                  "field": "oee",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h5",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "0.00%"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text17"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdtzqmk0064356ebstmwqxc": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Run Availability",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "availability",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "",
+                  "field": "availability",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h5",
+                  "query": {},
+                  "format": "float",
+                  "formatString": "0.00%"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text18"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw0z000i356e1on1gdis": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "100%",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": "[edges.node~>|$|(\n\n\n$d := occurAt;\n{\n\"toNow\": $not($isNilOrEmpty(endAt)) ? duration :\n$moment().diff($moment($d),'seconds')\n}\n\n\n\n)|]",
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "event.eventType.color",
+                      "mode.modeType.color",
+                      "endAt",
+                      "occurAt",
+                      "duration"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": "refresh",
+                    "model": "WorkcenterHistory",
+                    "parameters": "{\n  \"filter\": {\n    \"productionRunId\": {\n      \"_eq\": id\n    }\n  },\n   \"orderBy\": {\n   \"field\":\"createdAt\",\n   \"direction\":\"asc\"\n }\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "Only pull records from externalsystem where workcenterHistorySync is true (on workcenter)",
+                  "fontSize": "14",
+                  "filterFormName": "Form",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table5"
+                },
+                "parent": "TTIjUF1yDK",
+                "hidden": false,
+                "nodes": [
+                  "clqdunw0z000j356ebz6hd5ks",
+                  "clqdunw0z000k356eghsf8mh2",
+                  "clqdunw10000o356et2jki463",
+                  "clqdunw11000p356en4oqfa01",
+                  "clqdunw11000q356ey2q9zutk",
+                  "a-53KbpjO",
+                  "Se6SwQm7P",
+                  "clqdunw11000r356ekesyfhk3",
+                  "YXMkhyQ-_",
+                  "clqdunw10000n356eas5wzetj",
+                  "clqdunw10000l356echkw5nwl",
+                  "clqdunw10000m356einh5988s"
+                ],
+                "linkedNodes": {}
+              },
+              "clqdunw0z000j356ebz6hd5ks": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transaction Type",
+                  "format": "text",
+                  "dataPath": "transactionType.name",
+                  "field": "transactionType.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn31"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw0z000k356eghsf8mh2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Message",
+                  "format": "text",
+                  "dataPath": "message",
+                  "description": "A message related to the history record",
+                  "field": "message",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn32"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw10000l356echkw5nwl": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Occur At",
+                  "format": "datetime",
+                  "dataPath": "occurAt",
+                  "description": "Time in which it occurs - logDate",
+                  "field": "occurAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn33"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw10000m356einh5988s": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End At",
+                  "format": "datetime",
+                  "dataPath": "endAt",
+                  "description": "Time in which it ends or has been resolved.",
+                  "field": "endAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn34"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw10000n356eas5wzetj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Credited At",
+                  "format": "datetime",
+                  "dataPath": "creditedAt",
+                  "description": "Report Date -",
+                  "field": "creditedAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn35"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw10000o356et2jki463": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Alarm Number",
+                  "format": "text",
+                  "dataPath": " ",
+                  "field": "alarm.number"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn36"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw11000p356en4oqfa01": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift Name",
+                  "format": "text",
+                  "dataPath": "shift.name",
+                  "field": "shift.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn37"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw11000q356ey2q9zutk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Mode",
+                  "format": "text",
+                  "dataPath": "mode.name",
+                  "field": "mode.name",
+                  "style": {
+                    "__transform": "{\"background\": data.mode.modeType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn38"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunw11000r356ekesyfhk3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event",
+                  "format": "text",
+                  "dataPath": "event.name",
+                  "field": "event.name",
+                  "style": {
+                    "__transform": "{\"background\": data.event.eventType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn39"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfi000x356eicpn1gnp": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "100%",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "transactionType.color",
+                      "transactionType.scrapAdd",
+                      "transactionType.productionAdd"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": "refresh",
+                    "model": "ProductionHistory",
+                    "parameters": "{\n  \"filter\": {\n    \"productionRunId\": {\n      \"_eq\": id\n    }\n  },\n   \"orderBy\": {\n   \"field\":\"createdAt\",\n   \"direction\":\"asc\"\n }\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "This table is a list of production history records\nLinks out to production depletion",
+                  "fontSize": "14",
+                  "filterFormName": "Form",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table6"
+                },
+                "parent": "IdpvQCCHOn",
+                "hidden": false,
+                "nodes": [
+                  "clqdunzfi000y356exf9lqvi9",
+                  "clqdunzfi000z356enc1j14nh",
+                  "clqdunzfi0010356e8i7waq2g",
+                  "clqdunzfj0011356e0586n4vx",
+                  "clqdunzfj0012356e39t7owyj",
+                  "clqdunzfj0013356eu35n9jzd",
+                  "clqdunzfj0014356eklnf4nt4",
+                  "clqdunzfj0015356e4gghlf27",
+                  "clqdunzfj0016356e0wdpg1hp",
+                  "clqdunzfj0017356e7xoi7sd8",
+                  "clqdunzfk0018356euslcsx8l"
+                ],
+                "linkedNodes": {}
+              },
+              "clqdunzfi000y356exf9lqvi9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product Number Revision",
+                  "format": "text",
+                  "dataPath": "productNumberRevision",
+                  "description": "partNumberRevision",
+                  "field": "productNumberRevision"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn41"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfi000z356enc1j14nh": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Operation Code",
+                  "format": "text",
+                  "dataPath": "operationCode",
+                  "description": "",
+                  "field": "operationCode"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn42"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfi0010356e8i7waq2g": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Number",
+                  "format": "text",
+                  "dataPath": "workOrderNumber",
+                  "description": "job number",
+                  "field": "workOrderNumber"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn43"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0011356e0586n4vx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Transaction",
+                  "format": "text",
+                  "dataPath": "transactionType.name",
+                  "field": "transactionType.name",
+                  "style": {
+                    "__transform": "{\"background\": data.transactionType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn44"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0012356e39t7owyj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quantity",
+                  "format": "text",
+                  "dataPath": "quantity",
+                  "description": "What is the production quantity?",
+                  "field": "quantity",
+                  "style": {
+                    "justifyContent": "flex-end"
+                  },
+                  "headerAlign": "right"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn45"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0013356eu35n9jzd": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Include",
+                  "format": "checkmark",
+                  "dataPath": "includeInProductionCounts",
+                  "description": "This is matched based on the 'currentMode' at the time the production is entered by either PLC or user.",
+                  "field": "includeInProductionCounts",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn46"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0014356eklnf4nt4": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Serial No",
+                  "format": "text",
+                  "dataPath": "serialNo",
+                  "description": "",
+                  "field": "serialNo"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn47"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0015356e4gghlf27": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Employee",
+                  "format": "text",
+                  "dataPath": "employeeName",
+                  "description": "",
+                  "field": "employeeName"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn48"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0016356e0wdpg1hp": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Shift",
+                  "format": "text",
+                  "dataPath": "shift.name",
+                  "field": "shift.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn49"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfj0017356e7xoi7sd8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap Reason",
+                  "format": "text",
+                  "dataPath": "scrapReason.code",
+                  "field": "scrapReason.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn50"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqdunzfk0018356euslcsx8l": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created",
+                  "format": "datetime",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "field": "createdAt",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn51"
+                },
+                "parent": "clqdunzfi000x356eicpn1gnp",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a-53KbpjO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Type",
+                  "format": "text",
+                  "dataPath": "event.eventType.name",
+                  "field": "event.eventType.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn52"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Se6SwQm7P": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Category",
+                  "format": "text",
+                  "dataPath": "event.eventCategory.name",
+                  "field": "event.eventCategory.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn53"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "YXMkhyQ-_": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Duration",
+                  "format": "float",
+                  "dataPath": "toNow",
+                  "query": {
+                    "fields": []
+                  },
+                  "formatString": "hh:mm:ss",
+                  "data": {
+                    "__transform": "data.toNow",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn54"
+                },
+                "parent": "clqdunw0z000i356e1on1gdis",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clqqv3wbw00ka356ehijcyoeo": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Changeover Actual",
+                  "visible": true,
+                  "formElement": "Form",
+                  "dataPath": "changeoverTime",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Changeover Time - is the actual time spent in changeover during this production run (seconds)\n\nAggregate Workcenter History Records falling between productionRun.startAt and productionRun.endAt where modeType.changeover = 1.\n\nNote: multiple setups/changeovers that occur during a single production run will impact this number.",
+                  "field": "changeoverTime",
+                  "labelPosition": {
+                    "id": "column",
+                    "label": "Above"
+                  },
+                  "fontSize": "h6",
+                  "query": {
+                    "fields": []
+                  },
+                  "format": "float",
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text19"
+                },
+                "parent": "kOV_ep4Pug",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clpy3jcsm0002016o7km88v9s",
+      "title": "Production Run Analysis",
+      "path": "/productionManagement/manufacturing/productionRunAnalysis/:id",
+      "moduleId": "manufacturing",
+      "screenId": "productionRunAnalysis",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

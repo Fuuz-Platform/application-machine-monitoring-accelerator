@@ -1,0 +1,2256 @@
+{
+  "header": {
+    "id": "eventManagement",
+    "name": "Event Management",
+    "description": "Manage Mode Groups and Modes",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clq3tnko4000d014dbodm0cnh",
+    "number": "0.0.18",
+    "description": "",
+    "screenId": "eventManagement",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "Form Template",
+          "tabTitle": "Form",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "row",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "intervals": []
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 23,
+                    "Action Button": 19,
+                    "Form": 1,
+                    "Text": 14,
+                    "Display": 15,
+                    "Table": 8,
+                    "Table Column": 45,
+                    "Cards": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "dxnceICTN"
+                ],
+                "linkedNodes": {}
+              },
+              "X54tNa5PP": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "1200px",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "fqGOwD2Vv",
+                "hidden": false,
+                "nodes": [
+                  "Z-NRrMv_4",
+                  "GDXUL-zFw",
+                  "eVVwyDWQY",
+                  "26rYK7d-C"
+                ],
+                "linkedNodes": {}
+              },
+              "dxnceICTN": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "$exists(id) \n? {\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}\n: {\n  \"filter\": {\n    \"id\": {\n      \"_eq\": \"nope\"\n    }\n  }\n}",
+                    "model": "EventGroup",
+                    "fields": [
+                      "name",
+                      "id",
+                      "eventList[edges].[node].event.eventType.color"
+                    ],
+                    "disableDataChangeIndicator": true
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "description": "Event group is a collection of events that can be associated to 1 or more Workcenters to provide a streamlined list of applicable events to be selected for various modes."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "MainGroupForm"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "fqGOwD2Vv"
+                ],
+                "linkedNodes": {}
+              },
+              "GDXUL-zFw": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "event.name",
+                      "plcCode",
+                      "default",
+                      "event.description",
+                      "order",
+                      "requireNote",
+                      "usable",
+                      "meantimeMetrics",
+                      "eventPriority.name"
+                    ],
+                    "model": "EventList",
+                    "parameters": "$exists($components.MainGroupForm.formState.values.id)\n? \n{\n  \"filter\": {\n    \"eventGroupId\": {\n      \"_eq\": $components.MainGroupForm.formState.values.id\n    }\n  }\n\n}\n:\n$exists(id)\n?\n{\n  \"filter\": {\n    \"eventGroupId\": {\n      \"_eq\": id\n    }\n  }\n\n}\n:\n{\n  \"filter\": {\n    \"eventGroupId\": {\n      \"_eq\": \"nope\"\n    }\n  }\n\n}",
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "Bridge table allowing many to many relation between Event and EventGroup",
+                  "tableName": "Events in this Group",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "EventListTable"
+                },
+                "parent": "X54tNa5PP",
+                "hidden": false,
+                "nodes": [
+                  "kX4GOEjJW",
+                  "9pODjjM0r",
+                  "T-DUvaImF",
+                  "RPHNHUCQF",
+                  "j9I8cXgvM",
+                  "IDO8zCtvK",
+                  "jpG6xfhEk",
+                  "bron1MQ-m",
+                  "itZ7gONvO",
+                  "zOwv8_pX2",
+                  "yoDwY7-v0",
+                  "S7mrDUvml",
+                  "z8capaHzI",
+                  "8wkAueEGB"
+                ],
+                "linkedNodes": {}
+              },
+              "T-DUvaImF": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Name",
+                  "format": "text",
+                  "dataPath": "event.name",
+                  "field": "event.name",
+                  "width": "120",
+                  "query": {},
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Z-NRrMv_4": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container8"
+                },
+                "parent": "X54tNa5PP",
+                "hidden": false,
+                "nodes": [
+                  "J-t2__d_g"
+                ],
+                "linkedNodes": {}
+              },
+              "eVVwyDWQY": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container9"
+                },
+                "parent": "X54tNa5PP",
+                "hidden": false,
+                "nodes": [
+                  "bIZ5rWAF2",
+                  "6CLzwq09d"
+                ],
+                "linkedNodes": {}
+              },
+              "26rYK7d-C": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "name",
+                      "description",
+                      "eventType.name",
+                      "usable",
+                      "eventType.id"
+                    ],
+                    "model": "Event",
+                    "parameters": "\n {\n  \"filter\": {\n    \"usable\": {\n      \"_eq\": true\n    }\n  },\n  \"orderBy\": {\n  \"field\": \"name\",\n   \"direction\":\"asc\"\n  }\n  }\n\n ",
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "This table is a list of all the possible events to describe the state of the workcenters",
+                  "tableName": "Available Events",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "EventTable"
+                },
+                "parent": "X54tNa5PP",
+                "hidden": false,
+                "nodes": [
+                  "CmmGzLatL",
+                  "yGKhEjfxz",
+                  "SH-Kq0hjD",
+                  "bNq53On6X",
+                  "6DdEiR-R3",
+                  "UnbSaWa1H",
+                  "F7Tth2M3N",
+                  "rRWHsSaJj"
+                ],
+                "linkedNodes": {}
+              },
+              "SH-Kq0hjD": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "dataPath": "name",
+                  "description": "This is the name of the event - Label field",
+                  "field": "name",
+                  "width": "120",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bNq53On6X": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Description",
+                  "format": "text",
+                  "dataPath": "description",
+                  "description": "Description of Event",
+                  "field": "description",
+                  "width": "150",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6DdEiR-R3": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Type",
+                  "format": "text",
+                  "dataPath": "eventType.name",
+                  "field": "eventType.name",
+                  "style": {
+                    "__transform": "{\"background\": data.eventType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "query": {
+                    "fields": [
+                      "eventType.color"
+                    ]
+                  },
+                  "width": "100",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "oOJlU5jMy": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "200px",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container12"
+                },
+                "parent": "fqGOwD2Vv",
+                "hidden": false,
+                "nodes": [
+                  "nNQjXB7Ak",
+                  "cONiRrry0"
+                ],
+                "linkedNodes": {}
+              },
+              "nNQjXB7Ak": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "end",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "accent"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container16"
+                },
+                "parent": "oOJlU5jMy",
+                "hidden": false,
+                "nodes": [
+                  "nS58qUcle"
+                ],
+                "linkedNodes": {}
+              },
+              "cONiRrry0": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "name",
+                      "eventList.total",
+                      "eventList.edges.node.id"
+                    ],
+                    "model": "EventGroup",
+                    "parameters": "{\n  \"orderBy\": {\n  \"field\": \"name\",\n   \"direction\":\"asc\"\n  }\n  }",
+                    "disableDataChangeIndicator": true
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "masterDetail": false,
+                  "description": "Event group is a collection of events that can be associated to 1 or more Workcenters to provide a streamlined list of applicable events to be selected for various modes.",
+                  "tableName": "Event Groups",
+                  "rowMultiSelectWithClick": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "EventGroupTable"
+                },
+                "parent": "oOJlU5jMy",
+                "hidden": false,
+                "nodes": [
+                  "ccDwJorVi",
+                  "QJBB82MWU",
+                  "5BUCr0uZc"
+                ],
+                "linkedNodes": {}
+              },
+              "nS58qUcle": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "fields": [
+                        {
+                          "name": "name",
+                          "description": "",
+                          "label": "Name",
+                          "type": "text",
+                          "dataPath": "name",
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "name"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "Usable",
+                          "description": "",
+                          "label": "Usable",
+                          "type": "switch",
+                          "defaultValue": true,
+                          "dataPath": "usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "usable"
+                            ]
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Create New Event Group\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "mutation.label & \" created successfully.\""
+                      },
+                      "mutation": "mutation CreateEventGroup($payload: [EventGroupCreatePayloadInput!]!) {\n  mutation: createEventGroup(payload: $payload) {\n    id          \n  }\n}"
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "\n(\n\n/* set form data */\n$components.MainGroupForm.fn.setValue(\"name\",$$.name);\n$components.MainGroupForm.fn.setValue(\"id\",$$.mutation.id);\n\n/* set eventlist table to load (should be empty as it is new eventgroup) */\n$components.EventListTable.fn.loadData({\n  \"filter\": {\n    \"eventGroupId\": {\n      \"_eq\": $$.mutation.id\n    }\n  }\n\n});\n\n/* reload eventgroup table */\n$components.EventGroupTable.fn.search()\n\n)"
+                    }
+                  ],
+                  "title": "Create Event Group"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton10",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Create button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Create Button which open form.",
+                    "icon": "plus",
+                    "requiresTable": true
+                  }
+                },
+                "parent": "nNQjXB7Ak",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QJBB82MWU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Name",
+                  "format": "text",
+                  "dataPath": "name",
+                  "description": "The unique name of the event group",
+                  "field": "name",
+                  "width": "120",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "cONiRrry0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6CLzwq09d": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "name": "name",
+                          "description": "This is the name of the event - Label field (Required)",
+                          "label": "Name",
+                          "type": "text",
+                          "dataPath": "name",
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "name"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "description",
+                          "description": "Description of Event",
+                          "label": "Description",
+                          "type": "markdown",
+                          "dataPath": "description",
+                          "validation": {
+                            "required": false
+                          },
+                          "query": {
+                            "fields": [
+                              "description"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "eventType",
+                          "description": "Reference to EventType, a table of booleans that describe the type of event (Required)",
+                          "label": "Event Type",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "type": "combobox",
+                          "dataPath": "eventType",
+                          "queryType": "EventType",
+                          "target": {
+                            "dataPath": "eventTypeId"
+                          },
+                          "validation": {
+                            "required": true
+                          },
+                          "query": {
+                            "fields": [
+                              "eventType.id",
+                              "eventType.name"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "eventCategory",
+                          "description": "Customer specific categorization of the Events (optional)",
+                          "label": "Event Category",
+                          "labelField": "name",
+                          "labelPath": "name",
+                          "additionalFields": "name",
+                          "type": "combobox",
+                          "dataPath": "eventCategory",
+                          "queryType": "EventCategory",
+                          "target": {
+                            "dataPath": "eventCategoryId"
+                          },
+                          "validation": {
+                            "required": false
+                          },
+                          "query": {
+                            "fields": [
+                              "eventCategory.id",
+                              "eventCategory.name"
+                            ]
+                          }
+                        },
+                        {
+                          "name": "usable",
+                          "description": "Is the event usable?",
+                          "label": "Usable",
+                          "type": "switch",
+                          "dataPath": "usable",
+                          "validation": {
+                            "required": true
+                          },
+                          "defaultValue": true,
+                          "query": {
+                            "fields": [
+                              "usable"
+                            ]
+                          }
+                        }
+                      ],
+                      "title": {
+                        "__transform": "\"Create New Event\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateEvent($payload: [EventCreatePayloadInput!]!) {\n  mutation: createEvent(payload: $payload) {\n    id          \n  }\n}",
+                      "message": {
+                        "__transform": "mutation.label & \" created successfully.\""
+                      },
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$isNil($.Form.formState.values.viewUnusable) or $.Form.formState.values.viewUnusable=false\n?\n$.EventTable.fn.search()\n:\n(\n   $q := $query({\n    \"api\": \"application\",\n      \"statement\":\"query Event{event{ total \\nedges{ \\nnode{id \\nname \\ndescription \\nusable \\nshortStopThreshold \\nmeanTimeMetric eventType{id \\nname} } }}}\"\n    });\n  $.EventTable.fn.setData($q.event.edges.node);\n)\n",
+                      "remote": false,
+                      "transforms": {
+                        "pre": "{\n  \"Form\":$components.MainGroupForm,\n  \"EventTable\": $components.EventTable\n }"
+                      }
+                    }
+                  ],
+                  "title": "Create Event"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton14",
+                  "editor": {
+                    "category": "Interaction",
+                    "description": "Create button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Create Button which open form.",
+                    "icon": "plus",
+                    "requiresTable": true
+                  }
+                },
+                "parent": "eVVwyDWQY",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fqGOwD2Vv": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container18"
+                },
+                "parent": "dxnceICTN",
+                "hidden": false,
+                "nodes": [
+                  "oOJlU5jMy",
+                  "X54tNa5PP"
+                ],
+                "linkedNodes": {}
+              },
+              "F7Tth2M3N": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "dataPath": "usable",
+                  "description": "Is the event usable?",
+                  "field": "usable",
+                  "query": {},
+                  "width": "80",
+                  "style": {
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "RPHNHUCQF": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Event Description",
+                  "format": "text",
+                  "dataPath": "event.description",
+                  "field": "event.description",
+                  "width": "150",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "CmmGzLatL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "query": {},
+                  "actions": [
+                    {
+                      "title": "Link to Group",
+                      "useIconButton": true,
+                      "icon": {
+                        "variant": "light",
+                        "size": "small",
+                        "icon": "link"
+                      },
+                      "buttonColor": "error",
+                      "color": "#000000",
+                      "action": [
+                        {
+                          "type": "form",
+                          "title": {
+                            "__transform": "\"Add Event to Event Group\""
+                          },
+                          "fields": [
+                            {
+                              "name": "order",
+                              "description": "",
+                              "label": "Order",
+                              "type": "integer",
+                              "dataPath": "order",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": 10,
+                              "query": {
+                                "fields": [
+                                  "order"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "default",
+                              "description": "Only one Event in the Event List should be Default - this will be the fall back value when the Mode change happens if no other Event value is provided",
+                              "label": "Default",
+                              "type": "switch",
+                              "dataPath": "default",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "default"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "eventPriority",
+                              "description": "Indicates the level of importance, when workcenter triggers this event - primarily for alarms",
+                              "label": "Event Priority",
+                              "labelField": "name",
+                              "labelPath": "name",
+                              "additionalFields": "name",
+                              "type": "combobox",
+                              "dataPath": "eventPriority",
+                              "queryType": "EventPriority",
+                              "target": {
+                                "dataPath": "eventPriorityId"
+                              },
+                              "validation": {
+                                "required": false
+                              },
+                              "query": {
+                                "fields": [
+                                  "eventPriority.id",
+                                  "eventPriority.name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "requireNote",
+                              "description": "Require a note from the user, when this event is selected on the UI - Event Dashboard",
+                              "label": "Require Note",
+                              "type": "switch",
+                              "dataPath": "requireNote",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "requireNote"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "plcCode",
+                              "description": "A Unique PLC Code associated with Event",
+                              "label": "Plc Code",
+                              "type": "text",
+                              "dataPath": "plcCode",
+                              "validation": {
+                                "required": false
+                              },
+                              "query": {
+                                "fields": [
+                                  "plcCode"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "alarm",
+                              "description": "When this Event is selected - Create a corresponding Alarm with the Event Priority selected",
+                              "label": "Trigger Alarm",
+                              "type": "switch",
+                              "dataPath": "alarm",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "alarm"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "meantimeMetrics",
+                              "description": "",
+                              "label": "Meantime Metrics",
+                              "type": "switch",
+                              "dataPath": "meantimeMetrics",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "meantimeMetrics"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "usable",
+                              "description": "",
+                              "label": "Usable",
+                              "type": "switch",
+                              "dataPath": "usable",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": true,
+                              "query": {
+                                "fields": [
+                                  "usable"
+                                ]
+                              }
+                            }
+                          ],
+                          "transforms": {}
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation CreateEventList($payload: [EventListCreatePayloadInput!]!) {\n  mutation: createEventList(payload: $payload) {\n    id          \n  }\n}",
+                          "transforms": {
+                            "pre": "{\n  \"payload\": {\n    \"create\":  {\"eventGroupId\": $components.MainGroupForm.formState.values.id, \"eventId\": rowData.id, \"order\": data.order,\"eventPriorityId\": data.eventPriorityId, \"plcCode\": data.plcCode, \"usable\": data.usable, \"requireNote\": data.requireNote, \"default\": data.default, \"shortStopThreshold\": data.shortStopThreshold, \"meantimeMetrics\": data.meantimeMetrics}\n  }\n}"
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "transformation": "(\n$components.EventListTable.fn.search();\n$components.EventGroupTable.fn.search();\n)\n",
+                          "remote": false,
+                          "message": {
+                            "__transform": "data ? \"Event Added to Event Group\" : null"
+                          }
+                        }
+                      ],
+                      "disabled": {
+                        "__transform": "$isNil($components.MainGroupForm.data.name) or rowData.name in $components.EventListTable.data.event.name or $isNil(rowData.eventType.id)",
+                        "__dynamicFields": {
+                          "payload": null,
+                          "context": [
+                            "components.MainGroupForm.data.name",
+                            "components.EventListTable.data.event.name"
+                          ]
+                        },
+                        "__cacheKey": "",
+                        "__remote": false
+                      },
+                      "customButtonColor": "#007ae4"
+                    }
+                  ],
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "style": {
+                    "color": "#ff0000",
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center",
+                  "width": "80"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bron1MQ-m": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Order",
+                  "format": "text",
+                  "dataPath": "order",
+                  "description": "Sort order of Event within EventGroup, default 10",
+                  "field": "order",
+                  "width": "80",
+                  "style": {
+                    "justifyContent": "flex-start"
+                  },
+                  "headerAlign": "left"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yoDwY7-v0": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "PLC Code",
+                  "format": "text",
+                  "dataPath": "plcCode",
+                  "description": "PLC Code associated with Event in EventGroup",
+                  "field": "plcCode",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center",
+                  "width": "100"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kX4GOEjJW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "One to many reference to EventGroup",
+                  "field": "eventGroupId",
+                  "query": {},
+                  "actions": [
+                    {
+                      "icon": {
+                        "icon": "pencil",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "buttonColor": "primary",
+                      "title": "Update Event Configuration",
+                      "useIconButton": true,
+                      "action": [
+                        {
+                          "type": "form",
+                          "title": {
+                            "__transform": "\"Update Event Configuration\""
+                          },
+                          "fields": [
+                            {
+                              "name": "eventGroupId",
+                              "type": "string",
+                              "dataPath": "eventGroupId",
+                              "target": {
+                                "dataPath": "eventGroupId"
+                              },
+                              "query": {
+                                "fields": [
+                                  "eventGroup"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "event",
+                              "description": "",
+                              "label": "Event",
+                              "labelField": "name",
+                              "labelPath": "name",
+                              "additionalFields": "name",
+                              "type": "combobox",
+                              "dataPath": "event",
+                              "queryType": "Event",
+                              "target": {
+                                "dataPath": "eventId"
+                              },
+                              "validation": {
+                                "required": true
+                              },
+                              "query": {
+                                "fields": [
+                                  "event.id",
+                                  "event.name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "order",
+                              "description": "",
+                              "label": "Order",
+                              "type": "integer",
+                              "dataPath": "order",
+                              "validation": {
+                                "required": true
+                              },
+                              "query": {
+                                "fields": [
+                                  "order"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "eventPriority",
+                              "description": "Indicates the level of importance, when workcenter triggers this event - primarily for alarms",
+                              "label": "Event Priority",
+                              "labelField": "name",
+                              "labelPath": "name",
+                              "additionalFields": "name",
+                              "type": "combobox",
+                              "dataPath": "eventPriority",
+                              "queryType": "EventPriority",
+                              "target": {
+                                "dataPath": "eventPriorityId"
+                              },
+                              "validation": {
+                                "required": true
+                              },
+                              "query": {
+                                "fields": [
+                                  "eventPriority.id",
+                                  "eventPriority.name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "default",
+                              "description": "Only one Event in the Event List should be Default - this will be the fall back value when the Mode change happens if no other Event value is provided",
+                              "label": "Default",
+                              "type": "switch",
+                              "dataPath": "default",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": true,
+                              "query": {
+                                "fields": [
+                                  "default"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "requireNote",
+                              "description": "Require a note from the user, when this event is selected on the UI",
+                              "label": "Require Note",
+                              "type": "switch",
+                              "dataPath": "requireNote",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "requireNote"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "plcCode",
+                              "description": "PLC Code associated with Event",
+                              "label": "Plc Code",
+                              "type": "text",
+                              "dataPath": "plcCode",
+                              "validation": {
+                                "required": false
+                              },
+                              "query": {
+                                "fields": [
+                                  "plcCode"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "alarm",
+                              "description": "When this Event is selected - Create a corresponding Alarm with the Event Priority selected",
+                              "label": "Trigger Alarm",
+                              "type": "switch",
+                              "dataPath": "alarm",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "alarm"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "meantimeMetrics",
+                              "description": "",
+                              "label": "MTBF",
+                              "type": "switch",
+                              "dataPath": "meantimeMetrics",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": false,
+                              "query": {
+                                "fields": [
+                                  "meantimeMetrics"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "usable",
+                              "description": "Only can be selected from a list when Usable is True",
+                              "label": "Usable",
+                              "type": "switch",
+                              "dataPath": "usable",
+                              "validation": {
+                                "required": true
+                              },
+                              "defaultValue": true,
+                              "query": {
+                                "fields": [
+                                  "usable"
+                                ]
+                              }
+                            }
+                          ],
+                          "transforms": {
+                            "pre": "rowData"
+                          }
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation UpdateEventList($payload: [EventListUpdatePayloadInput!]!) {\n  mutation: updateEventList(payload: $payload) {\n  id\n }\n}",
+                          "transforms": {
+                            "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\": rowData.id\n    },\n    \"update\": $$.data\n  }\n}"
+                          },
+                          "message": {
+                            "__transform": "\"Event: \" & rowData.event.name & \" configuration updated successfully.\""
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "transformation": "$components.EventListTable.fn.search()",
+                          "remote": false
+                        }
+                      ],
+                      "customButtonColor": "#434343"
+                    }
+                  ],
+                  "width": "80",
+                  "style": {
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8wkAueEGB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {},
+                  "actions": [
+                    {
+                      "icon": {
+                        "icon": "link-slash",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "useIconButton": true,
+                      "title": "Remove Event from Event Group",
+                      "buttonColor": "error",
+                      "action": [
+                        {
+                          "type": "confirmation",
+                          "message": {
+                            "__transform": "\"Are you sure you want to remove \" & rowData.event.name & \" from event group?\""
+                          },
+                          "submitIcon": {
+                            "icon": "trash",
+                            "variant": "light"
+                          },
+                          "buttonColor": "error"
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation DeleteEventList($payload: [EventListDeletePayloadInput!]!) {\n  mutation: deleteEventList(payload: $payload) {\n    id\n  }\n}",
+                          "transforms": {
+                            "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\":  rowData.id\n    }\n  }\n}"
+                          },
+                          "message": {
+                            "__transform": "rowData.event.name & \" removed from Event Group \" & $components.Form1.data.name & \"!\""
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "remote": false,
+                          "transformation": "$components.EventListTable.fn.search()"
+                        }
+                      ],
+                      "customButtonColor": "#d20404"
+                    }
+                  ],
+                  "style": {
+                    "__transform": "{\n  \"color\": \"#ff0000\",\n  \"justifyContent\": \"center\"\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "80",
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yGKhEjfxz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {},
+                  "actions": [
+                    {
+                      "title": "Update Event",
+                      "useIconButton": true,
+                      "icon": {
+                        "icon": "pencil",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "buttonColor": "primary",
+                      "action": [
+                        {
+                          "type": "form",
+                          "fields": [
+                            {
+                              "name": "name",
+                              "description": "Name of Event",
+                              "label": "Name",
+                              "type": "text",
+                              "dataPath": "name",
+                              "validation": {
+                                "required": true
+                              },
+                              "query": {
+                                "fields": [
+                                  "name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "description",
+                              "description": "Description of Event",
+                              "label": "Description",
+                              "type": "markdown",
+                              "dataPath": "description",
+                              "validation": {
+                                "required": false
+                              },
+                              "query": {
+                                "fields": [
+                                  "description"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "eventType",
+                              "description": "Reference to EventType, a table of booleans that describe the type of event",
+                              "label": "Event Type",
+                              "labelField": "name",
+                              "labelPath": "name",
+                              "additionalFields": "name",
+                              "type": "combobox",
+                              "dataPath": "eventType",
+                              "queryType": "EventType",
+                              "target": {
+                                "dataPath": "eventTypeId"
+                              },
+                              "validation": {
+                                "required": true
+                              },
+                              "query": {
+                                "fields": [
+                                  "eventType.id",
+                                  "eventType.name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "eventCategory",
+                              "description": "Customer specific categorization of the Events (optional)",
+                              "label": "Event Category",
+                              "labelField": "name",
+                              "labelPath": "name",
+                              "additionalFields": "name",
+                              "type": "combobox",
+                              "dataPath": "eventCategory",
+                              "queryType": "EventCategory",
+                              "target": {
+                                "dataPath": "eventCategoryId"
+                              },
+                              "validation": {
+                                "required": false
+                              },
+                              "query": {
+                                "fields": [
+                                  "eventCategory.id",
+                                  "eventCategory.name"
+                                ]
+                              }
+                            },
+                            {
+                              "name": "usable",
+                              "description": "Is the event usable?",
+                              "label": "Usable",
+                              "type": "switch",
+                              "dataPath": "usable",
+                              "validation": {
+                                "required": false
+                              },
+                              "defaultValue": true,
+                              "query": {
+                                "fields": [
+                                  "usable"
+                                ]
+                              }
+                            }
+                          ],
+                          "transforms": {
+                            "pre": "rowData"
+                          },
+                          "title": {
+                            "__transform": "\"Update Event \" & rowData.name"
+                          }
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation UpdateEvent($payload: [EventUpdatePayloadInput!]!) {\n  mutation: updateEvent(payload: $payload) {\n  id\n }\n}",
+                          "message": {
+                            "__transform": "\"Event: \" & rowData.name & \"  updated successfully.\""
+                          },
+                          "transforms": {
+                            "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\": rowData.id\n    },\n    \"update\": $$.data\n  }\n}"
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "transformation": "$isNil($.Form.formState.values.viewUnusable) or $.Form.formState.values.viewUnusable=false\n?\n$.EventTable.fn.search()\n:\n(\n   $q := $query({\n    \"api\": \"application\",\n      \"statement\":\"query Event{event{ total \\nedges{ \\nnode{id \\nname \\ndescription \\nusable \\nshortStopThreshold \\nmeanTimeMetric eventType{id \\nname} } }}}\"\n    });\n  $.EventTable.fn.setData($q.event.edges.node);\n)\n",
+                          "remote": false,
+                          "transforms": {
+                            "pre": "{\n  \"Form\":$components.MainForm,\n  \"EventTable\": $components.EventTable\n }"
+                          }
+                        }
+                      ],
+                      "customButtonColor": "#434343"
+                    }
+                  ],
+                  "width": "80",
+                  "headerAlign": "center",
+                  "style": {
+                    "justifyContent": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "rRWHsSaJj": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {},
+                  "actions": [
+                    {
+                      "title": "Delete Event",
+                      "useIconButton": true,
+                      "icon": {
+                        "icon": "trash",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "buttonColor": "error",
+                      "action": [
+                        {
+                          "type": "confirmation",
+                          "submitIcon": {
+                            "icon": "trash",
+                            "variant": "solid"
+                          },
+                          "buttonColor": "error",
+                          "message": {
+                            "__transform": "\"Are you sure you want to delete event \" & rowData.name & \"?\""
+                          },
+                          "transforms": {
+                            "pre": "rowData"
+                          }
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation DeleteEvent($payload:[EventDeletePayloadInput!]!) {\n  deleteEvent(payload: $payload) {\n  id\n}\n}",
+                          "transforms": {
+                            "pre": "{\n  \"payload\": {\n    \"where\": {\n      \"id\": rowData.id\n    }\n  }\n}"
+                          },
+                          "message": {
+                            "__transform": "\"Event \" & rowData.name & \" deleted!\""
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "transformation": "$isNil($.Form.formState.values.viewUnusable) or $.Form.formState.values.viewUnusable=false\n?\n$.EventTable.fn.search()\n:\n(\n   $q := $query({\n    \"api\": \"application\",\n      \"statement\":\"query Event{event{ total \\nedges{ \\nnode{id \\nname \\ndescription \\nusable \\nshortStopThreshold \\nmeanTimeMetric eventType{id \\nname} } }}}\"\n    });\n  $.EventTable.fn.setData($q.event.edges.node);\n)\n",
+                          "remote": false,
+                          "transforms": {
+                            "pre": "{\n  \"Form\":$components.MainForm,\n  \"EventTable\": $components.EventTable\n }"
+                          }
+                        }
+                      ],
+                      "customButtonColor": "#d20404"
+                    }
+                  ],
+                  "style": {
+                    "color": "#ff0000",
+                    "justifyContent": "center"
+                  },
+                  "width": "80",
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ccDwJorVi": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {},
+                  "actions": [
+                    {
+                      "title": "Manage Events in Event Froup",
+                      "useIconButton": true,
+                      "icon": {
+                        "icon": "magnifying-glass-arrow-right",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "buttonColor": "primary",
+                      "action": [
+                        {
+                          "type": "transformation",
+                          "navigationType": "New Webpage",
+                          "newWindow": false,
+                          "target": {
+                            "__transform": "\"/productionManagement/manufacturing/eventGroups/\" & rowData.id"
+                          },
+                          "remote": false,
+                          "transformation": "\n(\n$components.MainGroupForm.fn.setValue(\"name\",$$.rowData.name);\n$components.MainGroupForm.fn.setValue(\"id\",$$.rowData.id)\n\n )"
+                        },
+                        {
+                          "type": "transformation",
+                          "remote": false,
+                          "transformation": "$components.EventListTable.fn.loadData({\n  \"filter\": {\n    \"eventGroupId\": {\n      \"_eq\": $$.rowData.id\n    }\n  }\n\n})"
+                        }
+                      ],
+                      "customButtonColor": "#007ae4"
+                    }
+                  ],
+                  "width": "75",
+                  "style": {
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "EventGroupTable"
+                },
+                "parent": "cONiRrry0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "J-t2__d_g": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "display",
+                  "padding": 0,
+                  "width": "80%",
+                  "height": "50px",
+                  "label": "Name",
+                  "visible": true,
+                  "formElement": "MainGroupForm",
+                  "dataPath": "name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The unique name of the event group",
+                  "field": "name",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  },
+                  "fontSize": "h4",
+                  "alignItems": "center",
+                  "disabled": false
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Display13"
+                },
+                "parent": "Z-NRrMv_4",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "5BUCr0uZc": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": " ",
+                  "format": "action",
+                  "dataPath": " ",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "query": {
+                    "fields": [
+                      "eventList.total",
+                      "eventList.edges.node.id"
+                    ]
+                  },
+                  "actions": [
+                    {
+                      "title": "Delete Event Group",
+                      "useIconButton": true,
+                      "icon": {
+                        "icon": "trash",
+                        "variant": "light",
+                        "size": "small"
+                      },
+                      "buttonColor": "error",
+                      "action": [
+                        {
+                          "type": "confirmation",
+                          "message": {
+                            "__transform": "(\n\n$q :=  $query({\n    \"api\": \"application\",\n      \"statement\":\"query EventList{eventList(where: {eventGroupId: {_eq:\\\"\" & rowData.id & \"\\\"}}) { total\\n }}\"\n    });\n  \n\n$q.eventList.total > 0 \n\n? rowData.name & \" is configured with \" & $q.eventList.total & \" events. Are you sure you would like to proceed?\"\n: \"Are you sure you would like to delete event group \" & rowData.name & \"?\"\n)\n"
+                          },
+                          "submitIcon": {
+                            "icon": "trash",
+                            "variant": "solid"
+                          },
+                          "buttonColor": "error"
+                        },
+                        {
+                          "type": "mutation",
+                          "api": "Application",
+                          "mutation": "mutation DeleteListsAndEventGroup($payloadEventList: [EventListDeletePayloadInput!]!, $payloadEventGroup:[EventGroupDeletePayloadInput!]!) {\n  deleteEventList(payload:$payloadEventList) {\n    id\n  }\n  deleteEventGroup(payload:$payloadEventGroup) {\n    id\n  }\n}\n",
+                          "message": {
+                            "__transform": "rowData.name & \" Event Group has been deleted!\""
+                          },
+                          "transforms": {
+                            "pre": "(\n\n$q :=  $query({\n    \"api\": \"application\",\n      \"statement\":\"query EventList{eventList(where: {eventGroupId: {_eq:\\\"\" & rowData.id & \"\\\"}}) { total\\n edges{\\n node{\\n id} }}}\"\n    });\n  \n\n$eventListOrEmpty :=  $q.eventList.total > 0 ? $q.eventList.edges.{\n    \"where\": {\n      \"id\": $.node.id\n    }\n  } : [];\n{ \n  \"payloadEventList\": $eventListOrEmpty,\n  \"payloadEventGroup\": {\n    \"where\": {\n      \"id\": rowData.id\n    }\n  }\n}\n)"
+                          }
+                        },
+                        {
+                          "type": "transformation",
+                          "transformation": "\ndeleteEventGroup[0].id = $components.MainGroupForm.formState.values.id\n?\n(\n$components.MainGroupForm.fn.setValue(\"name\", null);\n$components.MainGroupForm.fn.setValue(\"id\", null);\n$components.EventListTable.fn.setData([]);\n$components.EventGroupTable.fn.search();\n)\n:\n$components.EventGroupTable.fn.search()\n",
+                          "remote": false
+                        }
+                      ],
+                      "customButtonColor": "#d20404"
+                    }
+                  ],
+                  "width": "75",
+                  "style": {
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center",
+                  "showColumnSuppressMenu": false
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "cONiRrry0",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bIZ5rWAF2": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "eye",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": " $query({\n    \"api\": \"application\",\n      \"statement\":\"query Event{event(where: {usable: {_eq: false}}){ total}}\"\n    }).event.total = 0",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$isNil($.Form.formState.values.viewUnusable) or $.Form.formState.values.viewUnusable=false\n? \n(\n\n  $.Form.fn.setValue(\"viewUnusable\", true);\n   $q := $query({\n    \"api\": \"application\",\n      \"statement\":\"query Event{event{ total \\nedges{ \\nnode{id \\nname \\ndescription \\nusable eventType{id \\nname} } }}}\"\n    });\n  $.EventTable.fn.setData($q.event.edges.node);\n  /*  $.EventTable.fn.loadData({\n      \"filter\": {\n        \"usable\": {\n          \"_in\": [true,false]\n        }\n      }\n    }) */\n  \n    \n) \n:\n(\n $.Form.fn.setValue(\"viewUnusable\", false);\n\n  $.EventTable.fn.search(); \n/*$.EventTable.fn.loadData(\n  {\n    \"filter\": {\n    \"usable\": {\n    \"_eq\":true\n    \n    }\n  }\n  }\n  ); */\n)\n\n\n",
+                      "remote": false,
+                      "transforms": {
+                        "pre": "{\n  \"Form\":$components.MainGroupForm,\n  \"EventTable\": $components.EventTable\n }"
+                      }
+                    }
+                  ],
+                  "title": "Show/Hide Unusable Events",
+                  "customButtonColor": "#007ae4"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton18"
+                },
+                "parent": "eVVwyDWQY",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "S7mrDUvml": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "MTBF",
+                  "format": "checkmark",
+                  "dataPath": "meantimeMetrics",
+                  "description": "When enabled, this state will be included in the calculation of Mean Time Between Failure (MTBF), when this state is responsible for causing a line downtime event. MTBF is calculated by taking total running time, or time during a run in which the line is not down, and dividing it by the number of applicable events. So if a production run had 3.5 hours of running time and had 5 events for which Meantime Metrics were enabled, the MTBF would be 0.7.  MTBF is pertinent for unexpected downtime events or Unplanned Downtime Type states.\n\n(Not Yet Implemented)",
+                  "field": "meantimeMetrics",
+                  "query": {},
+                  "width": "75",
+                  "headerAlign": "center",
+                  "style": {
+                    "justifyContent": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn36"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "z8capaHzI": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "dataPath": "usable",
+                  "description": "",
+                  "field": "usable",
+                  "query": {},
+                  "style": {
+                    "__transform": "{\n  \"justifyContent\": \"center\"\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "headerAlign": "center",
+                  "width": "75"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn37"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jpG6xfhEk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Default",
+                  "format": "checkmark",
+                  "dataPath": "default",
+                  "description": "Use this to default the Event when a Mode is changed - this will be implemented as the fallback value, if no other value is given.",
+                  "field": "default",
+                  "query": {},
+                  "width": "80",
+                  "style": {
+                    "alignItems": "center"
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn39"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9pODjjM0r": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Type",
+                  "format": "text",
+                  "dataPath": "event.eventType.name",
+                  "field": "event.eventType.name",
+                  "style": {
+                    "__transform": "{\"background\": data.event.eventType.color}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "query": {
+                    "fields": [
+                      "event.eventType.color",
+                      "event.eventType.name"
+                    ]
+                  },
+                  "width": "100",
+                  "wrapText": true
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn40"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "itZ7gONvO": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Require Note",
+                  "format": "checkmark",
+                  "dataPath": "requireNote",
+                  "description": "Turn on, if this event when selected, will require the user to enter a note.",
+                  "field": "requireNote",
+                  "query": {},
+                  "width": "110",
+                  "style": {
+                    "justifyContent": "center"
+                  },
+                  "headerAlign": "center"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn41"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zOwv8_pX2": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Alarm",
+                  "format": "checkmark",
+                  "dataPath": "alarm",
+                  "description": "If True - will be used to create an Alarm in the Alarm table - Anytime an event is selected and updates workcenter history - if Alarm=true, an Alarm will be created. Alarms must be cleared manually.",
+                  "field": "alarm",
+                  "width": "75",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn42"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "IDO8zCtvK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Priority",
+                  "format": "text",
+                  "dataPath": "eventPriority.name",
+                  "field": "eventPriority.name",
+                  "width": "100"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn43"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "UnbSaWa1H": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Category",
+                  "format": "text",
+                  "dataPath": "eventCategory.name",
+                  "field": "eventCategory.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn44"
+                },
+                "parent": "26rYK7d-C",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "j9I8cXgvM": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Category",
+                  "format": "text",
+                  "dataPath": "event.eventCategory.name",
+                  "field": "event.eventCategory.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn45"
+                },
+                "parent": "GDXUL-zFw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cloesgbzy002j018m3lcs5xr2",
+      "title": "Event Management",
+      "path": "/productionManagement/manufacturing/eventManagement",
+      "moduleId": "manufacturing",
+      "screenId": "eventManagement",
+      "isMenuAccessible": true,
+      "submenu": "Configuration"
+    }
+  ]
+}

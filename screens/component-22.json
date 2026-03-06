@@ -1,0 +1,2514 @@
+{
+  "header": {
+    "id": "productionRunHistory",
+    "name": "Production Run History",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": false
+  },
+  "version": {
+    "id": "clrywvfan0014014a859vdseo",
+    "number": "0.0.29",
+    "description": "",
+    "screenId": "productionRunHistory",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ProductionRunTable",
+          "tabTitle": "Production Run Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 6,
+                    "Action Button": 4,
+                    "Form": 1,
+                    "Table": 4,
+                    "Date Range": 4,
+                    "Text": 2,
+                    "Integer": 6,
+                    "Float": 32,
+                    "Combobox": 6,
+                    "Table Column": 70,
+                    "Tab Bar": 1
+                  },
+                  "module": {
+                    "id": "manufacturing",
+                    "group": {
+                      "id": "productionManagement"
+                    }
+                  },
+                  "dataModel": "ProductionRun",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "QX9AMekHPH",
+                  "2vDrQ7pOHG",
+                  "HEQxTD1ZaJ"
+                ],
+                "linkedNodes": {}
+              },
+              "QX9AMekHPH": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "Zpr4o7leHY"
+                ],
+                "linkedNodes": {}
+              },
+              "Zpr4o7leHY": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "ProductionRun",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "QX9AMekHPH",
+                "hidden": false,
+                "nodes": [
+                  "QOpWSVMdiL"
+                ],
+                "linkedNodes": {}
+              },
+              "QOpWSVMdiL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "Zpr4o7leHY",
+                "hidden": false,
+                "nodes": [
+                  "0LVds_-X4",
+                  "HptydDE8F",
+                  "-mq6_MtwDM",
+                  "Yw04lFiTM",
+                  "ciSaG_rset",
+                  "q2WcnnyXPc",
+                  "vxwVnUY_Gd",
+                  "lC2K9lYdLQ"
+                ],
+                "linkedNodes": {}
+              },
+              "ciSaG_rset": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Created At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "createdAt",
+                  "field": "createdAt",
+                  "description": "The date and time the record was created.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange1"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "q2WcnnyXPc": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Updated At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "updatedAt",
+                  "field": "updatedAt",
+                  "description": "The date and time the record was last updated.",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange2"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "vxwVnUY_Gd": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "End At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "endAt",
+                  "field": "endAt",
+                  "description": "The actual date/time of when this Run ended (ie. production setup cleared)",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange3"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "lC2K9lYdLQ": {
+                "type": {
+                  "resolvedName": "DateRangeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "datetimeRange",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Start At",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "startAt",
+                  "field": "startAt",
+                  "description": "The actual date/time of when this Run began (ie production setup added)",
+                  "element": "DateRangeInput"
+                },
+                "displayName": "Date Range",
+                "custom": {
+                  "elementName": "DateRange4"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-mq6_MtwDM": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300px",
+                  "height": "auto",
+                  "label": "Workcenter",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter",
+                  "field": "workcenter",
+                  "description": "",
+                  "element": "Combobox",
+                  "queryType": "Workcenter",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": "code",
+                  "target": {
+                    "dataPath": "workcenter.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "workcenter.id",
+                      "workcenter.code"
+                    ]
+                  },
+                  "orderByField": "code",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox3"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2vDrQ7pOHG": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "O8O2iRipvC",
+                  "D_BS6tAj-6",
+                  "1WTJ_o75TO",
+                  "0vSttjIZwx"
+                ],
+                "linkedNodes": {}
+              },
+              "O8O2iRipvC": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "color": "inherit",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "2vDrQ7pOHG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "1WTJ_o75TO": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "color": "inherit",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": true,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "plus",
+                      "title": "Create a new Production Run",
+                      "fields": [
+                        {
+                          "label": "Changeover Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "changeoverTime",
+                          "field": "changeoverTime",
+                          "description": "Changeover Time - is the actual time spent in changeover during this production run (seconds)\n\nAggregate Workcenter History Records falling between productionRun.startAt and productionRun.endAt where modeType.changeover = 1.\n\nNote: multiple setups/changeovers that occur during a single production run will impact this number.",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Duration",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "duration",
+                          "field": "duration",
+                          "description": "Duration (seconds) between the StartAt - EndAt for the entire Production Run",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Run Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "runTime",
+                          "field": "runTime",
+                          "description": "Run Time (seconds) Aggregation:\n\nThe aggregation looks at workcenterHistory records, that fall between the productionRun.startAt and productionRun.endAt to determine based on the Events (not Modes) whether the time was spend up, or down.\n\nPlanned Production Time = resource shift availability (total hours) between productionRun.startAt & productionRun.EndAt (do not excluded plannedDowntime, include all 'avialable' time); Planned Prod Time is always based on the calendar Available time for the workcenter. User must adjust the calendar - when appropriate to adjust the planned production time.\n\nRun Time = Planned Production Time (Minus)-\n\nworkcenterHistory records where PlannedDowntime Or UnPlannedDowntime ==1",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Average Cycle Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "averageCycleTime",
+                          "field": "averageCycleTime",
+                          "description": "Average Cycle time (seconds)\n\n((produced + scrap) / RunTime",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Earned Labor Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "earnedLaborHours",
+                          "field": "earnedLaborHours",
+                          "description": "Earned Labor Hours:\n\n(Produced (good only) / Standard Rate) * approvedWorkcenter.crewSize (for all outputs of the run)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Earned Machine Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "earnedMachineHours",
+                          "field": "earnedMachineHours",
+                          "description": "(Produced (good only) / Standard Rate) - for all outputs of the run.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Excluded Production",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "excludedProduction",
+                          "field": "excludedProduction",
+                          "description": "Total Production where includeInProductionCounts = 0",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Excluded Scrap",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "excludedScrap",
+                          "field": "excludedScrap",
+                          "description": "Total Scrap where includeInProductionCounts = 0",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Ideal Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealAggregate",
+                          "field": "idealAggregate",
+                          "description": "Sum of all Ideal rates for all production outputs - this defines the total expected throughput per hour for this Run.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performance",
+                          "field": "performance",
+                          "description": "Performance = (idealRate * totalCount) / runTime\n\ntotalCount = produced+scrap\n\nincludeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Planned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plannedDowntime",
+                          "field": "plannedDowntime",
+                          "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.plannedDowntime=true\n\nDuration in Seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Produced",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "produced",
+                          "field": "produced",
+                          "description": "Total produced where includeInProductionCounts = 1\n\nThis  is the total throughput for the entire production run in good units made.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "scrap / totalProduction\n\ntotalProduction (produced + scrap), Where WorkcenterMode.includeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Run Crew Size",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "runCrewSize",
+                          "field": "runCrewSize",
+                          "description": "Pull from productionSetup.crewSize when Setup is Cleared.\n\nNote: the crew size at the productionSetup may apply to multiple outputs.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Scrap",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scrap",
+                          "field": "scrap",
+                          "description": "Total Scrap where includeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Setup Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "setupAggregate",
+                          "field": "setupAggregate",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Standard Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardAggregate",
+                          "field": "standardAggregate",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Production",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "totalProduction",
+                          "field": "totalProduction",
+                          "description": "This is the total production for the run - including all included production + scrap entries.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Unplanned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unplannedDowntime",
+                          "field": "unplannedDowntime",
+                          "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.unplannedDowntime=true\n\nDuration in Seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Actual Labor Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "actualLaborHours",
+                          "field": "actualLaborHours",
+                          "description": "Actual Labor Hours:\n\nAt ProductionRun StartAt - Create new WorkcenterHistory log entries for any open/existing labor clockins & update the historical records/close them out.\n\nWhen a ProductionRun is ended, close all open labor entries, and open new ones for those that were not closed prior to the run ending.",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "The actual date/time of when this Run ended (ie. production setup cleared)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The actual date/time of when this Run began (ie production setup added)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Production Setup",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionSetup",
+                          "field": "productionSetup",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "ProductionSetup",
+                          "labelField": "workcenterId",
+                          "labelPath": "workcenterId",
+                          "additionalFields": "workcenterId",
+                          "target": {
+                            "dataPath": "productionSetupId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/productionSetups/\" & data.productionSetup.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "productionSetup.id",
+                              "productionSetup.workcenterId"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Unit",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unit",
+                          "field": "unit",
+                          "description": "Production Unit of Measure must apply to all production setup outputs.",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Unit",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "unitId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/system/configuration/units/\" & data.unit.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "unit.id",
+                              "unit.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Workcenter",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workcenter",
+                          "field": "workcenter",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Workcenter",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "workcenterId"
+                          },
+                          "linkTarget": {
+                            "__transform": "\"/productionManagement/manufacturing/workcenters/\" & data.workcenter.id"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenter.id",
+                              "workcenter.code"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateProductionRun($payload: [ProductionRunCreatePayloadInput!]!) {\n  mutation: createProductionRun(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": {\n    \"create\": data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "\"Production Run \" & data.mutation[0].number & \" created successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "2vDrQ7pOHG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "D_BS6tAj-6": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "color": "inherit",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "updateButton",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "submitIcon": "save",
+                      "title": {
+                        "__transform": "\"Update Production Run \" & $components.Table1.selectedRows[0].label"
+                      },
+                      "fields": [
+                        {
+                          "label": "Number",
+                          "validation": {
+                            "required": true
+                          },
+                          "dataPath": "number",
+                          "field": "number",
+                          "description": "Sequence - shared between multiple production Runs, if co-production",
+                          "element": "TextInput",
+                          "type": "text"
+                        },
+                        {
+                          "label": "Changeover Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "changeoverTime",
+                          "field": "changeoverTime",
+                          "description": "Changeover Time - is the actual time spent in changeover during this production run (seconds)\n\nAggregate Workcenter History Records falling between productionRun.startAt and productionRun.endAt where modeType.changeover = 1.\n\nNote: multiple setups/changeovers that occur during a single production run will impact this number.",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Duration",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "duration",
+                          "field": "duration",
+                          "description": "Duration (seconds) between the StartAt - EndAt for the entire Production Run",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Run Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "runTime",
+                          "field": "runTime",
+                          "description": "Run Time (seconds) Aggregation:\n\nThe aggregation looks at workcenterHistory records, that fall between the productionRun.startAt and productionRun.endAt to determine based on the Events (not Modes) whether the time was spend up, or down.\n\nPlanned Production Time = resource shift availability (total hours) between productionRun.startAt & productionRun.EndAt (do not excluded plannedDowntime, include all 'avialable' time); Planned Prod Time is always based on the calendar Available time for the workcenter. User must adjust the calendar - when appropriate to adjust the planned production time.\n\nRun Time = Planned Production Time (Minus)-\n\nworkcenterHistory records where PlannedDowntime Or UnPlannedDowntime ==1",
+                          "element": "IntegerInput",
+                          "type": "integer"
+                        },
+                        {
+                          "label": "Average Cycle Time",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "averageCycleTime",
+                          "field": "averageCycleTime",
+                          "description": "Average Cycle time (seconds)\n\n((produced + scrap) / RunTime",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Earned Labor Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "earnedLaborHours",
+                          "field": "earnedLaborHours",
+                          "description": "Earned Labor Hours:\n\n(Produced (good only) / Standard Rate) * approvedWorkcenter.crewSize (for all outputs of the run)",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Earned Machine Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "earnedMachineHours",
+                          "field": "earnedMachineHours",
+                          "description": "(Produced (good only) / Standard Rate) - for all outputs of the run.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Ideal Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "idealAggregate",
+                          "field": "idealAggregate",
+                          "description": "Sum of all Ideal rates for all production outputs - this defines the total expected throughput per hour for this Run.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Performance%",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "performance",
+                          "field": "performance",
+                          "description": "Performance = (idealRate * totalCount) / runTime\n\ntotalCount = produced+scrap\n\nincludeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Planned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "plannedDowntime",
+                          "field": "plannedDowntime",
+                          "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.plannedDowntime=true\n\nDuration in Seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Produced",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "produced",
+                          "field": "produced",
+                          "description": "Total produced where includeInProductionCounts = 1\n\nThis  is the total throughput for the entire production run in good units made.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Scrap",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "scrap",
+                          "field": "scrap",
+                          "description": "Total Scrap where includeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Excluded Production",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "excludedProduction",
+                          "field": "excludedProduction",
+                          "description": "Total Production where includeInProductionCounts = 0",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Excluded Scrap",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "excludedScrap",
+                          "field": "excludedScrap",
+                          "description": "Total Scrap where includeInProductionCounts = 0",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Production",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "totalProduction",
+                          "field": "totalProduction",
+                          "description": "This is the total production for the run - including all included production + scrap entries.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Total Required",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "totalRequired",
+                          "field": "totalRequired",
+                          "description": "This is the sum of all required production across all outputs, can be manually updated to properly reflect the run.",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Quality%",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "quality",
+                          "field": "quality",
+                          "description": "scrap / totalProduction\n\ntotalProduction (produced + scrap), Where WorkcenterMode.includeInProductionCounts = 1",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Expected Crew Size",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "crewAggregate",
+                          "field": "crewAggregate",
+                          "description": "Default = Sum of productionSetupOutput Crew Sizes. Should not be modified unless master data is incorrect",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Actual Crew Size",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "runCrewSize",
+                          "field": "runCrewSize",
+                          "description": "Default = Sum of ProductionSetupOutput Crew Sizes, but can be edited to represent the actual crew size to consider for the run",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Changeover Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "changeoverAggregate",
+                          "field": "changeoverAggregate",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Standard Aggregate",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "standardAggregate",
+                          "field": "standardAggregate",
+                          "description": "",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Unplanned Downtime",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unplannedDowntime",
+                          "field": "unplannedDowntime",
+                          "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.unplannedDowntime=true\n\nDuration in Seconds",
+                          "element": "FloatInput",
+                          "type": "float"
+                        },
+                        {
+                          "label": "Actual Labor Hours",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "actualLaborHours",
+                          "field": "actualLaborHours",
+                          "description": "Actual Labor Hours:\n\nAt ProductionRun StartAt - Create new WorkcenterHistory log entries for any open/existing labor clockins & update the historical records/close them out.\n\nWhen a ProductionRun is ended, close all open labor entries, and open new ones for those that were not closed prior to the run ending.",
+                          "element": "TextInput",
+                          "type": "text",
+                          "disabled": true
+                        },
+                        {
+                          "label": "End At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "endAt",
+                          "field": "endAt",
+                          "description": "The actual date/time of when this Run ended (ie. production setup cleared)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Start At",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "startAt",
+                          "field": "startAt",
+                          "description": "The actual date/time of when this Run began (ie production setup added)",
+                          "element": "DateTimeInput",
+                          "type": "datetime"
+                        },
+                        {
+                          "label": "Production Setup",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "productionSetup",
+                          "field": "productionSetup",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "disabled": true,
+                          "queryType": "ProductionSetup",
+                          "labelField": "workcenterId",
+                          "labelPath": "workcenterId",
+                          "additionalFields": "workcenterId",
+                          "target": {
+                            "dataPath": "productionSetupId"
+                          },
+                          "query": {
+                            "fields": [
+                              "productionSetup.id",
+                              "productionSetup.workcenterId"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Unit",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "unit",
+                          "field": "unit",
+                          "description": "Production Unit of Measure must apply to all production setup outputs.",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "queryType": "Unit",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "unitId"
+                          },
+                          "query": {
+                            "fields": [
+                              "unit.id",
+                              "unit.code"
+                            ]
+                          }
+                        },
+                        {
+                          "label": "Workcenter",
+                          "validation": {
+                            "required": false
+                          },
+                          "dataPath": "workcenter",
+                          "field": "workcenter",
+                          "description": "",
+                          "element": "Combobox",
+                          "type": "combobox",
+                          "api": "Application",
+                          "disabled": true,
+                          "queryType": "Workcenter",
+                          "labelField": "code",
+                          "labelPath": "code",
+                          "additionalFields": "code",
+                          "target": {
+                            "dataPath": "workcenterId"
+                          },
+                          "query": {
+                            "fields": [
+                              "workcenter.id",
+                              "workcenter.code"
+                            ]
+                          }
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table1.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateProductionRun($payload: [ProductionRunUpdatePayloadInput!]!) {\n  mutation: updateProductionRun(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    },\n    \"update\": $$.data\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Production Run \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \" updated successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton3"
+                },
+                "parent": "2vDrQ7pOHG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0vSttjIZwx": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "color": "inherit",
+                    "variant": "light",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table1.selectedRows) = 0",
+                    "__dynamicFields": {
+                      "payload": [],
+                      "context": [
+                        "components.Table1.selectedRows"
+                      ]
+                    },
+                    "__cacheKey": "deleteButton",
+                    "__remote": false
+                  },
+                  "hidden": true,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "buttonColor": "error",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table1.selectedRows) = 1 ? (\"Production Run \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteProductionRun($payload: [ProductionRunDeletePayloadInput!]!) {\n  mutation: deleteProductionRun(payload: $payload) { \n    id\n    number\n  }\n}",
+                      "transforms": {
+                        "pre": "{\n  \"payload\": $components.Table1.selectedRows.{\n    \"where\": {\n      \"id\": id\n    }\n  }\n}"
+                      },
+                      "message": {
+                        "__transform": "($count($components.Table1.selectedRows) = 1 ? (\"Production Run \" & $components.Table1.selectedRows.number) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "remote": false,
+                      "transformation": "$components.Table1.fn.search()"
+                    }
+                  ],
+                  "title": "Delete"
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "2vDrQ7pOHG",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HEQxTD1ZaJ": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "ProductionRun",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "remote": true,
+                      "transform": "[edges.node~>|$|(\n\n\n$d := $coalesce([startAt, $moment()]);\n$es := $coalesce([excludedScrap, 0]);\n$ep := $coalesce([excludedProduction, 0]);\n$end := endAt\n{\n\"runDuration\": duration >= 0 ? duration  :\n$isNilOrEmpty(duration) ? $moment().diff($moment($d),'seconds') : 0,\n\n\"running\": $isNilOrEmpty($end) ? \"CURRENT\" : null,\n\n\"totExcludedProd\": $sum($es + $ep)\n\n}\n\n)|\n\n]"
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "fields": [
+                      "id",
+                      "startAt",
+                      "duration",
+                      "endAt",
+                      "workcenter.code",
+                      "excludedProduction",
+                      "excludedScrap"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": "refresh",
+                    "parameters": "{   \"orderBy\": {\n   \"field\":\"createdAt\",\n   \"direction\":\"desc\"\n }\n }"
+                  },
+                  "selectable": "single",
+                  "showToolPanels": true,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "detailHeight": 400,
+                  "hideTableHeader": false,
+                  "filterFormName": "Form1",
+                  "description": "",
+                  "rowMultiSelectWithClick": false,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "_bEDrlQuym",
+                  "PiBJuMu5K",
+                  "QIaME4fYW",
+                  "St810RknLB",
+                  "h2wIC9uqz",
+                  "GWmG3q2JB",
+                  "ocOSs8_Lr",
+                  "-Z4ko39r-8",
+                  "o32nWG2JEk",
+                  "7HrjJbpuk6",
+                  "9XfHT5HOqU",
+                  "fhRkryFcjs",
+                  "d6quIB26ya",
+                  "wkQod2mqur",
+                  "7oobz_bb7o",
+                  "N3jTz6K4Eb",
+                  "yc1hTQ2nPa",
+                  "BCLR7UVuM0",
+                  "Vqp5ELINks",
+                  "1wKc8FZpDV",
+                  "VCvu6--crQ",
+                  "09HizGCwbe",
+                  "8efgsp6T5",
+                  "1TR6dJkSW",
+                  "OXM7r5yvP",
+                  "qtd9o-P_jP",
+                  "cuN1uoAywz",
+                  "4YA3tcKRUv",
+                  "hO5OwSNH-o",
+                  "ZopMkr11nn",
+                  "zNrgcw7WX6",
+                  "VdKynTFRxX",
+                  "yVdy_WA3Jk",
+                  "yA_0y_7kud",
+                  "35XG6t0snn",
+                  "75N4qwNE9",
+                  "wxQ5eJPcw"
+                ],
+                "linkedNodes": {
+                  "Table1Detail": "z5fBd_mFt"
+                }
+              },
+              "_bEDrlQuym": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Number",
+                  "format": "text",
+                  "field": "number",
+                  "dataPath": "number",
+                  "description": "Sequence - shared between multiple production Runs, if co-production",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "number"
+                    ]
+                  },
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/productionRunAnalysis/\" & data.id",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "9XfHT5HOqU": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Changeover Time",
+                  "format": "integer",
+                  "field": "changeoverTime",
+                  "dataPath": "changeoverTime",
+                  "description": "Changeover Time - is the actual time spent in changeover during this production run (seconds)\n\nAggregate Workcenter History Records falling between productionRun.startAt and productionRun.endAt where modeType.changeover = 1.\n\nNote: multiple setups/changeovers that occur during a single production run will impact this number.",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "query": {},
+                  "formatString": "0.00"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7HrjJbpuk6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Duration",
+                  "format": "integer",
+                  "dataPath": "duration",
+                  "query": {
+                    "fields": []
+                  },
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fhRkryFcjs": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Time",
+                  "format": "integer",
+                  "field": "runTime",
+                  "dataPath": "runTime",
+                  "description": "Run Time (seconds) Aggregation:\n\nThe aggregation looks at workcenterHistory records, that fall between the productionRun.startAt and productionRun.endAt to determine based on the Events (not Modes) whether the time was spend up, or down.\n\nPlanned Production Time = resource shift availability (total hours) between productionRun.startAt & productionRun.EndAt (do not excluded plannedDowntime, include all 'avialable' time); Planned Prod Time is always based on the calendar Available time for the workcenter. User must adjust the calendar - when appropriate to adjust the planned production time.\n\nRun Time = Planned Production Time (Minus)-\n\nworkcenterHistory records where PlannedDowntime Or UnPlannedDowntime ==1",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "query": {},
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7oobz_bb7o": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Avg Cycle Time (s)",
+                  "format": "float",
+                  "field": "averageCycleTime",
+                  "dataPath": "averageCycleTime",
+                  "description": "Average Cycle time (seconds/unit)\n\nrunTime / (included produced + included scrap)",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "query": {},
+                  "formatString": "0.00000"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "N3jTz6K4Eb": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Earned Labor Hours",
+                  "format": "float",
+                  "field": "earnedLaborHours",
+                  "dataPath": "earnedLaborHours",
+                  "description": "Earned Labor Hours:\n\n(Produced (good only) / Standard Rate) * approvedWorkcenter.crewSize (for all outputs of the run)",
+                  "formatString": "0.0000"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yc1hTQ2nPa": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Earned Machine Hours",
+                  "format": "float",
+                  "field": "earnedMachineHours",
+                  "dataPath": "earnedMachineHours",
+                  "description": "(Produced (good only) / Standard Rate) - for all outputs of the run.",
+                  "formatString": "0.0000"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BCLR7UVuM0": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Excluded Production",
+                  "field": "excludedProduction",
+                  "dataPath": "excludedProduction",
+                  "description": "Total Production where includeInProductionCounts = 0"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Vqp5ELINks": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Excluded Scrap",
+                  "field": "excludedScrap",
+                  "dataPath": "excludedScrap",
+                  "description": "Total Scrap where includeInProductionCounts = 0"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4YA3tcKRUv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Ideal Aggregate",
+                  "format": "float",
+                  "field": "idealAggregate",
+                  "dataPath": "idealAggregate",
+                  "description": "Sum of all Ideal rates for all production outputs - this defines the total expected throughput per hour for this Run."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-Z4ko39r-8": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Performance",
+                  "format": "float",
+                  "field": "performance",
+                  "dataPath": "performance",
+                  "description": "Performance = (idealRate * totalCount) / runTime\n\ntotalCount = produced+scrap\n\nincludeInProductionCounts = 1",
+                  "query": {},
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "d6quIB26ya": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Planned Downtime",
+                  "format": "integer",
+                  "field": "plannedDowntime",
+                  "dataPath": "plannedDowntime",
+                  "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.plannedDowntime=true\n\nDuration in Seconds",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "query": {},
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "1wKc8FZpDV": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Produced",
+                  "format": "float",
+                  "field": "produced",
+                  "dataPath": "produced",
+                  "description": "Total produced where includeInProductionCounts = 1\n\nThis  is the total throughput for the entire production run in good units made."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "o32nWG2JEk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Quality",
+                  "format": "float",
+                  "field": "quality",
+                  "dataPath": "quality",
+                  "description": "scrap / totalProduction\n\ntotalProduction (produced + scrap), Where WorkcenterMode.includeInProductionCounts = 1",
+                  "query": {},
+                  "style": {
+                    "justifyContent": "flex-end",
+                    "alignItems": "center"
+                  },
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn14"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "qtd9o-P_jP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Actual Crew",
+                  "format": "float",
+                  "field": "runCrewSize",
+                  "dataPath": "runCrewSize",
+                  "description": "Pull from productionSetup.crewSize when Setup is Cleared.\n\nNote: the crew size at the productionSetup may apply to multiple outputs."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn15"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VCvu6--crQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap",
+                  "format": "float",
+                  "field": "scrap",
+                  "dataPath": "scrap",
+                  "description": "Total Scrap where includeInProductionCounts = 1"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn16"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cuN1uoAywz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Changeover Aggregate",
+                  "format": "float",
+                  "field": "changeoverAggregate",
+                  "dataPath": "changeoverAggregate",
+                  "description": "Sum of all changeoverTimes of all production outputs for the run.",
+                  "formatString": "0.00"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn17"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "hO5OwSNH-o": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Standard Aggregate",
+                  "format": "float",
+                  "field": "standardAggregate",
+                  "dataPath": "standardAggregate",
+                  "description": "The consolidated standard rate, for all outputs in the Run."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn18"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "09HizGCwbe": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Tot Included Production",
+                  "format": "float",
+                  "field": "totalProduction",
+                  "dataPath": "totalProduction",
+                  "description": "This is the total production for the run - including all included production + scrap entries where \"include in production counts ==1\" based on the mode at time of entry"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn19"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wkQod2mqur": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Unplanned Downtime",
+                  "format": "integer",
+                  "field": "unplannedDowntime",
+                  "dataPath": "unplannedDowntime",
+                  "description": "Sum of all 'unplanned downtime' during the productionRun - based on workcenter history where eventType.unplannedDowntime=true\n\nDuration in Seconds",
+                  "style": {
+                    "alignItems": "center",
+                    "justifyContent": "flex-end"
+                  },
+                  "query": {},
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn20"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ZopMkr11nn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Actual Labor Hours",
+                  "format": "float",
+                  "field": "actualLaborHours",
+                  "dataPath": "actualLaborHours",
+                  "description": "Run Time * Actual Crew Size",
+                  "query": {},
+                  "formatString": "hh:mm:ss"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zNrgcw7WX6": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "End Date",
+                  "format": "datetime",
+                  "field": "endAt",
+                  "dataPath": "endAt",
+                  "description": "The actual date/time of when this Run ended (ie. production setup cleared)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VdKynTFRxX": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Start Date",
+                  "format": "datetime",
+                  "field": "startAt",
+                  "dataPath": "startAt",
+                  "description": "The actual date/time of when this Run began (ie production setup added)"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yVdy_WA3Jk": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Setup Id",
+                  "format": "text",
+                  "field": "productionSetup.id",
+                  "dataPath": "productionSetup.id",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "query": {
+                    "fields": [
+                      "productionSetup.id"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "St810RknLB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workcenter Code",
+                  "format": "text",
+                  "dataPath": "workcenter.code",
+                  "query": {
+                    "fields": []
+                  },
+                  "field": "workcenter.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yA_0y_7kud": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Created At",
+                  "format": "datetime",
+                  "field": "createdAt",
+                  "dataPath": "createdAt",
+                  "description": "The date and time the record was created."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "35XG6t0snn": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Updated At",
+                  "format": "datetime",
+                  "field": "updatedAt",
+                  "dataPath": "updatedAt",
+                  "description": "The date and time the record was last updated."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QIaME4fYW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Group",
+                  "format": "text",
+                  "dataPath": "workcenter.workcenterGroup.name",
+                  "field": "workcenter.workcenterGroup.name"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HptydDE8F": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Workcenter Group",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter.workcenterGroup",
+                  "target": {
+                    "dataPath": "workcenter.workcenterGroup.id._eq"
+                  },
+                  "field": "workcenter.workcenterGroup",
+                  "predicate": "_eq",
+                  "labelField": "name",
+                  "labelPath": "name",
+                  "orderByField": "name",
+                  "query": {
+                    "fields": [
+                      "workcenter.workcenterGroup.id",
+                      "workcenter.workcenterGroup.name"
+                    ]
+                  },
+                  "queryType": "WorkcenterGroup",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox4"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0LVds_-X4": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Building",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "workcenter.facility",
+                  "target": {
+                    "dataPath": "workcenter.facility.id._eq"
+                  },
+                  "field": "workcenter.facility",
+                  "predicate": "_eq",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "query": {
+                    "fields": [
+                      "workcenter.facility.id",
+                      "workcenter.facility.code"
+                    ]
+                  },
+                  "queryType": "Facility",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox5"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PiBJuMu5K": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Building",
+                  "format": "text",
+                  "dataPath": "workcenter.facility.code",
+                  "field": "workcenter.facility.code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn30"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "z5fBd_mFt": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Table1Detail"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Yw04lFiTM": {
+                "type": {
+                  "resolvedName": "Combobox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "combobox",
+                  "padding": 8,
+                  "width": "300",
+                  "height": "auto",
+                  "label": "Production Run",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "api": "Application",
+                  "validation": {
+                    "required": false
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "labelField": "number",
+                  "labelPath": "number",
+                  "orderByField": "number",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "number"
+                    ]
+                  },
+                  "queryType": "ProductionRun",
+                  "target": {
+                    "dataPath": "id._eq"
+                  },
+                  "dataPath": "id",
+                  "orderByDirection": "asc"
+                },
+                "displayName": "Combobox",
+                "custom": {
+                  "elementName": "Combobox6"
+                },
+                "parent": "QOpWSVMdiL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OXM7r5yvP": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Expected Crew",
+                  "format": "float",
+                  "dataPath": "crewAggregate",
+                  "description": "Crew Aggregate is the sum of all production output - standard operator crew sizes.",
+                  "field": "crewAggregate",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn63"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "1TR6dJkSW": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Total Required",
+                  "format": "float",
+                  "dataPath": "totalRequired",
+                  "description": "The aggregate of all required quantities across all outputs for this run.",
+                  "field": "totalRequired",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn64"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GWmG3q2JB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run OEE",
+                  "format": "float",
+                  "dataPath": "oee",
+                  "description": "",
+                  "field": "oee",
+                  "query": {},
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn65"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ocOSs8_Lr": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Run Availability",
+                  "format": "float",
+                  "dataPath": "availability",
+                  "description": "",
+                  "field": "availability",
+                  "query": {},
+                  "formatString": "0.00%"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn66"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "h2wIC9uqz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Status",
+                  "format": "text",
+                  "style": {
+                    "__transform": "$isNilOrEmpty(data.endAt) ? {\"background\": \"#2E29A6\", \"color\": \"#ffffff\"} : null",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "data": {
+                    "__transform": "data.running",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "dataPath": " ",
+                  "width": "80"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn67"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8efgsp6T5": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Tot Excluded Production",
+                  "dataPath": "totExcludedProd",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "data.totExcludedProd",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn68"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "75N4qwNE9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Products",
+                  "format": "text",
+                  "dataPath": "workOrderProcessDistributions.edges.node.productNumberRevision",
+                  "field": "workOrderProcessDistributions.edges.node.productNumberRevision",
+                  "data": {
+                    "__transform": "$join(\n[data.workOrderProcessDistributions.edges.node.productNumberRevision[$isString($)]],\n\" / \"\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn69"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wxQ5eJPcw": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workorders",
+                  "dataPath": "workOrderProcessDistributions.edges.node.workOrderNumber",
+                  "query": {},
+                  "field": "workOrderProcessDistributions.edges.node.workOrderNumber",
+                  "data": {
+                    "__transform": "$join(\n[data.workOrderProcessDistributions.edges.node.workOrderNumber[$isString($)]],\n\" / \"\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn70"
+                },
+                "parent": "HEQxTD1ZaJ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clpy3h5090002016cbo5xaq29",
+      "title": "Production Run History",
+      "path": "/productionManagement/manufacturing/productionRuns",
+      "moduleId": "manufacturing",
+      "screenId": "productionRunHistory",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

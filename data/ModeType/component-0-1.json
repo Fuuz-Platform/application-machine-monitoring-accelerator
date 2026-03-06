@@ -1,0 +1,67 @@
+{
+  "api": "application",
+  "modelName": "ModeType",
+  "payload": [
+    {
+      "id": "cloenl3n6001e0174ebvn4kfg",
+      "name": "Production",
+      "changeover": false,
+      "disabled": false,
+      "idle": false,
+      "maintenance": false,
+      "other": false,
+      "production": true,
+      "usable": true,
+      "color": "#00ff46"
+    },
+    {
+      "id": "cloenpr980019018881a85w0h",
+      "name": "Idle",
+      "changeover": false,
+      "disabled": false,
+      "idle": true,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "usable": true,
+      "color": "#cccccc"
+    },
+    {
+      "id": "cloeps1mg00290188c2tde7ec",
+      "name": "Changeover",
+      "changeover": true,
+      "disabled": false,
+      "idle": false,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "usable": true,
+      "color": "#ffd580"
+    },
+    {
+      "id": "cloepsbiq001w018mf668fs6g",
+      "name": "Disabled",
+      "changeover": false,
+      "disabled": true,
+      "idle": false,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "usable": true,
+      "color": "#ffcccb"
+    },
+    {
+      "id": "cloept5l8002a0188fv596b94",
+      "name": "Maintenance",
+      "changeover": false,
+      "disabled": false,
+      "idle": false,
+      "maintenance": true,
+      "other": false,
+      "production": false,
+      "usable": true,
+      "color": "#45edff"
+    }
+  ],
+  "metadata": {}
+}

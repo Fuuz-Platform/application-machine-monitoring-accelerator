@@ -1,0 +1,760 @@
+{
+  "header": {
+    "id": "shiftModal",
+    "name": "Shift Modal",
+    "description": "",
+    "active": true,
+    "moduleId": "configuration",
+    "isWidget": true
+  },
+  "version": {
+    "id": "clt3fkdh100go01cueypj9wij",
+    "number": "0.0.58",
+    "description": "",
+    "screenId": "shiftModal",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Form": 2,
+                    "Container": 8,
+                    "Time": 4,
+                    "Checkbox": 15,
+                    "Text": 2,
+                    "Tab Bar": 1,
+                    "Action Button": 4,
+                    "Switch": 18
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "JPp-CQi9Z"
+                ],
+                "linkedNodes": {}
+              },
+              "JPp-CQi9Z": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "/* PARAMS LOAD*/\n\n{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": $coalesce([id, \"\"])\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": "Shift"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "description": "This table is a list of all shifts and it's attributes"
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "fj7xfUxszP"
+                ],
+                "linkedNodes": {}
+              },
+              "fj7xfUxszP": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "JPp-CQi9Z",
+                "hidden": false,
+                "nodes": [
+                  "0aTSCqvyw",
+                  "VOmVqI8y_",
+                  "EMS3QOj89"
+                ],
+                "linkedNodes": {}
+              },
+              "w5ekjmgPr": {
+                "type": {
+                  "resolvedName": "TimeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "time",
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "label": "Start At",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "startAt",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift begins at.",
+                  "field": "startAt",
+                  "timeZone": "setting"
+                },
+                "displayName": "Time",
+                "custom": {
+                  "elementName": "Time1"
+                },
+                "parent": "0aTSCqvyw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yEUpoJayV": {
+                "type": {
+                  "resolvedName": "TimeInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "time",
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "label": "End At",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "endAt",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The time,  based on your Tenenat timeZone setting that the shift ends at.",
+                  "field": "endAt",
+                  "timeZone": "setting"
+                },
+                "displayName": "Time",
+                "custom": {
+                  "elementName": "Time2"
+                },
+                "parent": "0aTSCqvyw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VOmVqI8y_": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "fj7xfUxszP",
+                "hidden": false,
+                "nodes": [
+                  "iHmjBib8W",
+                  "clossr08x00ac356ethtojmjs",
+                  "clossreo600as356e8c6epn88",
+                  "clossrigi00ay356eh5xy9pmm",
+                  "clossrmqa00b4356efz9xw5t2",
+                  "clossrrr200ba356e5r2ls4nz",
+                  "clossrv4e00bg356ehb7thpc1",
+                  "clossrytr00bm356eabd4yqjh"
+                ],
+                "linkedNodes": {}
+              },
+              "0aTSCqvyw": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "fj7xfUxszP",
+                "hidden": false,
+                "nodes": [
+                  "F3B2GGqoG",
+                  "clp45lr2d001q356exdjnd78s",
+                  "w5ekjmgPr",
+                  "yEUpoJayV"
+                ],
+                "linkedNodes": {}
+              },
+              "F3B2GGqoG": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "text",
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "label": "Name",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Shift name - Label field",
+                  "field": "name"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "0aTSCqvyw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EMS3QOj89": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-end",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "fj7xfUxszP",
+                "hidden": false,
+                "nodes": [
+                  "E0uBUtWts",
+                  "UqMMhQUdI"
+                ],
+                "linkedNodes": {}
+              },
+              "UqMMhQUdI": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "red",
+                  "icon": {
+                    "icon": "x",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Screen.fn.return()"
+                    }
+                  ]
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "EMS3QOj89",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "E0uBUtWts": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "save",
+                    "variant": "solid",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "action": [
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "message": {
+                        "__transform": "$components.Form1.data.name & ($metadata.urlParameters.id? \n  \" Updated Successfully\" :\n  \" Create Successfully\" )"
+                      },
+                      "transforms": {
+                        "pre": "(\n  $payload := $merge([\n    $omit($components.Form1.data, [\"id\", \"total\", \"edges\"]),\n    {\n      \"shiftGroupId\": $metadata.urlParameters.shiftGroupId\n    },\n   {\n      \"startHour\": $moment($components.Form1.data.startAt).hour()?\n        $moment($components.Form1.data.startAt).utc().hour() :\n        $moment($components.Form1.data.startAt, \"HH:mm\").hour(),\n\n      \"startMinute\": $moment($components.Form1.data.startAt).hour()?\n        $moment($components.Form1.data.startAt).utc().minute() :\n        $moment($components.Form1.data.startAt, \"HH:mm\").minute(),\n\n      \"endHour\": $moment($components.Form1.data.endAt).hour()?\n        $moment($components.Form1.data.endAt).utc().hour() :\n        $moment($components.Form1.data.endAt, \"HH:mm\").hour(),\n\n      \"endMinute\": $moment($components.Form1.data.endAt).hour()?\n        $moment($components.Form1.data.endAt).utc().minute() :\n        $moment($components.Form1.data.endAt, \"HH:mm\").minute()\n\n    }\n  ]);\n    \n  {\n    \"payload\":{\n      \"where\":{\n        \"id\": $metadata.urlParameters.id? $metadata.urlParameters.id : $cuid()\n      },\n      \"update\":$payload,\n      \"create\": $payload\n    }\n    \n  }\n\n)",
+                        "post": "$components.Screen.fn.return()"
+                      },
+                      "mutation": "mutation($payload:[ShiftUpsertPayloadInput!]!){\n  upsertShift(payload:$payload){ id }\n}"
+                    }
+                  ]
+                },
+                "displayName": "Action Button",
+                "custom": {
+                  "elementName": "ActionButton2"
+                },
+                "parent": "EMS3QOj89",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "iHmjBib8W": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Credit At Start",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "creditAtStart",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "When true production or scrap records are going to be credited to  the date the shift starts on. For example a third shift that begins at 11pm on June 1 but completes on June 2, when boolean = true, would be credited to the June 1 date for reporting and tracking purposes.",
+                  "field": "creditAtStart",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch9"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossr08x00ac356ethtojmjs": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Monday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "monday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Mondays?",
+                  "field": "monday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch10"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossreo600as356e8c6epn88": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Tuesday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "tuesday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Tuesdays?",
+                  "field": "tuesday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch11"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossrigi00ay356eh5xy9pmm": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Wednesday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "wednesday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Wednesdays?",
+                  "field": "wednesday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch12"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossrmqa00b4356efz9xw5t2": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Thursday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "thursday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Thursdays?",
+                  "field": "thursday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch13"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossrrr200ba356e5r2ls4nz": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Friday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "friday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Fridays?",
+                  "field": "friday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch14"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossrv4e00bg356ehb7thpc1": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Saturday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "saturday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Saturdays?",
+                  "field": "saturday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch15"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clossrytr00bm356eabd4yqjh": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "auto",
+                  "height": "auto",
+                  "label": "Sunday",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "sunday",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Does this shift apply to Sundays?",
+                  "field": "sunday",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch16"
+                },
+                "parent": "VOmVqI8y_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "clp45lr2d001q356exdjnd78s": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "type": "switch",
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "label": "Active",
+                  "validation": {
+                    "required": true
+                  },
+                  "visible": true,
+                  "formElement": "Form1",
+                  "dataPath": "active",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "",
+                  "field": "active",
+                  "defaultValue": true
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch18"
+                },
+                "parent": "0aTSCqvyw",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "clo5rd7pq000401544n7jfei6",
+      "title": "Shift Modal",
+      "path": "/system/configuration/shiftModal/:action/:id",
+      "moduleId": "configuration",
+      "screenId": "shiftModal",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

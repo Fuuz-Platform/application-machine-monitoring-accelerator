@@ -1,0 +1,85 @@
+{
+  "api": "application",
+  "modelName": "EventType",
+  "payload": [
+    {
+      "id": "cloephxs1001p0174h51remxs",
+      "name": "Blocked",
+      "blocked": true,
+      "disabled": false,
+      "idle": false,
+      "plannedDowntime": false,
+      "running": false,
+      "starved": false,
+      "unplannedDowntime": false,
+      "usable": true,
+      "color": "#b5651d"
+    },
+    {
+      "id": "cloepi38m001q01749rsc1t2m",
+      "name": "Disabled - Planned",
+      "blocked": false,
+      "disabled": true,
+      "idle": false,
+      "plannedDowntime": true,
+      "running": false,
+      "starved": false,
+      "unplannedDowntime": false,
+      "usable": true,
+      "color": "#ffffe0"
+    },
+    {
+      "id": "cloepilm3002501883m8g7ln9",
+      "name": "Planned Downtime",
+      "blocked": false,
+      "disabled": false,
+      "idle": false,
+      "plannedDowntime": true,
+      "running": false,
+      "starved": false,
+      "unplannedDowntime": false,
+      "usable": true,
+      "color": "#add8e6"
+    },
+    {
+      "id": "cloepjicl00260188hkw9e1mv",
+      "name": "Unplanned Downtime",
+      "blocked": false,
+      "disabled": false,
+      "idle": false,
+      "plannedDowntime": false,
+      "running": false,
+      "starved": false,
+      "unplannedDowntime": true,
+      "usable": true,
+      "color": "#f3172d"
+    },
+    {
+      "id": "cloepjsty001s017440df6gwf",
+      "name": "Running",
+      "blocked": false,
+      "disabled": false,
+      "idle": false,
+      "plannedDowntime": false,
+      "running": true,
+      "starved": false,
+      "unplannedDowntime": false,
+      "usable": true,
+      "color": "#66ff99"
+    },
+    {
+      "id": "cloepk4hc001u01796mp0hs6z",
+      "name": "Starved",
+      "blocked": false,
+      "disabled": false,
+      "idle": false,
+      "plannedDowntime": false,
+      "running": false,
+      "starved": true,
+      "unplannedDowntime": false,
+      "usable": true,
+      "color": "#cbc3e3"
+    }
+  ],
+  "metadata": {}
+}

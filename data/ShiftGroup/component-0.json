@@ -1,0 +1,12 @@
+{
+  "api": "application",
+  "modelName": "ShiftGroup",
+  "payload": [
+    {
+      "id": "clnnc9n7i000b01c0fd2r8mqd",
+      "name": "Default Shift Group",
+      "usable": true
+    }
+  ],
+  "metadata": {}
+}

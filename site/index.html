@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>application-machine-monitoring-accelerator &mdash; Fuuz Accelerator</title>
+<meta name="description" content="Fuuz accelerator: Machine monitoring application — workcenter state, downtime, OEE, IoT, alarms, shift scheduling">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://accelerators.fuuz.com/application-machine-monitoring-accelerator/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://accelerators.fuuz.com/application-machine-monitoring-accelerator/">
+<meta property="og:site_name" content="Fuuz Accelerators">
+<meta property="og:title" content="application-machine-monitoring-accelerator &mdash; Fuuz Accelerator">
+<meta property="og:description" content="Fuuz accelerator: Machine monitoring application — workcenter state, downtime, OEE, IoT, alarms, shift scheduling">
+<link rel="icon" href="assets/appicon-violet.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="prose.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "application-machine-monitoring-accelerator",
+  "url": "https://accelerators.fuuz.com/application-machine-monitoring-accelerator/",
+  "description": "Fuuz accelerator: Machine monitoring application \u2014 workcenter state, downtime, OEE, IoT, alarms, shift scheduling",
+  "codeRepository": "https://github.com/Fuuz-Platform/application-machine-monitoring-accelerator",
+  "applicationCategory": "BusinessApplication",
+  "runtimePlatform": "Fuuz",
+  "author": {
+    "@type": "Organization",
+    "name": "Fuuz",
+    "url": "https://fuuz.com"
+  }
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="../"><img src="assets/logo-horizontal-on-midnight.svg" alt="Fuuz"></a>
+    <span class="section">Accelerators</span>
+    <nav><a href="#overview">Overview</a><a href="#package-contents">Package Contents</a><a href="#functional-areas">Functional Areas</a><a href="https://github.com/Fuuz-Platform/application-machine-monitoring-accelerator">GitHub</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap hero">
+  <p class="eyebrow">Accelerator &middot; Installs into a tenant</p>
+  <h1>application-machine-monitoring-accelerator<span class="accent"></span></h1>
+  <p class="lede">Fuuz accelerator: Machine monitoring application — workcenter state, downtime, OEE, IoT, alarms, shift scheduling</p>
+  <div class="ctas">
+    <a class="cta cta-primary" href="https://github.com/Fuuz-Platform/application-machine-monitoring-accelerator">Get the package</a>
+    <a class="cta cta-secondary" href="../">All accelerators</a>
+  </div>
+</div>
+<section>
+  <div class="wrap prose">
+<p><strong>Version:</strong> 1.0.5
+<strong>Platform:</strong> Fuuz ≥ 2025.1.1
+<strong>Enterprise:</strong> MFGx
+<strong>Spec Version:</strong> 2.0.0</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The Machine Monitoring Accelerator is a comprehensive, production-ready Fuuz application for real-time shop floor visibility, OEE (Overall Equipment Effectiveness) tracking, and IoT-driven machine data collection. It provides the full operational layer between physical manufacturing equipment and digital production records — capturing machine states, production counts, scrap events, downtime, and alarms in real time.</p>
+<p>Built around the ISA-95 manufacturing hierarchy and ISO 22400 OEE standards, this accelerator supports discrete and process manufacturers who need accurate, shift-level machine performance data without custom development. It integrates with PLCs and OPC-UA devices via IoT tags, generates hourly OEE records, aggregates performance across configurable dimensions (product, work order, shift, workcenter group), and surfaces all data through operator-facing dashboards and management-level plant views.</p>
+<h3>Core Capabilities</h3>
+<ul>
+<li><strong>Real-time machine state tracking</strong> — Workcenter mode changes (production, idle, maintenance, changeover, unplanned downtime) recorded as an immutable history log with timestamps, duration, and shift assignment</li>
+<li><strong>Automated OEE calculation</strong> — Hourly Availability × Performance × Quality computation per workcenter per shift; aggregated across configurable time frames (daily, weekly, monthly) and dimensions (product, work order, etc.)</li>
+<li><strong>PLC-integrated production counting</strong> — Counter accumulator logic tracks raw PLC pulse counts, derives production quantities via delta comparison, supports multi-cavity/multi-output workcenters, and posts production records automatically or on-demand</li>
+<li><strong>IoT device subscriptions</strong> — Subscribes to OPC-UA device tags, maintains current and historical tag values, routes incoming IoT messages to the correct production or mode-change handler</li>
+<li><strong>Event and alarm management</strong> — Structured event taxonomy with priority levels, escalation logic (level-1 / level-2 notification timers), alarm lifecycle (new → acknowledged → cleared/canceled), and Gantt-ready downtime history</li>
+<li><strong>Shift scheduling engine</strong> — Day-of-week shift schedules with configurable start/end times, timezone support, and <code>creditAtStart</code> flag for cross-midnight shift date attribution</li>
+<li><strong>Operator control panel</strong> — Per-workcenter HMI screens for mode selection, production setup, output management, scrap recording, and badge-in/out</li>
+<li><strong>Plant dashboard</strong> — WorkcenterGroup-based multi-machine views showing live OEE, current mode/event, production rates, and alarm counts</li>
+</ul>
+<hr />
+<h2 id="package-contents">Package Contents</h2>
+<pre><code>machine-monitoring/
+├── manifest.json
+├── definition.json
+├── package-data.json
+├── data/                        34 seed data files
+├── dataFlows/                   38 automation flows
+├── dataModels/                  78 data model definitions
+├── savedTransforms/             22 reusable data transforms
+└── screens/                     84 UI screen definitions
+</code></pre>
+<hr />
+<h2 id="functional-areas">Functional Areas</h2>
+<h3>1. Workcenter Management</h3>
+<p>Workcenters are the atomic unit of machine monitoring. Each physical machine or work cell is represented as a <code>Workcenter</code> record with configuration for:</p>
+<ul>
+<li><strong>Production modes</strong> — Linked to a <code>ModeGroup</code> which contains an ordered <code>ModeList</code> of valid <code>Mode</code> records. Each mode entry can have a <code>plcCode</code> for PLC-driven automatic mode switching and an optional associated <code>EventGroup</code> for structured event capture.</li>
+<li><strong>Shift scheduling</strong> — Assigned to a <code>ShiftGroup</code> for OEE shift resolution. The engine looks up the active shift at any given moment using the workcenter's shift group assignment.</li>
+<li><strong>OEE rate configuration</strong> — Default ideal rate stored at workcenter level; overridden at the <code>ApprovedWorkcenter</code> (product-operation) level for product-specific takt time calculations.</li>
+<li><strong>External system sync flags</strong> — <code>productionHistorySync</code>, <code>runSync</code>, and <code>workcenterHistorySync</code> flags control whether production data flows from an external ERP rather than being originated in Fuuz.</li>
+<li><strong>IoT tag binding</strong> — Many-to-many <code>WorkcenterIotTag</code> junction associates OPC-UA tags from connected devices to a specific workcenter for counter reading, mode signals, and scrap signals.</li>
+<li><strong>Facility assignment</strong> — Workcenters are optionally grouped under a <code>Facility</code> (type: Production, Distribution, or Subcontract) following the ISA-95 site hierarchy.</li>
+<li><strong>WorkcenterGroups</strong> — Cross-cutting logical collections (independent of ERP setup) used to build plant-level dashboards. Groups have <code>externalId</code> for ERP mapping and <code>customData</code> for extended metadata.</li>
+<li><strong>Current state pointer</strong> — <code>currentWorkcenterHistoryId</code> (unique foreign key) always points to the open <code>WorkcenterHistory</code> record, enabling instant current-state lookups without a query scan.</li>
+</ul>
+<h3>2. Production State &amp; Setup</h3>
+<p>The <code>ProductionSetup</code> table functions as a one-per-workcenter "live state" record — the single source of truth for what the machine is currently doing:</p>
+<ul>
+<li><strong>Current mode</strong> — <code>modeId</code> reflects the active <code>Mode</code>; changing this creates a new <code>WorkcenterHistory</code> record and triggers OEE recalculation for the hour</li>
+<li><strong>Current event</strong> — <code>eventId</code> references a specific <code>Event</code> from the workcenter's configured <code>ModeGroup</code> event lists; event updates modify the open <code>WorkcenterHistory</code> record without creating a new one</li>
+<li><strong>Current production run</strong> — <code>productionRunId</code> links to the active <code>ProductionRun</code> when the workcenter is executing a scheduled job</li>
+<li><strong>Operators on duty</strong> — <code>operators</code> (JSON array) tracks who is logged in; used in labor efficiency calculations</li>
+<li><strong>Static bulletins</strong> — <code>note</code> field stores free-text instructions visible on operator dashboards without triggering system events</li>
+<li><strong>Outputs</strong> — One-to-many <code>ProductionSetupOutput</code> records, one per active product/work-order/cavity combination</li>
+</ul>
+<p><strong>ProductionSetupOutput</strong> is where PLC integration and production tracking converge:</p>
+<ul>
+<li><code>outputId</code> — cavity number for multi-cavity dies (enabled by <code>Workcenter.multiOutCapable</code>)</li>
+<li><code>counterInput</code> / <code>counterAccum</code> / <code>counterLastProduction</code> — three-field PLC counter accumulator: <code>counterInput</code> = last raw PLC value; <code>counterAccum</code> = total accumulated across PLC resets; <code>counterLastProduction</code> = counter value at last production post; production quantity = <code>counterInput − counterLastProduction</code></li>
+<li><code>autoProduction</code> — when true, the IoT pipeline automatically posts production records on each counter update instead of waiting for operator confirmation</li>
+<li><code>unitPerCycle</code> — floating-point multiplier for dies that produce multiple parts per machine stroke</li>
+<li><code>standardQuantity</code> / <code>idealRate</code> / <code>setupRate</code> — rate targets sourced from linked <code>ApprovedWorkcenter</code> for the product-operation combination</li>
+<li><code>producedQuantity</code> / <code>scrappedQuantity</code> — running totals for the current setup</li>
+<li><code>remainingBalance</code> / <code>dueAt</code> / <code>scheduledStartAt</code> — work order schedule data for operator guidance</li>
+<li><code>distributionStatus</code> / <code>workOrderProcessDistributionId</code> — WMS integration hooks for distribution workflow coupling</li>
+</ul>
+<h3>3. Production History</h3>
+<p><code>ProductionHistory</code> is the immutable append-only ledger of all production and scrap transactions. Every quantity posted — whether from operator entry, PLC auto-production, or ERP sync — creates a record here.</p>
+<p><strong>Key fields:</strong>
+- <code>quantity</code> — units produced or scrapped (required)
+- <code>occurAt</code> — timestamp of the event (defaults to <code>$moment()</code> at creation)
+- <code>creditedAt</code> — adjusted date for shift attribution (controlled by <code>Shift.creditAtStart</code> for cross-midnight shifts)
+- <code>transactionTypeId</code> — links to <code>TransactionType</code> defining the nature of the record (productionAdd, scrapAdd, productionSetupAdd, productionSetupClear, modeChange, etc.)
+- <code>shiftId</code> — resolved shift at time of posting; used for OEE aggregation
+- <code>workcenterId</code> / <code>approvedWorkcenterId</code> / <code>productionRunId</code> / <code>scrapReasonId</code> — full traceability chain
+- <code>externalId</code> — NetSuite Work Order Completion or Assembly Build ID for ERP reconciliation</p>
+<p><strong>Traceability fields</strong> (for regulated manufacturing):
+- <code>serialNo</code> — auto-sequenced from <code>serialNumbers</code> sequence
+- <code>lotNo</code>, <code>heatNo</code>, <code>heatCode</code>, <code>masterUnitNo</code>, <code>trackingNo</code> — material genealogy
+- <code>productNumber</code>, <code>productNumberRevision</code>, <code>productRevision</code> — revision-controlled product identity
+- <code>operationCode</code>, <code>operationNumber</code>, <code>workOrderNumber</code> — routing and shop order linkage</p>
+<p><code>dataChangeCapture</code> is enabled and exposed, enabling downstream event streaming for ERP integration.</p>
+<h3>4. OEE Calculation &amp; Reporting</h3>
+<p>OEE is calculated per ISO 22400: <strong>OEE = Availability × Performance × Quality</strong></p>
+<p><strong>Hourly OEE (<code>Oee</code> model):</strong>
+- One record per workcenter per shift-hour per shift
+- <code>shiftHour</code> — 1-based hour index within the shift (e.g., hour 3 of an 8-hour shift)
+- <code>availability</code> — productionTime / totalTime; <code>productionTime</code> = scheduled time minus unplanned downtime
+- <code>performance</code> — (totalQuantity × averageCycleTime) / productionTime; uses <code>idealRate</code> from ApprovedWorkcenter or Workcenter default
+- <code>quality</code> — totalProductionQuantity / (totalProductionQuantity + totalScrapQuantity)
+- <code>counter</code> — total machine cycles from PLC or manual entry for the hour; used when cycle time is more reliable than rate
+- <code>plannedDowntime</code> / <code>unplannedDowntime</code> / <code>other</code> — seconds in each state category for the hour
+- <code>creditedAt</code> — adjusted report date (respects <code>Shift.creditAtStart</code> for cross-midnight shifts)
+- Indexed on <code>(workcenterId, workcenterGroupId, shiftId, shiftHour, startAt, endAt)</code> and <code>(workcenterId, shiftId, creditedAt)</code> for fast dashboard queries</p>
+<p><strong>Aggregated OEE (<code>OeeAggregate</code> model):</strong>
+- Rolled-up OEE across configured dimensions with weighted averages (<code>availabilityWeight</code>, <code>performanceWeight</code>, <code>qualityWeight</code>)
+- Linked to <code>OeeConfiguration</code> (which dimensions to apply) and <code>OeeTimeFrame</code> (duration in seconds — daily/weekly/monthly)
+- Dimension slicing by <code>productNoRevision</code>, <code>workOrderCode</code>, <code>workOrderNumber</code>, <code>shiftId</code>, <code>workcenterId</code>, <code>workcenterGroupId</code>
+- <code>OeeConfiguration.lastRanAt</code> is automatically set to the start of the configured time frame in America/Detroit timezone when a configuration is created</p>
+<p><strong>OEE Time Frames (<code>OeeTimeFrame</code>):</strong>
+- <code>label</code> — auto-set as the record ID via create trigger
+- <code>duration</code> — seconds (e.g., 86400 = daily, 604800 = weekly, 2592000 = monthly)
+- Used by scheduler to determine when aggregate recalculation runs</p>
+<p><strong>Key data flows:</strong>
+- <em>Calculate OEE</em> — core system flow; triggered on WorkcenterHistory changes, computes hourly Oee record
+- <em>Get OEEs for shift</em> — integration flow serving dashboard OEE query by shift date range
+- <em>Get OEEs for shift Production Run</em> — integration flow filtering OEE by active production run</p>
+<h3>5. Workcenter History &amp; Downtime</h3>
+<p><code>WorkcenterHistory</code> is the time-series log of every machine state change:</p>
+<ul>
+<li>Each record represents one continuous interval at a single mode/event combination</li>
+<li><code>occurAt</code> — start of the interval ("logDate")</li>
+<li><code>endAt</code> — end of the interval ("time resolved"); null for the currently-open record</li>
+<li><code>duration</code> — <code>endAt − occurAt</code> in seconds; used directly in OEE time component calculations</li>
+<li><code>disabled</code> — set from <code>Event</code>; marks the interval as "machine down" for OEE runtime calculation</li>
+<li><code>includeInOee</code> — set from <code>Mode</code>; determines if interval counts toward OEE scheduled time</li>
+<li><code>requireNote</code> — forces operator to enter a note before the record can be closed</li>
+<li><code>modeId</code> / <code>eventId</code> — snapshot of mode and event active during this interval</li>
+<li><code>productionRunId</code> — links to the run active at time of state change</li>
+<li><code>shiftId</code> — resolved shift for time attribution</li>
+</ul>
+<p><strong>Back Fill End Dates</strong> data flow handles edge cases where records are left open across shifts or system restarts, ensuring OEE calculation always has complete time windows.</p>
+<h3>6. Event &amp; Downtime Taxonomy</h3>
+<p>A three-level event taxonomy provides structured downtime classification:</p>
+<p><strong>EventType</strong> — defines OEE impact flags:
+- <code>running</code>, <code>starved</code>, <code>blocked</code>, <code>idle</code>, <code>disabled</code> (unplanned downtime for OEE), <code>plannedDowntime</code>, <code>unplannedDowntime</code></p>
+<p><strong>EventCategory</strong> — 8-way classification:
+- <code>equipment</code>, <code>labor</code>, <code>material</code>, <code>quality</code>, <code>schedule</code>, <code>ancillary</code>, <code>support</code>, <code>other</code></p>
+<p><strong>EventPriority</strong> — defines escalation thresholds:
+- <code>redMinutes</code> / <code>yellowMinutes</code> — age thresholds for visual alerting
+- <code>critical</code>, <code>high</code>, <code>low</code>, <code>medium</code> — priority tier flags
+- <code>configurationSchema</code> — JSON schema for priority-specific metadata capture</p>
+<p><strong>EventGroup / EventList</strong> — groups events for assignment to Mode entries:
+- <code>EventList</code> associates an <code>Event</code> to an <code>EventGroup</code> with display <code>order</code>, <code>default</code> flag, <code>plcCode</code> for IoT-driven selection, <code>requireNote</code>, and optional <code>EventPriority</code>
+- <code>alarm</code> flag on EventList triggers automatic alarm creation when that event is selected (see <em>Create Alarm on Event</em> flow)</p>
+<p><strong>Event</strong> — individual downtime/event entries:
+- <code>externalId</code> — PLC integer code for automatic event assignment from IoT signals
+- <code>eventCategoryId</code>, <code>eventTypeId</code> — taxonomy linkage
+- <code>customData</code> — extensible metadata</p>
+<h3>7. Alarm Management</h3>
+<p>Alarms provide escalating notification when workcenters enter abnormal states:</p>
+<ul>
+<li><code>Alarm</code> records are auto-created by the <em>Create Alarm on Event</em> flow when an EventList entry has <code>alarm: true</code></li>
+<li><code>alarmStatusId</code> → <code>AlarmStatus</code> tracks lifecycle state with Boolean flags: <code>new</code>, <code>active</code>, <code>acknowledged</code>, <code>cleared</code>, <code>canceled</code></li>
+<li><code>workcenterHistoryId</code> (unique) — one alarm per open workcenter history record; cleared automatically when the interval closes</li>
+<li><code>levelOneSent</code> / <code>levelTwoSent</code> (DateTime) — escalation timestamps; populated when notifications fire at configured priority thresholds</li>
+<li><code>assignedRoleId</code> / <code>assignedUserId</code> — enables alarm routing to specific personnel or roles</li>
+<li><code>acknowledgedAt</code>, <code>assignedAt</code>, <code>canceledAt</code>, <code>clearedAt</code> — full lifecycle audit trail</li>
+<li>TTL on <code>updatedAt</code>: ~32 million seconds (~1 year) — old closed alarms auto-expire</li>
+</ul>
+<p><em>Alarm State Change Screen Flow</em> — handles operator interactions from the alarm management screen, driving status transitions.</p>
+<h3>8. Mode Management</h3>
+<p><strong>Mode</strong> — named machine states with OEE impact flags:
+- <code>idle</code> — machine is not producing but is healthy
+- <code>includeProductionCounts</code> — whether production posted in this mode counts toward OEE quality numerator
+- <code>usable</code> — controls availability in operator mode selection lists</p>
+<p><strong>ModeType</strong> — classifies modes into 6 operational categories:
+- <code>production</code>, <code>idle</code>, <code>changeover</code>, <code>maintenance</code> (planned downtime), <code>disabled</code> (unplanned downtime), <code>other</code>
+- Each ModeType has a <code>color</code> for visual differentiation in Gantt and dashboard views</p>
+<p><strong>ModeGroup / ModeList</strong> — per-workcenter configuration of which modes are available:
+- <code>ModeList</code> entries carry display <code>order</code>, <code>default</code> flag, <code>plcCode</code> for PLC-driven switching, and optional <code>EventGroup</code> for event prompting when that mode is selected
+- <em>WorkcenterModeChangeLaunch</em> screen flow — initiates mode change from operator HMI
+- <em>Change Workcenter Mode</em> integration flow — applies the mode change, creates WorkcenterHistory record, triggers OEE recalculation
+- <em>No Mode Group Configured</em> screen flow — error handler for workcenters missing mode group assignment</p>
+<h3>9. IoT Integration</h3>
+<p>Full OPC-UA device integration pipeline:</p>
+<p><strong>Device → Tag → Workcenter pipeline:</strong>
+1. Devices (OPC-UA servers, PLCs) are registered in the platform
+2. <code>IotTag</code> records define individual tag subscriptions: <code>name</code>, <code>configuration</code> (JSON — endpoint, node ID, polling interval), <code>iotTagTypeId</code>, <code>iotTagUseCaseId</code>, <code>storeHistory</code> flag, <code>currentValue</code> (JSON — last received value), <code>currentValueRecordedAt</code>
+3. <code>WorkcenterIotTag</code> junction maps each tag to one or more workcenters
+4. <em>Create Device Subscription From Iot Tags</em> — system flow that generates OPC-UA subscriptions on the device from the IotTag configuration
+5. <em>Update Iot Tag by Device Subscriptions</em> — receives subscription update events, updates <code>IotTag.currentValue</code>
+6. <em>Create Historical IOT Tag Values</em> — when <code>storeHistory = true</code>, appends each update to <code>IotTagHistoricalValue</code> for trend analysis
+7. <em>IOT Tag Handler</em> — the main routing flow; reads <code>iotTagUseCaseId</code> to determine if incoming value triggers production posting, mode change, scrap recording, or counter update</p>
+<p><strong>IotTagUseCase</strong> controls dispatch routing:
+- Use cases map to specific handler behaviors (e.g., "Production Counter", "Mode Signal", "Scrap Signal", "Generic")
+- <code>configurationSchema</code> per use case defines the expected tag configuration structure</p>
+<p><strong>7-day data change capture</strong> on IotTag (exposed) enables real-time streaming of tag value updates to connected systems.</p>
+<h3>10. Shift &amp; Scheduling</h3>
+<p><strong>Shift</strong> — defines a single named work period:
+- <code>startHour</code>/<code>startMinute</code>, <code>endHour</code>/<code>endMinute</code> — local time bounds
+- <code>timeZone</code> — IANA timezone string for shift resolution
+- Day-of-week flags (<code>monday</code>…<code>sunday</code>) — all default true; set false to exclude days
+- <code>creditAtStart</code> — when true, production from a cross-midnight shift (e.g., 11 PM–7 AM) credits to the start date rather than the end date; critical for accurate daily production reporting for third-shift operations</p>
+<p><strong>ShiftGroup</strong> — named collection of shifts assigned to workcenters:
+- Multiple workcenters share the same shift group for consistent OEE shift resolution
+- <code>usable</code> flag controls active assignment</p>
+<h3>11. Product Rate Configuration</h3>
+<p><strong>ApprovedWorkcenter</strong> — product-operation-workcenter rate configuration:
+- <code>code</code> — auto-sequenced identifier
+- <code>idealRate</code> — takt time target (the denominator in OEE performance calculation when product-specific rates are configured)
+- <code>crewSize</code>, <code>setupCrewSize</code>, <code>setupTime</code> — labor standard data
+- <code>standardProductionRate</code>, <code>standardQuantity</code>, <code>targetRate</code>, <code>unitsPerCycle</code> (Int) — production standard references
+- <code>operationCode</code>, <code>operationNo</code>, <code>productOperationId</code> — routing linkage
+- <code>productId</code>, <code>productNo</code>, <code>productNoRevision</code>, <code>productRevision</code> — product identity at the revision level
+- <code>active</code> — enables/disables without deleting historical records</p>
+<p><strong>ScrapReason</strong> — configurable scrap classification:
+- <code>code</code> — unique identifier (also the display label)
+- <code>plcCode</code> — IoT signal value that auto-posts a scrap record for this reason
+- <code>externalId</code> — ERP scrap reason code for two-way sync
+- <code>usable</code> — controls availability in operator scrap entry screens</p>
+<hr />
+<h2 id="data-flows">Data Flows</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Type</th>
+<th>Module</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Alarm State Change Screen Flow</td>
+<td>Screen</td>
+<td>manufacturing</td>
+<td>Handles alarm lifecycle transitions from operator screens</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Back Fill End Dates of Workcenter History</td>
+<td>System</td>
+<td>integration</td>
+<td>Closes open WorkcenterHistory records across shift boundaries</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Calculate OEE</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Computes hourly Availability × Performance × Quality per workcenter/shift</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Change Workcenter Mode</td>
+<td>Integration</td>
+<td>manufacturing</td>
+<td>Applies mode change, creates WorkcenterHistory record, triggers OEE</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Control Panel Router</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Routes operator control panel actions to appropriate handlers</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Create Device Subscription From Iot Tags</td>
+<td>System</td>
+<td>internetOfThings</td>
+<td>Generates OPC-UA subscriptions from IotTag configuration</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Create Historical IOT Tag Values</td>
+<td>System</td>
+<td>internetOfThings</td>
+<td>Persists IotTag value history when storeHistory is enabled</td>
+</tr>
+<tr>
+<td>7</td>
+<td>IOT Tag Handler</td>
+<td>System</td>
+<td>internetOfThings</td>
+<td>Routes incoming IoT messages by use case to production/mode handlers</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Load Workcenter Outputs</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Loads ProductionSetupOutput records for active workcenter</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Mode Event Gantt Data from Workcenter History</td>
+<td>System</td>
+<td>dashboard</td>
+<td>Transforms WorkcenterHistory into Gantt chart format for dashboards</td>
+</tr>
+<tr>
+<td>10</td>
+<td>No Mode Group Configured</td>
+<td>Screen</td>
+<td>manufacturing</td>
+<td>Error handler for workcenters without mode group assignment</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Publish on Production Setup Mode Change</td>
+<td>System</td>
+<td>—</td>
+<td>Event publisher for mode change notifications to subscribers</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Record Production</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Posts ProductionHistory records from operator entry or PLC counter delta</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Start Stop Run</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Manages ProductionRun start/stop lifecycle at workcenter</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Update Iot Tag by Device Subscriptions</td>
+<td>System</td>
+<td>internetOfThings</td>
+<td>Processes device subscription updates, persists current tag value</td>
+</tr>
+<tr>
+<td>15</td>
+<td>WorkcenterModeChangeLaunch</td>
+<td>Screen</td>
+<td>manufacturing</td>
+<td>Initiates mode change dialog from operator HMI</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Get OEEs for shift</td>
+<td>Integration</td>
+<td>dashboard</td>
+<td>Query flow returning OEE records for a shift date range</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Create Alarm on Event</td>
+<td>System</td>
+<td>manufacturing</td>
+<td>Auto-creates Alarm record when an EventList entry with alarm=true is selected</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Get OEEs for shift Production Run</td>
+<td>Integration</td>
+<td>dashboard</td>
+<td>Query flow filtering OEE by active production run</td>
+</tr>
+<tr>
+<td>19–37</td>
+<td>Additional Flows (19)</td>
+<td>Various</td>
+<td>Various</td>
+<td>Production run management, plant dashboard data, advanced OEE, scheduling integrations, and reporting flows</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="data-models">Data Models</h2>
+<h3>Core Machine &amp; Workcenter</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Workcenter</code></td>
+<td>code!, name!, active!, autoProduction, multiOutCapable, shiftGroupId, modeGroupId, workcenterGroupId</td>
+<td>Central machine entity; 75 schema versions</td>
+</tr>
+<tr>
+<td><code>WorkcenterGroup</code></td>
+<td>name!, usable!, externalId</td>
+<td>Plant-level dashboard groupings independent of ERP</td>
+</tr>
+<tr>
+<td><code>WorkcenterHistory</code></td>
+<td>occurAt, endAt, duration, disabled, includeInOee, modeId, eventId, workcenterId</td>
+<td>Immutable machine state time-series; 39 schema versions</td>
+</tr>
+<tr>
+<td><code>WorkcenterMode</code></td>
+<td>number (auto), plcCode, modeId</td>
+<td>Workcenter-level mode assignment with PLC code</td>
+</tr>
+<tr>
+<td><code>WorkcenterIotTag</code></td>
+<td>workcenterId, iotTagId</td>
+<td>Many-to-many IoT tag binding; dataChangeCapture enabled</td>
+</tr>
+<tr>
+<td><code>Facility</code></td>
+<td>code!, name!, type (Production/Distribution/Subcontract), active</td>
+<td>ISA-95 site hierarchy node; 120-day data capture</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Production</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ProductionSetup</code></td>
+<td>workcenterId (unique!), modeId, eventId, productionRunId, operators</td>
+<td>Live workcenter state record; 53 schema versions</td>
+</tr>
+<tr>
+<td><code>ProductionSetupOutput</code></td>
+<td>outputId, productNumber!, counterInput/Accum/LastProduction, autoProduction, unitPerCycle, workcenterId!</td>
+<td>Per-output PLC integration and quantity tracking; 23 schema versions</td>
+</tr>
+<tr>
+<td><code>ProductionHistory</code></td>
+<td>quantity!, occurAt!, creditedAt, shiftId!, transactionTypeId!, workcenterId, serialNo (auto-seq)</td>
+<td>Immutable production/scrap ledger; 47 schema versions</td>
+</tr>
+<tr>
+<td><code>ApprovedWorkcenter</code></td>
+<td>code (auto-seq), idealRate, crewSize, productId!, workcenterId!</td>
+<td>Product-operation rate standards per workcenter</td>
+</tr>
+<tr>
+<td><code>ScrapReason</code></td>
+<td>code! (unique), plcCode, externalId, usable</td>
+<td>Configurable scrap classification with IoT and ERP binding</td>
+</tr>
+<tr>
+<td><code>TransactionType</code></td>
+<td>name! (=id), productionAdd!, scrapAdd!, modeChange!, 28 additional Boolean flags, color!</td>
+<td>Transaction classification; dataChangeCapture enabled</td>
+</tr>
+</tbody>
+</table></div>
+<h3>OEE</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Oee</code></td>
+<td>shiftHour, availability, performance, quality, oee!, counter, creditedAt!, workcenterId</td>
+<td>Hourly OEE record per workcenter/shift; 23 schema versions</td>
+</tr>
+<tr>
+<td><code>OeeAggregate</code></td>
+<td>All Oee fields + weighted averages, productNoRevision, workOrderCode, oeeConfigurationId, oeeTimeFrameId</td>
+<td>Dimensional OEE rollup; 9 schema versions</td>
+</tr>
+<tr>
+<td><code>OeeConfiguration</code></td>
+<td>name, lastRanAt (auto-set, Detroit tz), oeeTimeFrameId!</td>
+<td>Defines aggregation dimensions and schedule; 13 schema versions</td>
+</tr>
+<tr>
+<td><code>OeeDimension</code></td>
+<td>label, field (grouping key), description</td>
+<td>Defines one aggregation dimension (e.g., by product)</td>
+</tr>
+<tr>
+<td><code>OeeDimensionOeeConfiguration</code></td>
+<td>oeeConfigurationId, oeeDimensionId (unique composite)</td>
+<td>M:M junction linking dimensions to configurations</td>
+</tr>
+<tr>
+<td><code>OeeTimeFrame</code></td>
+<td>label (=id auto), duration (Int seconds), description</td>
+<td>Named time windows for OEE rollup (daily/weekly/monthly)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Events &amp; Alarms</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Alarm</code></td>
+<td>number (auto-seq), alarmStatusId!, workcenterId!, workcenterHistoryId! (unique), levelOneSent, levelTwoSent</td>
+<td>Alarm record with escalation tracking; TTL ~1 year</td>
+</tr>
+<tr>
+<td><code>AlarmStatus</code></td>
+<td>name! (unique), active, new, acknowledged, cleared, canceled, usable!</td>
+<td>Alarm lifecycle state definitions</td>
+</tr>
+<tr>
+<td><code>Event</code></td>
+<td>name! (unique), externalId (PLC int), eventCategoryId, eventTypeId, eventListId, usable</td>
+<td>Named event/downtime entry</td>
+</tr>
+<tr>
+<td><code>EventType</code></td>
+<td>name! (unique), disabled, plannedDowntime, unplannedDowntime, running, starved, blocked, idle, usable!</td>
+<td>OEE impact classification per event type</td>
+</tr>
+<tr>
+<td><code>EventCategory</code></td>
+<td>equipment, labor, material, quality, schedule, ancillary, support, other</td>
+<td>8-way categorical classification</td>
+</tr>
+<tr>
+<td><code>EventGroup</code></td>
+<td>name! (unique), usable</td>
+<td>Container for EventList entries</td>
+</tr>
+<tr>
+<td><code>EventList</code></td>
+<td>order, alarm, default, requireNote, plcCode, eventId!, eventGroupId, eventPriorityId</td>
+<td>Event-to-group mapping with IoT code and alarm trigger</td>
+</tr>
+<tr>
+<td><code>EventPriority</code></td>
+<td>name! (unique), redMinutes, yellowMinutes, critical, high, low, medium, usable</td>
+<td>Priority tiers with escalation time thresholds</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Modes</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Mode</code></td>
+<td>name!, idle!, includeProductionCounts, usable!, modeTypeId</td>
+<td>Named machine state</td>
+</tr>
+<tr>
+<td><code>ModeType</code></td>
+<td>name! (unique), production, idle, changeover, maintenance, disabled, other, color, usable</td>
+<td>OEE category classification for modes</td>
+</tr>
+<tr>
+<td><code>ModeGroup</code></td>
+<td>name! (unique), usable</td>
+<td>Container for ModeList entries assigned to workcenters</td>
+</tr>
+<tr>
+<td><code>ModeList</code></td>
+<td>order, default, plcCode, modeId!, modeGroupId!, eventGroupId</td>
+<td>Mode-to-group mapping with PLC code</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Shifts</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Shift</code></td>
+<td>name!, startHour/Minute, endHour/Minute, timeZone, creditAtStart!, day-of-week flags, shiftGroupId!</td>
+<td>Named shift schedule; 27 schema versions</td>
+</tr>
+<tr>
+<td><code>ShiftGroup</code></td>
+<td>name!, usable</td>
+<td>Grouping of shifts assigned to workcenters</td>
+</tr>
+</tbody>
+</table></div>
+<h3>IoT</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Key Fields</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IotTag</code></td>
+<td>name! (unique), active!, storeHistory!, currentValue (JSON), configuration (JSON), deviceId, iotTagTypeId, iotTagUseCaseId</td>
+<td>OPC-UA/IoT data point; 7-day dataChangeCapture</td>
+</tr>
+<tr>
+<td><code>IotTagHistoricalValue</code></td>
+<td>recordedAt!, value (JSON!), iotTagId</td>
+<td>Historical tag value time-series</td>
+</tr>
+<tr>
+<td><code>IotTagType</code></td>
+<td>name! (unique, =id auto), usable!, configurationSchema</td>
+<td>Tag type classification with schema definition</td>
+</tr>
+<tr>
+<td><code>IotTagUseCase</code></td>
+<td>name! (unique, =id auto), usable!, configurationSchema</td>
+<td>Routing classification (Production Counter, Mode Signal, etc.)</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="screens-84-total">Screens (84 total)</h2>
+<p>Screens provide operator-facing HMI panels, management dashboards, and configuration interfaces:</p>
+<p><strong>Operator HMI</strong>
+- Workcenter control panel with mode selection, event logging, production entry, and scrap recording
+- Multi-output production setup for multi-cavity workcenters
+- Badge-in / badge-out operator tracking
+- Alarm acknowledgment and escalation views</p>
+<p><strong>Plant / Line Dashboards</strong>
+- WorkcenterGroup overview — live OEE, current mode/event, production vs. target
+- Mode/Event Gantt chart — time-axis view of machine state history per shift
+- OEE trend views — hourly, shift, daily, weekly, monthly breakdowns</p>
+<p><strong>Configuration Screens</strong>
+- Workcenter setup — mode group, shift group, IoT tag assignment, rate configuration
+- Shift and ShiftGroup management
+- Mode, ModeGroup, ModeList configuration
+- Event, EventGroup, EventPriority configuration
+- AlarmStatus configuration
+- OeeConfiguration and OeeTimeFrame management
+- ScrapReason and TransactionType management</p>
+<hr />
+<h2 id="seed-data-34-records">Seed Data (34 records)</h2>
+<p>Pre-configured reference data included on install:</p>
+<ul>
+<li><strong>ModeTypes</strong> — production, idle, changeover, maintenance, disabled, other (with default colors)</li>
+<li><strong>TransactionTypes</strong> — full set of 31 named transaction classifications with color assignments</li>
+<li><strong>AlarmStatuses</strong> — new, active, acknowledged, cleared, canceled with Boolean flag presets</li>
+<li><strong>EventTypes</strong> — running, blocked, starved, idle, planned downtime, unplanned downtime</li>
+<li><strong>EventCategories</strong> — all 8 categories (equipment, labor, material, quality, schedule, ancillary, support, other)</li>
+<li><strong>EventPriorities</strong> — default priority levels with escalation minute thresholds</li>
+<li><strong>IotTagTypes</strong> and <strong>IotTagUseCases</strong> — standard OPC-UA tag type and use-case classifications</li>
+<li><strong>OeeTimeFrames</strong> — daily (86400s), weekly (604800s), monthly (2592000s)</li>
+</ul>
+<hr />
+<h2 id="key-integrations">Key Integrations</h2>
+<h3>ERP / External Systems</h3>
+<ul>
+<li><code>ProductionHistory.externalId</code> — NetSuite Work Order Completion / Assembly Build ID</li>
+<li><code>ScrapReason.externalId</code> — ERP scrap reason mapping</li>
+<li><code>WorkcenterGroup.externalId</code> — ERP workcenter group mapping</li>
+<li><code>Workcenter.externalId</code> — external system machine ID</li>
+<li>Sync flags: <code>productionHistorySync</code>, <code>runSync</code>, <code>workcenterHistorySync</code> — enable pull-from-ERP mode per workcenter</li>
+</ul>
+<h3>PLC / OPC-UA</h3>
+<ul>
+<li><code>WorkcenterMode.plcCode</code> — integer code sent by PLC to trigger mode changes</li>
+<li><code>ModeList.plcCode</code> — PLC code for mode signal routing</li>
+<li><code>EventList.plcCode</code> — PLC code for event signal routing</li>
+<li><code>ScrapReason.plcCode</code> — PLC code for scrap signal routing</li>
+<li><code>IotTag.configuration</code> — full OPC-UA subscription configuration (endpoint, node ID, interval)</li>
+<li><code>ProductionSetupOutput.counterInput/Accum/counterLastProduction</code> — three-register PLC pulse counter accumulator</li>
+</ul>
+<h3>Printing / Labeling</h3>
+<ul>
+<li><code>Workcenter.printerId</code> → <code>Device</code> — label printer assigned to each workcenter for production record labeling</li>
+</ul>
+<hr />
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Ensure Fuuz platform version ≥ 2025.1.1 is deployed in the target environment</li>
+<li>Import the package via Fuuz Package Manager using <code>manifest.json</code> (specVersion 2.0.0)</li>
+<li>Seed data (34 records) will be applied automatically on first import — ModeTypes, TransactionTypes, AlarmStatuses, EventTypes, EventCategories, EventPriorities, IoT reference data, and OEE time frames</li>
+<li>Configure <code>ShiftGroup</code> and <code>Shift</code> records for your facility's schedule (start/end times, timezone, day-of-week flags, <code>creditAtStart</code> for third shift)</li>
+<li>Create <code>ModeGroup</code> and <code>ModeList</code> entries defining valid modes per workcenter type, with PLC codes if PLC integration is in scope</li>
+<li>Create <code>EventGroup</code> and <code>EventList</code> entries for structured downtime classification; assign priority levels and enable <code>alarm</code> flag on critical events</li>
+<li>Create <code>Facility</code> and <code>WorkcenterGroup</code> records following your ISA-95 site hierarchy and plant dashboard layout</li>
+<li>Create <code>Workcenter</code> records and assign <code>ShiftGroup</code>, <code>ModeGroup</code>, <code>Facility</code>, <code>WorkcenterGroup</code>, and optional <code>screenId</code></li>
+<li>Configure <code>ApprovedWorkcenter</code> records for each product-operation-workcenter combination requiring product-specific OEE rate standards</li>
+<li>For IoT/PLC integration: create <code>IotTag</code> records with device and OPC-UA node configuration; run <em>Create Device Subscription From Iot Tags</em> flow; map tags to workcenters via <code>WorkcenterIotTag</code>; configure <code>iotTagUseCaseId</code> to route signals to the correct handler</li>
+<li>Configure <code>OeeConfiguration</code> and link to <code>OeeTimeFrame</code> and <code>OeeDimension</code> records for automated OEE aggregation reporting</li>
+<li>Activate operator screens and plant dashboards from the Screens library; assign <code>screenId</code> to Workcenter records for per-machine control panel routing</li>
+</ol>
+<hr />
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><strong>Fuuz Platform</strong> ≥ 2025.1.1 — required for specVersion 2.0.0 package support</li>
+<li><strong>Device / OPC-UA module</strong> — required for IoT tag subscription pipeline (flows 5, 6, 7, 14)</li>
+<li><strong>Scheduler module</strong> — required for automated OEE aggregate recalculation and back-fill flows</li>
+<li><strong>Notification module</strong> (optional) — required for alarm escalation level-1/level-2 email/SMS delivery</li>
+<li><strong>ERP Connector</strong> (optional) — required when <code>productionHistorySync</code>, <code>runSync</code>, or <code>workcenterHistorySync</code> flags are enabled on any Workcenter</li>
+</ul>
+<hr />
+<p><em>Built on the <a href="https://fuuz.com">Fuuz Industrial Operations Platform</a> — <a href="https://help.fuuz.com">Documentation</a></em></p>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Fuuz&reg; is an Enterprise Industrial Intelligence Platform.
+      <a href="https://accelerators.fuuz.com/">All accelerators</a> &middot;
+      <a href="https://github.com/Fuuz-Platform/application-machine-monitoring-accelerator">Source</a> &middot;
+      <a href="https://fuuz.com">fuuz.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
